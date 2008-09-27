@@ -146,8 +146,6 @@
         @"bridgecomplete('%@', '%@');",
         @"id not set", [request.URL path]];
     
-//    [webView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:)
-//                                              withObject:jsstring waitUntilDone:NO];
     [webView stringByEvaluatingJavaScriptFromString:jsstring];
     return Nil;
 }
@@ -162,9 +160,19 @@
     // handle special internal URLs here
     
     if ([[request.URL scheme] isEqualToString:@"nibwarejsbridge"]
-        || [[request.URL host] isEqualToString:@"nibwarejsbridge"]) {
+        || [[request.URL scheme] isEqualToString:@"nitroxlog"]
+        || [[request.URL host] isEqualToString:@"nitroxjsbridge"]
+        || [[request.URL host] isEqualToString:@"nibwarejsbridge"]) 
+    {
         [self handleJSBridge:webView request:request navigationType:navigationType];
         
+        return NO;
+    }
+    
+    if ([[request.URL scheme] isEqualToString:@"nitroxlog"]) {
+        NSString *msg = [[request.URL query]  stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSLog(@"WEB LOG: %@", msg);
+
         return NO;
     }
     
