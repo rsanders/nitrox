@@ -1,18 +1,18 @@
 //
-//  NitroxyWebViewController.m
+//  NitroxWebViewController.m
 //  pingle
 //
 //  Created by Robert Sanders on 9/23/08.
 //  Copyright 2008 ViTrue, Inc.. All rights reserved.
 //
 
-#import "NitroxyWebViewController.h"
-#import "NitroxyWebView.h"
+#import "NitroxWebViewController.h"
+#import "NitroxWebView.h"
 
 #import "Nibware.h"
 
 
-@implementation NitroxyWebViewController
+@implementation NitroxWebViewController
 
 @synthesize loadJSLib, otherJSLibs, delegate, webRootPath;
 
@@ -24,7 +24,7 @@
 
 - (void)startHTTPServer {
     NSLog(@"starting HTTP server");    
-    server = [[NitroxyHTTPServer alloc] initWithDelegate:self];
+    server = [[NitroxHTTPServer alloc] initWithDelegate:self];
     
     // TODO: randomize 
     authToken = @"temptoken";
@@ -69,11 +69,11 @@
     [super dealloc];
 }
 
-- (NitroxyWebView *)webView {
-    return (NitroxyWebView*)self.view;
+- (NitroxWebView *)webView {
+    return (NitroxWebView*)self.view;
 }
 
-#pragma mark NitroxyHTTPServer delegate
+#pragma mark NitroxHTTPServer delegate
 
 - (GTMHTTPResponseMessage *)httpServer:(GTMHTTPServer *)server
                          handleRequest:(GTMHTTPRequestMessage *)request
@@ -208,7 +208,7 @@
     NSLog(@"wVdFLWE: %@", error);
 }
 
-#pragma mark NitroxyWebViewDelegate
+#pragma mark NitroxWebViewDelegate
 
 @end
 

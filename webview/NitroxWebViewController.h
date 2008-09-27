@@ -1,5 +1,5 @@
 //
-//  NitroxyWebViewController.h
+//  NitroxWebViewController.h
 //  pingle
 //
 //  Created by Robert Sanders on 9/23/08.
@@ -8,23 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-#import "NitroxyWebView.h"
-#import "NitroxyHTTPServer.h"
+#import "NitroxWebView.h"
+#import "NitroxHTTPServer.h"
 
-@protocol NitroxyWebViewDelegate;
+@protocol NitroxWebViewDelegate;
 
-@interface NitroxyWebViewController : UIViewController <UIWebViewDelegate> {
+@interface NitroxWebViewController : UIViewController <UIWebViewDelegate> {
     // properties
     BOOL                   loadJSLib;
     NSArray*               otherJSLibs;
     
-    id<NitroxyWebViewDelegate>   delegate;
+    id<NitroxWebViewDelegate>   delegate;
     
     NSString*              webRootPath;
     
     // private
     BOOL                   passNext;
-    NitroxyHTTPServer*     server;
+    NitroxHTTPServer*     server;
     
     int                    httpPort;
     NSString*              authToken;
@@ -32,15 +32,15 @@
 
 @property (assign) BOOL                         loadJSLib;
 @property (retain) NSArray*                     otherJSLibs;
-@property (assign) id<NitroxyWebViewDelegate>   delegate;
+@property (assign) id<NitroxWebViewDelegate>   delegate;
 @property (retain) NSString*                    webRootPath;
 
-- (NitroxyWebView*)webView;
+- (NitroxWebView*)webView;
 
 @end
 
 
-@protocol NitroxyWebViewDelegate <UIWebViewDelegate>
+@protocol NitroxWebViewDelegate <UIWebViewDelegate>
 
 
 @end

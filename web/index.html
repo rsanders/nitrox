@@ -26,8 +26,14 @@ function bridgecallajax(fun, argstring) {
   var id = "id" + i++;
   debuglog('starting bridgecall for id ' + id);
   var fullstring = "http://localhost:61607/invoke/" + id + "/" + fun + "/args/" + argstring + "/" + i;
-  var res = jQuery.ajax({url: fullstring, async: false}).responseText;
-  debuglog('response text for ajax is: ' + responseText);
+  var req = jQuery.ajax({url: fullstring, async: false});
+  if (req.status == 200) {
+    var res = req.responseText; 
+    debuglog('response text for ajax is: ' + res);
+    alert('response is ' + res);
+  } else {
+    debuglog('error code: ' + req.status);
+  }
   _midresult=_nibware_result;
   return id;
 }
@@ -49,6 +55,7 @@ function bridgecall(fun, argstring) {
   _midresult=_nibware_result;
   return id;
 }
+
 function bridgecomplete(id, result)
 {
   debuglog("result for id " + id + " = " + result);
@@ -64,7 +71,7 @@ function bridgecomplete(id, result)
 <a href="javascript:debuglog('res = ' + _nibware_result + ' mid=' + _midresult);">Show popup</a> <br/>
 <a href="javascript:window.location.href='http://nibwarejsbridge/foo/bar/baz';">Set location</a> <br/>
 <a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
-<a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
+<a href="javascript:window.location.href=window.location.href;">Refresh</a> <br/>
 
 </body>
 </html>
