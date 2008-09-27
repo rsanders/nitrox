@@ -150,6 +150,15 @@
     return Nil;
 }
 
+- (id)handleJSLog:(UIWebView *)webView request:(NSURLRequest *)request 
+      navigationType:(UIWebViewNavigationType)navigationType 
+{
+    NSString *msg = [[request.URL query]  stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"WEB LOG: %@", msg);
+    
+    return Nil;
+}
+
 #pragma mark UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request 
@@ -160,7 +169,7 @@
     // handle special internal URLs here
     
     if ([[request.URL scheme] isEqualToString:@"nibwarejsbridge"]
-        || [[request.URL scheme] isEqualToString:@"nitroxlog"]
+        || [[request.URL scheme] isEqualToString:@"nitroxbridge"]
         || [[request.URL host] isEqualToString:@"nitroxjsbridge"]
         || [[request.URL host] isEqualToString:@"nibwarejsbridge"]) 
     {
@@ -170,8 +179,7 @@
     }
     
     if ([[request.URL scheme] isEqualToString:@"nitroxlog"]) {
-        NSString *msg = [[request.URL query]  stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSLog(@"WEB LOG: %@", msg);
+        [self handleJSLog:webView request:request navigationType:navigationType];
 
         return NO;
     }
