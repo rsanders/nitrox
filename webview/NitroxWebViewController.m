@@ -210,5 +210,39 @@
 
 #pragma mark NitroxWebViewDelegate
 
+#pragma mark UIWebView passthrough
+
+- (void)loadRequest:(NSURLRequest *)request {
+    [[self webView] loadRequest:request];
+}
+
+- (void)loadRequest:(NSURLRequest *)request baseURL:(NSURL *)baseURL {
+    NSURLResponse *response;
+    NSError *error;
+    
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+
+    if (!error && data) {
+        [self loadData:data MIMEType:[response MIMEType] textEncodingName:[response textEncodingName] baseURL:baseURL];
+    } else {
+        [self loadHTMLString:[NSString stringWithFormat:
+                              @"<html><body>Error: Could not load document from %@, error=%@</body></html>",
+                              [request URL], error]
+                     baseURL:baseURL];
+    }
+}
+
+- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
+    [[self webView] loadHTMLString:string baseURL:baseURL];
+}
+
+- (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType 
+    textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL
+{
+    [[self webView] loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
+}
+
+
+
 @end
 

@@ -37,6 +37,12 @@
 
 - (NitroxWebView*)webView;
 
+- (void)loadRequest:(NSURLRequest *)request;
+- (void)loadRequest:(NSURLRequest *)request baseURL:(NSURL *)baseURL;
+- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL;
+- (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL;
+
+
 @end
 
 
