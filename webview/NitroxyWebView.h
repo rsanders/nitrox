@@ -1,5 +1,5 @@
 //
-//  NibwareWebView.h
+//  NitroxyWebView.h
 //  pingle
 //
 //  Created by Robert Sanders on 9/23/08.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface NibwareWebView : UIWebView {
+@interface NitroxyWebView : UIWebView {
 
 }
 

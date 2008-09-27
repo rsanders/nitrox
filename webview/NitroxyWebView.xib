@@ -100,9 +100,9 @@
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>NibwareWebViewController</string>
+					<string>NitroxyWebViewController</string>
 					<string>UIResponder</string>
-					<string>NibwareWebView</string>
+					<string>NitroxyWebView</string>
 					<string>{{650, 140}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
@@ -133,19 +133,19 @@
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
-					<string key="className">NibwareWebView</string>
+					<string key="className">NitroxyWebView</string>
 					<string key="superclassName">UIWebView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">lib/nibwarelib/NibwareWebView.h</string>
+						<string key="minorKey">lib/nibwarelib/NitroxyWebView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">NibwareWebViewController</string>
+					<string key="className">NitroxyWebViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">lib/nibwarelib/NibwareWebViewController.h</string>
+						<string key="minorKey">lib/nibwarelib/NitroxyWebViewController.h</string>
 					</object>
 				</object>
 			</object>

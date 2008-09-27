@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta id="viewport" name="viewport" content="width=device-width; user-scalable=0;"/>
+</head>
+<body>
+
+This is the about page v2!
+
+<div id="outbox">
+</div>
+
+<h3 id="dtitle">Debug</h3>
+<div id="debuglog">
+</div>
+
+<script type="text/javascript">
+function debuglog(msg) {
+  var oldHTML = jQuery('#debuglog').get(0).innerHTML;
+  jQuery('#debuglog').html( msg + "<br/>--<br/>" + oldHTML );
+}
+_nibware_result = "UNDEF";
+_midresult = "nomidresult";
+i = 0;
+
+function bridgecallajax(fun, argstring) {
+  var id = "id" + i++;
+  debuglog('starting bridgecall for id ' + id);
+  var fullstring = "http://localhost:61607/invoke/" + id + "/" + fun + "/args/" + argstring + "/" + i;
+  var res = jQuery.ajax({url: fullstring, async: false}).responseText;
+  debuglog('response text for ajax is: ' + responseText);
+  _midresult=_nibware_result;
+  return id;
+}
+
+function bridgecomplete(id, result)
+{
+  debuglog("result for id " + id + " = " + result);
+  _nibware_result = result;
+}
+
+function bridgecall(fun, argstring) {
+  var id = "id" + i++;
+  debuglog('starting bridgecall for id ' + id);
+  // var fullstring = "http://nibwarejsbridge/invoke/" + id + "/" + fun + "/args/" + argstring + "/" + i;
+  var fullstring = "nibwarejsbridge://localhost/invoke/" + id + "/" + fun + "/args/" + argstring + "/" + i;
+  window.location.href=fullstring;
+  debuglog("set href to " + fullstring);
+  // jQuery.ajax({url: fullstring, async: false});
+  _midresult=_nibware_result;
+  return id;
+}
+function bridgecomplete(id, result)
+{
+  debuglog("result for id " + id + " = " + result);
+  _nibware_result = result;
+}
+
+// jQuery(function() { bridgecall("somecall", "this/is/an/arg/string"); });
+</script>
+
+<a href="nibwarejsbridge://localhost/somefun/manual/clicks">Click me to test manually by normal click</a> <br/>
+<a href="javascript:bridgecall('somefun', '/js/clicks');return false;">Click me to test via JS</a> <br/>
+<a href="javascript:bridgecallajax('somefun', '/js/clicks');return false;">Click me to test via Ajax</a> <br/>
+<a href="javascript:debuglog('res = ' + _nibware_result + ' mid=' + _midresult);">Show popup</a> <br/>
+<a href="javascript:window.location.href='http://nibwarejsbridge/foo/bar/baz';">Set location</a> <br/>
+<a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
+<a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
+
+</body>
+</html>

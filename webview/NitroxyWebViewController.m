@@ -1,18 +1,20 @@
 //
-//  NibwareWebViewController.m
+//  NitroxyWebViewController.m
 //  pingle
 //
 //  Created by Robert Sanders on 9/23/08.
 //  Copyright 2008 ViTrue, Inc.. All rights reserved.
 //
 
-#import "NibwareWebViewController.h"
+#import "NitroxyWebViewController.h"
+#import "NitroxyWebView.h"
+
 #import "Nibware.h"
 
 
-@implementation NibwareWebViewController
+@implementation NitroxyWebViewController
 
-@synthesize loadJSLib, otherJSLibs, delegate;
+@synthesize loadJSLib, otherJSLibs, delegate, webRootPath;
 
 - (void) init {
     [super init];
@@ -20,9 +22,32 @@
     loadJSLib = YES;
 }
 
+- (void)startHTTPServer {
+    NSLog(@"starting HTTP server");    
+    server = [[NitroxyHTTPServer alloc] initWithDelegate:self];
+    
+    // TODO: randomize 
+    authToken = @"temptoken";
+    
+    [server setPort:61607];
+
+    NSError *error;
+    [server start:&error];
+    
+    if (error) {
+        NSLog(@"had error starting HTTP server: %@", error);
+        @throw error;
+    }
+    
+    httpPort = [server port];
+    NSLog(@"started HTTP server %d", httpPort);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [(UIWebView*)self.view setDelegate:self];
+
+    [self startHTTPServer];
 }
 
 
@@ -44,9 +69,39 @@
     [super dealloc];
 }
 
-- (NibwareWebView *)webView {
-    return (NibwareWebView*)self.view;
+- (NitroxyWebView *)webView {
+    return (NitroxyWebView*)self.view;
 }
+
+#pragma mark NitroxyHTTPServer delegate
+
+- (GTMHTTPResponseMessage *)httpServer:(GTMHTTPServer *)server
+                         handleRequest:(GTMHTTPRequestMessage *)request
+{
+    NSLog(@"got request %@", request);
+    
+
+    NSString *path = [[request URL] path];
+
+    path = [NSString stringWithFormat:@"%@/web%@",
+            [[NSBundle mainBundle] bundlePath],
+            path];
+    
+    NSLog(@"calculated file path is %@", path);
+    
+    GTMHTTPResponseMessage* message;
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager isReadableFileAtPath:path]) {
+        NSString *contents = [NSString stringWithContentsOfFile:path];
+        message = [GTMHTTPResponseMessage responseWithHTMLString:contents];
+    } else {
+        message = [GTMHTTPResponseMessage emptyResponseWithCode:404];
+    }
+    
+    return message;
+}
+
 
 #pragma mark HTML Munging
 
@@ -153,7 +208,7 @@
     NSLog(@"wVdFLWE: %@", error);
 }
 
-#pragma mark NibwareWebViewDelegate
+#pragma mark NitroxyWebViewDelegate
 
 @end
 
