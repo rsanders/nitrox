@@ -212,17 +212,21 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"wVDSL");
+    if (loadJSLib || true) {
+        NSLog(@"loading JSlib");
+        
+        NSString *jspath = [[NSBundle mainBundle] pathForResource:@"jquery" ofType:@"js" inDirectory:@"web"];
+        [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
+
+        jspath = [[NSBundle mainBundle] pathForResource:@"rew" ofType:@"js" inDirectory:@"web"];
+        [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
+
+    }
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     NSLog(@"wVDFL");
-    if (loadJSLib || true) {
-        NSLog(@"loading JSlib");
-        
-        NSString *jspath = [[NSBundle mainBundle] pathForResource:@"rew" ofType:@"js" inDirectory:@"web"];
-        
-        [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
-    }
+
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
