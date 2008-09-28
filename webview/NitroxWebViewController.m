@@ -82,6 +82,11 @@
     
 
     NSString *path = [[request URL] path];
+    
+    if ([path isEqual:@"/"])
+    {
+        path = @"/index.html";
+    }
 
     path = [NSString stringWithFormat:@"%@/web%@",
             [[NSBundle mainBundle] bundlePath],
