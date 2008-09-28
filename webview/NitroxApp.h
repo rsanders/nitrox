@@ -10,6 +10,9 @@
 
 #import "NitroxWebView.h"
 #import "NitroxWebViewController.h"
+#import "NitroxAppPage.h"
+
+@class NitroxAppPage;
 
 @interface NitroxApp : NSObject {
     // remote directory to load from
@@ -27,6 +30,10 @@
     id<NitroxWebViewDelegate>     delegate;
 
     NitroxWebViewController*      webViewController;
+    
+    NitroxAppPage*                currentPage;
+    
+    NSArray*                      pages;
 }
 
 @end

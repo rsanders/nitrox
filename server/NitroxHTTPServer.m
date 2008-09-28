@@ -9,6 +9,12 @@
 #import "NitroxHTTPServer.h"
 
 
+@implementation NitroxHTTPResponseMessage
+@end
+
+@implementation NitroxHTTPRequestMessage
+@end
+
 @implementation NitroxHTTPServer
 
 @end

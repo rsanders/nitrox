@@ -10,6 +10,21 @@
 
 #import "GTMHTTPServer.h"
 
+@class NitroxHTTPServer;
+
+@interface NitroxHTTPResponseMessage : GTMHTTPResponseMessage {
+}
+@end
+
+@interface NitroxHTTPRequestMessage : GTMHTTPRequestMessage {
+}
+@end
+
+@protocol NitroxHTTPServerDelegate
+- (NitroxHTTPResponseMessage *)httpServer:(NitroxHTTPServer *)server
+                         handleRequest:(NitroxHTTPRequestMessage *)request;
+@end
+
 @interface NitroxHTTPServer : GTMHTTPServer {
 
 }
