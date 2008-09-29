@@ -67,7 +67,11 @@ enum {
   BOOL localhostOnly_;
   NSFileHandle *listenHandle_;
   NSMutableArray *connections_;
+    
+    BOOL acceptWithRunLoop;
 }
+
+@property (assign) BOOL     acceptWithRunLoop;
 
 // The delegate must support the httpServer:handleRequest: method in
 // NSObject(GTMHTTPServerDeletateMethods) below.

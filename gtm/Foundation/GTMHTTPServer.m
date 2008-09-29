@@ -37,6 +37,9 @@
 - (void)closeConnection:(NSMutableDictionary *)connDict;
 - (void)sendResponseOnNewThread:(NSMutableDictionary *)connDict;
 - (void)sentResponse:(NSMutableDictionary *)connDict;
+- (void)startListener;
+- (void)listenOnThread;
+- (void)newConnectionAccepted:(NSFileHandle*)newConnection;
 @end
 
 // keys for our connection dictionaries
@@ -61,11 +64,14 @@ static NSString *kResponse = @"Response";
 
 @implementation GTMHTTPServer
 
+@synthesize acceptWithRunLoop;
+
 - (id)init {
   return [self initWithDelegate:nil];
 }
 
 - (id)initWithDelegate:(id)delegate {
+    acceptWithRunLoop = NO;
   self = [super init];
   if (self) {
     if (!delegate) {
@@ -184,13 +190,8 @@ static NSString *kResponse = @"Response";
     // COV_NF_END
   }
   
-  // setup notifications for connects
-  NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-  [center addObserver:self
-             selector:@selector(acceptedConnectionNotification:)
-                 name:NSFileHandleConnectionAcceptedNotification
-               object:listenHandle_];
-  [listenHandle_ acceptConnectionInBackgroundAndNotify];
+    
+  [self startListener];
   
   // TODO: maybe hit the delegate incase it wants to register w/ NSNetService,
   // or just know we're up and running?
@@ -222,7 +223,6 @@ startFailed:
   }
   [connections_ removeAllObjects];
 }
-
 - (NSUInteger)activeRequestCount {
   return [connections_ count];
 }
@@ -239,6 +239,50 @@ startFailed:
 @end
 
 @implementation GTMHTTPServer (PrivateMethods)
+
+
+- (void)startListener {
+    if (acceptWithRunLoop) {
+        // setup notifications for connects
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center addObserver:self
+                   selector:@selector(acceptedConnectionNotification:)
+                       name:NSFileHandleConnectionAcceptedNotification
+                     object:listenHandle_];
+        [listenHandle_ acceptConnectionInBackgroundAndNotify];
+    } else {
+        [self performSelectorInBackground:@selector(listenOnThread) withObject:Nil];
+    }
+}
+
+- (void)listenAndAccept {
+    BOOL done = NO;
+    int acceptedFD;
+    int listenFD = [listenHandle_ fileDescriptor];
+    
+    struct sockaddr address;
+    socklen_t address_len;
+    
+    while (! done) {
+        NSLog(@"accepting...");
+        acceptedFD = accept(listenFD, &address, &address_len);
+        NSLog(@"accepted fd %d", acceptedFD);
+        
+        NSFileHandle *newFile = [[NSFileHandle alloc] initWithFileDescriptor:acceptedFD closeOnDealloc:YES];
+        [newFile autorelease];
+        [self newConnectionAccepted:newFile];
+        NSLog(@"looping");
+    }
+}
+
+- (void) listenOnThread {
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    
+    [self listenAndAccept];
+    
+    [pool release];
+}
+
 
 - (void)acceptedConnectionNotification:(NSNotification *)notification {
   NSDictionary *userInfo = [notification userInfo];
@@ -259,6 +303,108 @@ startFailed:
   [connections_ addObject:connDict];
 }
 
+
+- (void)handleRequest:(NSFileHandle *)connectionHandle fork:(BOOL)fork {
+    NSMutableDictionary *connDict = [self lookupConnection:connectionHandle];
+    if (connDict == nil) return; // we are no longer tracking this one
+    
+    char buffer[1024];
+    int length;
+    BOOL done = NO;
+    GTMHTTPRequestMessage *request;
+
+    int fd = [connectionHandle fileDescriptor];
+    
+    while (!done) {
+        length = read(fd, buffer, sizeof(buffer));
+
+        // remote side closed
+        if (length <= 0) {
+            NSLog(@"closing connection %d prematurely", fd);
+            [self closeConnection:connDict];
+            return;
+        }
+    
+        // Like Apple's sample, we just keep adding data until we get a full header
+        // and any referenced body.
+        
+        request = [connDict objectForKey:kRequest];
+        [request appendData:[NSData dataWithBytes:buffer length:length]];
+        
+        // Is the header complete yet?
+        if (![request isHeaderComplete]) {
+            // more data...
+            continue;
+        }
+        
+        // Do we have all the body?
+        UInt32 contentLength = [request contentLength];
+        NSData *body = [request body];
+        NSUInteger bodyLength = [body length];
+        if (contentLength > bodyLength) {
+            // need more data...
+            continue;
+        }
+        
+        done = YES;
+        
+        if (contentLength < bodyLength) {
+            // We got extra (probably someone trying to pipeline on us), trim
+            // and let the extra data go...
+            NSData *newBody = [NSData dataWithBytes:[body bytes] 
+                                             length:contentLength];
+            [request setBody:newBody];
+            _GTMDevLog(@"Got %lu extra bytes on http request, ignoring them",
+                       (unsigned long)(bodyLength - contentLength));
+        }
+    }
+
+    GTMHTTPResponseMessage *response = nil;
+    @try {
+        // Off to the delegate
+        response = [delegate_ httpServer:self handleRequest:request];
+    } @catch (NSException *e) {
+        _GTMDevLog(@"Exception trying to handle http request: %@", e);
+    } // COV_NF_LINE - radar 5851992 only reachable w/ an uncaught exception which isn't testable
+    
+    if (!response) {
+        [self closeConnection:connDict];
+        return;
+    }
+    
+    // We don't support connection reuse, so we add (force) the header to close
+    // every connection.
+    [response setValue:@"close" forHeaderField:@"Connection"];
+    
+    // spawn thread to send reply (since we do a blocking send)
+    [connDict setObject:response forKey:kResponse];
+    
+    
+    if (fork) {
+        [NSThread detachNewThreadSelector:@selector(sendResponseOnNewThread:)
+                                 toTarget:self
+                               withObject:connDict];
+    } else {
+        [self sendResponse:connDict];
+    }
+}
+
+- (void)handleRequestOnThread:(NSFileHandle*)fileHandle {
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    [self handleRequest:fileHandle fork:NO];
+    [pool release];
+}
+
+
+- (void)newConnectionAccepted:(NSFileHandle*)newConnection {
+    _GTMDevAssert(newConnection != nil,
+                  @"failed to get the connection from accept loop");
+    
+    NSMutableDictionary *connDict =
+    [self newConnectionWithFileHandle:newConnection];
+    [connections_ addObject:connDict];
+}
+
 - (NSMutableDictionary *)newConnectionWithFileHandle:(NSFileHandle *)fileHandle {
   NSMutableDictionary *result = [NSMutableDictionary dictionary];
 
@@ -268,13 +414,18 @@ startFailed:
     [[[GTMHTTPRequestMessage alloc] init] autorelease];
   [result setObject:request forKey:kRequest];
   
-  // setup for data notifications
-  NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-  [center addObserver:self
-             selector:@selector(dataAvailableNotification:)
-                 name:NSFileHandleReadCompletionNotification
-               object:fileHandle];
-  [fileHandle readInBackgroundAndNotify];
+    if (acceptWithRunLoop) {
+      // setup for data notifications
+      NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+      [center addObserver:self
+                 selector:@selector(dataAvailableNotification:)
+                     name:NSFileHandleReadCompletionNotification
+                   object:fileHandle];
+      [fileHandle readInBackgroundAndNotify];
+    } else {
+      // fork and run
+      [self performSelectorInBackground:@selector(handleRequestOnThread:) withObject:fileHandle];
+    }
 
   return result;
 }
@@ -378,8 +529,27 @@ startFailed:
   [connections_ removeObject:connDict];
 }
 
+- (void)sendResponse:(NSMutableDictionary *)connDict {
+    
+    @try {
+        GTMHTTPResponseMessage *response = [connDict objectForKey:kResponse];
+        NSFileHandle *connectionHandle = [connDict objectForKey:kFileHandle];
+        NSData *serialized = [response serializedData];
+        [connectionHandle writeData:serialized];
+    } @catch (NSException *e) {  // COV_NF_START - causing an exception here is to hard in a test
+        // TODO: let the delegate know about the exception (but do it on the main
+        // thread)
+        _GTMDevLog(@"exception while sending reply: %@", e);
+    }  // COV_NF_END
+    
+    // back to the main thread to close things down
+    [self performSelectorOnMainThread:@selector(sentResponse:)
+                           withObject:connDict
+                        waitUntilDone:NO];
+}
+
 - (void)sendResponseOnNewThread:(NSMutableDictionary *)connDict {
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
   
   @try {
     GTMHTTPResponseMessage *response = [connDict objectForKey:kResponse];
