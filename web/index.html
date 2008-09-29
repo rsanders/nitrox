@@ -37,7 +37,8 @@ i = 0;
 function bridgecallajax(fun, argstring) {
   var id = "id" + i++;
   debuglog('starting bridgecall for id ' + id);
-  var fullstring = "http://localhost:61607/invoke/" + id + "/" + fun + "/args/" + argstring + "/" + i;
+  var port = _nitrox_info.port;
+  var fullstring = "http://localhost:" + port + "/invoke/" + id + "/" + fun + "/args/" + argstring + "/" + i;
   var req = jQuery.ajax({url: fullstring, async: false});
   if (req.status == 200) {
     var res = req.responseText; 

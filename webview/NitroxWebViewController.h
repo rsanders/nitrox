@@ -31,8 +31,9 @@
 }
 
 @property (assign) BOOL                         loadJSLib;
+@property (assign) NSInteger                    httpPort;
 @property (retain) NSArray*                     otherJSLibs;
-@property (assign) id<NitroxWebViewDelegate>   delegate;
+@property (assign) id<NitroxWebViewDelegate>    delegate;
 @property (retain) NSString*                    webRootPath;
 
 - (NitroxWebView*)webView;

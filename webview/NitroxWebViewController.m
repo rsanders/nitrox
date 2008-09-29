@@ -11,25 +11,42 @@
 
 #import "Nibware.h"
 
+@interface NitroxWebViewController (Private) 
+- (void)startHTTPServer;
+@end
+
 
 @implementation NitroxWebViewController
 
-@synthesize loadJSLib, otherJSLibs, delegate, webRootPath;
+@synthesize loadJSLib, otherJSLibs, delegate, webRootPath, httpPort;
 
-- (void) init {
-    [super init];
+- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle
+{
+    id ret = [super initWithNibName:nibName bundle:nibBundle];
+
     passNext = NO;
     loadJSLib = YES;
+    [self startHTTPServer];
+
+    return ret;
 }
 
 - (void)startHTTPServer {
-    NSLog(@"starting HTTP server");    
+    if (server) {
+        NSLog(@"server already started on port %d", [server port]);
+        return;
+    }
+
+    NSLog(@"starting HTTP server");
     server = [[NitroxHTTPServer alloc] initWithDelegate:self];
     
     // TODO: randomize 
     authToken = @"temptoken";
     
-    [server setPort:61607];
+    if (httpPort > 0) {
+        [server setPort:httpPort];
+    }
+    server.acceptWithRunLoop = NO;
 
     NSError *error;
     [server start:&error];
@@ -66,6 +83,9 @@
 - (void)dealloc {
     otherJSLibs = Nil;
     
+    [server stop];
+    [server release];
+
     [super dealloc];
 }
 
@@ -220,8 +240,13 @@
 
         jspath = [[NSBundle mainBundle] pathForResource:@"rew" ofType:@"js" inDirectory:@"web"];
         [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
-
     }
+    
+    NSString *nitroxInfo = [NSString stringWithFormat:
+                            @"_nitrox_info = {port: %d, enabled: true};",
+                            self.httpPort];
+    
+    [self insertJavascriptString:nitroxInfo];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -237,7 +262,18 @@
 
 #pragma mark UIWebView passthrough
 
+- (NSURL *)createBaseURL {
+    return [NSURL URLWithString:
+            [NSString stringWithFormat:@"http://localhost:%d/", self.httpPort]];
+}
+
 - (void)loadRequest:(NSURLRequest *)request {
+    NSMutableURLRequest* realRequest = [request mutableCopy];
+    NSURL *baseURL = [self createBaseURL];
+#pragma unused (baseURL)
+
+    [realRequest setMainDocumentURL:[self createBaseURL]];
+
     [[self webView] loadRequest:request];
 }
 
