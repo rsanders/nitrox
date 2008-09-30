@@ -30,9 +30,6 @@
 #import "GTMDefines.h"
 
 @interface GTMHTTPServer (PrivateMethods)
-// - (void)acceptedConnectionNotification:(NSNotification *)notification;
-//- (NSMutableDictionary *)newConnectionWithFileHandle:(NSFileHandle *)fileHandle;
-// - (void)dataAvailableNotification:(NSNotification *)notification;
 - (NSMutableDictionary *)lookupConnection:(NSFileHandle *)fileHandle;
 - (void)registerConnection:(NSMutableDictionary *)connDict;
 - (void)closeConnection:(NSMutableDictionary *)connDict;
@@ -40,8 +37,7 @@
 - (void)sendResponse:(NSMutableDictionary *)connDict;
 - (void)sentResponse:(NSMutableDictionary *)connDict;
 - (void)startListener;
-//- (void)listenOnThread;
-//- (void)newConnectionAccepted:(NSFileHandle*)newConnection;
+- (void)enqueueOperation:(NSOperation*)operation;
 @end
 
 // keys for our connection dictionaries
@@ -92,12 +88,15 @@ static NSString *kResponse = @"Response";
                                                                 NULL);
     localhostOnly_ = YES;
     connections_ = [[NSMutableArray alloc] init];
+      
+    operationQueue_ = [[NSOperationQueue alloc] init];
   }
   return self;
 }
 
 - (void)dealloc {
   [self stop];
+  [operationQueue_ release];
   [super dealloc];
 }
 
@@ -352,6 +351,10 @@ startFailed:
   
   // close it down
   [self closeConnection:connDict];
+}
+
+- (void) enqueueOperation:(NSOperation *)operation {
+    [operationQueue_ addOperation:operation];
 }
 
 @end
@@ -851,9 +854,9 @@ startFailed:
     
     // spawn thread to send reply (since we do a blocking send)
     [connDict setObject:response forKey:kResponse];
-    [NSThread detachNewThreadSelector:@selector(sendResponseOnNewThread:)
-                             toTarget:server_
-                           withObject:connDict];
+    
+    [server_ enqueueOperation:
+     [[NSInvocationOperation alloc] initWithTarget:server_ selector:@selector(sendResponseOnNewThread:) object:connDict]];
 }
 
 @end

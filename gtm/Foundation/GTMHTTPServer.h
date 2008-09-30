@@ -72,6 +72,8 @@ enum {
     
   id <GTMHTTPConnectionHandler> connectionHandler;
   BOOL acceptWithRunLoop;
+    
+  NSOperationQueue*    operationQueue_;
 }
 
 @property (assign) BOOL     acceptWithRunLoop;
