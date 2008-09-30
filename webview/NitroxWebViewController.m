@@ -46,7 +46,8 @@
     if (httpPort > 0) {
         [server setPort:httpPort];
     }
-    server.acceptWithRunLoop = NO;
+    [server setAcceptWithRunLoop:NO];
+    [server setLocalhostOnly:YES];
 
     NSError *error;
     [server start:&error];
