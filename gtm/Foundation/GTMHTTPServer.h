@@ -56,6 +56,8 @@ enum {
 };
 
 @class GTMHTTPRequestMessage, GTMHTTPResponseMessage;
+@class GTMHTTPConnectionHandler, GTMHTTPThreadedConnectionHandler, GTMHTTPRunLoopConnectionHandler;
+@protocol GTMHTTPConnectionHandler;
 
 // ----------------------------------------------------------------------------
 
@@ -68,7 +70,8 @@ enum {
   NSFileHandle *listenHandle_;
   NSMutableArray *connections_;
     
-    BOOL acceptWithRunLoop;
+  id <GTMHTTPConnectionHandler> connectionHandler;
+  BOOL acceptWithRunLoop;
 }
 
 @property (assign) BOOL     acceptWithRunLoop;
@@ -138,4 +141,40 @@ enum {
 // TODO: class method for redirections?
 // TODO: add helper for expire/no-cache
 - (void)setValue:(NSString*)value forHeaderField:(NSString*)headerField;
+@end
+
+// ----------------------------------------------------------------------------
+
+@protocol GTMHTTPConnectionHandler <NSObject>
+- (id<GTMHTTPConnectionHandler>) initWithServer:(GTMHTTPServer*)server listener:(NSFileHandle*)socket;
+- (void) handleConnection:(NSFileHandle*)fileHandle;
+- (void) start;
+- (void) stop;
+@end
+
+
+// Engine for handling requests and sending responses (like Apache MPMs)
+@interface GTMHTTPConnectionHandler : NSObject {
+    GTMHTTPServer*            server_;
+    NSFileHandle*             listenHandle_;
+}
+@end
+
+// ----------------------------------------------------------------------------
+
+// Threaded Engine for handling requests and sending responses (like Apache MPMs)
+@interface GTMHTTPThreadedConnectionHandler : GTMHTTPConnectionHandler <GTMHTTPConnectionHandler> {
+    NSThread*                 listenThread_;
+}
+
+@end
+
+
+// ----------------------------------------------------------------------------
+
+// RunLoop / Async I/O driven Engine for handling requests and sending responses (like Apache MPMs)
+
+@interface GTMHTTPRunLoopConnectionHandler : GTMHTTPConnectionHandler <GTMHTTPConnectionHandler>  {
+}
+
 @end
