@@ -318,6 +318,9 @@ startFailed:
     
     @try {
         GTMHTTPResponseMessage *response = [connDict objectForKey:kResponse];
+        if (!response) {
+            response = [GTMHTTPResponseMessage emptyResponseWithCode:404];
+        }
         NSFileHandle *connectionHandle = [connDict objectForKey:kFileHandle];
         NSData *serialized = [response serializedData];
         [connectionHandle writeData:serialized];
