@@ -46,7 +46,12 @@
     if (httpPort > 0) {
         [server setPort:httpPort];
     }
+    
+    // if you say YES here, you gots yourself a deadlock
     [server setAcceptWithRunLoop:NO];
+    
+    // security risk otherwise; once we validate with tokens, it won't be as much, though
+    // it's still kind of useless unless we want to allow distributed communication / RPC
     [server setLocalhostOnly:YES];
 
     NSError *error;
@@ -96,33 +101,32 @@
 
 #pragma mark NitroxHTTPServer delegate
 
-- (GTMHTTPResponseMessage *)httpServer:(GTMHTTPServer *)server
-                         handleRequest:(GTMHTTPRequestMessage *)request
-{
-    NSLog(@"got request %@", request);
-    
 
-    NSString *path = [[request URL] path];
+- (NitroxHTTPResponseMessage *)httpServer:(NitroxHTTPServer *)server
+                            handleRequest:(NitroxHTTPRequestMessage *)request
+                                   atPath:(NSString *)path
+{
+    NSLog(@"got request %@ at path %@", request, path);
     
     if ([path isEqual:@"/"])
     {
         path = @"/index.html";
     }
 
-    path = [NSString stringWithFormat:@"%@/web%@",
+    path = [NSString stringWithFormat:@"%@/web/%@",
             [[NSBundle mainBundle] bundlePath],
             path];
     
     NSLog(@"calculated file path is %@", path);
     
-    GTMHTTPResponseMessage* message;
+    NitroxHTTPResponseMessage* message;
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager isReadableFileAtPath:path]) {
         NSString *contents = [NSString stringWithContentsOfFile:path];
-        message = [GTMHTTPResponseMessage responseWithHTMLString:contents];
+        message = [NitroxHTTPResponseMessage responseWithHTMLString:contents];
     } else {
-        message = [GTMHTTPResponseMessage emptyResponseWithCode:404];
+        message = [NitroxHTTPResponseMessage emptyResponseWithCode:404];
     }
     
     return message;

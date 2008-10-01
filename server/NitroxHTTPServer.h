@@ -21,12 +21,17 @@
 @end
 
 @protocol NitroxHTTPServerDelegate
+- (BOOL) willHandlePath:(NSString *)path
+            fromRequest:(NitroxHTTPRequestMessage *)request
+               onServer:(NitroxHTTPServer *)server;
+          
 - (NitroxHTTPResponseMessage *)httpServer:(NitroxHTTPServer *)server
-                         handleRequest:(NitroxHTTPRequestMessage *)request;
+                            handleRequest:(NitroxHTTPRequestMessage *)request
+                                   atPath:(NSString *)path;
 @end
 
-@interface NitroxHTTPServer : GTMHTTPServer {
-
+@interface NitroxHTTPServer : GTMHTTPServer  {
+    id<NitroxHTTPServerDelegate>         nitroxDelegate;
 }
 
 @end
