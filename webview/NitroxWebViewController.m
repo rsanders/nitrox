@@ -9,7 +9,7 @@
 #import "NitroxWebViewController.h"
 #import "NitroxWebView.h"
 
-#import "NitroxApiDevice.h"
+#import "NitroxApi.h"
 
 #import "Nibware.h"
 
@@ -49,6 +49,10 @@
     
     [rpcDelegate addPath:@"Device" delegate:[[NitroxRPCDispatcher alloc] 
                                              initWithStubClass:[[NitroxApiDevice alloc] init]]];
+
+    [rpcDelegate addPath:@"Location" delegate:[[NitroxRPCDispatcher alloc] 
+                                             initWithStubClass:[[NitroxApiLocation alloc] init]]];
+
     
     // fallback is an authoritative filesystem server rooted at APP.app/web
     [pathDelegate setDefaultDelegate:
