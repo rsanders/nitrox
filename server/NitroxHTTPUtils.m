@@ -17,7 +17,7 @@
     }
     NSArray *components = [path componentsSeparatedByString:@"/"];
     if ([components count] >= 1) {
-        return [[components subarrayWithRange:NSMakeRange([components count]-1,1)] componentsJoinedByString:@"/"];
+        return [[components subarrayWithRange:NSMakeRange(1, [components count]-1)] componentsJoinedByString:@"/"];
     } else {
         return @"";
     }
