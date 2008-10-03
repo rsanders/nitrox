@@ -1,0 +1,19 @@
+Communication between Javascript web apps and the Nitrox wrapper occurs through
+a kind of RPC-via-AJAX call.  The JS code load a specially formatted URL via
+an XMLHttpRequest to an embedded web server.
+
+  http://localhost:$EMBEDPORT/$APPKEY/rpc/$PACKAGE/$FUNCTION?arg1=a&arg2=b&...
+
+If necessary, a body can be posted.  
+  
+Proxying
+
+  http://localhost:$EMBEDPORT/$APPKEY/proxy?url=$URL&method=$METHOD&header_foo=bar
+  
+    URL is the URL-encoded URL
+    METHOD is the method to use
+    header_$NAME is a header name to supply
+  
+A body can also be posted.
+
+

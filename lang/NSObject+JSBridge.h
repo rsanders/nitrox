@@ -14,4 +14,6 @@
 - (NSArray*) instanceMethodNames;
 - (NSArray*) classMethodNames;
 
+- (NSString *) serializeToJSON;
+
 @end

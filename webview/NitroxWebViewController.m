@@ -8,7 +8,8 @@
 
 #import "NitroxWebViewController.h"
 #import "NitroxWebView.h"
-#import "NitroxHTTP.h"
+
+#import "NitroxApiDevice.h"
 
 #import "Nibware.h"
 
@@ -19,7 +20,7 @@
 
 @implementation NitroxWebViewController
 
-@synthesize loadJSLib, otherJSLibs, delegate, webRootPath, httpPort;
+@synthesize loadJSLib, otherJSLibs, delegate, webRootPath, httpPort, rpcDelegate;
 
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle
 {
@@ -43,6 +44,12 @@
     NitroxHTTPServerPathDelegate *pathDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
     [pathDelegate addPath:@"log" delegate:[NitroxHTTPServerLogDelegate singleton]];
 
+    rpcDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
+    [pathDelegate addPath:@"rpc" delegate:rpcDelegate];
+    
+    [rpcDelegate addPath:@"Device" delegate:[[NitroxRPCDispatcher alloc] 
+                                             initWithStubClass:[[NitroxApiDevice alloc] init]]];
+    
     // fallback is an authoritative filesystem server rooted at APP.app/web
     [pathDelegate setDefaultDelegate:
         [[[NitroxHTTPServerFilesystemDelegate alloc] 
@@ -106,6 +113,8 @@
     
     [server stop];
     [server release];
+    
+    [rpcDelegate release];
     [(id<NSObject>)serverDelegate release];
 
     [super dealloc];

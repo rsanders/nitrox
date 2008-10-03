@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "NitroxWebView.h"
+#import "NitroxHTTP.h"
 #import "NitroxHTTPServer.h"
 
 @protocol NitroxWebViewDelegate;
@@ -27,6 +28,7 @@
 
     NitroxHTTPServer*             server;
     id<NitroxHTTPServerDelegate>  serverDelegate;
+    NitroxHTTPServerPathDelegate* rpcDelegate;    
     
     int                    httpPort;
     NSString*              authToken;
@@ -37,6 +39,7 @@
 @property (retain) NSArray*                     otherJSLibs;
 @property (assign) id<NitroxWebViewDelegate>    delegate;
 @property (retain) NSString*                    webRootPath;
+@property (retain) NitroxHTTPServerPathDelegate* rpcDelegate;   
 
 - (NitroxWebView*)webView;
 

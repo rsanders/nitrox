@@ -34,4 +34,7 @@
     return [self methodNamesForClass:object_getClass([self class])];
 }
 
+- (NSString *) serializeToJSON {
+}
+
 @end
