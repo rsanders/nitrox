@@ -16,5 +16,6 @@
 + (NSString *) stripLeadingPathElement:(NSString *)path;
 + (NSString *) getLeadingPathElement:(NSString *)path;
 + (NSString *) stripLeadingSlash:(NSString *)path;
++ (NSString *) stripTrailingSlash:(NSString *)path;
 
 @end

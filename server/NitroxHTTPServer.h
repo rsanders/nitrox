@@ -16,17 +16,36 @@
 }
 @end
 
-@interface NitroxHTTPRequestMessage : GTMHTTPRequestMessage {
+@interface NitroxHTTPRequest : NSObject {
+    GTMHTTPRequestMessage*    requestMessage;
+    NSString*                 prefixPath;
+    NSString*                 path;
 }
+
+@property (retain) GTMHTTPRequestMessage*    requestMessage;
+@property (retain) NSString*                 prefixPath;
+@property (retain) NSString*                 path;
+
+// designated initializer
+- (NitroxHTTPRequest*) initWithRequestMessage:(GTMHTTPRequestMessage*) requestMessage
+                                       prefix:(NSString*)prefix
+                                         path:(NSString *)path;
+
+- (NitroxHTTPRequest*) initWithRequestMessage:(GTMHTTPRequestMessage*) requestMessage;
+
+- (NitroxHTTPRequest*) nextLevelRequest;
+
+- (NSURL *)URL;
+
 @end
 
 @protocol NitroxHTTPServerDelegate
 - (BOOL) willHandlePath:(NSString *)path
-            fromRequest:(NitroxHTTPRequestMessage *)request
+            fromRequest:(NitroxHTTPRequest *)request
                onServer:(NitroxHTTPServer *)server;
           
 - (NitroxHTTPResponseMessage *)httpServer:(NitroxHTTPServer *)server
-                            handleRequest:(NitroxHTTPRequestMessage *)request
+                            handleRequest:(NitroxHTTPRequest *)request
                                    atPath:(NSString *)path;
 @end
 

@@ -24,7 +24,9 @@
     
     // private
     BOOL                   passNext;
-    NitroxHTTPServer*     server;
+
+    NitroxHTTPServer*             server;
+    id<NitroxHTTPServerDelegate>  serverDelegate;
     
     int                    httpPort;
     NSString*              authToken;

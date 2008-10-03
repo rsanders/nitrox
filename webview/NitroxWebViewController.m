@@ -8,6 +8,7 @@
 
 #import "NitroxWebViewController.h"
 #import "NitroxWebView.h"
+#import "NitroxHTTP.h"
 
 #import "Nibware.h"
 
@@ -38,7 +39,21 @@
     }
 
     NSLog(@"starting HTTP server");
-    server = [[NitroxHTTPServer alloc] initWithDelegate:self];
+    
+    NitroxHTTPServerPathDelegate *pathDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
+    [pathDelegate addPath:@"log" delegate:[NitroxHTTPServerLogDelegate singleton]];
+
+    // fallback is an authoritative filesystem server rooted at APP.app/web
+    [pathDelegate setDefaultDelegate:
+        [[[NitroxHTTPServerFilesystemDelegate alloc] 
+            initWithRoot:[NSString stringWithFormat:@"%@/web",
+                          [[NSBundle mainBundle] bundlePath]]
+            authoritative:YES] 
+         autorelease]];
+    
+    serverDelegate = pathDelegate;
+
+    server = [[NitroxHTTPServer alloc] initWithDelegate:serverDelegate];
     
     // TODO: randomize 
     authToken = @"temptoken";
@@ -91,6 +106,7 @@
     
     [server stop];
     [server release];
+    [(id<NSObject>)serverDelegate release];
 
     [super dealloc];
 }
@@ -98,40 +114,6 @@
 - (NitroxWebView *)webView {
     return (NitroxWebView*)self.view;
 }
-
-#pragma mark NitroxHTTPServer delegate
-
-
-- (NitroxHTTPResponseMessage *)httpServer:(NitroxHTTPServer *)server
-                            handleRequest:(NitroxHTTPRequestMessage *)request
-                                   atPath:(NSString *)path
-{
-    NSLog(@"got request %@ at path %@", request, path);
-    
-    if ([path isEqual:@"/"])
-    {
-        path = @"/index.html";
-    }
-
-    path = [NSString stringWithFormat:@"%@/web/%@",
-            [[NSBundle mainBundle] bundlePath],
-            path];
-    
-    NSLog(@"calculated file path is %@", path);
-    
-    NitroxHTTPResponseMessage* message;
-
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if ([fileManager isReadableFileAtPath:path]) {
-        NSString *contents = [NSString stringWithContentsOfFile:path];
-        message = [NitroxHTTPResponseMessage responseWithHTMLString:contents];
-    } else {
-        message = [NitroxHTTPResponseMessage emptyResponseWithCode:404];
-    }
-    
-    return message;
-}
-
 
 #pragma mark HTML Munging
 
@@ -240,16 +222,20 @@
     if (loadJSLib || true) {
         NSLog(@"loading JSlib");
         
-        NSString *jspath = [[NSBundle mainBundle] pathForResource:@"jquery" ofType:@"js" inDirectory:@"web"];
+        NSString *jspath = [[NSBundle mainBundle] pathForResource:@"jquery" ofType:@"js" inDirectory:@"web/lib"];
         [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
 
+        jspath = [[NSBundle mainBundle] pathForResource:@"nitrox" ofType:@"js" inDirectory:@"web/lib"];
+        [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
+        
         jspath = [[NSBundle mainBundle] pathForResource:@"rew" ofType:@"js" inDirectory:@"web"];
         [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
     }
     
     NSString *nitroxInfo = [NSString stringWithFormat:
-                            @"_nitrox_info = {port: %d, enabled: true};",
-                            self.httpPort];
+                            @"_nitrox_info = {port: %d, enabled: true};\n"
+                             "Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true;",
+                            self.httpPort, self.httpPort];
     
     [self insertJavascriptString:nitroxInfo];
 }
@@ -262,8 +248,6 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     NSLog(@"wVdFLWE: %@", error);
 }
-
-#pragma mark NitroxWebViewDelegate
 
 #pragma mark UIWebView passthrough
 

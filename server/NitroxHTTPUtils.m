@@ -43,4 +43,12 @@
     }
 }
 
++ (NSString *) stripTrailingSlash:(NSString *)path {
+    if ([path characterAtIndex:[path length]-1] == '/') {
+        return [path substringToIndex:[path length]-1];
+    } else {
+        return path;
+    }
+}
+
 @end

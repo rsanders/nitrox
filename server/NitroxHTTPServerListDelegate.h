@@ -12,10 +12,12 @@
 #import "NitroxHTTPServer.h"
 
 @interface NitroxHTTPServerListDelegate : NSObject <NitroxHTTPServerDelegate> {
-    NSMutableArray*            list;
+    NSMutableArray*                list;
+    id<NitroxHTTPServerDelegate>   defaultDelegate;
 }
 
 @property (retain)  NSMutableArray*      list;
+@property (assign)  id<NitroxHTTPServerDelegate>  defaultDelegate;
 
 - (NitroxHTTPServerListDelegate *) init;
 - (void) addDelegate:(id<NitroxHTTPServerDelegate>)delegate;

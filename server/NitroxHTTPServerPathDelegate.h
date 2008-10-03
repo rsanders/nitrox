@@ -11,10 +11,13 @@
 #import "NitroxHTTPServer.h"
 
 @interface NitroxHTTPServerPathDelegate : NSObject <NitroxHTTPServerDelegate> {
-    NSMutableDictionary*          paths;
+    NSMutableDictionary*           paths;
+    id<NitroxHTTPServerDelegate>   defaultDelegate;
+
 }
 
-@property (retain)  NSDictionary*      paths;
+@property (retain)  NSDictionary*                 paths;
+@property (retain)  id<NitroxHTTPServerDelegate>  defaultDelegate;
 
 - (NitroxHTTPServerPathDelegate *) init;
 - (void) addPath:(NSString *)path delegate:(id<NitroxHTTPServerDelegate>)delegate;

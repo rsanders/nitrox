@@ -11,7 +11,7 @@
 
 @implementation NitroxHTTPServerPathDelegate
 
-@synthesize paths;
+@synthesize paths, defaultDelegate;
 
 - (NitroxHTTPServerPathDelegate *) init {
     [super init];
@@ -20,35 +20,42 @@
 }
 
 - (BOOL) willHandlePath:(NSString *)path
-            fromRequest:(NitroxHTTPRequestMessage *)request
+            fromRequest:(NitroxHTTPRequest *)request
                onServer:(NitroxHTTPServer *)server
 {
     return ([paths objectForKey:path] != Nil || [paths objectForKey:[[request URL] path]]);
 }
 
 - (NitroxHTTPResponseMessage *)httpServer:(NitroxHTTPServer *)server
-                            handleRequest:(NitroxHTTPRequestMessage *)request
+                            handleRequest:(NitroxHTTPRequest *)request
                                    atPath:(NSString *)path
 {
     NSArray *components = [path componentsSeparatedByString:@"/"];
+    id<NitroxHTTPServerDelegate> handler = Nil;
     
-    if ([paths objectForKey:path]) {
-        return [(id<NitroxHTTPServerDelegate>)[paths objectForKey:path] httpServer:server handleRequest:request atPath:path];
-    }
+    handler = [paths objectForKey:path];
     
-    NSString *key;
-    if ([components count] >= 1) {
-        key = [components objectAtIndex:0];
-    } else {
-        NSLog(@"empty component set for path");
-        @throw [NSException exceptionWithName:@"error" reason:@"no components" userInfo:Nil];
-    }
+    if (! handler) {
+        NSString *key = Nil;
+        if ([components count] >= 1) {
+            key = [components objectAtIndex:0];
+        } else {
+            NSLog(@"empty component set for path");
+        }
 
-    if (key) {
-        return [(id<NitroxHTTPServerDelegate>)[paths objectForKey:key] httpServer:server handleRequest:request atPath:path];
+        if (key) {
+            handler = [paths objectForKey:key];
+        }
     }
     
-    return Nil;
+    if (handler) {
+        NitroxHTTPRequest *nextRequest = [request nextLevelRequest];
+        return [handler httpServer:server handleRequest:nextRequest atPath:[nextRequest path]];
+    } else if (defaultDelegate) {
+        return [defaultDelegate httpServer:server handleRequest:request atPath:path];
+    } else {
+        return Nil;
+    }
 }
 
 - (void) addPath:(NSString *)path delegate:(id<NitroxHTTPServerDelegate>)delegate
@@ -57,7 +64,8 @@
 }
 
 - (void) dealloc {
-    
+    [(id<NSObject>)defaultDelegate release];
+    [paths release];
     [super dealloc];
 }
 

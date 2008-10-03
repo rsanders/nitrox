@@ -12,7 +12,7 @@
 
 @implementation NitroxHTTPServerListDelegate
 
-@synthesize list;
+@synthesize list, defaultDelegate;
 
 - (NitroxHTTPServerListDelegate *) init {
     [super init];
@@ -20,7 +20,7 @@
     return self;
 }
 
-- (id) getDelegateForPath:(NSString *)path fromRequest:(NitroxHTTPRequestMessage *)request onServer:(NitroxHTTPServer *)server
+- (id) getDelegateForPath:(NSString *)path fromRequest:(NitroxHTTPRequest *)request onServer:(NitroxHTTPServer *)server
 {
     id <NitroxHTTPServerDelegate> delegate;
     for (delegate in list)
@@ -33,7 +33,7 @@
 
 
 - (BOOL) willHandlePath:(NSString *)path
-            fromRequest:(NitroxHTTPRequestMessage *)request
+            fromRequest:(NitroxHTTPRequest *)request
                onServer:(NitroxHTTPServer *)server
 {
     return [self getDelegateForPath:path fromRequest:request onServer:server] != Nil;
@@ -41,7 +41,7 @@
 
 
 - (NitroxHTTPResponseMessage *)httpServer:(NitroxHTTPServer *)server
-                            handleRequest:(NitroxHTTPRequestMessage *)request
+                            handleRequest:(NitroxHTTPRequest *)request
                                    atPath:(NSString *)path
 
 {
@@ -64,7 +64,8 @@
 
 
 - (void) dealloc {
-    
+    [list release];
+    [(id<NSObject>)defaultDelegate release];
     [super dealloc];
 }
 
