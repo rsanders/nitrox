@@ -52,7 +52,7 @@
         return [NitroxHTTPResponseMessage emptyResponseWithCode:400];
     }
     
-    NSString *className = [stub className];
+    // NSString *className = [stub className];
     NSString *ic = [components objectAtIndex:0];
     
     NSString *result;
@@ -64,10 +64,13 @@
         result = @"Incorrect i/c setting";
     }
     
-    NSString *response = [NSString stringWithFormat:@"ok, class=%@, i/c=%@, args=%@, res=%@", 
-                          className, ic, args, result];
     CJSONSerializer *serializer = [[[CJSONSerializer alloc] init] autorelease];
-    response = [serializer serializeObject:response];
+    NSString *response;
+    if (result == Nil) {
+        response = @"null";
+    } else {
+        response = [serializer serializeObject:result];
+    }
     return [NitroxHTTPResponseMessage responseWithBody:[response dataUsingEncoding:NSUTF8StringEncoding]
                                            contentType:@"application/javascript" statusCode:200];
 }
