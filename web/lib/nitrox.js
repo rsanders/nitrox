@@ -12,35 +12,32 @@ function msgencode(string) {
    	             .replace('"','&quot;');
 };
 
-console.log = function(msg) {
-    alert(msg);
-    jQuery('#debuglog').html( msgencode(msg) + "<br/>--<br/>" + jQuery('#debuglog').html() );
-    if (Nitrox.Runtime.enabled) {
-        setTimeout(function() { window.location.href="nitroxlog://somehost/path?" + escape(msg); },
-               1);
-    }
-};
 
 Nitrox = function() {
-        console.log("Nitrox constructed");
     };
 
+if (this.console && console.log) { 
+    Nitrox.consolelog = console.log;
+}
+
 Nitrox.log = function(msg) {
-    alert(msg);
+    // alert(msg);
     setTimeout(function() {
                jQuery('#debuglog').html( msgencode(msg) + "<br/>--<br/>" + jQuery('#debuglog').html() );
                }, 10);
     if (Nitrox.Runtime.enabled && false) {
         setTimeout(function() { 
-                window.location.href="nitroxlog://somehost/path?" + escape(msg); 
-                // jQuery('#debuglog').html( msgencode("Logged2 " + msg) + "<br/>--<br/>" + jQuery('#debuglog').html() );                
+                window.location.href="nitroxlog://somehost/path?" + escape(msg);                
             },
            20);
     }
-    // TODO: this will be super-slow; need to create a queue
-    jQuery.ajax({url: "http://localhost:" + Nitrox.Runtime.port + "/log", 
-                data: msg, async: false, type: 'post'});
-    // jQuery("document").triggerHandler("nitrox.log", msg);
+    // TODO: this will be super-slow if sync, and out-of-order if async; need to create a queue
+    if (Nitrox.Runtime.enabled) {
+        jQuery.ajax({url: "http://localhost:" + Nitrox.Runtime.port + "/log", 
+                    data: msg, async: false, type: 'post'});
+    } else if (Nitrox.consolelog) {
+        console.log(msg);
+    }
 };
 
 console.log = Nitrox.log;
