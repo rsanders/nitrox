@@ -76,11 +76,14 @@ Nitrox.Bridge = {
                 req = {error: e, status:401, responseText: "Error: " + e};
             }
             Nitrox.log("step 5");
-            if (!req) {
+            if (async) {
+                return;
+            }
+            if (req == null) {
                 Nitrox.log("No request object returned");
                 req = {error: "unknown", status:500, responseText:"No req object returned"};
             }
-            if (req.status == 200) {
+            if (req && req.status == 200) {
                 var res = req.responseText; 
                 Nitrox.log('response text for ajax is: ' + res);
             } else {
@@ -103,7 +106,7 @@ Nitrox.Location = {
     },
     
     getLocation: function() {
-        var location = Nitrox.Bridge.call('Location/c/getLocation', {}, true);
+        var location = Nitrox.Bridge.call('Location/c/getLocation', {}, false);
         Nitrox.log("location is " + location);
         return location;
     },
