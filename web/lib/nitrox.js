@@ -52,31 +52,44 @@ Nitrox.Runtime = {
     enabled: false,
     port: 0,
     token: 'none',
+
+    baseURL: function() {
+        return "http://localhost:" + this.port;
+    },
+
+    rpcURL: function() {
+        var url = this.baseURL() + "/rpc";
+        return url;
+    },
+
     version: '0.1'
 };
 
+// general bridge functions
+
 Nitrox.Bridge = {
     'call': function(fun, args, async) {
-            Nitrox.log("step 1");
-            Nitrox.log('FOO2 starting bridge call for ' + fun);
+            //Nitrox.log("step 1");
+            // Nitrox.log('FOO2 starting bridge call for ' + fun);
             var id = "id" + i++;
             if (!async) async = false;
-            Nitrox.log("step 2, id="+id);
+            // Nitrox.log("step 2, id="+id);
             Nitrox.log('FOO starting bridgecall for id ' + id);
             var port = Nitrox.Runtime.port;
             // clone args
-            Nitrox.log("step 3");
+            // Nitrox.log("step 3");
             args = jQuery.extend(true, args, {'id': id, 'token': Nitrox.Runtime.token});
-            var fullstring = "http://localhost:" + port + "/rpc/" + fun;
-            Nitrox.log("Step 4, url=" + fullstring);
+            var fullstring = Nitrox.Runtime.rpcURL() + "/" + fun;
+            // Nitrox.log("Step 4, url=" + fullstring);
             var req;
             try {
                 req = jQuery.ajax({url: fullstring, data: args, async: async, type: 'get'});
             } catch (e) {
                 req = {error: e, status:401, responseText: "Error: " + e};
             }
-            Nitrox.log("step 5");
+            // Nitrox.log("step 5");
             if (async) {
+                Nitrox.log("returning from async " + fun + " , id=" + id);
                 return;
             }
             if (req == null) {
@@ -90,11 +103,13 @@ Nitrox.Bridge = {
                 Nitrox.log('error code: ' + req.status);
             }
             Nitrox.log('returning from id=' + id);
-            return id;
+            return req.responseText;
         },
 
     'version': '0.1'
 };
+
+// location functions
 
 Nitrox.Location = {
     start: function(async) {
@@ -114,6 +129,8 @@ Nitrox.Location = {
     version: '0.1'
 };
 
+// accelerometer
+
 Nitrox.Accelerometer = {
     start: function(async) {
         Nitrox.Bridge.call('Accelerometer/c/start', {}, async);
@@ -124,15 +141,33 @@ Nitrox.Accelerometer = {
     },
     
     getAcceleration: function() {
-        var location = Nitrox.Bridge.call('Accelerometer/c/getAcceleration', {}, true);
-        Nitrox.log("acceleration is " + location);
-        return location;
+        var accel = Nitrox.Bridge.call('Accelerometer/c/getAcceleration', {}, false);
+        Nitrox.log("acceleration is " + accel);
+        return accel;
     },
     
     version: '0.1'
 };
 
+// device information
 
+Nitrox.Device = {
+    getDeviceAttribute: function(attrname) {
+        return Nitrox.Bridge.call('Device/c/' + attrname, {}, false);
+    },
+
+    model: function() {
+        return Nitrox.Device.getDeviceAttribute('model');
+    },
+
+    orientation: function() {
+        return Nitrox.Device.getDeviceAttribute('orientation');
+    },
+    
+    version: '0.1'
+};
+
+// vibration functions
 
 Nitrox.Vibrate = {
     vibrate: function() {
@@ -142,6 +177,36 @@ Nitrox.Vibrate = {
     version: '0.1'
 };
 
+// lang / runtime functions
+
+Nitrox.Lang = {
+    loadJS: function(file) {
+        Nitrox.log("lang.loadJS not yet supported");
+        return "Not yet supported";
+    },
+    
+    version: '0.1'
+};
+
+// proxy functions
+
+Nitrox.Proxy = {
+    ajax: function(ajaxObject) {
+        Nitrox.log("proxy.ajax not yet supported");
+        return "Not yet supported";
+    },
+    
+    retrieve: function(url, callback) {
+        Nitrox.log("proxy.retrieve not yet supported");
+        return "Not yet supported";
+    },
+    
+    version: '0.1'
+};
+
+
+// file functions
+
 Nitrox.File = function(path) {
     Nitrox.log("File constructed at path " + path);
 };
@@ -149,10 +214,9 @@ Nitrox.File = function(path) {
 Nitrox.File.prototype = {
 };
 
-
+// final bootstrap
 
 jQuery(function() {
-       alert("Nitrox loaded");
-       // console.log("Nitrox loaded");
+       Nitrox.log("Nitrox loaded");
 });
 

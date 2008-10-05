@@ -64,6 +64,8 @@
         return [NitroxHTTPResponseMessage emptyResponseWithCode:400];
     }
     
+    CJSONSerializer *serializer = [[[CJSONSerializer alloc] init] autorelease];    
+    
     // NSString *className = [stub className];
     NSString *ic = [components objectAtIndex:0];
 
@@ -79,11 +81,11 @@
     } 
     @catch (NSException *ne) { 
         result = [NSString stringWithFormat:@"Caught exception: %@", ne];
-        return [NitroxHTTPResponseMessage responseWithBody:[result dataUsingEncoding:NSUTF8StringEncoding] 
+        return [NitroxHTTPResponseMessage responseWithBody:[[serializer serializeString:result] dataUsingEncoding:NSUTF8StringEncoding]
                                                contentType:@"text/plain" statusCode:400];
     }
     
-    CJSONSerializer *serializer = [[[CJSONSerializer alloc] init] autorelease];
+
     NSString *response;
     if (result == Nil) {
         response = @"null";
