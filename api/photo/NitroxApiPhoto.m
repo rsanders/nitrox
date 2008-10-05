@@ -37,7 +37,7 @@
 
 
 - (NSString *) className {
-    return @"AbstractStub";
+    return @"Photo";
 }
 
 - (NSString *) instanceMethods {

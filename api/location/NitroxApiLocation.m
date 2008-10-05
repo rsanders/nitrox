@@ -39,21 +39,6 @@
 
 #pragma mark Photo specific methods
 
-- (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args {
-    SEL sel = NSSelectorFromString(method);
-    
-    NSString *res = @"no result";
-    
-    if ([self respondsToSelector:sel]) {
-        res = [self performSelector:sel];
-    }
-
-    return res;
-}
-
-- (id) invoke:(NSString *)method args:(NSDictionary *)args {
-    return Nil;
-}
 
 - (id) start {
     if (! started) {
@@ -78,8 +63,7 @@
     }
 
     NSLog(@"current location info is %@", self.currentLocation);
-    
-    CLLocation *loc = self.currentLocation;
+
     NSDictionary *linfo = [[NSDictionary alloc] initWithObjectsAndKeys:
                          [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude], @"latitude",
                          [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude], @"longitude",
@@ -121,7 +105,7 @@
 
 
 - (NSString *) className {
-    return @"Device";
+    return @"Location";
 }
 
 - (NSString *) instanceMethods {

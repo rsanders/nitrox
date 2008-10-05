@@ -10,3 +10,4 @@
 #import "NitroxApiPhoto.h"
 #import "NitroxApiDevice.h"
 #import "NitroxApiLocation.h"
+#import "NitroxApiAccelerometer.h"

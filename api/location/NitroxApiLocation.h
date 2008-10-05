@@ -26,4 +26,8 @@
 - (NitroxApiLocation *)initWithLocationManager:(CLLocationManager *)manager;
 - (NitroxApiLocation *)init;
 
+- (id) start;
+- (id) stop;
+- (id) getLocation;
+
 @end
