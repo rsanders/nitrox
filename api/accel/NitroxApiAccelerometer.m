@@ -67,9 +67,9 @@
      NSLog(@"current acceleration info is %@", self.currentAcceleration);
  
      NSDictionary *linfo = [[NSDictionary alloc] initWithObjectsAndKeys:
-                          [NSString stringWithFormat:@"%f", currentAcceleration.x], @"x",
-                          [NSString stringWithFormat:@"%f", currentAcceleration.y], @"y",
-                          [NSString stringWithFormat:@"%f", currentAcceleration.z], @"z",
+                          [NSNumber numberWithDouble:currentAcceleration.x], @"x",
+                          [NSNumber numberWithDouble:currentAcceleration.y], @"y",
+                          [NSNumber numberWithDouble:currentAcceleration.z], @"z",
                           [NSString stringWithFormat:@"%@", currentAcceleration.timestamp], @"timestamp",
                           Nil];
      return [linfo autorelease];

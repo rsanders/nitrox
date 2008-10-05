@@ -65,11 +65,11 @@
     NSLog(@"current location info is %@", self.currentLocation);
 
     NSDictionary *linfo = [[NSDictionary alloc] initWithObjectsAndKeys:
-                         [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude], @"latitude",
-                         [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude], @"longitude",
-                         [NSString stringWithFormat:@"%f", currentLocation.altitude], @"altitude",
-                         [NSString stringWithFormat:@"%f", currentLocation.verticalAccuracy], @"verticalAccuracy",
-                         [NSString stringWithFormat:@"%f", currentLocation.horizontalAccuracy], @"horizontalAccuracy",
+                         [NSNumber numberWithDouble:currentLocation.coordinate.latitude], @"latitude",
+                         [NSNumber numberWithDouble:currentLocation.coordinate.longitude], @"longitude",
+                         [NSNumber numberWithDouble:currentLocation.altitude], @"altitude",
+                         [NSNumber numberWithDouble:currentLocation.verticalAccuracy], @"verticalAccuracy",
+                         [NSNumber numberWithDouble:currentLocation.horizontalAccuracy], @"horizontalAccuracy",
                          [NSString stringWithFormat:@"%@", currentLocation.timestamp], @"timestamp",
                          Nil];
     return [linfo autorelease];
