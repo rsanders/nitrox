@@ -70,6 +70,10 @@ function testAccelerometer() {
   Nitrox.log("accel is " + accel);
 }
 
+function testLoadJS() {
+  Nitrox.Lang.loadJS("testload.js");
+  Nitrox.Lang.loadJS("test/load2.js");  
+}
 
 Nitrox.Location.start(true);
 Nitrox.Accelerometer.start(true);
@@ -84,6 +88,7 @@ Nitrox.Accelerometer.start(true);
 <a href="javascript:testVibrate();">Vibrate</a> <br/>
 <a href="javascript:testDevice();">Get Device Model</a> <br/>
 <a href="javascript:testAccelerometer();">Get Accel</a> <br/>
+<a href="javascript:testLoadJS();">Test LoadJS</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">

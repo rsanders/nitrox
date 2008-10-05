@@ -177,9 +177,17 @@ Nitrox.Vibrate = {
 // lang / runtime functions
 
 Nitrox.Lang = {
-    loadJS: function(file) {
-        Nitrox.log("lang.loadJS not yet supported");
-        return "Not yet supported";
+    loadJS: function(file, async) {
+        if (!async) { async = false; }
+        var url = Nitrox.Runtime.baseURL() + '/' + file;
+        var res = jQuery.ajax({url: url, async: async, type: 'get'});
+        if (res && res.status == 200) {
+            eval(res.responseText);
+            return true;
+        } else {
+            Nitrox.log("loadJS of " + file + " failed");
+            return false;
+        }
     },
     
     version: '0.1'
