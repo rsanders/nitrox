@@ -54,7 +54,7 @@
                             handleRequest:(NitroxHTTPRequest *)request
                                    atPath:(NSString *)path
 {
-    NSString *ePath = [self effectivePath:path];
+    NSString *ePath = [self effectivePath:request.path];
     
     NSLog(@"calculated file path is %@", ePath);
     
