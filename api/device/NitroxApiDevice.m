@@ -17,23 +17,23 @@
     return self;
 }
 
-#pragma mark Photo specific methods
+#pragma mark Device specific methods
 
 - (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args {
-    SEL sel = NSSelectorFromString(method);
+    
+    NSString *res = Nil;
     UIDevice *device = [UIDevice currentDevice];
     
-    NSString *res = @"no result";
-    
+    SEL sel = NSSelectorFromString( [method stringByAppendingString:@":"] );       
     if ([device respondsToSelector:sel]) {
+        res = [device performSelector:sel withObject:args];
+    } else if ([device respondsToSelector:(sel = NSSelectorFromString(method))]) {
         res = [device performSelector:sel];
+    } else {
+        res = [super invokeClassMethod:method args:args];
     }
     
     return res;
-}
-
-- (id) invoke:(NSString *)method args:(NSDictionary *)args {
-    return Nil;
 }
 
 #pragma mark Stub methods; should refactor out
