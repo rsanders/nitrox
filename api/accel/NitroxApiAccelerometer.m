@@ -18,7 +18,7 @@
  - (NitroxApiAccelerometer *)initWithAccelerometer:(UIAccelerometer *)mgr
  {
      accelerometer = mgr;
-     self.frequency = 10;
+     self.frequency = 1;
      self.currentAcceleration = Nil;
      return self;
  }
@@ -70,7 +70,7 @@
                           [NSNumber numberWithDouble:currentAcceleration.x], @"x",
                           [NSNumber numberWithDouble:currentAcceleration.y], @"y",
                           [NSNumber numberWithDouble:currentAcceleration.z], @"z",
-                          [NSString stringWithFormat:@"%@", currentAcceleration.timestamp], @"timestamp",
+                          [NSNumber numberWithDouble:currentAcceleration.timestamp], @"timestamp",
                           Nil];
      return [linfo autorelease];
 }
