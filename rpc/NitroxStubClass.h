@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class NitroxRPCDispatcher;
 
 @interface NitroxStubClass : NSObject {
-
+    NitroxRPCDispatcher*   dispatcher;
 }
 
 @property (retain,readonly)  NSString*    className;
 @property (retain,readonly)  NSString*    classMethods;
 @property (retain,readonly)  NSString*    instanceMethods;   
+@property (assign) NitroxRPCDispatcher*   dispatcher;
 
 - (id) newInstance;
 - (id) newInstanceWithArgs:(NSDictionary *)args;

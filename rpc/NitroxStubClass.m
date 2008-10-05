@@ -8,11 +8,14 @@
 
 #import "NitroxStubClass.h"
 
+#import "NitroxRPCDispatcher.h"
 
 @implementation NitroxStubClass
 
+@synthesize dispatcher;
+
 - (NSString *) className {
-    return @"AbstractStub";
+    return [NSStringFromClass([self class]) stringByReplacingOccurrencesOfString:@"NitroxApi" withString:@""];
 }
 
 - (NSString *) instanceMethods {
@@ -36,7 +39,20 @@
 }
 
 - (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args {
-    return Nil;
+    
+    NSString *res = Nil;
+
+    SEL sel = NSSelectorFromString( [method stringByAppendingString:@":"] );       
+    if ([self respondsToSelector:sel]) {
+        res = [self performSelector:sel withObject:args];
+    } else if ([self respondsToSelector:(sel = NSSelectorFromString(method))]) {
+        res = [self performSelector:sel];
+    } else {
+        NSLog(@"call to bad method %@", method);
+        [NSException raise:@"NitroxNoSuchMethod" format:@"No such method: %@", method];
+    }
+    
+    return res;
 }
 
 @end

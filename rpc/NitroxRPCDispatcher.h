@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "NitroxHTTP.h"
 #import "NitroxRPC.h"
+#import "NitroxRPCCallback.h"
 
 @interface NitroxRPCDispatcher : NSObject <NitroxHTTPServerDelegate> {
     NitroxStubClass*          stub;
 }
 
 - (NitroxRPCDispatcher *) initWithStubClass:(NitroxStubClass *)stub;
+
+- (void) scheduleCallback:(NitroxRPCCallback *)callback immediate:(BOOL)now;
 
 @end
