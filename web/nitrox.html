@@ -2,6 +2,7 @@
 <head>
 <meta id="viewport" name="viewport" content="width=device-width; user-scalable=0;"/>
 <base href="http://robertsanders.name/dev/nitrox/" />
+
 </head>
 <body>
 
@@ -24,8 +25,6 @@ function encode(string) {
 
 document.write("HREF = " + window.location.href + "<br/>");
 function debuglog(msg) {
-  setTimeout(function() { window.location.href="nitroxlog://somehost/path?" + escape(msg) },
-             1);
   var oldHTML = jQuery('#debuglog').get(0).innerHTML;
   jQuery('#debuglog').html( encode(msg) + "<br/>--<br/>" + oldHTML );
 }
@@ -51,18 +50,22 @@ function bridgecall(fun, argstring) {
   return id;
 }
 
+function testLocation() {
+  var loc = Nitrox.Location.getLocation();
+  Nitrox.log("location return is " + loc);
+  debuglog("location is " + loc);
+}
+
+Nitrox.Location.start(true);
+Nitrox.Accelerometer.start(true);
 
 // ]]>
 </script>
 
-<a href="nibwarejsbridge://localhost/somefun/manual/clicks">Click me to test manually by normal click</a> <br/>
-<a href="javascript:bridgecall('somefun', '/js/clicks');return false;">Click me to test via JS</a> <br/>
-<a href="javascript:Nitrox.Bridge.call('somefun', {var1: '/js/clicks'});return false;">Click me to test via Ajax</a> <br/>
-<a href="javascript:debuglog('res = ' + _nibware_result + ' mid=' + _midresult);">Show popup</a> <br/>
-<a href="javascript:window.location.href='http://nibwarejsbridge/foo/bar/baz';">Set location</a> <br/>
+<a href="javascript:Nitrox.Bridge.call('somefun', {var1: '/js/clicks'}, false);">Click me to test via Ajax</a> <br/>
 <a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
 <a href="javascript:window.location.href=window.location.href;">Refresh</a> <br/>
-<a href="javascript:console.log('logmsg');">Log test</a> <br/>
+<a href="javascript:testLocation();">Get Location</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">
