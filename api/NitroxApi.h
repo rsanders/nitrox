@@ -11,3 +11,4 @@
 #import "NitroxApiDevice.h"
 #import "NitroxApiLocation.h"
 #import "NitroxApiAccelerometer.h"
+#import "NitroxApiVibrate.h"

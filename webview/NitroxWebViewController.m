@@ -56,6 +56,9 @@
     [rpcDelegate addPath:@"Accelerometer" delegate:[[NitroxRPCDispatcher alloc] 
                                                initWithStubClass:[[NitroxApiAccelerometer alloc] init]]];
 
+    [rpcDelegate addPath:@"Vibrate" delegate:[[NitroxRPCDispatcher alloc] 
+                                                    initWithStubClass:[[NitroxApiVibrate alloc] init]]];
+
     
     // fallback is an authoritative filesystem server rooted at APP.app/web
     [pathDelegate setDefaultDelegate:
