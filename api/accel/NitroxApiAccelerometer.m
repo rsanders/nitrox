@@ -18,6 +18,7 @@
  - (NitroxApiAccelerometer *)initWithAccelerometer:(UIAccelerometer *)mgr
  {
      accelerometer = mgr;
+     self.frequency = 10;
      self.currentAcceleration = Nil;
      return self;
  }
