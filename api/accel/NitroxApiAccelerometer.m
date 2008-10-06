@@ -83,11 +83,10 @@
     NSLog(@"received accelerometer update %@", acceleration);    
     self.currentAcceleration = acceleration;
 
-    UIAccelerationValue x, y, z; 
-    x = acceleration.x; 
-    y = acceleration.y; 
-    z = acceleration.z;
-    // TODO: send into callback
+    NSDictionary *linfo = [self getAcceleration];
+    
+    [self scheduleCallbackScript:[NSString stringWithFormat:@"Nitrox.Accelerometer.delegate(%@);",
+                                  [self serialize:linfo]]];
 } 
 
 
