@@ -37,17 +37,33 @@ function bridgecomplete(id, result)
 {
   var msg = "result for id " + id + " = " + result;
   jQuery('#outbox').text(msg);
-  setTimeout(function() { debuglog(msg) }, 1);
   _nibware_result = result;
 }
 
 function bridgecall(fun, argstring) {
   var id = "id" + i++;
-  debuglog('starting bridgecall for id ' + id);
   var fullstring = "nibwarejsbridge://localhost/invoke/" + id + "/" + fun + "/args/" + argstring + "/" + i;
-  setTimeout(function() { window.location.href=fullstring; }, 1);
-  _midresult=_nibware_result;
-  return id;
+  // setTimeout(function() { window.location.href=fullstring; }, 1);
+  window.location.href=fullstring;
+}
+
+function benchmarkHook() {
+  var count = 50;
+  var origCount = count;
+  var bDate = new Date();
+  var oldBridgecomplete = bridgecomplete;
+  
+  bridgecomplete = function(id, result) {
+      if (count-- > 0) {
+        bridgecall("foo", "bar");
+      } else {
+        var eDate = new Date();
+        var avgms = ((eDate.getTime() - bDate.getTime()) / origCount);
+        Nitrox.log("for hook approach, avg time is " + avgms + " ms");
+        bridgecomplete = oldBridgecomplete;
+      }
+    };
+  bridgecall("0", "0");
 }
 
 function testLocation() {
@@ -73,10 +89,36 @@ function testAccelerometer() {
 function testLoadJS() {
   Nitrox.Lang.loadJS("testload.js");
   Nitrox.Lang.loadJS("test/load2.js");  
+  Nitrox.load("done with loadJS test");
 }
 
-Nitrox.Location.start(true);
-Nitrox.Accelerometer.start(true);
+function benchmarkAjax() {
+  Nitrox.log("benchmark starting");
+  var oldDebug = Nitrox.Runtime.debug;
+  Nitrox.Runtime.debug = false;
+  
+  var res = Nitrox.Benchmark.run(function() {
+      Nitrox.Device.model();
+    }, 50);
+  Nitrox.Runtime.debug = oldDebug;
+    
+  Nitrox.log("average time was " + res + " ms");
+}
+
+function testSetup() {
+  Nitrox.Location.start(true);
+  Nitrox.Accelerometer.start(true);
+}
+
+function forceError() {
+  Nitrox.log("forcing class not found error");
+  new Foo.Bar.Baz.Who();
+}
+
+jQuery(function() {
+        Nitrox.log("document loaded");
+ });
+ 
 
 // ]]>
 </script>
@@ -84,11 +126,15 @@ Nitrox.Accelerometer.start(true);
 <a href="javascript:Nitrox.Bridge.call('somefun', {var1: '/js/clicks'}, false);">Click me to test via Ajax</a> <br/>
 <a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
 <a href="javascript:window.location.href=window.location.href;">Refresh</a> <br/>
+<a href="javascript:testSetup();">Test Setup</a> <br/>
 <a href="javascript:testLocation();">Get Location</a> <br/>
 <a href="javascript:testVibrate();">Vibrate</a> <br/>
 <a href="javascript:testDevice();">Get Device Model</a> <br/>
 <a href="javascript:testAccelerometer();">Get Accel</a> <br/>
 <a href="javascript:testLoadJS();">Test LoadJS</a> <br/>
+<a href="javascript:benchmarkAjax();">Benchmark Ajax</a> <br/>
+<a href="javascript:benchmarkHook();">Benchmark Hook</a> <br/>
+<a href="javascript:forceError();">Force error</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">

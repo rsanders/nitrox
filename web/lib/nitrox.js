@@ -16,12 +16,41 @@ function msgencode(string) {
 Nitrox = function() {
     };
 
+
+Nitrox.prototype = {
+    };
+
+Nitrox.Runtime = {
+    enabled: false,
+    port: 0,
+    token: 'none',
+    debug: true,
+
+    start: function() {
+        // any startup functions here
+    },
+
+    baseURL: function() {
+        return "http://127.0.0.1:" + this.port;
+    },
+
+    rpcURL: function() {
+        var url = this.baseURL() + "/rpc";
+        return url;
+    },
+
+    version: '0.1'
+};
+
 if (this.console && console.log) { 
     Nitrox.consolelog = console.log;
 }
 
 Nitrox.log = function(msg) {
-    // alert(msg);
+    if (!Nitrox.Runtime.debug) {
+        return;
+    }
+
     setTimeout(function() {
                jQuery('#debuglog').html( msgencode(msg) + "<br/>--<br/>" + jQuery('#debuglog').html() );
                }, 10);
@@ -33,7 +62,7 @@ Nitrox.log = function(msg) {
     }
     // TODO: this will be super-slow if sync, and out-of-order if async; need to create a queue
     if (Nitrox.Runtime.enabled) {
-        jQuery.ajax({url: "http://localhost:" + Nitrox.Runtime.port + "/log", 
+        jQuery.ajax({url: "http://127.0.0.1:" + Nitrox.Runtime.port + "/log", 
                     data: msg, async: false, type: 'post'});
     } else if (Nitrox.consolelog) {
         console.log(msg);
@@ -42,49 +71,24 @@ Nitrox.log = function(msg) {
 
 console.log = Nitrox.log;
 
-Nitrox.prototype = {
-    };
-
-Nitrox.Runtime = {
-    enabled: false,
-    port: 0,
-    token: 'none',
-
-    baseURL: function() {
-        return "http://localhost:" + this.port;
-    },
-
-    rpcURL: function() {
-        var url = this.baseURL() + "/rpc";
-        return url;
-    },
-
-    version: '0.1'
-};
 
 // general bridge functions
 
 Nitrox.Bridge = {
     'call': function(fun, args, async) {
-            //Nitrox.log("step 1");
-            // Nitrox.log('FOO2 starting bridge call for ' + fun);
             var id = "id" + i++;
             if (!async) async = false;
-            // Nitrox.log("step 2, id="+id);
-            Nitrox.log('FOO starting bridgecall for id ' + id);
+            Nitrox.log('starting bridgecall for id ' + id);
             var port = Nitrox.Runtime.port;
             // clone args
-            // Nitrox.log("step 3");
             args = jQuery.extend(true, args, {'id': id, 'token': Nitrox.Runtime.token});
             var fullstring = Nitrox.Runtime.rpcURL() + "/" + fun;
-            // Nitrox.log("Step 4, url=" + fullstring);
             var req;
             try {
                 req = jQuery.ajax({url: fullstring, data: args, async: async, type: 'get'});
             } catch (e) {
                 req = {error: e, status:401, responseText: "Error: " + e};
             }
-            // Nitrox.log("step 5");
             if (async) {
                 Nitrox.log("returning from async " + fun + " , id=" + id);
                 return;
@@ -99,7 +103,6 @@ Nitrox.Bridge = {
             } else {
                 Nitrox.log('error code: ' + req.status);
             }
-            Nitrox.log('returning from id=' + id);
             return req.responseText;
         },
 
@@ -209,6 +212,23 @@ Nitrox.Proxy = {
     version: '0.1'
 };
 
+// benchmark
+
+Nitrox.Benchmark = {
+    run: function(fun, count) {
+        if (!count) { count = 1; };
+        var actualCount = 0;
+        var bDate = new Date();
+        while (count-- > 0) {
+            fun();
+            actualCount++;
+        }
+        var eDate = new Date();
+        return ((eDate.getTime() - bDate.getTime()) / actualCount);
+    },
+    
+    version: '0.1'
+};
 
 // file functions
 
@@ -221,7 +241,7 @@ Nitrox.File.prototype = {
 
 // final bootstrap
 
-jQuery(function() {
-       Nitrox.log("Nitrox loaded");
-});
+// jQuery(function() {
+//        Nitrox.log("Nitrox loaded");
+// });
 
