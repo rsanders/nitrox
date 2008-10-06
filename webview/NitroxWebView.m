@@ -29,5 +29,31 @@
     [super dealloc];
 }
 
+#pragma mark Undocumented / Private methods
+
+// DOES NOT WORK
+- (void)webView:(id)webView addMessageToConsole:(id)dictionary
+{
+    NSLog(@"adding message to console: %@", dictionary);
+}
+
+// DOES NOT WORK
+- (void) _reportError:(id)error
+{
+    NSLog(@"reporting error: %@", error);
+}
+
+// WORKS
+- (void)webView:(id)webView runJavaScriptAlertPanelWithMessage:(id)message initiatedByFrame:(id)frame
+{
+    NSLog(@"got alert panel: %@", message);
+    [super webView:webView runJavaScriptAlertPanelWithMessage:message initiatedByFrame:frame];
+}
+
+// UNKNOWN
+- (void)webView:(id)webView unableToImplementPolicyWithError:(id)error frame:(id)frame
+{
+    NSLog(@"unable to implement policy with error: %@", error);
+}
 
 @end

@@ -162,7 +162,7 @@
 }
 
 - (void)insertJavascriptString:(NSString *)script {
-    NSLog(@"inserting JS: %@", script);
+    NSLog(@"inserting JS: %@", [script substringToIndex:80]);
     [[self webView] stringByEvaluatingJavaScriptFromString:script];
 }
 
@@ -246,15 +246,13 @@
 
         jspath = [[NSBundle mainBundle] pathForResource:@"nitrox" ofType:@"js" inDirectory:@"web/lib"];
         [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
-        
-        jspath = [[NSBundle mainBundle] pathForResource:@"rew" ofType:@"js" inDirectory:@"web"];
-        [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
     }
     
     NSString *nitroxInfo = [NSString stringWithFormat:
                             @"_nitrox_info = {port: %d, enabled: true};\n"
                              "Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true;",
                             self.httpPort, self.httpPort];
+    
     
     [self insertJavascriptString:nitroxInfo];
 }
@@ -311,6 +309,13 @@
     [[self webView] loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
 
+#pragma mark Undocumented / Private methods
+
+// DOES NOT WORK
+- (void)webView:(UIWebView *)webView addMessageToConsole:(NSDictionary *)dictionary
+{
+    NSLog(@"adding message to console in delegate: %@", dictionary);
+}
 
 
 @end
