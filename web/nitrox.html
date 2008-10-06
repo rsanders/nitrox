@@ -85,6 +85,7 @@ function testDevice() {
 function testAccelerometer() {
   var accel = Nitrox.Accelerometer.getAcceleration();
   Nitrox.log("accel is " + accel);
+  Nitrox.log("Accel update count is " + Nitrox.Accelerometer.updateCount);
 }
 
 function testLoadJS() {

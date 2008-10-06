@@ -136,6 +136,10 @@ Nitrox.Location = {
 // accelerometer
 
 Nitrox.Accelerometer = {
+    updateCount: 0,
+    
+    currentAcceleration: null,
+    
     start: function(async) {
         Nitrox.Bridge.call('Accelerometer/c/start', {}, async);
     },
@@ -145,13 +149,22 @@ Nitrox.Accelerometer = {
     },
     
     getAcceleration: function() {
-        var accel = Nitrox.Bridge.call('Accelerometer/c/getAcceleration', {}, false);
-        Nitrox.log("acceleration is " + accel);
+        var accel;
+        var cached = "";
+        if (this.currentAcceleration) {
+            accel = this.currentAcceleration;
+            cached = 'CACHED ';
+        } else {
+            accel = Nitrox.Bridge.call('Accelerometer/c/getAcceleration', {}, false);
+        }
+        Nitrox.log(cached + "acceleration is " + accel);
         return accel;
     },
 
     delegate: function(accel) {
-        Nitrox.log("default acceleration delegate received accel: " + loc);
+        this.updateCount++;
+        this.currentAcceleration = accel;
+        Nitrox.log("default acceleration delegate received accel: " + accel);
     },
 
     version: '0.1'
@@ -165,7 +178,7 @@ Nitrox.Device = {
     },
 
     stop: function(async) {
-        Nitrox.Bridge.call('Accelerometer/c/stopMonitoringOrientation', {}, async);
+        Nitrox.Bridge.call('Device/c/stopMonitoringOrientation', {}, async);
     },
 
     getDeviceAttribute: function(attrname) {
@@ -263,6 +276,30 @@ Nitrox.Benchmark = {
         var eDate = new Date();
         return ((eDate.getTime() - bDate.getTime()) / actualCount);
     },
+    
+    version: '0.1'
+};
+
+Nitrox.Application = {
+    delegate: null,
+
+    _delegate: function(funname, arg) {
+        if (this.delegate && this.delegate[funname]) {
+            Nitrox.log("invoking method " + fun + " on Nitrox.App delegate with arg " + arg);
+            this.delegate[funname](arg);
+        } else {
+            Nitrox.log("cannot find method " + fun + " for Nitrox.App delegate with arg " + arg);
+        }
+    },
+    
+    exit: function() {
+        Nitrox.Bridge.call('Application/c/exit', {}, true);
+    },
+
+    openURL: function(url) {
+        Nitrox.Bridge.call('Application/c/openURL', {url: url}, true);
+    },
+
     
     version: '0.1'
 };

@@ -43,8 +43,8 @@
 - (id) start {
     if (! started) {
         self.currentAcceleration = Nil;
-        accelerometer.updateInterval = 1 / self.frequency;
         accelerometer.delegate = self; 
+        accelerometer.updateInterval = 1 / self.frequency;
         started = YES;
     }
     return Nil;
