@@ -44,6 +44,8 @@
     NitroxHTTPServerPathDelegate *pathDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
     [pathDelegate addPath:@"log" delegate:[NitroxHTTPServerLogDelegate singleton]];
 
+    [pathDelegate addPath:@"proxy" delegate:[[[NitroxHTTPServerProxyDelegate alloc] init] autorelease]];
+    
     rpcDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
     [pathDelegate addPath:@"rpc" delegate:rpcDelegate];
     

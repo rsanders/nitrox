@@ -13,3 +13,4 @@
 #import "NitroxHTTPServerListDelegate.h"
 #import "NitroxHTTPServerLogDelegate.h"
 #import "NitroxHTTPServerFilesystemDelegate.h"
+#import "NitroxHTTPServerProxyDelegate.h"

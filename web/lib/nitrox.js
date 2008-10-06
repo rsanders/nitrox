@@ -204,9 +204,26 @@ Nitrox.Proxy = {
         return "Not yet supported";
     },
     
-    retrieve: function(url, callback) {
+    retrieve: function(url, callback, method) {
         Nitrox.log("proxy.retrieve not yet supported");
-        return "Not yet supported";
+        if (!method) {
+            method = "get";
+        }
+
+        var data = { url: url };
+        url = Nitrox.Runtime.baseURL() + "/proxy/retrieve";
+        var ajax = jQuery.ajax({url: url, data: data, async: (callback ? true : false), type: method});
+        var res = false;
+
+        if (callback) {
+            return ajax;
+        }
+        
+        if (ajax && ajax.status == 200) {
+            return ajax.responseText;
+        } else {
+            return null;
+        } 
     },
     
     version: '0.1'
