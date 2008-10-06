@@ -7,7 +7,9 @@
 //
 
 #import "NSObject+JSBridge.h"
-#import <objc/objc-runtime.h>
+
+#import "GTMObjC2Runtime.h"
+// #import <objc/objc-runtime.h>
 
 @implementation NSObject (JSBridge)
 
@@ -34,7 +36,10 @@
     return [self methodNamesForClass:object_getClass([self class])];
 }
 
+// TODO: incomplete
 - (NSString *) serializeToJSON {
+    [NSException raise:NSGenericException format:@"serializeToJSON not implemented"];
+    return @"";
 }
 
 @end
