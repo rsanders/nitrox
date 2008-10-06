@@ -65,7 +65,7 @@ Nitrox.log = function(msg) {
         jQuery.ajax({url: "http://127.0.0.1:" + Nitrox.Runtime.port + "/log", 
                     data: msg, async: false, type: 'post'});
     } else if (Nitrox.consolelog) {
-        console.log(msg);
+        Nitrox.consolelog(msg);
     }
 };
 
