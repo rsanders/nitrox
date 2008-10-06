@@ -16,7 +16,7 @@
 - (NSString *) model;
 - (void) log:(NSString *)msg;
 
-- (NSString *) getKey:(NSString *)key fromDictionary:(NSDictionary *)dict;
+- (NSString *) getKey:(NSString *)key fromDictionary:(id)dict;
 
 @property (retain) NSString *attr;
 

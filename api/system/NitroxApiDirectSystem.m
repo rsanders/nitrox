@@ -29,10 +29,10 @@
     NSLog(@"Direct LOG: %@", msg);
 }
 
-- (NSString *) getKey:(NSString *)key fromDictionary:(NSDictionary *)dict
+- (NSString *) getKey:(NSString *)key fromDictionary:(id)dict
 {
     NSLog(@"key is %@, dict is %@", key, dict);
-    return [key stringByAppendingString:@"-val"];
+    return [dict valueForKey:key];
 }
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)selector {

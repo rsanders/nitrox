@@ -117,9 +117,7 @@ function benchmarkDirect() {
   Nitrox.Runtime.debug = oldDebug;
   Nitrox.log("result for model call was " + model);
   Nitrox.log("average time for direct was " + res + " ms");
-  
-  Nitrox.log("getkey res is " + 
-      window.nadirect.getKey("somekey", {somekey: "someval", b: 3}));
+
 }
 
 function testSetup() {
@@ -143,6 +141,11 @@ function testDirect() {
   Nitrox.log("attr = " + window.nadirect.attr);
   window.nadirect.attr = "new attr value";
   Nitrox.log("post-set attr = " + window.nadirect.attr);
+  
+  Nitrox.log("getkey res is " + 
+      window.nadirect.getKey("somekey", {somekey: "someval", b: 3}));
+  Nitrox.log("getkey b res is " + 
+      window.nadirect.getKey("b", {somekey: "someval", b: 3}));
 }
 
 jQuery(function() {
