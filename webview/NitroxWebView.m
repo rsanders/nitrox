@@ -47,7 +47,9 @@
 - (void)webView:(id)webView runJavaScriptAlertPanelWithMessage:(id)message initiatedByFrame:(id)frame
 {
     NSLog(@"got alert panel: %@", message);
-    [super webView:webView runJavaScriptAlertPanelWithMessage:message initiatedByFrame:frame];
+    if ([super respondsToSelector:@selector(webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:)]) {
+        [super webView:webView runJavaScriptAlertPanelWithMessage:message initiatedByFrame:frame];
+    }
 }
 
 // UNKNOWN
