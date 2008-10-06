@@ -120,10 +120,24 @@ function benchmarkDirect() {
 
 }
 
-function testSetup() {
+function startPhysicalMonitoring() {
   Nitrox.Location.start(true);
   Nitrox.Accelerometer.start(true);
 }
+
+function stopPhysicalMonitoring() {
+  Nitrox.Location.stop(true);
+  Nitrox.Accelerometer.stop(true);
+}
+
+function startOrientation() {
+  Nitrox.Device.start(true);
+}
+
+function stopOrientation() {
+  Nitrox.Device.stop(true);
+}
+
 
 function forceError() {
   Nitrox.log("forcing class not found error");
@@ -159,7 +173,8 @@ jQuery(function() {
 <a href="javascript:Nitrox.Bridge.call('somefun', {var1: '/js/clicks'}, false);">Click me to test via Ajax</a> <br/>
 <a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
 <a href="javascript:window.location.href=window.location.href;">Refresh</a> <br/>
-<a href="javascript:testSetup();">Test Setup</a> <br/>
+<a href="javascript:startPhysicalMonitoring();">Start accel/location</a> <br/>
+<a href="javascript:stopPhysicalMonitoring();">Stop accel/location</a> <br/>
 <a href="javascript:testLocation();">Get Location</a> <br/>
 <a href="javascript:testVibrate();">Vibrate</a> <br/>
 <a href="javascript:testDevice();">Get Device Model</a> <br/>
@@ -170,6 +185,8 @@ jQuery(function() {
 <a href="javascript:benchmarkDirect();">Benchmark Direct</a> <br/>
 <a href="javascript:forceError();">Force error</a> <br/>
 <a href="javascript:testDirect();">Test Direct</a> <br/>
+<a href="javascript:startOrientation();">Start Orientation</a> <br/>
+<a href="javascript:stopOrientation();">Stop Orientation</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">

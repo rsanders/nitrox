@@ -109,7 +109,10 @@
 - (void) scheduleCallback:(NitroxRPCCallback *)callback immediate:(BOOL)now
 {
     NSLog(@"scheduling callback %@ for %@", callback, now ? @"now" : @"later");
-    
+    [self.webViewController performSelectorOnMainThread:@selector(scheduleCallback:)
+                              withObject:callback
+                           waitUntilDone:now
+                                   modes:[NSArray arrayWithObject:NSRunLoopCommonModes]];
     
 }
 

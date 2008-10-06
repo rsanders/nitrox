@@ -11,6 +11,7 @@
 #import "NitroxWebView.h"
 #import "NitroxHTTP.h"
 #import "NitroxHTTPServer.h"
+#import "NitroxRPCCallback.h"
 
 @protocol NitroxWebViewDelegate;
 
@@ -47,6 +48,8 @@
 - (void)loadRequest:(NSURLRequest *)request baseURL:(NSURL *)baseURL;
 - (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL;
 - (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL;
+
+- (void)scheduleCallback:(NitroxRPCCallback *)callback;
 
 
 @end

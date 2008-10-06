@@ -10,6 +10,7 @@
 #import "NitroxWebView.h"
 
 #import "NitroxApi.h"
+#import "NitroxRPC.h"
 
 #import "Nibware.h"
 
@@ -167,7 +168,7 @@
                           "})();", [url absoluteString]];
     }
     
-    NSLog(@"inserting JS from URL %@: %@", url, jsstring);
+    NSLog(@"inserting JS from URL %@", url);
     [[self webView] stringByEvaluatingJavaScriptFromString:jsstring];
 }
 
@@ -202,6 +203,12 @@
     NSLog(@"WEB LOG: %@", msg);
     
     return Nil;
+}
+
+- (void)scheduleCallback:(NitroxRPCCallback *)callback
+{
+    NSLog(@"scheduling callback: %@", callback.script);
+    [self.webView stringByEvaluatingJavaScriptFromString:callback.script];
 }
 
 #pragma mark UIWebViewDelegate
@@ -322,6 +329,8 @@
 {
     [[self webView] loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
+
+
 
 #pragma mark Undocumented / Private methods
 

@@ -10,6 +10,8 @@
 
 #import "NitroxRPCDispatcher.h"
 
+#import "CJSONSerializer.h"
+
 @implementation NitroxStubClass
 
 @synthesize dispatcher;
@@ -53,6 +55,20 @@
     }
     
     return res;
+}
+
+- (void) scheduleCallbackScript:(NSString *)jsscript
+{
+    [self.dispatcher scheduleCallback:[NitroxRPCCallback callbackWithString:jsscript]
+                            immediate:NO];
+}
+
+- (NSString *) serialize:(id)object
+{
+    
+    CJSONSerializer *serializer = [[[CJSONSerializer alloc] init] autorelease];    
+    
+    return [serializer serializeObject:object];
 }
 
 @end

@@ -26,4 +26,8 @@
 
 - (id) object:(id)object invoke:(NSString *)method args:(NSDictionary *)args;
 
+
+- (NSString *) serialize:(id)object;
+- (void) scheduleCallbackScript:(NSString *)jsscript;
+
 @end

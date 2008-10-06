@@ -11,4 +11,19 @@
 
 @implementation NitroxRPCCallback
 
+@synthesize script;
+
++ (NitroxRPCCallback *)callbackWithString:(NSString *)jsstring
+{
+    NitroxRPCCallback *cb = [[NitroxRPCCallback alloc] init];
+    cb.script = jsstring;
+    return [cb autorelease];
+}
+
+
+- (void) dealloc {
+    self.script = Nil;
+    [super dealloc];
+}
+
 @end

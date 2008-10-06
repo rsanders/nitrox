@@ -85,6 +85,10 @@
     
     self.currentLocation = newLocation;
     
+    NSDictionary *linfo = [self getLocation];
+    
+    [self scheduleCallbackScript:[NSString stringWithFormat:@"Nitrox.Location.delegate(%@);",
+                                  [self serialize:linfo]]];
     // TODO: call JS callback / fire event
 }
 

@@ -10,7 +10,12 @@
 
 
 @interface NitroxRPCCallback : NSObject {
-
+    NSString*     script;
 }
+
+@property (retain) NSString*  script;
+
++ (NitroxRPCCallback *)callbackWithString:(NSString *)jsstring;
+
 
 @end

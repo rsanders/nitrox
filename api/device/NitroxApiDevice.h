@@ -11,9 +11,14 @@
 #import "NitroxRPC.h"
 
 @interface NitroxApiDevice : NitroxStubClass {
-    
+@private
+    BOOL monitoringOrientation;
 }
 
 - (NitroxApiDevice *)init;
+
+- (id) startMonitoringOrientation;
+- (id) stopMonitoringOrientation;
+
 
 @end

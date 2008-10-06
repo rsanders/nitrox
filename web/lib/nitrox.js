@@ -126,6 +126,10 @@ Nitrox.Location = {
         return location;
     },
     
+    delegate: function(loc) {
+        Nitrox.log("default location delegate received location: " + loc);
+    },
+    
     version: '0.1'
 };
 
@@ -145,13 +149,25 @@ Nitrox.Accelerometer = {
         Nitrox.log("acceleration is " + accel);
         return accel;
     },
-    
+
+    delegate: function(accel) {
+        Nitrox.log("default acceleration delegate received accel: " + loc);
+    },
+
     version: '0.1'
 };
 
 // device information
 
 Nitrox.Device = {
+    start: function(async) {
+        Nitrox.Bridge.call('Device/c/startMonitoringOrientation', {}, async);
+    },
+
+    stop: function(async) {
+        Nitrox.Bridge.call('Accelerometer/c/stopMonitoringOrientation', {}, async);
+    },
+
     getDeviceAttribute: function(attrname) {
         return Nitrox.Bridge.call('Device/c/' + attrname, {}, false);
     },
@@ -162,6 +178,10 @@ Nitrox.Device = {
 
     orientation: function() {
         return Nitrox.Device.getDeviceAttribute('orientation');
+    },
+
+    orientationDelegate: function(orientation) {
+        Nitrox.log("default orientation delegate got orientation: " + orientation);
     },
     
     version: '0.1'
