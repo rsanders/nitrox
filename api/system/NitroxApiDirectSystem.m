@@ -1,0 +1,57 @@
+//
+//  NitroxApiDirectSystem.m
+//  nitroxy1
+//
+//  Created by Robert Sanders on 10/6/08.
+//  Copyright 2008 ViTrue, Inc.. All rights reserved.
+//
+
+#import "NitroxApiDirectSystem.h"
+
+
+@implementation NitroxApiDirectSystem
+
+@synthesize attr;
+
+- (NitroxApiDirectSystem *) init {
+    [super init];
+    self.attr = @"default attr value";
+    return self;
+}
+
+- (NSString *) model
+{
+    return [[UIDevice currentDevice] model];
+}
+
+- (void) log:(NSString *)msg
+{
+    NSLog(@"Direct LOG: %@", msg);
+}
+
+- (NSString *) getKey:(NSString *)key fromDictionary:(NSDictionary *)dict
+{
+    NSLog(@"key is %@, dict is %@", key, dict);
+    return [key stringByAppendingString:@"-val"];
+}
+
++ (BOOL)isSelectorExcludedFromWebScript:(SEL)selector {
+    //NSLog(@"%@ received %@ for '%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(selector));
+    return NO;
+}
+
++ (BOOL)isKeyExcludedFromWebScript:(const char *)property {
+    //NSLog(@"%@ received %@ for '%s'", self, NSStringFromSelector(_cmd), property);
+    return NO;
+}
+
++ (NSString *) webScriptNameForSelector:(SEL)sel {
+    NSLog(@"%@ received %@ with sel='%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(sel));
+    if (sel == @selector(getKey:fromDictionary:)) {
+        return @"getKey";
+    } else {
+        return NSStringFromSelector(sel);
+    }
+}
+
+@end

@@ -8,6 +8,7 @@
 
 #import "NitroxWebView.h"
 
+#import "NitroxApiDirectSystem.h"
 
 @implementation NitroxWebView
 
@@ -44,12 +45,24 @@
 }
 
 // WORKS
-- (void)webView:(id)webView runJavaScriptAlertPanelWithMessage:(id)message initiatedByFrame:(id)frame
-{
-    NSLog(@"got alert panel: %@", message);
-    if ([super respondsToSelector:@selector(webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:)]) {
-        [super webView:webView runJavaScriptAlertPanelWithMessage:message initiatedByFrame:frame];
-    }
+//- (void)webView:(id)webView runJavaScriptAlertPanelWithMessage:(id)message initiatedByFrame:(id)frame
+//{
+//    NSLog(@"got alert panel on webview %@: %@", webView, message);
+//    if ([super respondsToSelector:@selector(webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:)]) {
+//        NSLog(@"NEVER MIND, not sending alert panel msg to super");
+//        // [super webView:webView runJavaScriptAlertPanelWithMessage:message initiatedByFrame:frame];
+//    }
+//}
+
+- (void)webView:(id)webView windowScriptObjectAvailable:(id)windowScriptObject {
+    NSLog(@"%@ received readiness %@", self, NSStringFromSelector(_cmd));
+    
+    /* here we'll add our object to the window object as an object named
+     'nadirect'.  We can use this object in JavaScript by referencing the 'nadirect'
+     property of the 'window' object.   */
+
+    NSLog(@"scriptObject is %@", windowScriptObject);
+    [windowScriptObject setValue:[[NitroxApiDirectSystem alloc] init] forKey:@"nadirect"];
 }
 
 // UNKNOWN

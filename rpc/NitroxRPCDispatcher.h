@@ -11,12 +11,20 @@
 #import "NitroxRPC.h"
 #import "NitroxRPCCallback.h"
 
+@class NitroxWebViewController;
+
 @interface NitroxRPCDispatcher : NSObject <NitroxHTTPServerDelegate> {
     NitroxStubClass*          stub;
+    NitroxWebViewController*  webViewController;
 }
 
 - (NitroxRPCDispatcher *) initWithStubClass:(NitroxStubClass *)stub;
+- (NitroxRPCDispatcher *) initWithStubClass:(NitroxStubClass *)stub 
+                          webViewController:(NitroxWebViewController *)webViewController;
 
 - (void) scheduleCallback:(NitroxRPCCallback *)callback immediate:(BOOL)now;
+
+
+@property (assign) NitroxWebViewController*  webViewController;
 
 @end

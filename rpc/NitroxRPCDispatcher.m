@@ -12,14 +12,24 @@
 
 @implementation NitroxRPCDispatcher
 
+@synthesize webViewController;
+
 - (NitroxRPCDispatcher *) initWithStubClass:(NitroxStubClass *)stubClass {
+    return [self initWithStubClass:stubClass webViewController:Nil];
+}
+
+- (NitroxRPCDispatcher *) initWithStubClass:(NitroxStubClass *)stubClass 
+                          webViewController:(NitroxWebViewController *)wvc
+{
     stub = [stubClass retain];
     [stubClass setDispatcher:self];
+    self.webViewController = wvc;
     return self;
 }
 
 - (void) dealloc {
     stub.dispatcher = Nil;
+    self.webViewController = Nil;
     [stub release];
     [super dealloc];
 }

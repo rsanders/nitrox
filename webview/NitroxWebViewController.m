@@ -50,17 +50,29 @@
     [pathDelegate addPath:@"rpc" delegate:rpcDelegate];
     
     [rpcDelegate addPath:@"Device" delegate:[[NitroxRPCDispatcher alloc] 
-                                             initWithStubClass:[[NitroxApiDevice alloc] init]]];
+                                             initWithStubClass:[[NitroxApiDevice alloc] init]
+                                             webViewController:self]];
 
     [rpcDelegate addPath:@"Location" delegate:[[NitroxRPCDispatcher alloc] 
-                                             initWithStubClass:[[NitroxApiLocation alloc] init]]];
+                                               initWithStubClass:[[NitroxApiLocation alloc] init]
+                                               webViewController:self]];
+
 
     [rpcDelegate addPath:@"Accelerometer" delegate:[[NitroxRPCDispatcher alloc] 
-                                               initWithStubClass:[[NitroxApiAccelerometer alloc] init]]];
-
+                                                    initWithStubClass:[[NitroxApiAccelerometer alloc] init]
+                                                    webViewController:self]];
+    
     [rpcDelegate addPath:@"Vibrate" delegate:[[NitroxRPCDispatcher alloc] 
-                                                    initWithStubClass:[[NitroxApiVibrate alloc] init]]];
+                                              initWithStubClass:[[NitroxApiVibrate alloc] init]
+                                              webViewController:self]];
 
+    [rpcDelegate addPath:@"Benchmark" delegate:[[NitroxRPCDispatcher alloc] 
+                                              initWithStubClass:[[NitroxApiBenchmark alloc] init]
+                                              webViewController:self]];
+
+    [rpcDelegate addPath:@"System" delegate:[[NitroxRPCDispatcher alloc] 
+                                              initWithStubClass:[[NitroxApiSystem alloc] init]
+                                              webViewController:self]];
     
     // fallback is an authoritative filesystem server rooted at APP.app/web
     [pathDelegate setDefaultDelegate:
