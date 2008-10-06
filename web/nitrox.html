@@ -130,6 +130,13 @@ function forceError() {
   new Foo.Bar.Baz.Who();
 }
 
+function testHash() {
+  var currentURL = window.location.href;
+  Nitrox.log("Current URL is " + currentURL + ", full=" + window.location);
+  window.location.href = window.location.href + "#foo";
+  Nitrox.log("Set URL, result = " + window.location.href + ", full loc = " + window.location);
+}
+
 function testDirect() {
   Nitrox.log("starting direct test: " + window.nadirect);
   if (window.nadirect) {
@@ -170,6 +177,7 @@ jQuery(function() {
 <a href="javascript:benchmarkDirect();">Benchmark Direct</a> <br/>
 <a href="javascript:forceError();">Force error</a> <br/>
 <a href="javascript:testDirect();">Test Direct</a> <br/>
+<a href="javascript:testHash();">Test Hash</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">

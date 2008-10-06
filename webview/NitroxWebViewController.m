@@ -167,7 +167,7 @@
                           "})();", [url absoluteString]];
     }
     
-    NSLog(@"inserting JS from URL %@: %@", url, jsstring);
+    NSLog(@"inserting JS from URL %@", url);
     [[self webView] stringByEvaluatingJavaScriptFromString:jsstring];
 }
 
@@ -209,9 +209,26 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request 
  navigationType:(UIWebViewNavigationType)navigationType 
 {
-    NSLog(@"wVsSLWR, req=%@", request);
+    NSLog(@"wVsSLWR, req=%@, mdURL=%@", request, [request mainDocumentURL]);
 
-    // handle special internal URLs here
+    
+    // test code for hash URLs
+    NSURL *url = request.URL;
+    NSString *fragment = [url fragment];
+    if (fragment && [fragment isEqualToString:@"foo"]) { // comes without preceding hash
+        NSLog(@"fragment is %@", fragment);
+        
+        // append a string, pretending it's a result
+        NSURL *newurl = [NSURL URLWithString:[NSString stringWithFormat:@"%@_foo", url]];
+        
+        // neither of these seems to change the final resultp
+        [(NSMutableURLRequest *)request setURL:newurl];
+        [(NSMutableURLRequest *)request setMainDocumentURL:newurl];
+        return YES;
+    }
+    
+
+    // handle special internal URLs here    
     
     if ([[request.URL scheme] isEqualToString:@"nibwarejsbridge"]
         || [[request.URL scheme] isEqualToString:@"nitroxbridge"]
@@ -251,7 +268,7 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    NSLog(@"wVDSL");
+    NSLog(@"wVDSL, URL=%@", [[webView request] URL]);
     if (loadJSLib || true) {
         NSLog(@"loading JSlib");
         
@@ -272,8 +289,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"wVDFL");
-
+    NSLog(@"wVDFL, URL=%@", [[webView request] URL]);
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
