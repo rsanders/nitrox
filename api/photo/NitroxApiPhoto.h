@@ -15,8 +15,8 @@
     
 }
 
-- (BOOL) hasCamera;
-- (BOOL) hasLibrary;
+- (id) hasCamera;
+- (id) hasLibrary;
 
 - (NitroxPhoto *) showPicker;
 - (NitroxPhoto *) takePhoto;

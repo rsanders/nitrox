@@ -13,12 +13,18 @@
 
 #pragma mark Photo specific methods
 
-- (BOOL) hasCamera {
-    return YES;
+/*
+ * Data URI
+ *
+ *
+ */
+
+- (id) hasCamera {
+    return [NSNumber numberWithBool:YES];
 }
 
-- (BOOL) hasLibrary {
-    return YES;
+- (id) hasLibrary {
+    return [NSNumber numberWithBool:YES];
 }
 
 - (NitroxPhoto *) showPicker {
@@ -35,10 +41,6 @@
 
 #pragma mark Stub methods; should refactor out
 
-
-- (NSString *) className {
-    return @"Photo";
-}
 
 - (NSString *) instanceMethods {
     return Nil;
