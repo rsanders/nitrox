@@ -53,15 +53,18 @@ Nitrox.log = function(msg, skipremote) {
 
     setTimeout(function() {
                jQuery('#debuglog').html( msgencode(msg) + "<br/>--<br/>" + jQuery('#debuglog').html() );
-               }, 10);
+               }, 1);
+
     if (Nitrox.Runtime.enabled && false) {
         setTimeout(function() { 
                 window.location.href="nitroxlog://somehost/path?" + escape(msg);                
             },
            20);
-    }
-    // TODO: this will be super-slow if sync, and out-of-order if async; need to create a queue
-    if (Nitrox.Runtime.enabled && !skipremote) {
+    } else if (Nitrox.Runtime.enabled && window.nadirect.log) {
+        window.nadirect.log(msg);
+    } else if (Nitrox.Runtime.enabled && !skipremote) {
+        // TODO: this will be super-slow if sync, and out-of-order if 
+        // async; need to create an outbound ajax queue
         jQuery.ajax({url: "http://127.0.0.1:" + Nitrox.Runtime.port + "/log", 
                     data: msg, async: false, type: 'post'});
     } else if (Nitrox.consolelog) {
@@ -283,6 +286,10 @@ Nitrox.Proxy = {
     // see http://developer.apple.com/internet/webcontent/xmlhttpreq.html
     //   http://ajaxpatterns.org/Ajax_Stub
 
+    transparentAjaxEnabled: function() {
+        return (XMLHttpRequest.prototype.n_originalSend ? true : false);
+    },
+
     enableTransparentAjax: function() {
         if (XMLHttpRequest.prototype.n_originalSend) {
             return;
@@ -317,7 +324,7 @@ Nitrox.Proxy = {
     _proxyXHRopen: function() {
         window.nadirect.log("opening XHR request for " + arguments[1]);
         var args = arguments;
-        var ret = this.n_originalSend.apply(this, args);
+        var ret = this.n_originalOpen.apply(this, args);
         window.nadirect.log("done with open");
         return ret;
     },
