@@ -49,8 +49,6 @@
     NSString *msg = [[[NSString alloc] initWithData:[[request requestMessage] body] 
                                            encoding:NSUTF8StringEncoding] 
                      autorelease];
-
-    NSLog(@"RPC: argstring is %@", msg);
     
     NSString *query = [[[request requestMessage] URL] query];
     

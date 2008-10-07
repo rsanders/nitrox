@@ -612,18 +612,18 @@ startFailed:
     socklen_t address_len;
     
     while (! done) {
-        NSLog(@"accepting...");
+        // NSLog(@"accepting...");
         acceptedFD = accept(listenFD, &address, &address_len);
         if (acceptedFD == -1 && [[NSThread currentThread] isCancelled]) {
             NSLog(@"listening thread canceled");
             return;
         }
-        NSLog(@"accepted fd %d", acceptedFD);
+        // NSLog(@"accepted fd %d", acceptedFD);
         
         NSFileHandle *newFile = [[NSFileHandle alloc] initWithFileDescriptor:acceptedFD closeOnDealloc:YES];
         [newFile autorelease];
         [self newConnectionWithFileHandle:newFile];
-        NSLog(@"looping");
+        // NSLog(@"looping");
     }
 }
 

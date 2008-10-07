@@ -26,7 +26,7 @@
 
 - (void) log:(NSString *)msg
 {
-    NSLog(@"Direct LOG: %@", msg);
+    NSLog(@"JSLOG: %@", msg);
 }
 
 - (NSString *) getKey:(NSString *)key fromDictionary:(id)dict
@@ -46,7 +46,7 @@
 }
 
 + (NSString *) webScriptNameForSelector:(SEL)sel {
-    NSLog(@"%@ received %@ with sel='%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(sel));
+    // NSLog(@"%@ received %@ with sel='%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(sel));
     if (sel == @selector(getKey:fromDictionary:)) {
         return @"getKey";
     } else if (sel == @selector(log:)) {
