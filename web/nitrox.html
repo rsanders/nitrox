@@ -175,7 +175,7 @@ function testOpenURL() {
 }
 
 function notificationListener(name, userInfo) {
-  Nitrox.log("NOTIFTEST - got " + name);
+  Nitrox.log("NOTIFTEST - got " + name + " userInfo = " + Nitrox.Lang.toJSON(userInfo));
 }
 
 function testNotification() {
