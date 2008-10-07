@@ -19,46 +19,46 @@
 
 #pragma mark Device specific methods
 
-- (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args {
-    
-    NSString *res = Nil;
-    UIDevice *device = [UIDevice currentDevice];
-    
-    SEL sel = NSSelectorFromString( [method stringByAppendingString:@":"] );       
-    if ([device respondsToSelector:sel]) {
-        res = [device performSelector:sel withObject:args];
-    } else if ([device respondsToSelector:(sel = NSSelectorFromString(method))]) {
-        res = [device performSelector:sel];
-    } else {
-        res = [super invokeClassMethod:method args:args];
+
+- (id) openURL:(NSDictionary *)args
+{
+    NSString *url = [args objectForKey:@"url"];
+    if (! url) {
+        NSLog(@"no URL supplied to openURL");
+        return Nil;
     }
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    return Nil;
+}
+
+- (id) exit:(NSDictionary *)args
+{
+    BOOL hard = [[args objectForKey:@"hard"] boolValue];
     
-    return res;
+    if (! hard) {
+        NSLog(@"notifying application delegate of intent to exit");
+        id<UIApplicationDelegate> appdel = [[UIApplication sharedApplication] delegate];
+        if (appdel) {
+            [appdel applicationWillTerminate:[UIApplication sharedApplication]];
+        }
+    }
+
+    NSLog(@"exiting...");
+    exit(0);
+    return Nil;
+}
+
+- (id) addNotificationListener:(NSDictionary *)args
+{
+    return Nil;
+}
+
+- (id) removeNotificationListener:(NSDictionary *)args
+{
+    return Nil;
 }
 
 #pragma mark Stub methods; should refactor out
-
-
-- (NSString *) className {
-    return @"Device";
-}
-
-- (NSString *) instanceMethods {
-    return Nil;
-}
-
-- (NSString *) classMethods {
-    return Nil;
-}
-
-- (id) newInstance {
-    return Nil;
-}
-
-- (id) newInstanceWithArgs:(NSDictionary *)args {
-    return Nil;
-}
-
 
 
 

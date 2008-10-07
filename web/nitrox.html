@@ -124,6 +124,7 @@ function benchmarkDirect() {
 function startPhysicalMonitoring() {
   Nitrox.Location.start(true);
   Nitrox.Accelerometer.start(true);
+  Nitrox.Accelerometer.updateFrequency(1/10.0);
 }
 
 function stopPhysicalMonitoring() {
@@ -163,6 +164,17 @@ function testDirect() {
       window.nadirect.getKey("b", {somekey: "someval", b: 3}));
 }
 
+function testExit() {
+  Nitrox.log("exiting...");
+  Nitrox.System.exit();
+}
+
+function testOpenURL() {
+  Nitrox.log("opening a URL");
+  Nitrox.System.openURL("http://reddit.com/");
+}
+
+
 jQuery(function() {
         Nitrox.log("document loaded");
  });
@@ -188,6 +200,8 @@ jQuery(function() {
 <a href="javascript:testDirect();">Test Direct</a> <br/>
 <a href="javascript:startOrientation();">Start Orientation</a> <br/>
 <a href="javascript:stopOrientation();">Stop Orientation</a> <br/>
+<a href="javascript:testExit();">Test Exiting</a> <br/>
+<a href="javascript:testOpenURL();">Open Reddit in Safari</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">

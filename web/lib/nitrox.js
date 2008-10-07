@@ -81,7 +81,7 @@ Nitrox.Bridge = {
             Nitrox.log('starting bridgecall for id ' + id);
             var port = Nitrox.Runtime.port;
             // clone args
-            args = jQuery.extend(true, args, {'id': id, 'token': Nitrox.Runtime.token});
+            args = jQuery.extend(true, args, {'__id': id, '__token': Nitrox.Runtime.token});
             var fullstring = Nitrox.Runtime.rpcURL() + "/" + fun;
             var req;
             try {
@@ -159,6 +159,10 @@ Nitrox.Accelerometer = {
         }
         Nitrox.log(cached + "acceleration is " + accel);
         return accel;
+    },
+
+    updateFrequency: function(frequency, async) {
+        Nitrox.Bridge.call('Accelerometer/c/updateFrequency', {frequency: frequency}, async);
     },
 
     delegate: function(accel) {
@@ -280,7 +284,7 @@ Nitrox.Benchmark = {
     version: '0.1'
 };
 
-Nitrox.Application = {
+Nitrox.System = {
     delegate: null,
 
     _delegate: function(funname, arg) {
@@ -293,13 +297,34 @@ Nitrox.Application = {
     },
     
     exit: function() {
-        Nitrox.Bridge.call('Application/c/exit', {}, true);
+        Nitrox.Bridge.call('System/c/exit', {}, true);
     },
 
     openURL: function(url) {
-        Nitrox.Bridge.call('Application/c/openURL', {url: url}, true);
+        Nitrox.Bridge.call('System/c/openURL', {url: url}, true);
     },
+    
+    version: '0.1'
+};
 
+Nitrox.Notification = {
+    delegate: null,
+
+    _delegate: function(notification, info) {
+        if (!this.delegate) {
+            Nitrox.log("cannot find method " + notification + " for Nitrox.App delegate with arg " + info);
+            return;
+        }
+    },
+    
+    addNotificationListener: function(name, listener) {
+        Nitrox.log("addNotificationListener not supported yet");
+    },
+    
+    removeNotificationListener: function(name) {
+        Nitrox.log("removeNotificationListener not supported yet");
+    },
+    
     
     version: '0.1'
 };
@@ -315,7 +340,7 @@ Nitrox.File.prototype = {
 
 // final bootstrap
 
-// jQuery(function() {
-//        Nitrox.log("Nitrox loaded");
-// });
+jQuery(function() {
+       Nitrox.log("Nitrox loaded");
+});
 
