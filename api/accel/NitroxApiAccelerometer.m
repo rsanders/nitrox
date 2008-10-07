@@ -18,7 +18,7 @@
  - (NitroxApiAccelerometer *)initWithAccelerometer:(UIAccelerometer *)mgr
  {
      accelerometer = mgr;
-     self.frequency = 1;
+     self.frequency = 1/20.0;
      self.currentAcceleration = Nil;
      return self;
  }
@@ -74,6 +74,20 @@
                           Nil];
      return [linfo autorelease];
 }
+
+- (id) updateFrequency:(NSDictionary *)dict
+{
+    NSString *arg = [dict objectForKey:@"frequency"];
+    double newFreq = [arg doubleValue];
+    if (newFreq <= 0) {
+        return Nil;
+    }
+    self.frequency = newFreq;
+    accelerometer.updateInterval = 1/self.frequency;
+    
+    return Nil;
+}
+
 
 #pragma mark Accelerometer Delegate methods
 

@@ -14,12 +14,12 @@
 @interface NitroxApiAccelerometer : NitroxStubClass  <UIAccelerometerDelegate> {
     BOOL                     started;
     UIAccelerometer*         accelerometer;
-    NSInteger                frequency;
+    double                   frequency;
     UIAcceleration*          currentAcceleration;
 }
 
 @property (assign)  BOOL                     started;
-@property (assign)  NSInteger                frequency;
+@property (assign)  double                   frequency;
 @property (assign,readonly)  UIAccelerometer*         accelerometer;
 @property (retain)  UIAcceleration*          currentAcceleration;
 
@@ -29,5 +29,6 @@
 - (id) start;
 - (id) stop;
 - (id) getAcceleration;
+- (id) updateFrequency:(NSDictionary *)dict;
 
 @end
