@@ -209,6 +209,14 @@ function testNotification() {
 
 }
 
+function testPhotoPicker() {
+  Nitrox.log("showing photo picker");
+  Nitrox.Event.addNotificationListener("photo_picked", notificationListener);
+  Nitrox.Photo.showPicker();
+
+
+}
+
 jQuery(function() {
         Nitrox.log("document loaded");
  });
@@ -239,6 +247,7 @@ jQuery(function() {
 <a href="javascript:testNotification();">Test notifications</a> <br/>
 <a href="javascript:toggleProxyAjax();">Toggle proxy ajax</a> <br/>
 <a href="javascript:testCrossDomainAjax();">Test Cross-Domain Ajax</a> <br/>
+<a href="javascript:testPhotoPicker();">Show Photo Picker</a> <br/>
 <a href="javascript:jQuery('#debuglog').html('');">Clear log</a> <br/>
 
 <h3 id="dtitle">Debug</h3>

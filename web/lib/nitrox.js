@@ -484,6 +484,27 @@ Nitrox.Event = {
     version: '0.1'
 };
 
+// photo functions
+
+Nitrox.Photo = {
+    delegate: null,
+
+    _delegate: function(funname, arg) {
+        if (this.delegate && this.delegate[funname]) {
+            Nitrox.log("invoking method " + fun + " on Nitrox.App delegate with arg " + arg);
+            this.delegate[funname](arg);
+        } else {
+            Nitrox.log("cannot find method " + fun + " for Nitrox.App delegate with arg " + arg);
+        }
+    },
+    
+    showPicker: function(url) {
+        Nitrox.Bridge.call('Photo/c/showPicker', {}, true);
+    },
+
+    version: '0.1'
+};
+
 // file functions
 
 Nitrox.File = function(path) {

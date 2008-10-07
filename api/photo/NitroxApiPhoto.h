@@ -9,16 +9,20 @@
 #import <UIKit/UIKit.h>
 
 #import "NitroxRPC.h"
+#import "NitroxImagePicker.h"
+
 @class NitroxPhoto;
 
-@interface NitroxApiPhoto : NitroxStubClass {
-    
+@interface NitroxApiPhoto : NitroxStubClass <UIImagePickerControllerDelegate> {
+    NitroxImagePicker*     picker;
 }
+
+@property (retain) NitroxImagePicker* picker;
 
 - (id) hasCamera;
 - (id) hasLibrary;
 
-- (NitroxPhoto *) showPicker;
+- (id) showPicker;
 - (NitroxPhoto *) takePhoto;
 - (NitroxPhoto *) chooseFromLibrary;
 

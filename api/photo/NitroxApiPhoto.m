@@ -11,6 +11,13 @@
 
 @implementation NitroxApiPhoto
 
+@synthesize picker;
+
+- (void) dealloc {
+    self.picker = Nil;
+    [super dealloc];
+}
+
 #pragma mark Photo specific methods
 
 /*
@@ -20,14 +27,21 @@
  */
 
 - (id) hasCamera {
-    return [NSNumber numberWithBool:YES];
+    return [NSNumber numberWithBool:
+            [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]];
 }
 
 - (id) hasLibrary {
-    return [NSNumber numberWithBool:YES];
+    return [NSNumber numberWithBool:
+            [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]];
 }
 
-- (NitroxPhoto *) showPicker {
+- (id) showPicker {
+    self.picker = [[NitroxImagePicker alloc] initWithNibName:@"NitroxImagePickerUI"
+                                                      bundle:[NSBundle mainBundle]];
+    self.picker.mainController = self.dispatcher.webViewController;
+    UIView *view = [self.dispatcher.webViewController webView];
+    [picker showInView:view];
     return Nil;
 }
 
