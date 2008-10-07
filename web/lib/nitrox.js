@@ -263,26 +263,7 @@ Nitrox.Proxy = {
     savedXHR: null,
     
     globalXHR: XMLHttpRequest,
-    
-    // enableTransparentAjax: function() {
-    //     Nitrox.log("enabling transparent proxying of XHR requests");
-    //     if (this.savedXHR) {
-    //         return false;
-    //     }
-    //     this.savedXHR = XMLHttpRequest;
-    //     XMLHttpRequest = this.proxyXHR;
-    // },
-
-    // restore: function() {
-    //     if (this.savedXHR && XMLHttpRequest == this.proxyXHR) {
-    //         XMLHttpRequest = this.savedXHR;
-    //         this.savedXHR = null;
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // },
-
+ 
     // see http://developer.apple.com/internet/webcontent/xmlhttpreq.html
     //   http://ajaxpatterns.org/Ajax_Stub
 
@@ -324,6 +305,14 @@ Nitrox.Proxy = {
     _proxyXHRopen: function() {
         window.nadirect.log("opening XHR request for " + arguments[1]);
         var args = arguments;
+        var url = args[1];
+        if (!url.match(new RegExp("^http://(127\.0\.0\.1|localhost)[:/]")))
+        {
+            var baseURL = Nitrox.Runtime.baseURL();
+            url = url.replace(new RegExp("^http://[^/]+/"), baseURL + "/proxy/ajax/");
+            window.nadirect.log("new url is " + url);
+        }
+        args[1] = url;
         var ret = this.n_originalOpen.apply(this, args);
         window.nadirect.log("done with open");
         return ret;
@@ -335,7 +324,6 @@ Nitrox.Proxy = {
     },
     
     retrieve: function(url, callback, method) {
-        Nitrox.log("proxy.retrieve not yet supported");
         if (!method) {
             method = "get";
         }

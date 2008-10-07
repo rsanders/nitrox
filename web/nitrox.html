@@ -188,6 +188,18 @@ function toggleProxyAjax() {
   }
 }
 
+function testCrossDomainAjax() {
+  // var url = "http://robertsanders.name/dev/nitrox/ajax.txt";
+  var url = "http://nitrox.googlecode.com/files/ajax.txt";
+  try {
+    var ajax = jQuery.ajax({url: url, async: false, type: 'get'});
+    Nitrox.log("Ajax return was: " + ajax.responseText);
+  } catch (e) {
+    Nitrox.log("Caught exception in ajax call: " + e);
+  }
+}
+
+
 function testNotification() {
   Nitrox.log("starting notification");
   Nitrox.Event.addNotificationListener("UIApplicationDidChangeStatusBarOrientationNotification",
@@ -226,6 +238,8 @@ jQuery(function() {
 <a href="javascript:testOpenURL();">Open Reddit in Safari</a> <br/>
 <a href="javascript:testNotification();">Test notifications</a> <br/>
 <a href="javascript:toggleProxyAjax();">Toggle proxy ajax</a> <br/>
+<a href="javascript:testCrossDomainAjax();">Test Cross-Domain Ajax</a> <br/>
+<a href="javascript:jQuery('#debuglog').html('');">Clear log</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">
