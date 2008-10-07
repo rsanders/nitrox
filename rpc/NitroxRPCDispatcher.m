@@ -55,7 +55,7 @@
     NSString *query = [[[request requestMessage] URL] query];
     
     // need to separate id and token and other args
-    if (false && query && ![query isEqualToString:@""]) {
+    if (query && ![query isEqualToString:@""]) {
         msg = [[[request requestMessage] URL] query];
     }
     
