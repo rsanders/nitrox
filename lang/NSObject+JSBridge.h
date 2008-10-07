@@ -15,5 +15,6 @@
 - (NSArray*) classMethodNames;
 
 - (NSString *) serializeToJSON;
++ (id) unserializeFromJSON:(NSString *)json;
 
 @end

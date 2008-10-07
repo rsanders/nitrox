@@ -9,6 +9,10 @@
 #import "NSObject+JSBridge.h"
 
 #import "GTMObjC2Runtime.h"
+
+#import "CJSONSerializer.h"
+#import "CJSONDeserializer.h"
+
 // #import <objc/objc-runtime.h>
 
 @implementation NSObject (JSBridge)
@@ -38,8 +42,26 @@
 
 // TODO: incomplete
 - (NSString *) serializeToJSON {
-    [NSException raise:NSGenericException format:@"serializeToJSON not implemented"];
-    return @"";
+    CJSONSerializer *serializer = [[[CJSONSerializer alloc] init] autorelease];    
+    
+    return [serializer serializeObject:self];
 }
+
++ (id) unserializeFromJSON:(NSString *)json {
+    CJSONDeserializer *deserializer = [[[CJSONDeserializer alloc] init] autorelease];    
+    
+    NSError *error;
+    id retval = [deserializer deserialize:[json dataUsingEncoding:NSUTF8StringEncoding]
+                               error:&error];
+    if (error) {
+        NSLog(@"failed to deserialize in class %@ from json: %@", 
+              NSStringFromClass([self class]), json);
+        return Nil;
+    } else {
+        return retval;
+    }
+    
+}
+
 
 @end
