@@ -1,0 +1,201 @@
+<html>
+<head>
+<meta id="viewport" name="viewport" content="width=device-width; user-scalable=0;"/>
+<base href="http://robertsanders.name/dev/nitrox/" />
+
+</head>
+<body>
+
+Accel Demo
+
+<div id="outbox">
+</div>
+
+
+
+<script type="text/javascript">
+// <![CDATA[
+function encode(string) {
+   	return string.replace('&','&amp;')
+   	             .replace('<','&lt;')
+   	             .replace('>','&gt;')
+   	             .replace('\'','&apos;')
+   	             .replace('"','&quot;');
+}
+
+document.write("HREF = " + window.location.href + "<br/>");
+function debuglog(msg) {
+  var oldHTML = jQuery('#debuglog').get(0).innerHTML;
+  jQuery('#debuglog').html( encode(msg) + "<br/>--<br/>" + oldHTML );
+}
+
+_nibware_result = "UNDEF";
+_midresult = "nomidresult";
+i = 0;
+
+function bridgecomplete(id, result)
+{
+  var msg = "result for id " + id + " = " + result;
+  jQuery('#outbox').text(msg);
+  _nibware_result = result;
+}
+
+function bridgecall(fun, argstring) {
+  var id = "id" + i++;
+  var fullstring = "nibwarejsbridge://localhost/invoke/" + id + "/" + fun + "/args/" + argstring + "/" + i;
+  // setTimeout(function() { window.location.href=fullstring; }, 1);
+  window.location.href=fullstring;
+}
+
+function benchmarkHook() {
+  var count = 50;
+  var origCount = count;
+  var bDate = new Date();
+  var oldBridgecomplete = bridgecomplete;
+  
+  bridgecomplete = function(id, result) {
+      eval("{a: 2+2}");
+      if (count-- > 0) {
+        bridgecall("foo", "bar");
+      } else {
+        var eDate = new Date();
+        var avgms = ((eDate.getTime() - bDate.getTime()) / origCount);
+        Nitrox.log("for hook approach, avg time is " + avgms + " ms");
+        bridgecomplete = oldBridgecomplete;
+      }
+    };
+  bridgecall("0", "0");
+}
+
+function testLocation() {
+  var loc = Nitrox.Location.getLocation();
+  Nitrox.log("location return is " + loc);
+  debuglog("location is " + loc);
+}
+
+function testVibrate() {
+  Nitrox.Vibrate.vibrate();
+}
+
+function testDevice() {
+  var model = Nitrox.Device.model();
+  Nitrox.log("model is " + model);
+}
+
+function testAccelerometer() {
+  var accel = Nitrox.Accelerometer.getAcceleration();
+  Nitrox.log("accel is " + accel);
+  Nitrox.log("Accel update count is " + Nitrox.Accelerometer.updateCount);
+}
+
+function testLoadJS() {
+  Nitrox.Lang.loadJS("testload.js");
+  Nitrox.Lang.loadJS("test/load2.js");  
+  Nitrox.load("done with loadJS test");
+}
+
+function benchmarkAjax() {
+  Nitrox.log("benchmark starting");
+  var oldDebug = Nitrox.Runtime.debug;
+  Nitrox.Runtime.debug = false;
+  
+  var res = Nitrox.Benchmark.run(function() {
+      Nitrox.Device.model();
+    }, 50);
+  Nitrox.Runtime.debug = oldDebug;
+    
+  Nitrox.log("average time for ajax was " + res + " ms");
+}
+
+function benchmarkDirect() {
+  Nitrox.log("benchmark starting");
+  var oldDebug = Nitrox.Runtime.debug;
+  Nitrox.Runtime.debug = false;
+  var model = "UNDEF";
+  var res = Nitrox.Benchmark.run(function() {
+      model = window.nadirect.model();
+    }, 50);
+  Nitrox.Runtime.debug = oldDebug;
+  Nitrox.log("result for model call was " + model);
+  Nitrox.log("average time for direct was " + res + " ms");
+
+}
+
+function startPhysicalMonitoring() {
+  Nitrox.Location.start(true);
+  Nitrox.Accelerometer.start(true);
+}
+
+function stopPhysicalMonitoring() {
+  Nitrox.Location.stop(true);
+  Nitrox.Accelerometer.stop(true);
+}
+
+function startOrientation() {
+  Nitrox.Device.start(true);
+}
+
+function stopOrientation() {
+  Nitrox.Device.stop(true);
+}
+
+
+function forceError() {
+  Nitrox.log("forcing class not found error");
+  new Foo.Bar.Baz.Who();
+}
+
+function testDirect() {
+  Nitrox.log("starting direct test: " + window.nadirect);
+  if (window.nadirect) {
+    var model = window.nadirect.model();
+    Nitrox.log("model is " + model);
+    window.nadirect.log_("this is a direct log msg");
+    Nitrox.log("done with direct invocation test");
+  }
+  Nitrox.log("attr = " + window.nadirect.attr);
+  window.nadirect.attr = "new attr value";
+  Nitrox.log("post-set attr = " + window.nadirect.attr);
+  
+  Nitrox.log("getkey res is " + 
+      window.nadirect.getKey("somekey", {somekey: "someval", b: 3}));
+  Nitrox.log("getkey b res is " + 
+      window.nadirect.getKey("b", {somekey: "someval", b: 3}));
+}
+
+jQuery(function() {
+        Nitrox.log("document loaded");
+ });
+ 
+
+// ]]>
+</script>
+
+<a href="javascript:Nitrox.Bridge.call('somefun', {var1: '/js/clicks'}, false);">Click me to test via Ajax</a> <br/>
+<a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
+<a href="javascript:window.location.href=window.location.href;">Refresh</a> <br/>
+<a href="javascript:startPhysicalMonitoring();">Start accel/location</a> <br/>
+<a href="javascript:stopPhysicalMonitoring();">Stop accel/location</a> <br/>
+<a href="javascript:testLocation();">Get Location</a> <br/>
+<a href="javascript:testVibrate();">Vibrate</a> <br/>
+<a href="javascript:testDevice();">Get Device Model</a> <br/>
+<a href="javascript:testAccelerometer();">Get Accel</a> <br/>
+<a href="javascript:testLoadJS();">Test LoadJS</a> <br/>
+<a href="javascript:benchmarkAjax();">Benchmark Ajax</a> <br/>
+<a href="javascript:benchmarkHook();">Benchmark Hook</a> <br/>
+<a href="javascript:benchmarkDirect();">Benchmark Direct</a> <br/>
+<a href="javascript:forceError();">Force error</a> <br/>
+<a href="javascript:testDirect();">Test Direct</a> <br/>
+<a href="javascript:startOrientation();">Start Orientation</a> <br/>
+<a href="javascript:stopOrientation();">Stop Orientation</a> <br/>
+
+<h3 id="dtitle">Debug</h3>
+<div id="debuglog">
+</div>
+
+
+<img src="icon.gif" alt="FAIL REL" />
+<img src="http://robertsanders.name/dev/nitrox/icon.gif" alt="FAIL ABS" />
+
+</body>
+</html>
