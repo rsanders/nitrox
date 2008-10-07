@@ -49,7 +49,10 @@
     NSLog(@"%@ received %@ with sel='%@'", self, NSStringFromSelector(_cmd), NSStringFromSelector(sel));
     if (sel == @selector(getKey:fromDictionary:)) {
         return @"getKey";
-    } else {
+    } else if (sel == @selector(log:)) {
+        return @"log";
+    }
+    else {
         return NSStringFromSelector(sel);
     }
 }
