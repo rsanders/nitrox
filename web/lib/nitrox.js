@@ -90,6 +90,7 @@ Nitrox.Bridge = {
             try {
                 req = jQuery.ajax({url: fullstring, data: args, async: async, type: 'get'});
             } catch (e) {
+                Nitrox.log("caught error in Nitrox.Bridge.call: " + e, true);
                 req = {error: e, status:401, responseText: "Error: " + e};
             }
             if (async) {
@@ -130,7 +131,7 @@ Nitrox.Location = {
     },
     
     delegate: function(loc) {
-        Nitrox.log("default location delegate received location: " + loc);
+        Nitrox.log("default location delegate received location: " + Nitrox.Lang.toJSON(loc));
     },
     
     version: '0.1'
@@ -171,7 +172,7 @@ Nitrox.Accelerometer = {
     delegate: function(accel) {
         this.updateCount++;
         this.currentAcceleration = accel;
-        Nitrox.log("default acceleration delegate received accel: " + accel);
+        Nitrox.log("default acceleration delegate received accel: " + Nitrox.Lang.toJSON(accel));
     },
 
     version: '0.1'
@@ -256,7 +257,11 @@ Nitrox.Lang = {
     version: '0.1'
 };
 
-// proxy functions
+/*
+ * proxy functions...might be useful if UIWebView stops supporting
+ * cross-domain XHR.  When did this happen?  (RDS, 2008-10-07)
+ *
+ */
 
 
 Nitrox.Proxy = {
@@ -306,10 +311,10 @@ Nitrox.Proxy = {
         window.nadirect.log("opening XHR request for " + arguments[1]);
         var args = arguments;
         var url = args[1];
-        if (!url.match(new RegExp("^http://(127\.0\.0\.1|localhost)[:/]")))
+        if (!url.match(new RegExp("^http(s?)://(127\.0\.0\.1|localhost)[:/]")))
         {
             var baseURL = Nitrox.Runtime.baseURL();
-            url = url.replace(new RegExp("^http://[^/]+/"), baseURL + "/proxy/ajax/");
+            url = url.replace(new RegExp("^(http(s?))://"), baseURL + "/proxy/ajax/$1/");
             window.nadirect.log("new url is " + url);
         }
         args[1] = url;
