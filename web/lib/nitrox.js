@@ -46,7 +46,7 @@ if (this.console && console.log) {
     Nitrox.consolelog = console.log;
 }
 
-Nitrox.log = function(msg) {
+Nitrox.log = function(msg, skipremote) {
     if (!Nitrox.Runtime.debug) {
         return;
     }
@@ -61,7 +61,7 @@ Nitrox.log = function(msg) {
            20);
     }
     // TODO: this will be super-slow if sync, and out-of-order if async; need to create a queue
-    if (Nitrox.Runtime.enabled) {
+    if (Nitrox.Runtime.enabled && !skipremote) {
         jQuery.ajax({url: "http://127.0.0.1:" + Nitrox.Runtime.port + "/log", 
                     data: msg, async: false, type: 'post'});
     } else if (Nitrox.consolelog) {
@@ -255,7 +255,73 @@ Nitrox.Lang = {
 
 // proxy functions
 
+
 Nitrox.Proxy = {
+    savedXHR: null,
+    
+    globalXHR: XMLHttpRequest,
+    
+    // enableTransparentAjax: function() {
+    //     Nitrox.log("enabling transparent proxying of XHR requests");
+    //     if (this.savedXHR) {
+    //         return false;
+    //     }
+    //     this.savedXHR = XMLHttpRequest;
+    //     XMLHttpRequest = this.proxyXHR;
+    // },
+
+    // restore: function() {
+    //     if (this.savedXHR && XMLHttpRequest == this.proxyXHR) {
+    //         XMLHttpRequest = this.savedXHR;
+    //         this.savedXHR = null;
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // },
+
+    // see http://developer.apple.com/internet/webcontent/xmlhttpreq.html
+    //   http://ajaxpatterns.org/Ajax_Stub
+
+    enableTransparentAjax: function() {
+        if (XMLHttpRequest.prototype.n_originalSend) {
+            return;
+        }
+        XMLHttpRequest.prototype.n_originalSend = XMLHttpRequest.prototype.send;
+        XMLHttpRequest.prototype.send = this._proxyXHRsend;
+        XMLHttpRequest.prototype.n_originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = this._proxyXHRopen;
+
+    },
+
+    disableTransparentAjax: function() {
+        if (! XMLHttpRequest.prototype.n_originalSend) {
+            return;
+        }
+        XMLHttpRequest.prototype.send = XMLHttpRequest.prototype.n_originalSend;
+        XMLHttpRequest.prototype.n_originalSend = null;
+        XMLHttpRequest.prototype.open = XMLHttpRequest.prototype.n_originalOpen;
+        XMLHttpRequest.prototype.n_originalOpen = null;
+    },
+    
+    _proxyXHRsend: function() {
+        window.nadirect.log("sending XHR request");
+        var ret = this.n_originalSend.apply(this, arguments);
+        window.nadirect.log("done with send");
+        return ret;
+    },
+
+    /*
+     *  open("method", "URL"[, asyncFlag[, "userName"[, "password"]]])
+     */
+    _proxyXHRopen: function() {
+        window.nadirect.log("opening XHR request for " + arguments[1]);
+        var args = arguments;
+        var ret = this.n_originalSend.apply(this, args);
+        window.nadirect.log("done with open");
+        return ret;
+    },
+
     ajax: function(ajaxObject) {
         Nitrox.log("proxy.ajax not yet supported");
         return "Not yet supported";

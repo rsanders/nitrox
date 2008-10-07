@@ -178,6 +178,11 @@ function notificationListener(name, userInfo) {
   Nitrox.log("NOTIFTEST - got " + name + " userInfo = " + Nitrox.Lang.toJSON(userInfo));
 }
 
+function testProxyAjax() {
+  Nitrox.Proxy.enableTransparentAjax();
+  Nitrox.log("enabled transparent ajax");
+}
+
 function testNotification() {
   Nitrox.log("starting notification");
   Nitrox.Event.addNotificationListener("UIApplicationDidChangeStatusBarOrientationNotification",
@@ -215,6 +220,7 @@ jQuery(function() {
 <a href="javascript:testExit();">Test Exiting</a> <br/>
 <a href="javascript:testOpenURL();">Open Reddit in Safari</a> <br/>
 <a href="javascript:testNotification();">Test notifications</a> <br/>
+<a href="javascript:testProxyAjax();">Enable proxy ajax</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">
