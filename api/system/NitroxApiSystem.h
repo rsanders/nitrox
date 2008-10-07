@@ -20,7 +20,6 @@
 
 - (id) openURL:(NSDictionary *)args;
 - (id) exit:(NSDictionary *)args;
-- (id) addNotificationListener:(NSDictionary *)args;
-- (id) removeNotificationListener:(NSDictionary *)args;
+
 
 @end

@@ -74,6 +74,11 @@
     [rpcDelegate addPath:@"System" delegate:[[NitroxRPCDispatcher alloc] 
                                               initWithStubClass:[[NitroxApiSystem alloc] init]
                                               webViewController:self]];
+
+    [rpcDelegate addPath:@"Event" delegate:[[NitroxRPCDispatcher alloc] 
+                                             initWithStubClass:[[NitroxApiEvent alloc] init]
+                                             webViewController:self]];
+    
     
     // fallback is an authoritative filesystem server rooted at APP.app/web
     [pathDelegate setDefaultDelegate:

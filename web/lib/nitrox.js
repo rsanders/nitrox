@@ -217,6 +217,8 @@ Nitrox.Vibrate = {
 // lang / runtime functions
 
 Nitrox.Lang = {
+    loaded: [],
+    
     loadJS: function(file, async) {
         if (!async) { async = false; }
         var url = Nitrox.Runtime.baseURL() + '/' + file;
@@ -228,6 +230,24 @@ Nitrox.Lang = {
             Nitrox.log("loadJS of " + file + " failed");
             return false;
         }
+    },
+    
+    require: function(jsfile, async) {
+        if (jQuery.inArray(jsfile, this.loaded) != -1) {
+            Nitrox.log("in require, file " + jsfile + " already loaded");
+            return true;
+        }
+        
+        var res = Nitrox.Lang.loadJS(jsfile, async);
+        if (res) {
+            this.loaded.push(jsfile);
+        }
+        return res;
+    },
+    
+    toJSON: function(obj) {
+        Nitrox.Lang.require("lib/jquery/jquery.json.js");
+        return jQuery.toJSON(obj);
     },
     
     version: '0.1'
@@ -304,10 +324,16 @@ Nitrox.System = {
         Nitrox.Bridge.call('System/c/openURL', {url: url}, true);
     },
     
+    vibrate: function(async) {
+        Nitrox.Bridge.call('Vibrate/c/vibrate', {}, async ? true : false);
+    },
+    
     version: '0.1'
 };
 
-Nitrox.Notification = {
+Nitrox.Event = {
+    listeners: {},
+    
     delegate: null,
 
     _delegate: function(notification, info) {
@@ -316,15 +342,78 @@ Nitrox.Notification = {
             return;
         }
     },
+
+    _receiveNotification: function(name, userInfo) {
+        Nitrox.log("received notification " + name);
+        var larr = this._getListenersArray(name);
+        
+        jQuery.each(larr, function(idx, elt) { elt(name, userInfo); });
+    },
+    
+    _getListenersArray: function(name) {
+        var larr = this.listeners[name];
+        if (!larr) {
+            larr = this.listeners[name] = [];
+        }
+        return larr;
+    },
+    
+    _removeFromArray: function(array, object) {
+        return jQuery.grep(array, function(elt, idx) { elt != object; });
+    },
     
     addNotificationListener: function(name, listener) {
-        Nitrox.log("addNotificationListener not supported yet");
+        Nitrox.log("adding listener to notification " + name);
+
+        var larr = this._getListenersArray(name);
+        if (jQuery.inArray(listener, larr) != -1) {
+            // already listening
+            return false;
+        }
+        
+        // first-time listener...
+        // start up Objective-C listening if not already active
+        if (larr.length == 0) {
+            var args = {name: name};
+            Nitrox.Bridge.call('Event/c/addNotificationListener', args, true);
+        }
+
+        // record local listener
+        larr.push(listener);
+
+        return true;
     },
     
-    removeNotificationListener: function(name) {
-        Nitrox.log("removeNotificationListener not supported yet");
+    removeNotificationListener: function(name, listener) {
+        Nitrox.log("removing listener from notification " + name);
+        
+        var larr = this._getListenersArray(name);
+        
+        if (! listener) {
+            larr = this.listeners[name] = [];
+        } else if (jQuery.inArray(listener, larr) != -1) {
+            larr = this._removeFromArray(larr, listener);
+            this.listeners[name] = larr;
+        } else {
+            return false;
+        }
+        
+        if (larr.length == 0) {
+            var args = {name: name};
+            Nitrox.Bridge.call('Event/c/removeNotificationListener', args, true);
+        }
+        return true;
     },
-    
+
+    postNotification: function(name, userInfo) {
+        Nitrox.log("posting notification " + name);
+        if (! userInfo) {
+            userInfo = {};
+        }
+        var args = {name: name, userInfo: Nitrox.Lang.toJSON(userInfo)};
+        Nitrox.Bridge.call('Event/c/postNotification', args, true);
+        return true;
+    },
     
     version: '0.1'
 };

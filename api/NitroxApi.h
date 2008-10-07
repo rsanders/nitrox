@@ -14,6 +14,7 @@
 #import "NitroxApiVibrate.h"
 #import "NitroxApiBenchmark.h"
 #import "NitroxApiSystem.h"
+#import "NitroxApiEvent.h"
 
 // testing
 #import "NitroxApiDirectSystem.h"

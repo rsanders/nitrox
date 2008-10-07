@@ -48,16 +48,6 @@
     return Nil;
 }
 
-- (id) addNotificationListener:(NSDictionary *)args
-{
-    return Nil;
-}
-
-- (id) removeNotificationListener:(NSDictionary *)args
-{
-    return Nil;
-}
-
 #pragma mark Stub methods; should refactor out
 
 
