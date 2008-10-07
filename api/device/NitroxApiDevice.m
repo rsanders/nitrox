@@ -57,10 +57,10 @@
                        name:UIApplicationDidChangeStatusBarOrientationNotification
                      object:Nil];
 
-        [center addObserver:self 
-                   selector:@selector(orientationDidChange:) 
-                       name:UIDeviceOrientationDidChangeNotification
-                     object:Nil];        
+//        [center addObserver:self 
+//                   selector:@selector(orientationDidChange:) 
+//                       name:UIDeviceOrientationDidChangeNotification
+//                     object:Nil];        
         
         
         monitoringOrientation = YES;
@@ -86,10 +86,15 @@
     NSDictionary *dict = notification.userInfo;
     NSNumber *orientation = [dict objectForKey:UIApplicationStatusBarOrientationUserInfoKey];
     
-    NSLog(@"got orientation update for type %@: %@", notification.name, orientation);
+    UIDeviceOrientation oldOrientation = [orientation intValue];
+    UIDeviceOrientation newOrientation = [[UIDevice currentDevice] orientation];
+    
+    NSLog(@"got orientation update for type %@: from %d to %d", 
+          notification.name, oldOrientation, newOrientation);
     
     if (orientation) {
-        [self scheduleCallbackScript:[NSString stringWithFormat:@"Nitrox.Device.orientationDelegate(%@)",orientation]];
+        [self scheduleCallbackScript:[NSString stringWithFormat:@"Nitrox.Device.orientationDelegate(%d, %d)",
+                                      newOrientation, oldOrientation]];
     }
 }
 
