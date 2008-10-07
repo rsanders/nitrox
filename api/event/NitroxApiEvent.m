@@ -58,8 +58,12 @@
     if (userInfoString) {
         CJSONDeserializer *deserializer = [[[CJSONDeserializer alloc] init] autorelease];
         NSError *outError = Nil;
-        userInfo = [deserializer deserializeAsDictionary:[userInfoString dataUsingEncoding:NSUTF8StringEncoding]
+        @try  {
+            userInfo = [deserializer deserializeAsDictionary:[userInfoString dataUsingEncoding:NSUTF8StringEncoding]
                                                                  error:&outError];
+        } @catch (NSException * e) {
+            NSLog(@"could not deserialize userInfo: %@", e);
+        }
         if (outError) {
             NSLog(@"error deserializing userInfo: %@", outError);
             userInfo = Nil;
@@ -82,7 +86,13 @@
     NSString *name = [self serialize:[notification name]];
     NSDictionary *dict = [notification userInfo];
     
-    NSString *args = [self serialize:dict];
+    NSString *args;
+    @try {
+        args = [self serialize:dict];
+    } @catch (NSException * e) {
+        NSLog(@"could not serialize userInfo: %@", e);
+        args = @"{}";
+    }
     
     [self scheduleCallbackScript:[NSString stringWithFormat:@"Nitrox.Event._receiveNotification(%@, %@)",
                                   name, args]];
