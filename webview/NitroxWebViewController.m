@@ -221,7 +221,7 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request 
  navigationType:(UIWebViewNavigationType)navigationType 
 {
-    NSLog(@"wVsSLWR, req=%@", request);
+    NSLog(@"wVsSLWR, req=%@, mainDocURL=%@", request, [request mainDocumentURL]);
 
     // handle special internal URLs here
     
@@ -301,12 +301,14 @@
 
 - (void)loadRequest:(NSURLRequest *)request {
     NSMutableURLRequest* realRequest = [request mutableCopy];
-    NSURL *baseURL = [self createBaseURL];
-#pragma unused (baseURL)
 
-    [realRequest setMainDocumentURL:[self createBaseURL]];
+    /* 
+     * this doesn't seem to affect JS same origin policy at all 
+     */
+    // NSURL *baseURL = [self createBaseURL];
+    // [realRequest setMainDocumentURL:baseURL];
 
-    [[self webView] loadRequest:request];
+    [[self webView] loadRequest:realRequest];
 }
 
 - (void)loadRequest:(NSURLRequest *)request baseURL:(NSURL *)baseURL {
