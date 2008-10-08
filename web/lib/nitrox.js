@@ -78,36 +78,45 @@ console.log = Nitrox.log;
 // general bridge functions
 
 Nitrox.Bridge = {
-    'call': function(fun, args, async) {
+    'call': function(fun, args, async, ajaxOpts) {
             var id = "id" + i++;
             if (!async) async = false;
-            Nitrox.log('starting bridgecall for id ' + id);
+            window.nadirect.log('NBc: starting bridgecall for id ' + id);
             var port = Nitrox.Runtime.port;
             // clone args
+            if (! ajaxOpts) { ajaxOpts = {}; }
             args = jQuery.extend(true, args, {'__id': id, '__token': Nitrox.Runtime.token});
             var fullstring = Nitrox.Runtime.rpcURL() + "/" + fun;
             var req;
             try {
-                req = jQuery.ajax({url: fullstring, data: args, async: async, type: 'get'});
+                var ajaxObject = {url: fullstring, data: args, async: async, type: 'get'};
+                ajaxObject = jQuery.extend(ajaxObject, ajaxOpts);
+                window.nadirect.log("NBc: ajax object: " + Nitrox.Lang.toJSON(ajaxObject));
+                req = jQuery.ajax(ajaxObject);
+                window.nadirect.log("NBc: ajax returned without exception");
+                if (req.readyState == 4) {
+                    window.nadirect.log("NBc: ajax status is " + req.status);                    
+                }
             } catch (e) {
-                Nitrox.log("caught error in Nitrox.Bridge.call: " + e, true);
+                window.nadirect.log("NBc: caught error in Nitrox.Bridge.call: " + e);
                 req = {error: e, status:401, responseText: "Error: " + e};
             }
+            var res = null;
             if (async) {
-                Nitrox.log("returning from async " + fun + " , id=" + id);
-                return;
+                window.nadirect.log("NBc: returning from async " + fun + " , id=" + id);
+                return null;
             }
-            if (req == null) {
-                Nitrox.log("No request object returned");
+            if (! req) {
+                window.nadirect.log("NBc: No request object returned");
                 req = {error: "unknown", status:500, responseText:"No req object returned"};
             }
-            if (req && req.status == 200) {
-                var res = req.responseText; 
-                Nitrox.log('response text for ajax is: ' + res);
+            if (req && req.status == 200 && req.readyState == 4) {
+                res = req.responseText; 
+                window.nadirect.log('NBc: response text for ajax is: ' + res);
             } else {
-                Nitrox.log('error code: ' + req.status);
+                window.nadirect.log('NBc: not ready: state = ' + (req ? req.readyState : "no req"));
             }
-            return req.responseText;
+            return res;
         },
 
     'version': '0.1'
@@ -498,8 +507,19 @@ Nitrox.Photo = {
         }
     },
     
-    showPicker: function(url) {
-        Nitrox.Bridge.call('Photo/c/showPicker', {}, true);
+    showPicker: function() {
+        var res = Nitrox.Bridge.call('Photo/c/showPicker', {}, true);
+        Nitrox.log("NPsP: return from showpicker was " + res);
+        return res;
+    },
+    
+    _success: function(result) {
+        var url = Nitrox.Runtime.baseURL() + "/photoresults/" + result;
+        Nitrox.log("NPsP: result is " + url);
+    },
+    
+    _cancel: function(result) {
+        Nitrox.log("NPsP: result is CANCELED");
     },
 
     version: '0.1'

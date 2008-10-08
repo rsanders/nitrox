@@ -15,9 +15,15 @@
 
 @interface NitroxApiPhoto : NitroxStubClass <UIImagePickerControllerDelegate> {
     NitroxImagePicker*     picker;
+    NSCondition*           completionCondition;
+    NSString*              lastImage;
+    NSString*              urlFormat;
+    NSString*              saveDir;
 }
 
 @property (retain) NitroxImagePicker* picker;
+@property (retain) NSString* urlFormat;
+@property (retain) NSString* saveDir;
 
 - (id) hasCamera;
 - (id) hasLibrary;

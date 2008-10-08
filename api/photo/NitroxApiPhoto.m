@@ -11,10 +11,23 @@
 
 @implementation NitroxApiPhoto
 
-@synthesize picker;
+@synthesize picker, urlFormat, saveDir;
+
+- (id) init {
+    [super init];
+    completionCondition = [[NSCondition alloc] init];
+    self.urlFormat = @"%@";
+    NSString *tmpdir = [NSString stringWithCString:getenv("TMPDIR")];
+    self.saveDir = [tmpdir retain];
+    return self;
+}
 
 - (void) dealloc {
     self.picker = Nil;
+    self.saveDir = Nil;
+    self.urlFormat = Nil;
+    [lastImage release];
+    [completionCondition release];
     [super dealloc];
 }
 
@@ -39,9 +52,20 @@
 - (id) showPicker {
     self.picker = [[NitroxImagePicker alloc] initWithNibName:@"NitroxImagePickerUI"
                                                       bundle:[NSBundle mainBundle]];
-    self.picker.mainController = self.dispatcher.webViewController;
     UIView *view = [self.dispatcher.webViewController webView];
-    [picker showInView:view];
+    picker.delegate = self;
+    [picker performSelectorOnMainThread:@selector(showInView:)
+                             withObject:view waitUntilDone:NO];
+
+//    NSLog(@"acquiring lock");
+//    [completionCondition lock];
+//    NSLog(@"waiting for completion");
+//    [completionCondition wait];
+//    NSLog(@"completed");
+//    [completionCondition unlock];
+//    
+//    NSLog(@"returning new image path %@", lastImage);
+
     return Nil;
 }
 
@@ -51,6 +75,63 @@
 
 - (NitroxPhoto *) chooseFromLibrary {
     return Nil;
+}
+
+- (NSString *) saveImageToTempFile:(UIImage *)image
+{
+    NSString *filepart = [NSString stringWithFormat:@"%d.jpg", time(NULL)];
+    NSString *filename = [NSString stringWithFormat:@"%@/%@", 
+                          self.saveDir, filepart];
+
+    if (![[NSFileManager defaultManager] 
+                            createFileAtPath:filename 
+                            contents:UIImageJPEGRepresentation(image, 0.9)  
+                            attributes:Nil]) 
+    {
+        NSLog(@"couldn't create image file at path %@", filename);
+        return Nil;
+    }
+
+    return filepart;
+}
+
+#pragma mark Imagepicker delegate methods
+
+- (void)imagePickerController:(UIImagePickerController *)thispicker 
+        didFinishPickingImage:(UIImage *)image 
+                  editingInfo:(NSDictionary *)editingInfo {
+    
+    NSLog(@"Picked an image in NAP!");
+    
+    [image retain];
+    
+    NSString *filename = [self saveImageToTempFile:image];
+
+    lastImage = [filename retain];
+    NSLog(@"saved image to path %@", filename);
+    
+    NSString *jsstring = [NSString stringWithFormat:@"Nitrox.Photo._success(%@)",
+                          [self serialize:lastImage]];
+    
+    [dispatcher scheduleCallback:[NitroxRPCCallback callbackWithString:jsstring] immediate:NO];
+
+//    [completionCondition lock];
+//    [completionCondition signal];
+//    [completionCondition unlock];    
+
+    [image release];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)thispicker {
+    NSLog(@"Canceled picking an image in PIP");
+
+    NSString *jsstring = [NSString stringWithFormat:@"Nitrox.Photo._cancel({})"];
+    
+    [dispatcher scheduleCallback:[NitroxRPCCallback callbackWithString:jsstring] immediate:NO];
+    
+//    [completionCondition lock];
+//    [completionCondition signal];
+//    [completionCondition unlock];
 }
 
 #pragma mark Stub methods; should refactor out

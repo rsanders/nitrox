@@ -15,6 +15,7 @@
 #import "NitroxApiBenchmark.h"
 #import "NitroxApiSystem.h"
 #import "NitroxApiEvent.h"
+#import "NitroxApiPhoto.h"
 
 // testing
 #import "NitroxApiDirectSystem.h"

@@ -10,7 +10,6 @@
 
 
 @interface NitroxImagePicker : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    IBOutlet UIViewController *mainController;
     IBOutlet UIImagePickerController *realPicker;
     IBOutlet UIActionSheet *myView;
     IBOutlet UIView *mainView;
@@ -25,7 +24,6 @@
 - (void) showInView:(UIView *)view;
 - (void) dismiss;
 
-@property (nonatomic, retain) UIViewController *mainController;
 @property (nonatomic, assign) id<UIImagePickerControllerDelegate> delegate;
 
 @end

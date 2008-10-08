@@ -93,6 +93,7 @@
                                                contentType:@"text/plain" statusCode:400];
     }
     
+    NSLog(@"response is %@", result);
 
     NSString *response;
     if (result == Nil) {

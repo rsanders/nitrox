@@ -15,7 +15,6 @@
 
 @implementation NitroxImagePicker
 
-@synthesize mainController;
 @synthesize delegate;
 
 -(UIView *) view {
@@ -84,6 +83,7 @@
     
     if (buttonIndex == sheet.cancelButtonIndex || buttonIndex == sheet.destructiveButtonIndex) {
         NSLog(@"Canceling photo selection");
+        [delegate imagePickerControllerDidCancel:realPicker];
         return;
     }
     
@@ -100,6 +100,7 @@
             break;
         default:
             NSLog(@"Unhandled other button index %d", buttonIndex);
+            [delegate imagePickerControllerDidCancel:realPicker];
             break;
     }
 }
@@ -107,17 +108,20 @@
 
 #pragma mark UIImagePickerControllerDelegate methods
 
-- (void)imagePickerController:(UIImagePickerController *)thispicker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
-    
-    NSLog(@"Picked an image in PIP!");
-    
-    //[thispicker dismissModalViewControllerAnimated:YES];
+- (void) hidePicker:(UIImagePickerController *)thispicker {
     thispicker.view.hidden = YES;
     [[thispicker parentViewController] dismissModalViewControllerAnimated:YES];
     
     [thispicker popToRootViewControllerAnimated:YES];
     [thispicker.view resignFirstResponder];
     [thispicker.view removeFromSuperview];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)thispicker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
+    
+    NSLog(@"Picked an image in PIP!");
+    
+    [self hidePicker:thispicker];
     
     [image retain];
     
@@ -135,7 +139,7 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)thispicker {
     NSLog(@"Canceled picking an image in PIP");
     
-    [thispicker dismissModalViewControllerAnimated:YES];
+    [self hidePicker:thispicker];
     [delegate imagePickerControllerDidCancel:thispicker];
 }
 
