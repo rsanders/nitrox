@@ -18,4 +18,6 @@
 + (NSString *) stripLeadingSlash:(NSString *)path;
 + (NSString *) stripTrailingSlash:(NSString *)path;
 
++ (NSString *) contentTypeForExtension:(NSString *)extension;
+
 @end

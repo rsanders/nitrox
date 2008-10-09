@@ -51,4 +51,31 @@
     }
 }
 
++ (NSString *) contentTypeForExtension:(NSString *)extension
+{
+    extension = [extension lowercaseString];
+    if ([extension isEqualToString:@"jpg"] || [extension isEqualToString:@"jpeg"]) {
+        return @"image/jpeg";
+    } else if ([extension isEqualToString:@"js"]) {
+        return @"application/javascript";
+    } else if ([extension isEqualToString:@"html"] || [extension isEqualToString:@"htm"]) {
+        return @"text/html";
+    } else if ([extension isEqualToString:@"gif"]) {
+        return @"image/gif";
+    } else if ([extension isEqualToString:@"png"]) {
+        return @"image/png";
+    } else if ([extension isEqualToString:@"xhtml"]) {
+        return @"application/xhtml+xml";
+    } else if ([extension isEqualToString:@"txt"]) {
+        return @"text/plain";
+    } else if ([extension isEqualToString:@"xml"]) {
+        return @"text/xml";
+    } else if ([extension isEqualToString:@"css"]) {
+        return @"text/css";
+    } else {
+        return Nil;
+    }
+}
+
+
 @end

@@ -63,8 +63,13 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     if ([fileManager isReadableFileAtPath:ePath]) {
-        NSString *contents = [NSString stringWithContentsOfFile:ePath];
-        message = [NitroxHTTPResponseMessage responseWithHTMLString:contents];
+        NSData *contents = [NSData dataWithContentsOfFile:ePath];
+        NSString *type = [NitroxHTTPUtils contentTypeForExtension:[ePath pathExtension]];
+        if (!type) {
+            type = @"application/octet-stream";
+        }
+        message = [NitroxHTTPResponseMessage responseWithBody:contents
+                                                  contentType:type statusCode:200];
     } else if (authoritative) {
         message = [NitroxHTTPResponseMessage emptyResponseWithCode:404];
     } else {
