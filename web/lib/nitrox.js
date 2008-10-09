@@ -580,10 +580,10 @@ Nitrox.Photo = {
         return res;
     },
     
-    _success: function(result) {
-        var url = Nitrox.Runtime.baseURL() + "/photoresults/" + result;
-        Nitrox.log("NPsP: result is " + url);
-        this.handlers.handle('photo_picked', [url]);        
+    _success: function(path, metadata) {
+        var url = Nitrox.Runtime.baseURL() + "/photoresults/" + path;
+        Nitrox.log("NPsP: photo url is " + url + " metadata = " + Nitrox.Lang.toJSON(metadata));
+        this.handlers.handle('photo_picked', [url, metadata]);
     },
     
     _cancel: function(result) {

@@ -110,8 +110,16 @@
     lastImage = [filename retain];
     NSLog(@"saved image to path %@", filename);
     
-    NSString *jsstring = [NSString stringWithFormat:@"Nitrox.Photo._success(%@)",
-                          [self serialize:lastImage]];
+    CGSize size = [image size];
+    NSMutableDictionary *meta = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                    [NSNumber numberWithDouble:size.width], @"width",
+                                    [NSNumber numberWithDouble:size.height], @"height",
+                                    [NSNumber numberWithInt:[image imageOrientation]], @"orientation",
+                                    @"jpeg", @"format",
+                                    nil];
+    
+    NSString *jsstring = [NSString stringWithFormat:@"Nitrox.Photo._success(%@, %@)",
+                          [self serialize:lastImage], [self serialize:meta]];
     
     [dispatcher scheduleCallback:[NitroxRPCCallback callbackWithString:jsstring] immediate:NO];
 

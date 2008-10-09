@@ -209,13 +209,13 @@ function testNotification() {
 
 }
 
+Nitrox.Photo.handlers.addListener('photo_picked', function(path) {
+  Nitrox.log("received photo path: " + path);
+  jQuery('#outbox').html('<img src="' + path + '" />');
+});
+
 function testPhotoPicker() {
   Nitrox.log("showing photo picker");
-  // Nitrox.Event.addNotificationListener("photo_picked", notificationListener);
-  Nitrox.Photo.handlers.addListener('photo_picked', function(path) {
-    Nitrox.log("received photo path: " + path);
-    jQuery('#outbox').html('<img src="' + path + '" />');
-  });
   var res = Nitrox.Photo.showPicker();
   Nitrox.log("photo res is " + res);
 }
