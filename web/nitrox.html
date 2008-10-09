@@ -212,8 +212,12 @@ function testNotification() {
 function testPhotoPicker() {
   Nitrox.log("showing photo picker");
   // Nitrox.Event.addNotificationListener("photo_picked", notificationListener);
-  var path = Nitrox.Photo.showPicker();
-  Nitrox.log("photo path is " + path);
+  Nitrox.Photo.handlers.addListener('photo_picked', function(path) {
+    Nitrox.log("received photo path: " + path);
+    jQuery('#outbox').html('<img src="' + path + '" />');
+  });
+  var res = Nitrox.Photo.showPicker();
+  Nitrox.log("photo res is " + res);
 }
 
 jQuery(function() {

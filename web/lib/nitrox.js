@@ -406,6 +406,71 @@ Nitrox.System = {
     version: '0.1'
 };
 
+Nitrox.Handlers = function(owner) {
+    this.listeners = [];
+    this.owner = owner;
+    return this;
+};
+
+Nitrox.Handlers.prototype = {
+    listeners: [],
+    
+    owner: null,
+    
+    handle: function(name, args) {
+        Nitrox.log("handling event " + name + " this = " + this);
+        var larr = this.getListenersArray(name);
+        var all = larr.concat(this.getListenersArray('*'));
+
+        var owner = this.owner;
+        jQuery.each(all, function(idx, elt) { elt.apply(owner, args); });
+    },
+    
+    getListenersArray: function(name) {
+        var larr = this.listeners[name];
+        if (!larr) {
+            larr = this.listeners[name] = [];
+        }
+        return larr;
+    },
+    
+    _removeFromArray: function(array, object) {
+        return jQuery.grep(array, function(elt, idx) { elt != object; });
+    },
+    
+    addListener: function(name, listener) {
+        Nitrox.log("adding listener to notification " + name + " this is " + this);
+
+        var larr = this.getListenersArray(name);
+        if (jQuery.inArray(listener, larr) != -1) {
+            // already listening
+            return false;
+        }
+
+        // record local listener
+        larr.push(listener);
+
+        return true;
+    },
+    
+    removeListener: function(name, listener) {
+        Nitrox.log("removing listener from notification " + name);
+        
+        var larr = this.getListenersArray(name);
+        
+        if (! listener) {
+            larr = this.listeners[name] = [];
+        } else if (jQuery.inArray(listener, larr) != -1) {
+            larr = this._removeFromArray(larr, listener);
+            this.listeners[name] = larr;
+        } else {
+            return false;
+        }
+
+        return true;
+    },
+};
+
 Nitrox.Event = {
     listeners: {},
     
@@ -497,6 +562,8 @@ Nitrox.Event = {
 
 Nitrox.Photo = {
     delegate: null,
+    
+    handlers: new Nitrox.Handlers(this),
 
     _delegate: function(funname, arg) {
         if (this.delegate && this.delegate[funname]) {
@@ -516,6 +583,7 @@ Nitrox.Photo = {
     _success: function(result) {
         var url = Nitrox.Runtime.baseURL() + "/photoresults/" + result;
         Nitrox.log("NPsP: result is " + url);
+        this.handlers.handle('photo_picked', [url]);        
     },
     
     _cancel: function(result) {
