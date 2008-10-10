@@ -143,8 +143,10 @@ function stopOrientation() {
 
 
 function forceError() {
-  Nitrox.log("forcing class not found error");
-  new Foo.Bar.Baz.Who();
+  Nitrox.log("forcing reference error");
+  var x = ijkklret + 2;
+  Nitrox.log("forcing eval error");
+  eval("deadboeuf+1;");
 }
 
 function testDirect() {
@@ -256,6 +258,8 @@ jQuery(function() {
 <a href="javascript:Nitrox.Photo.chooseFromLibrary();">Choose Pic from Library</a> <br/>
 <a href="javascript:jQuery('#debuglog').html('');">Clear log</a> <br/>
 <a href="javascript:Nitrox.Application.openApplication('http://robertsanders.name/dev/nitrox/demos.html');">Load external demos app</a> <br/>
+<a href="javascript:window.location.href='http://robertsanders.name/dev/nitrox/demos.html';">Set HREF to load demos menu</a> <br/>
+<a href="javascript:window.location.href='http://localhost:58214/nitrox.html';">Set HREF to load self via server</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">

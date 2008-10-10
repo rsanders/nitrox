@@ -261,7 +261,7 @@
     }
     
     // don't allow direct clicks on links to load; remap them through our loadRequest
-    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+    if (navigationType == UIWebViewNavigationTypeLinkClicked || !passNext) {
         [self performSelectorOnMainThread:@selector(loadRequest:)
                                   withObject:[NSURLRequest requestWithURL:[NSURL URLWithString:[request.URL absoluteString]]]
                                waitUntilDone:NO];
@@ -315,7 +315,7 @@
     
     
     [self insertJavascriptString:nitroxInfo];
-    
+    passNext = NO;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -330,6 +330,7 @@
 }
 
 - (void)createNewWebView {
+    return;
     NSLog(@"replacing old webview: %@", self.view);
     NitroxWebView *newWebView = [[NitroxWebView alloc] initWithFrame:self.view.frame];
     [newWebView setDelegate:self];
@@ -381,6 +382,7 @@
 - (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
     [self createNewWebView];
 
+    passNext = YES;
     [[self webView] loadHTMLString:string baseURL:baseURL];
 }
 
@@ -389,6 +391,7 @@
 {
     [self createNewWebView];
 
+    passNext = YES;
     [[self webView] loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
 
