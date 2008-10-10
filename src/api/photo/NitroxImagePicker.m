@@ -16,6 +16,7 @@
 @implementation NitroxImagePicker
 
 @synthesize delegate;
+@synthesize hostingController;
 
 -(UIView *) view {
     return myView;
@@ -63,9 +64,7 @@
         [realPicker setSourceType:UIImagePickerControllerSourceTypeCamera];
     }
 
-    realPicker.view.hidden = NO;
-    [[[UIApplication sharedApplication] keyWindow] insertSubview:realPicker.view atIndex:0];
-    [[[UIApplication sharedApplication] keyWindow] bringSubviewToFront:realPicker.view];
+    [hostingController presentModalViewController:realPicker animated:YES];
 }
 
 -(void) cancel {
@@ -109,19 +108,17 @@
 #pragma mark UIImagePickerControllerDelegate methods
 
 - (void) hidePicker:(UIImagePickerController *)thispicker {
-    thispicker.view.hidden = YES;
-    [[thispicker parentViewController] dismissModalViewControllerAnimated:YES];
+    [hostingController dismissModalViewControllerAnimated:YES];
     
-    [thispicker popToRootViewControllerAnimated:YES];
-    [thispicker.view resignFirstResponder];
-    [thispicker.view removeFromSuperview];
+//    [thispicker popToRootViewControllerAnimated:YES];
+//    [thispicker.view resignFirstResponder];
+//    [thispicker.view removeFromSuperview];
+//    thispicker.view.hidden = YES;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)thispicker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
     
-    NSLog(@"Picked an image in PIP!");
-    
-    [self hidePicker:thispicker];
+    // NSLog(@"Picked an image in PIP!");
     
     [image retain];
     
@@ -134,6 +131,8 @@
     [delegate imagePickerController:thispicker didFinishPickingImage:image editingInfo:editingInfo];
     
     [image release];
+    
+    [self hidePicker:thispicker];    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)thispicker {
@@ -144,34 +143,9 @@
 }
 
 #pragma mark -
-
-/*
-// Override initWithNibName:bundle: to load the view using a nib file then perform additional customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically.
-- (void)loadView {
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-*/
-
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 
@@ -182,7 +156,13 @@
 
 
 - (void)dealloc {
+    self.hostingController = Nil;
+    self.delegate = Nil;
     [myView setDelegate:nil];
+    [myView release];
+    [mainView release];
+    [realPicker release];
+
     [super dealloc];
 }
 

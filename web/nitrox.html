@@ -211,7 +211,7 @@ function testNotification() {
 
 Nitrox.Photo.handlers.addListener('photo_picked', function(path) {
   Nitrox.log("received photo path: " + path);
-  jQuery('#outbox').html('<img src="' + path + '" />');
+  jQuery('#outbox').html('<img width="320" src="' + path + '" />');
 });
 
 function testPhotoPicker() {
@@ -251,6 +251,8 @@ jQuery(function() {
 <a href="javascript:toggleProxyAjax();">Toggle proxy ajax</a> <br/>
 <a href="javascript:testCrossDomainAjax();">Test Cross-Domain Ajax</a> <br/>
 <a href="javascript:testPhotoPicker();">Show Photo Picker</a> <br/>
+<a href="javascript:Nitrox.Photo.takePhoto();">Take Photo w/Camera</a> <br/>
+<a href="javascript:Nitrox.Photo.chooseFromLibrary();">Choos Pic from Library</a> <br/>
 <a href="javascript:jQuery('#debuglog').html('');">Clear log</a> <br/>
 
 <h3 id="dtitle">Debug</h3>

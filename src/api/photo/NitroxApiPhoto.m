@@ -49,14 +49,20 @@
             [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]];
 }
 
-- (id) showPicker {
+- (void) setupPicker {
     self.picker = [[NitroxImagePicker alloc] initWithNibName:@"NitroxImagePickerUI"
                                                       bundle:[NSBundle mainBundle]];
-    UIView *view = [self.dispatcher.webViewController webView];
     picker.delegate = self;
+    picker.hostingController = (UIViewController *)self.dispatcher.webViewController;
+}
+
+- (id) showPicker {
+    [self setupPicker];
+    UIView *view = [self.dispatcher.webViewController webView];
+
     [picker performSelectorOnMainThread:@selector(showInView:)
                              withObject:view waitUntilDone:NO];
-
+    
 //    NSLog(@"acquiring lock");
 //    [completionCondition lock];
 //    NSLog(@"waiting for completion");
@@ -69,11 +75,22 @@
     return Nil;
 }
 
-- (NitroxPhoto *) takePhoto {
+- (id) takePhoto {
+    [self setupPicker];
+
+    picker.delegate = self;
+    [picker performSelectorOnMainThread:@selector(pickNewPhoto)
+                             withObject:Nil waitUntilDone:NO];
     return Nil;
 }
 
-- (NitroxPhoto *) chooseFromLibrary {
+- (id) chooseFromLibrary {
+    [self setupPicker];
+
+    picker.delegate = self;
+    // [picker pickExistingPhoto];
+    [picker performSelectorOnMainThread:@selector(pickExistingPhoto)
+                             withObject:Nil waitUntilDone:NO];
     return Nil;
 }
 
@@ -93,6 +110,10 @@
     }
 
     return filepart;
+}
+
+- (void) cleanupPicker {
+    self.picker = Nil;
 }
 
 #pragma mark Imagepicker delegate methods
@@ -128,6 +149,8 @@
 //    [completionCondition unlock];    
 
     [image release];
+    
+    [self cleanupPicker];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)thispicker {
@@ -140,6 +163,8 @@
 //    [completionCondition lock];
 //    [completionCondition signal];
 //    [completionCondition unlock];
+
+    [self cleanupPicker];
 }
 
 #pragma mark Stub methods; should refactor out

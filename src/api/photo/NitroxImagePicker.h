@@ -13,6 +13,7 @@
     IBOutlet UIImagePickerController *realPicker;
     IBOutlet UIActionSheet *myView;
     IBOutlet UIView *mainView;
+    UIViewController *hostingController;
     
     id <UIImagePickerControllerDelegate> delegate;
 }
@@ -25,5 +26,6 @@
 - (void) dismiss;
 
 @property (nonatomic, assign) id<UIImagePickerControllerDelegate> delegate;
+@property (assign) UIViewController* hostingController;
 
 @end

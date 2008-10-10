@@ -42,7 +42,6 @@
 		B1C8AD3D0E9EE0FE003FE061 /* GTMPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC420E9EE0FE003FE061 /* GTMPath.m */; };
 		B1C8AD3E0E9EE0FE003FE061 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC440E9EE0FE003FE061 /* GTMRegex.m */; };
 		B1C8AD3F0E9EE0FE003FE061 /* GTMSignalHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC460E9EE0FE003FE061 /* GTMSignalHandler.m */; };
-		B1C8AD400E9EE0FE003FE061 /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC480E9EE0FE003FE061 /* GTMStackTrace.m */; };
 		B1C8AD410E9EE0FE003FE061 /* GTMSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC4A0E9EE0FE003FE061 /* GTMSystemVersion.m */; };
 		B1C8AD440E9EE0FE003FE061 /* GTMABAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC570E9EE0FE003FE061 /* GTMABAddressBook.m */; };
 		B1C8AD830E9EE0FE003FE061 /* NSObject+JSBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACAD0E9EE0FE003FE061 /* NSObject+JSBridge.m */; };
@@ -1291,7 +1290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# http://developer.apple.com/documentation/developertools/Conceptual/XcodeBuildSystem/200_build_phases/chapter_3_section_9.html\n\nRESOURCE_DEST=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\nWEBDEST=\"$RESOURCE_DEST/web\"\nmkdir -p \"$WEBDEST\"\ncp -R /Users/robertsanders/vitrue/src/xcode/libs/nitroxkit/web/* \"$WEBDEST\"\ndate > \"$WEBDEST/copied.txt\"\n";
+			shellScript = "#\n# This script exists because Xcode 3.1 doesn't copy changed resource files \n# into the binary when running in the simulator.\n#\n# Robert Sanders\n# rsanders@gmail.com\n#\n\n# http://developer.apple.com/documentation/developertools/Conceptual/XcodeBuildSystem/200_build_phases/chapter_3_section_9.html\n\n\nset > /tmp/buildout.$$.txt\n\nRESOURCE_DEST=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\nWEBDEST=\"$RESOURCE_DEST/web\"\nmkdir -p \"$WEBDEST\"\ncp -R $PROJECT_DIR/../../web/* \"$WEBDEST\"\ndate > \"$WEBDEST/copied.txt\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1329,7 +1328,6 @@
 				B1C8AD3D0E9EE0FE003FE061 /* GTMPath.m in Sources */,
 				B1C8AD3E0E9EE0FE003FE061 /* GTMRegex.m in Sources */,
 				B1C8AD3F0E9EE0FE003FE061 /* GTMSignalHandler.m in Sources */,
-				B1C8AD400E9EE0FE003FE061 /* GTMStackTrace.m in Sources */,
 				B1C8AD410E9EE0FE003FE061 /* GTMSystemVersion.m in Sources */,
 				B1C8AD440E9EE0FE003FE061 /* GTMABAddressBook.m in Sources */,
 				B1C8AD830E9EE0FE003FE061 /* NSObject+JSBridge.m in Sources */,

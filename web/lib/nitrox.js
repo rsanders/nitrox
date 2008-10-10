@@ -1,5 +1,4 @@
 
-alert("nitrox starting");
 if (! this.console) {
     this.console = {};
 }
@@ -46,6 +45,7 @@ if (this.console && console.log) {
     Nitrox.consolelog = console.log;
 }
 
+
 Nitrox.log = function(msg, skipremote) {
     if (!Nitrox.Runtime.debug) {
         return;
@@ -60,7 +60,7 @@ Nitrox.log = function(msg, skipremote) {
                 window.location.href="nitroxlog://somehost/path?" + escape(msg);                
             },
            20);
-    } else if (Nitrox.Runtime.enabled && window.nadirect.log) {
+    } else if (Nitrox.Runtime.enabled && window.nadirect.log  && ! window.nadirect.isSimulated) {
         window.nadirect.log(msg);
     } else if (Nitrox.Runtime.enabled && !skipremote) {
         // TODO: this will be super-slow if sync, and out-of-order if 
@@ -73,6 +73,12 @@ Nitrox.log = function(msg, skipremote) {
 };
 
 console.log = Nitrox.log;
+
+if (! window.nadirect) { window.nadirect = {}; }
+if (! window.nadirect.log) {
+    window.nadirect.log = Nitrox.log;
+    window.nadirect.isSimulated = true;
+}
 
 
 // general bridge functions
@@ -608,6 +614,18 @@ Nitrox.Photo = {
     showPicker: function() {
         var res = Nitrox.Bridge.call('Photo/c/showPicker', {}, true);
         Nitrox.log("NPsP: return from showpicker was " + res);
+        return res;
+    },
+
+    takePhoto: function() {
+        var res = Nitrox.Bridge.call('Photo/c/takePhoto', {}, true);
+        Nitrox.log("NPsP: return from takePhoto was " + res);
+        return res;
+    },
+
+    chooseFromLibrary: function() {
+        var res = Nitrox.Bridge.call('Photo/c/chooseFromLibrary', {}, true);
+        Nitrox.log("NPsP: return from chooseFromLibrary was " + res);
         return res;
     },
     

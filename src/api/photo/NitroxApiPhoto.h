@@ -29,7 +29,7 @@
 - (id) hasLibrary;
 
 - (id) showPicker;
-- (NitroxPhoto *) takePhoto;
-- (NitroxPhoto *) chooseFromLibrary;
+- (id) takePhoto;
+- (id) chooseFromLibrary;
 
 @end
