@@ -330,7 +330,9 @@
 }
 
 - (void)createNewWebView {
+    [[self webView] setScriptDebuggingEnabled:YES];
     return;
+
     NSLog(@"replacing old webview: %@", self.view);
     NitroxWebView *newWebView = [[NitroxWebView alloc] initWithFrame:self.view.frame];
     [newWebView setDelegate:self];

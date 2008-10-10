@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NitroxScriptDebugDelegate.h"
+
+@class WebView;
+@class WebInspector;
 
 @interface NitroxWebView : UIWebView {
-
+    WebView*      privateWebView;
+    id            windowScriptObject;
+    BOOL          scriptDebuggingEnabled;
 }
+
+@property BOOL scriptDebuggingEnabled;
 
 @end

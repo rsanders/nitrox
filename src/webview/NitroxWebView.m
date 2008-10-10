@@ -12,11 +12,14 @@
 
 @implementation NitroxWebView
 
+@synthesize scriptDebuggingEnabled;
+
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         // Initialization code
     }
+    scriptDebuggingEnabled = NO;
     return self;
 }
 
@@ -54,12 +57,27 @@
 //    }
 //}
 
-- (void)webView:(id)webView windowScriptObjectAvailable:(id)windowScriptObject {
+- (void)webView:(id)webView windowScriptObjectAvailable:(id)newWindowScriptObject {
     NSLog(@"%@ received readiness %@", self, NSStringFromSelector(_cmd));
+
+    // save these goodies
+    windowScriptObject = newWindowScriptObject;
+    privateWebView = webView;
+    
+//    id inspector = [[WebInspector alloc] initWithWebView:webView];
+//    [inspector attach];
+//    [inspector show];
     
     /* here we'll add our object to the window object as an object named
      'nadirect'.  We can use this object in JavaScript by referencing the 'nadirect'
      property of the 'window' object.   */
+
+    if (scriptDebuggingEnabled) {
+//        NSLog(@"inspector is %@", [webView inspector]);
+//        [[webView inspector] showConsole:self];    
+        
+        [webView setScriptDebugDelegate:[[NitroxScriptDebugDelegate alloc] init]];
+    }
 
     NSLog(@"scriptObject is %@", windowScriptObject);
     [windowScriptObject setValue:[[NitroxApiDirectSystem alloc] init] forKey:@"nadirect"];
