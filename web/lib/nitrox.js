@@ -379,6 +379,37 @@ Nitrox.Benchmark = {
     version: '0.1'
 };
 
+Nitrox.Application = {
+    delegate: null,
+
+    _delegate: function(funname, arg) {
+        if (this.delegate && this.delegate[funname]) {
+            Nitrox.log("invoking method " + fun + " on Nitrox.App delegate with arg " + arg);
+            this.delegate[funname](arg);
+        } else {
+            Nitrox.log("cannot find method " + fun + " for Nitrox.App delegate with arg " + arg);
+        }
+    },
+    
+    exit: function() {
+        Nitrox.Bridge.call('Application/c/exit', {}, true);
+    },
+
+    badgeNumber: function() {
+        return Nitrox.Bridge.call('Application/c/badgeNumber', {}, true);
+    },
+
+    setBadgeNumber: function(number) {
+        Nitrox.Bridge.call('Application/c/setBadgeNumber', {number: number}, true);
+    },
+    
+    vibrate: function(async) {
+        Nitrox.Bridge.call('Vibrate/c/vibrate', {}, async ? true : false);
+    },
+    
+    version: '0.1'
+};
+
 Nitrox.System = {
     delegate: null,
 

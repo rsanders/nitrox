@@ -1,0 +1,3 @@
+[submodule "vendor/nibwarelib"]
+	path = vendor/nibwarelib
+	url = git@github.com:rsanders/nibwarelib.git

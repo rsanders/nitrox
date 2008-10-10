@@ -1,0 +1,19 @@
+Provides three functions:
+
+* Go directly to pick an image from the library.
+* Go directly to camera.
+* Offer the user a choice between picking an image and taking a picture.
+
+Return types:
+
+One of the following:
+
+  * A local (internal) URL to the saved photo on disk as a JPEG
+  * Data URI: Base64 encoded data URI string of the JPEG
+  * JPEG Binary data (optionally Base64 encoded)
+  * A remote URL to the saved photo on a supported photo service.  Currently supported:
+    ** Pinglepic
+
+
+AIR API:
+

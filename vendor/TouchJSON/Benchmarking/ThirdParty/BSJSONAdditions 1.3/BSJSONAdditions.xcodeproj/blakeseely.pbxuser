@@ -1,0 +1,652 @@
+// !$*UTF8*$!
+{
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {973, 853}}";
+			sepNavSelRange = "{86, 0}";
+			sepNavVisRect = "{{0, 0}, {973, 853}}";
+		};
+	};
+	28278CD80991DC2900BCE5A7 /* BSJSONAdditions */ = {
+		isa = PBXExecutable;
+		activeArgIndex = 0;
+		activeArgIndices = (
+			YES,
+		);
+		argumentStrings = (
+			"-SenTest All",
+		);
+		autoAttachOnCrash = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+			{
+				active = YES;
+				name = DYLD_INSERT_LIBRARIES;
+				value = "$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/DevToolsBundleInjection.framework/DevToolsBundleInjection";
+			},
+			{
+				active = YES;
+				name = XCInjectBundle;
+				value = "$(BUILT_PRODUCTS_DIR)/Unit Tests.octest";
+			},
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = BSJSONAdditions;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+	};
+	28278CE30991DC4800BCE5A7 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+		scmType = "";
+	};
+	28278CE40991DC4800BCE5A7 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	28278CE90991DC5000BCE5A7 /* Unit Tests */ = {
+		activeExec = 0;
+	};
+	28278CF30991DC8F00BCE5A7 /* NSDictionary+BSJSONAdditions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {873, 744}}";
+			sepNavSelRange = "{1288, 0}";
+			sepNavVisRect = "{{0, 0}, {873, 744}}";
+			sepNavWindowFrame = "{{1935, -5}, {1024, 1024}}";
+		};
+	};
+	28278CF40991DC8F00BCE5A7 /* NSDictionary+BSJSONAdditions.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1052, 2702}}";
+			sepNavSelRange = "{2110, 0}";
+			sepNavVisRect = "{{0, 1958}, {873, 744}}";
+			sepNavWindowFrame = "{{745, 55}, {1024, 1001}}";
+		};
+	};
+	28278CF70991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {873, 840}}";
+			sepNavSelRange = "{1435, 0}";
+			sepNavVisRect = "{{0, 0}, {873, 744}}";
+			sepNavWindowFrame = "{{1935, -5}, {1024, 1024}}";
+		};
+	};
+	28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1130, 4242}}";
+			sepNavSelRange = "{1154, 0}";
+			sepNavVisRect = "{{0, 0}, {873, 744}}";
+		};
+	};
+	28278D210991E81000BCE5A7 /* XCBreakpointsBucket */ = {
+		isa = XCBreakpointsBucket;
+		name = "Project Breakpoints";
+		objects = (
+			289A90950992B2E40026B656 /* NSScanner+BSJSONAdditions.m:83 */,
+			289A90970992B2E60026B656 /* NSScanner+BSJSONAdditions.m:105 */,
+			289A90990992B2E90026B656 /* NSScanner+BSJSONAdditions.m:218 */,
+			289A909B0992B2F40026B656 /* NSScanner+BSJSONAdditions.m:254 */,
+			289A90A30992B44B0026B656 /* NSScanner+BSJSONAdditions.m:279 */,
+			289A90A50992B44D0026B656 /* NSScanner+BSJSONAdditions.m:284 */,
+			289A90A70992B44E0026B656 /* NSScanner+BSJSONAdditions.m:289 */,
+			289A90A90992B4500026B656 /* NSScanner+BSJSONAdditions.m:294 */,
+			289A90AB0992B4510026B656 /* NSScanner+BSJSONAdditions.m:299 */,
+			289A90F30992C3C20026B656 /* NSScanner+BSJSONAdditions.m:274 */,
+			289A90F50992C5790026B656 /* NSScanner+BSJSONAdditions.m:207 */,
+			289A90F80992C6B90026B656 /* NSScanner+BSJSONAdditions.m:78 */,
+			289A91080992CFAB0026B656 /* JSONValidTests.m:24 */,
+			289A911F0992E2870026B656 /* JSONValidTests.m:23 */,
+			289A91A2099408740026B656 /* JSONValidTests.m:108 */,
+			289A91A909940AB10026B656 /* NSScanner+BSJSONAdditions.m:244 */,
+			289A91E009947D1B0026B656 /* NSScanner+BSJSONAdditions.m:189 */,
+			289A91EA09947F3C0026B656 /* NSScanner+BSJSONAdditions.m:125 */,
+			289A91F6099480090026B656 /* JSONValidTests.m:109 */,
+			289A929709955A6A0026B656 /* NSDictionary+BSJSONAdditions.m:93 */,
+			289A929F09955B200026B656 /* NSDictionary+BSJSONAdditions.m:44 */,
+			289A92BD09955DD10026B656 /* NSDictionary+BSJSONAdditions.m:84 */,
+			288C12AC09D0D02F001F893C /* JSONValidTests.m:49 */,
+		);
+	};
+	2827C6CC09FECC66005C5DCD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		name = "NSScanner+BSJSONAdditions.m: 57";
+		rLen = 0;
+		rLoc = 2114;
+		rType = 0;
+		vrLen = 1208;
+		vrLoc = 1395;
+	};
+	2827C6CD09FECC66005C5DCD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289A90330992AB180026B656 /* json_test_valid_01.txt */;
+		name = "json_test_valid_01.txt: 1";
+		rLen = 0;
+		rLoc = 38;
+		rType = 0;
+		vrLen = 776;
+		vrLoc = 0;
+	};
+	2827C6CE09FECC66005C5DCD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289A90330992AB180026B656 /* json_test_valid_01.txt */;
+		name = "json_test_valid_01.txt: 1";
+		rLen = 0;
+		rLoc = 38;
+		rType = 0;
+		vrLen = 776;
+		vrLoc = 0;
+	};
+	2827C6CF09FECC66005C5DCD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		name = "NSScanner+BSJSONAdditions.m: 57";
+		rLen = 0;
+		rLoc = 2114;
+		rType = 0;
+		vrLen = 1208;
+		vrLoc = 1395;
+	};
+	2827C6DA09FECCB3005C5DCD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289A90330992AB180026B656 /* json_test_valid_01.txt */;
+		name = "json_test_valid_01.txt: 1";
+		rLen = 0;
+		rLoc = 38;
+		rType = 0;
+		vrLen = 814;
+		vrLoc = 0;
+	};
+	288C12AC09D0D02F001F893C /* JSONValidTests.m:49 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 289A90460992AC4A0026B656 /* JSONValidTests.m */;
+		functionName = "-testValidJSON";
+		hitCount = 1;
+		lineNumber = 49;
+		modificationTime = 167332267.556371;
+		state = 0;
+	};
+	289A90330992AB180026B656 /* json_test_valid_01.txt */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {948, 423}}";
+			sepNavSelRange = "{38, 0}";
+			sepNavVisRect = "{{0, 0}, {948, 423}}";
+		};
+	};
+	289A90360992AB180026B656 /* json_test_valid_05.txt */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {973, 853}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 0}, {973, 853}}";
+		};
+	};
+	289A90450992AC4A0026B656 /* JSONValidTests.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {973, 853}}";
+			sepNavSelRange = "{231, 0}";
+			sepNavVisRect = "{{0, 0}, {973, 853}}";
+		};
+	};
+	289A90460992AC4A0026B656 /* JSONValidTests.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1268, 1680}}";
+			sepNavSelRange = "{175, 41}";
+			sepNavVisRect = "{{0, 0}, {873, 744}}";
+		};
+	};
+	289A90950992B2E40026B656 /* NSScanner+BSJSONAdditions.m:83 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONArray:";
+		hitCount = 1;
+		lineNumber = 83;
+		modificationTime = 164679717.407539;
+		state = 2;
+	};
+	289A90970992B2E60026B656 /* NSScanner+BSJSONAdditions.m:105 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONString:";
+		hitCount = 1;
+		lineNumber = 105;
+		modificationTime = 164679717.407747;
+		state = 2;
+	};
+	289A90990992B2E90026B656 /* NSScanner+BSJSONAdditions.m:218 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONValue:";
+		hitCount = 1;
+		lineNumber = 218;
+		modificationTime = 164679717.407776;
+		state = 2;
+	};
+	289A909B0992B2F40026B656 /* NSScanner+BSJSONAdditions.m:254 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONNumber:";
+		hitCount = 1;
+		lineNumber = 254;
+		modificationTime = 164679717.407785;
+		state = 2;
+	};
+	289A90A30992B44B0026B656 /* NSScanner+BSJSONAdditions.m:279 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONValueSeparator";
+		hitCount = 1;
+		lineNumber = 279;
+		modificationTime = 164679717.407794;
+		state = 2;
+	};
+	289A90A50992B44D0026B656 /* NSScanner+BSJSONAdditions.m:284 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONObjectStartString";
+		hitCount = 1;
+		lineNumber = 284;
+		modificationTime = 164679717.407802;
+		state = 2;
+	};
+	289A90A70992B44E0026B656 /* NSScanner+BSJSONAdditions.m:289 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONObjectEndString";
+		hitCount = 1;
+		lineNumber = 289;
+		modificationTime = 164679717.40786;
+		state = 2;
+	};
+	289A90A90992B4500026B656 /* NSScanner+BSJSONAdditions.m:294 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONArrayStartString";
+		hitCount = 1;
+		lineNumber = 294;
+		modificationTime = 164679717.407868;
+		state = 2;
+	};
+	289A90AB0992B4510026B656 /* NSScanner+BSJSONAdditions.m:299 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONArrayEndString";
+		hitCount = 1;
+		lineNumber = 299;
+		modificationTime = 164679717.407877;
+		state = 2;
+	};
+	289A90F30992C3C20026B656 /* NSScanner+BSJSONAdditions.m:274 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONKeyValueSeparator";
+		hitCount = 1;
+		lineNumber = 274;
+		modificationTime = 164679717.407915;
+		state = 2;
+	};
+	289A90F50992C5790026B656 /* NSScanner+BSJSONAdditions.m:207 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONString:";
+		hitCount = 1;
+		lineNumber = 207;
+		modificationTime = 164679717.407925;
+		state = 2;
+	};
+	289A90F80992C6B90026B656 /* NSScanner+BSJSONAdditions.m:78 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONObject:";
+		hitCount = 1;
+		lineNumber = 78;
+		modificationTime = 164679717.407933;
+		state = 2;
+	};
+	289A91080992CFAB0026B656 /* JSONValidTests.m:24 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 289A90460992AC4A0026B656 /* JSONValidTests.m */;
+		functionName = "-testValidJSON";
+		hitCount = 1;
+		lineNumber = 24;
+		modificationTime = 164679717.407941;
+		state = 2;
+	};
+	289A911F0992E2870026B656 /* JSONValidTests.m:23 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 289A90460992AC4A0026B656 /* JSONValidTests.m */;
+		functionName = "-testValidJSON";
+		hitCount = 1;
+		lineNumber = 23;
+		modificationTime = 167332267.244989;
+		state = 0;
+	};
+	289A91810994005D0026B656 /* json_test_valid_06.txt */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {973, 853}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 0}, {973, 853}}";
+		};
+	};
+	289A91A2099408740026B656 /* JSONValidTests.m:108 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 289A90460992AC4A0026B656 /* JSONValidTests.m */;
+		functionName = "-testValidJSON";
+		hitCount = 1;
+		lineNumber = 108;
+		modificationTime = 167332267.37138;
+		state = 0;
+	};
+	289A91A909940AB10026B656 /* NSScanner+BSJSONAdditions.m:244 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONValue:";
+		hitCount = 1;
+		lineNumber = 244;
+		modificationTime = 164679717.408017;
+		state = 2;
+	};
+	289A91E009947D1B0026B656 /* NSScanner+BSJSONAdditions.m:189 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONString:";
+		hitCount = 1;
+		lineNumber = 189;
+		modificationTime = 164679717.408026;
+		state = 2;
+	};
+	289A91EA09947F3C0026B656 /* NSScanner+BSJSONAdditions.m:125 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF80991DC9F00BCE5A7 /* NSScanner+BSJSONAdditions.m */;
+		functionName = "-scanJSONString:";
+		hitCount = 1;
+		lineNumber = 125;
+		modificationTime = 164679717.408034;
+		state = 2;
+	};
+	289A91F6099480090026B656 /* JSONValidTests.m:109 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 289A90460992AC4A0026B656 /* JSONValidTests.m */;
+		functionName = "-testValidJSON";
+		hitCount = 1;
+		lineNumber = 109;
+		modificationTime = 167332267.467685;
+		state = 0;
+	};
+	289A929709955A6A0026B656 /* NSDictionary+BSJSONAdditions.m:93 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF40991DC8F00BCE5A7 /* NSDictionary+BSJSONAdditions.m */;
+		functionName = "-jsonStringForValue:";
+		hitCount = 1;
+		lineNumber = 93;
+		modificationTime = 164679717.40805;
+		state = 2;
+	};
+	289A929F09955B200026B656 /* NSDictionary+BSJSONAdditions.m:44 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF40991DC8F00BCE5A7 /* NSDictionary+BSJSONAdditions.m */;
+		functionName = "-jsonStringValue";
+		hitCount = 1;
+		lineNumber = 44;
+		modificationTime = 164679717.408058;
+		state = 2;
+	};
+	289A92BD09955DD10026B656 /* NSDictionary+BSJSONAdditions.m:84 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28278CF40991DC8F00BCE5A7 /* NSDictionary+BSJSONAdditions.m */;
+		functionName = "-jsonStringForValue:";
+		hitCount = 1;
+		lineNumber = 84;
+		modificationTime = 164679717.408066;
+		state = 2;
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeBuildStyle = 4A9504CCFFE6A4B311CA0CBA /* Debug */;
+		activeExecutable = 28278CD80991DC2900BCE5A7 /* BSJSONAdditions */;
+		activeTarget = 28278CE90991DC5000BCE5A7 /* Unit Tests */;
+		addToTargets = (
+			28278CE90991DC5000BCE5A7 /* Unit Tests */,
+		);
+		breakpoints = (
+			289A90950992B2E40026B656 /* NSScanner+BSJSONAdditions.m:83 */,
+			289A90970992B2E60026B656 /* NSScanner+BSJSONAdditions.m:105 */,
+			289A90990992B2E90026B656 /* NSScanner+BSJSONAdditions.m:218 */,
+			289A909B0992B2F40026B656 /* NSScanner+BSJSONAdditions.m:254 */,
+			289A90A30992B44B0026B656 /* NSScanner+BSJSONAdditions.m:279 */,
+			289A90A50992B44D0026B656 /* NSScanner+BSJSONAdditions.m:284 */,
+			289A90A70992B44E0026B656 /* NSScanner+BSJSONAdditions.m:289 */,
+			289A90A90992B4500026B656 /* NSScanner+BSJSONAdditions.m:294 */,
+			289A90AB0992B4510026B656 /* NSScanner+BSJSONAdditions.m:299 */,
+			289A90F30992C3C20026B656 /* NSScanner+BSJSONAdditions.m:274 */,
+			289A90F50992C5790026B656 /* NSScanner+BSJSONAdditions.m:207 */,
+			289A90F80992C6B90026B656 /* NSScanner+BSJSONAdditions.m:78 */,
+			289A91080992CFAB0026B656 /* JSONValidTests.m:24 */,
+			289A911F0992E2870026B656 /* JSONValidTests.m:23 */,
+			289A91A2099408740026B656 /* JSONValidTests.m:108 */,
+			289A91A909940AB10026B656 /* NSScanner+BSJSONAdditions.m:244 */,
+			289A91E009947D1B0026B656 /* NSScanner+BSJSONAdditions.m:189 */,
+			289A91EA09947F3C0026B656 /* NSScanner+BSJSONAdditions.m:125 */,
+			289A91F6099480090026B656 /* JSONValidTests.m:109 */,
+			289A929709955A6A0026B656 /* NSDictionary+BSJSONAdditions.m:93 */,
+			289A929F09955B200026B656 /* NSDictionary+BSJSONAdditions.m:44 */,
+			289A92BD09955DD10026B656 /* NSDictionary+BSJSONAdditions.m:84 */,
+			288C12AC09D0D02F001F893C /* JSONValidTests.m:49 */,
+		);
+		breakpointsGroup = 28278D210991E81000BCE5A7 /* XCBreakpointsBucket */;
+		codeSenseManager = 28278CE40991DC4800BCE5A7 /* Code sense */;
+		executables = (
+			28278CD80991DC2900BCE5A7 /* BSJSONAdditions */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_MessageID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					598,
+					273,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXErrorsWarningsDataSource_TypeID,
+					PBXErrorsWarningsDataSource_MessageID,
+					PBXErrorsWarningsDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					400,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					756,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					200,
+					568,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 167693344;
+			PBXWorkspaceStateSaveDate = 167693344;
+		};
+		perUserProjectItems = {
+			2827C6CC09FECC66005C5DCD /* PBXTextBookmark */ = 2827C6CC09FECC66005C5DCD /* PBXTextBookmark */;
+			2827C6CD09FECC66005C5DCD /* PBXTextBookmark */ = 2827C6CD09FECC66005C5DCD /* PBXTextBookmark */;
+			2827C6CE09FECC66005C5DCD /* PBXTextBookmark */ = 2827C6CE09FECC66005C5DCD /* PBXTextBookmark */;
+			2827C6CF09FECC66005C5DCD /* PBXTextBookmark */ = 2827C6CF09FECC66005C5DCD /* PBXTextBookmark */;
+			2827C6DA09FECCB3005C5DCD /* PBXTextBookmark */ = 2827C6DA09FECCB3005C5DCD /* PBXTextBookmark */;
+		};
+		sourceControlManager = 28278CE30991DC4800BCE5A7 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {973, 853}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 0}, {973, 853}}";
+		};
+	};
+	8D1107260486CEB800E47090 /* BSJSONAdditions */ = {
+		activeExec = 0;
+		executables = (
+			28278CD80991DC2900BCE5A7 /* BSJSONAdditions */,
+		);
+	};
+	8D1107310486CEB800E47090 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {973, 853}}";
+			sepNavSelRange = "{414, 0}";
+			sepNavVisRect = "{{0, 0}, {973, 853}}";
+		};
+	};
+}
