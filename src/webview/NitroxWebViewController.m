@@ -34,9 +34,13 @@
     return ret;
 }
 
+- (void) stop {
+    [server stop];
+}
+
 - (void)startHTTPServer {
     if (server) {
-        NSLog(@"server already started on port %d", [server port]);
+        NSLog(@"server already started on port %d", self.httpPort);
         return;
     }
 
@@ -79,11 +83,15 @@
                                              initWithStubClass:[[NitroxApiEvent alloc] init]
                                              webViewController:self]];
 
+    [rpcDelegate addPath:@"Application" delegate:[[NitroxRPCDispatcher alloc] 
+                                            initWithStubClass:[[NitroxApiApplication alloc] init]
+                                            webViewController:self]];
+
     NitroxApiPhoto *photo = [[NitroxApiPhoto alloc] init];
     [rpcDelegate addPath:@"Photo" delegate:[[NitroxRPCDispatcher alloc] 
                                             initWithStubClass:photo
                                             webViewController:self]];
-
+    
     [pathDelegate addPath:@"photoresults" delegate:
      [[NitroxHTTPServerFilesystemDelegate alloc] 
        initWithRoot:photo.saveDir
@@ -105,6 +113,7 @@
     // TODO: randomize 
     authToken = @"temptoken";
     
+    httpPort = 58214;
     if (httpPort > 0) {
         [server setPort:httpPort];
     }
@@ -231,7 +240,7 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request 
  navigationType:(UIWebViewNavigationType)navigationType 
 {
-    NSLog(@"wVsSLWR, req=%@, mainDocURL=%@", request, [request mainDocumentURL]);
+    NSLog(@"wVsSLWR, req=%@, mainDocURL=%@, navtype=%d", request, [request mainDocumentURL], navigationType);
 
     // handle special internal URLs here
     
@@ -248,6 +257,15 @@
     if ([[request.URL scheme] isEqualToString:@"nitroxlog"]) {
         [self handleJSLog:webView request:request navigationType:navigationType];
 
+        return NO;
+    }
+    
+    // don't allow direct clicks on links to load; remap them through our loadRequest
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [self performSelectorOnMainThread:@selector(loadRequest:)
+                                  withObject:[NSURLRequest requestWithURL:[NSURL URLWithString:[request.URL absoluteString]]]
+                               waitUntilDone:NO];
+        
         return NO;
     }
     
@@ -274,7 +292,7 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"wVDSL");
-    if (loadJSLib || true) {
+    if (loadJSLib && false) {
         NSLog(@"loading JSlib");
         
         NSString *jspath = [[NSBundle mainBundle] pathForResource:@"jquery" ofType:@"js" inDirectory:@"web/lib"];
@@ -283,19 +301,21 @@
         jspath = [[NSBundle mainBundle] pathForResource:@"nitrox" ofType:@"js" inDirectory:@"web/lib"];
         [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
     }
-    
-    NSString *nitroxInfo = [NSString stringWithFormat:
-                            @"_nitrox_info = {port: %d, enabled: true};\n"
-                             "Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true;",
-                            self.httpPort, self.httpPort];
-    
-    
-    [self insertJavascriptString:nitroxInfo];
+
+    NSLog(@"inserted configuration info");
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     NSLog(@"wVDFL");
-
+    
+    NSString *nitroxInfo = [NSString stringWithFormat:
+                            @"_nitrox_info = {port: %d, enabled: true};\n"
+                            "Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true;",
+                            self.httpPort, self.httpPort];
+    
+    
+    [self insertJavascriptString:nitroxInfo];
+    
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -306,7 +326,24 @@
 
 - (NSURL *)createBaseURL {
     return [NSURL URLWithString:
-            [NSString stringWithFormat:@"http://localhost:%d/", self.httpPort]];
+            [NSString stringWithFormat:@"http://localhost:%d/foo.html", [server port]]];
+}
+
+- (void)createNewWebView {
+    NSLog(@"replacing old webview: %@", self.view);
+    NitroxWebView *newWebView = [[NitroxWebView alloc] initWithFrame:self.view.frame];
+    [newWebView setDelegate:self];
+    UIView *superView = [self.view superview];
+
+    newWebView.hidden = NO;
+    newWebView.scalesPageToFit = NO;
+
+    [superView insertSubview:newWebView aboveSubview:self.view];
+    [self.view removeFromSuperview];
+    
+    self.view = newWebView;
+    [newWebView release];
+    NSLog(@"created new webview: %@", self.view);
 }
 
 - (void)loadRequest:(NSURLRequest *)request {
@@ -315,17 +352,21 @@
     /* 
      * this doesn't seem to affect JS same origin policy at all 
      */
-    // NSURL *baseURL = [self createBaseURL];
-    // [realRequest setMainDocumentURL:baseURL];
+    NSURL *baseURL = [self createBaseURL];
+    NSLog(@"in loadREquest, baseURL = %@", baseURL);
+    [realRequest setMainDocumentURL:baseURL];
 
-    [[self webView] loadRequest:realRequest];
+    //[[self webView] loadRequest:realRequest];
+    [self loadRequest:realRequest baseURL:baseURL];
 }
 
 - (void)loadRequest:(NSURLRequest *)request baseURL:(NSURL *)baseURL {
     NSURLResponse *response;
     NSError *error;
     
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSMutableURLRequest *noCacheRequest = [[request mutableCopy] autorelease];
+    [noCacheRequest setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    NSData *data = [NSURLConnection sendSynchronousRequest:noCacheRequest returningResponse:&response error:&error];
 
     if (!error && data) {
         [self loadData:data MIMEType:[response MIMEType] textEncodingName:[response textEncodingName] baseURL:baseURL];
@@ -338,12 +379,16 @@
 }
 
 - (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
+    [self createNewWebView];
+
     [[self webView] loadHTMLString:string baseURL:baseURL];
 }
 
 - (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType 
     textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL
 {
+    [self createNewWebView];
+
     [[self webView] loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
 

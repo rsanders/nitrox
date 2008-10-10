@@ -18,9 +18,12 @@
 
 // callable args
 
+- (id) openApplication:(NSDictionary *)args;
+
 - (id) openURL:(NSDictionary *)args;
 - (id) exit:(NSDictionary *)args;
 
-- (id) setApplicationBadgeNumber:(NSDictionary *)args;
+- (id) applicationIconBadgeNumber;
+- (id) setApplicationIconBadgeNumber:(NSDictionary *)args;
 
 @end

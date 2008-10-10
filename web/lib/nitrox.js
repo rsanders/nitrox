@@ -20,8 +20,8 @@ Nitrox.prototype = {
     };
 
 Nitrox.Runtime = {
-    enabled: false,
-    port: 0,
+    enabled: true,
+    port: 58214,
     token: 'none',
     debug: true,
 
@@ -84,10 +84,12 @@ if (! window.nadirect.log) {
 // general bridge functions
 
 Nitrox.Bridge = {
+    idcounter: 0,
+    
     'call': function(fun, args, async, ajaxOpts) {
-            var id = "id" + i++;
+            var id = "id" + this.idcounter++;
             if (!async) async = false;
-            window.nadirect.log('NBc: starting bridgecall for id ' + id);
+            // window.nadirect.log('NBc: starting bridgecall for id ' + id);
             var port = Nitrox.Runtime.port;
             // clone args
             if (! ajaxOpts) { ajaxOpts = {}; }
@@ -97,30 +99,30 @@ Nitrox.Bridge = {
             try {
                 var ajaxObject = {url: fullstring, data: args, async: async, type: 'get'};
                 ajaxObject = jQuery.extend(ajaxObject, ajaxOpts);
-                window.nadirect.log("NBc: ajax object: " + Nitrox.Lang.toJSON(ajaxObject));
+                //window.nadirect.log("NBc: ajax object: " + Nitrox.Lang.toJSON(ajaxObject));
                 req = jQuery.ajax(ajaxObject);
-                window.nadirect.log("NBc: ajax returned without exception");
+                //window.nadirect.log("NBc: ajax returned without exception");
                 if (req.readyState == 4) {
-                    window.nadirect.log("NBc: ajax status is " + req.status);                    
+                    //window.nadirect.log("NBc: ajax status is " + req.status);                    
                 }
             } catch (e) {
-                window.nadirect.log("NBc: caught error in Nitrox.Bridge.call: " + e);
+                //window.nadirect.log("NBc: caught error in Nitrox.Bridge.call: " + e);
                 req = {error: e, status:401, responseText: "Error: " + e};
             }
             var res = null;
             if (async) {
-                window.nadirect.log("NBc: returning from async " + fun + " , id=" + id);
+                //window.nadirect.log("NBc: returning from async " + fun + " , id=" + id);
                 return null;
             }
             if (! req) {
-                window.nadirect.log("NBc: No request object returned");
+                //window.nadirect.log("NBc: No request object returned");
                 req = {error: "unknown", status:500, responseText:"No req object returned"};
             }
             if (req && req.status == 200 && req.readyState == 4) {
                 res = req.responseText; 
-                window.nadirect.log('NBc: response text for ajax is: ' + res);
+                //window.nadirect.log('NBc: response text for ajax is: ' + res);
             } else {
-                window.nadirect.log('NBc: not ready: state = ' + (req ? req.readyState : "no req"));
+                //window.nadirect.log('NBc: not ready: state = ' + (req ? req.readyState : "no req"));
             }
             return res;
         },
@@ -253,7 +255,6 @@ Nitrox.Lang = {
     
     require: function(jsfile, async) {
         if (jQuery.inArray(jsfile, this.loaded) != -1) {
-            Nitrox.log("in require, file " + jsfile + " already loaded");
             return true;
         }
         
@@ -401,16 +402,22 @@ Nitrox.Application = {
         Nitrox.Bridge.call('Application/c/exit', {}, true);
     },
 
-    badgeNumber: function() {
-        return Nitrox.Bridge.call('Application/c/badgeNumber', {}, true);
+    iconBadgeNumber: function() {
+        return Nitrox.Bridge.call('Application/c/applicationIconBadgeNumber', {}, true);
     },
 
-    setBadgeNumber: function(number) {
-        Nitrox.Bridge.call('Application/c/setBadgeNumber', {number: number}, true);
+    setIconBadgeNumber: function(number) {
+        Nitrox.Bridge.call('Application/c/setApplicationIconBadgeNumber', {number: number}, true);
     },
     
     vibrate: function(async) {
         Nitrox.Bridge.call('Vibrate/c/vibrate', {}, async ? true : false);
+    },
+    
+    openApplication: function(url) {
+        Nitrox.log('in openApp, opening ' + url);
+        Nitrox.Bridge.call('Application/c/openApplication', {url: url}, true);
+        Nitrox.log('in openApp, DONE opening ' + url);
     },
     
     version: '0.1'

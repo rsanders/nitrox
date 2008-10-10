@@ -19,6 +19,18 @@
 
 #pragma mark Device specific methods
 
+- (id) openApplication:(NSDictionary *)args
+{
+    NSString *url = [args objectForKey:@"url"];
+    NSLog(@"url in openApplication implementation is %@", url);
+    // [[dispatcher webViewController] loadHTMLString:@"<html><body>hi2</body></html>" baseURL:[NSURL URLWithString:@"http://localhost/"]];
+    [[dispatcher webViewController] performSelectorOnMainThread:@selector(loadRequest:)
+                                                      withObject:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]
+                                                   waitUntilDone:NO];
+
+    
+    return Nil;
+}
 
 - (id) openURL:(NSDictionary *)args
 {
@@ -48,7 +60,7 @@
     return Nil;
 }
 
-- (id) setApplicationBadgeNumber:(NSDictionary *)args
+- (id) setApplicationIconBadgeNumber:(NSDictionary *)args
 {
     NSString *url = [args objectForKey:@"number"];
     if (! url) {
@@ -56,12 +68,13 @@
         return Nil;
     }
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:[url integerValue]];
+    return Nil;
 }
 
-- (id) applicationBadgeNumber
+- (id) applicationIconBadgeNumber
 {
 
-    return [NSNumber numberWithInteger:[[UIApplication sharedApplication] applicationBadgeNumber]];
+    return [NSNumber numberWithInteger:[[UIApplication sharedApplication] applicationIconBadgeNumber]];
 }
 
 #pragma mark Stub methods; should refactor out

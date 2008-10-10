@@ -83,6 +83,21 @@
                                               baseURL:Nil
                                                  name:@"LNitrox w/nil"]];
 
+    [cells addObject:
+        [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos.html"]
+                                 baseURL:Nil
+                                    name:@"Demos menu"]];
+
+    [cells addObject:
+     [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos/photo.html"]
+                              baseURL:Nil
+                                 name:@"Photo demo"]];
+    [cells addObject:
+     [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos/main.html"]
+                              baseURL:Nil
+                                 name:@"Main demo"]];
+    
+    
     WebViewInstance *remote = [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/nitrox.html"]
                                                        baseURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/nitrox.html"]
                                                           name:@"direct remote load"];

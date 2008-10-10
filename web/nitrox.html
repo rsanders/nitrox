@@ -2,7 +2,8 @@
 <head>
 <meta id="viewport" name="viewport" content="width=device-width; user-scalable=0;"/>
 <base href="http://robertsanders.name/dev/nitrox/" />
-
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/jquery.js"></script>
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/nitrox.js"></script>
 </head>
 <body>
 
@@ -250,10 +251,11 @@ jQuery(function() {
 <a href="javascript:testNotification();">Test notifications</a> <br/>
 <a href="javascript:toggleProxyAjax();">Toggle proxy ajax</a> <br/>
 <a href="javascript:testCrossDomainAjax();">Test Cross-Domain Ajax</a> <br/>
-<a href="javascript:testPhotoPicker();">Show Photo Picker</a> <br/>
+<a href="javascript:testPhotoPicker();">Show Photo Options</a> <br/>
 <a href="javascript:Nitrox.Photo.takePhoto();">Take Photo w/Camera</a> <br/>
-<a href="javascript:Nitrox.Photo.chooseFromLibrary();">Choos Pic from Library</a> <br/>
+<a href="javascript:Nitrox.Photo.chooseFromLibrary();">Choose Pic from Library</a> <br/>
 <a href="javascript:jQuery('#debuglog').html('');">Clear log</a> <br/>
+<a href="javascript:Nitrox.Application.openApplication('http://robertsanders.name/dev/nitrox/demos.html');">Load external demos app</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">
