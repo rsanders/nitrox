@@ -81,6 +81,7 @@
 		B1C8AF6D0E9EE112003FE061 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE950E9EE112003FE061 /* CJSONScanner.m */; };
 		B1C8AF6E0E9EE112003FE061 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE970E9EE112003FE061 /* CJSONSerializer.m */; };
 		B1C8B01C0E9EE2DF003FE061 /* web in Resources */ = {isa = PBXBuildFile; fileRef = B1C8B01B0E9EE2DF003FE061 /* web */; };
+		B1C8B25C0EA00B30003FE061 /* NitroxScriptDebugDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */; };
 		B1D35DA20E8E94A300A1C105 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA10E8E94A300A1C105 /* AddressBook.framework */; };
 		B1D35DA40E8E94A300A1C105 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA30E8E94A300A1C105 /* CFNetwork.framework */; };
 		B1D35DA80E8E94A300A1C105 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA70E8E94A300A1C105 /* CoreAudio.framework */; };
@@ -388,6 +389,8 @@
 		B1C8AE970E9EE112003FE061 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		B1C8AE980E9EE112003FE061 /* TouchJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TouchJSON.xcodeproj; sourceTree = "<group>"; };
 		B1C8B01B0E9EE2DF003FE061 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = web; path = ../../web; sourceTree = SOURCE_ROOT; };
+		B1C8B25A0EA00B30003FE061 /* NitroxScriptDebugDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxScriptDebugDelegate.h; sourceTree = "<group>"; };
+		B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxScriptDebugDelegate.m; sourceTree = "<group>"; };
 		B1D35DA10E8E94A300A1C105 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		B1D35DA30E8E94A300A1C105 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B1D35DA50E8E94A300A1C105 /* Camera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Camera.framework; path = System/Library/PrivateFrameworks/Camera.framework; sourceTree = SDKROOT; };
@@ -864,6 +867,8 @@
 				B1C8ACCF0E9EE0FE003FE061 /* NitroxWebView.xib */,
 				B1C8ACD00E9EE0FE003FE061 /* NitroxWebViewController.h */,
 				B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */,
+				B1C8B25A0EA00B30003FE061 /* NitroxScriptDebugDelegate.h */,
+				B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */,
 			);
 			path = webview;
 			sourceTree = "<group>";
@@ -1363,6 +1368,7 @@
 				B1C8AF6C0E9EE112003FE061 /* CJSONDeserializer.m in Sources */,
 				B1C8AF6D0E9EE112003FE061 /* CJSONScanner.m in Sources */,
 				B1C8AF6E0E9EE112003FE061 /* CJSONSerializer.m in Sources */,
+				B1C8B25C0EA00B30003FE061 /* NitroxScriptDebugDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
