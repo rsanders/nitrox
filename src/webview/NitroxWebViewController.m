@@ -220,13 +220,16 @@
     return Nil;
 }
 
-- (id)handleJSLog:(UIWebView *)webView request:(NSURLRequest *)request 
+- (BOOL)handleJSLog:(UIWebView *)webView request:(NSURLRequest *)request 
       navigationType:(UIWebViewNavigationType)navigationType 
 {
     NSString *msg = [[request.URL query]  stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"WEB LOG: %@", msg);
     
-    return Nil;
+    // doesn't do anything useful
+    // [(NSMutableURLRequest *)request setURL:[NSURL URLWithString:@"http://localhost:58214/foobar.html"]];
+    
+    return NO;
 }
 
 - (void)scheduleCallback:(NitroxRPCCallback *)callback
@@ -262,9 +265,7 @@
     }
     
     if ([[request.URL scheme] isEqualToString:@"nitroxlog"]) {
-        [self handleJSLog:webView request:request navigationType:navigationType];
-
-        return NO;
+        return [self handleJSLog:webView request:request navigationType:navigationType];
     }
 
     // mainDocumentURL is for the enclosing page, URL is the frame URL
