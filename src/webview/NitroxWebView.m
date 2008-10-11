@@ -33,6 +33,18 @@
     [super dealloc];
 }
 
+- (void) setScriptDebuggingEnabled:(BOOL)val 
+{
+    scriptDebuggingEnabled = val;
+    if (privateWebView) {
+        if (val) {
+            [privateWebView setScriptDebugDelegate:[[NitroxScriptDebugDelegate alloc] init]];
+        } else {
+            [privateWebView setScriptDebugDelegate:Nil];
+        }
+    }
+}
+
 #pragma mark Undocumented / Private methods
 
 // DOES NOT WORK
@@ -67,17 +79,13 @@
 //    id inspector = [[WebInspector alloc] initWithWebView:webView];
 //    [inspector attach];
 //    [inspector show];
-    
+
+    // enact any latent debugging settings
+    [self setScriptDebuggingEnabled:scriptDebuggingEnabled];
+
     /* here we'll add our object to the window object as an object named
      'nadirect'.  We can use this object in JavaScript by referencing the 'nadirect'
      property of the 'window' object.   */
-
-    if (scriptDebuggingEnabled) {
-//        NSLog(@"inspector is %@", [webView inspector]);
-//        [[webView inspector] showConsole:self];    
-        
-        [webView setScriptDebugDelegate:[[NitroxScriptDebugDelegate alloc] init]];
-    }
 
     NSLog(@"scriptObject is %@", windowScriptObject);
     [windowScriptObject setValue:[[NitroxApiDirectSystem alloc] init] forKey:@"nadirect"];

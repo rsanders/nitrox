@@ -235,6 +235,13 @@
     [self.webView stringByEvaluatingJavaScriptFromString:callback.script];
 }
 
+- (BOOL) handleIFRAMERequest:(NSURLRequest *)request
+{
+    NSLog(@"loading IFRAME from URL %@ into parent document %@",
+          [request URL], [request mainDocumentURL]);
+    return YES;
+}
+
 #pragma mark UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request 
@@ -259,6 +266,13 @@
 
         return NO;
     }
+
+    // mainDocumentURL is for the enclosing page, URL is the frame URL
+    if (navigationType == UIWebViewNavigationTypeOther
+        && ! [[request URL] isEqualTo:[request mainDocumentURL]])
+    {
+        return [self handleIFRAMERequest:request];
+    }
     
     // don't allow direct clicks on links to load; remap them through our loadRequest
     if (navigationType == UIWebViewNavigationTypeLinkClicked || !passNext) {
@@ -270,6 +284,7 @@
     }
     
     // if we're remapping, we'll want the remapped URL to pass through unmolested
+    // TODO: configurable remapping isn't done yet 
     if (passNext) {
         passNext = NO;
         return YES;
@@ -310,7 +325,7 @@
     
     NSString *nitroxInfo = [NSString stringWithFormat:
                             @"_nitrox_info = {port: %d, enabled: true};\n"
-                            "Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true;",
+                            "if (Nitrox && Nitrox.Runtime) { Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true; }",
                             self.httpPort, self.httpPort];
     
     
@@ -330,7 +345,10 @@
 }
 
 - (void)createNewWebView {
+    // only auto-enable debugging on simulator; it's WAY too slow on actual HW
+#if TARGET_IPHONE_SIMULATOR
     [[self webView] setScriptDebuggingEnabled:YES];
+#endif
     return;
 
     NSLog(@"replacing old webview: %@", self.view);
@@ -355,12 +373,12 @@
     /* 
      * this doesn't seem to affect JS same origin policy at all 
      */
-    NSURL *baseURL = [self createBaseURL];
-    NSLog(@"in loadREquest, baseURL = %@", baseURL);
-    [realRequest setMainDocumentURL:baseURL];
+//    NSURL *baseURL = [self createBaseURL];
+//    NSLog(@"in loadREquest, baseURL = %@", baseURL);
+//    [realRequest setMainDocumentURL:baseURL];
 
     //[[self webView] loadRequest:realRequest];
-    [self loadRequest:realRequest baseURL:baseURL];
+    [self loadRequest:realRequest baseURL:[realRequest URL]];
 }
 
 - (void)loadRequest:(NSURLRequest *)request baseURL:(NSURL *)baseURL {
@@ -396,8 +414,6 @@
     passNext = YES;
     [[self webView] loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
-
-
 
 #pragma mark Undocumented / Private methods
 
