@@ -63,10 +63,34 @@
 //- (void)webView:(id)webView runJavaScriptAlertPanelWithMessage:(id)message initiatedByFrame:(id)frame
 //{
 //    NSLog(@"got alert panel on webview %@: %@", webView, message);
+//    // this doesn't work either; the respondsToSelector check passes, but the app crashes
 //    if ([super respondsToSelector:@selector(webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:)]) {
 //        NSLog(@"NEVER MIND, not sending alert panel msg to super");
 //        // [super webView:webView runJavaScriptAlertPanelWithMessage:message initiatedByFrame:frame];
 //    }
+//}
+
+//- (BOOL) webView:(id)webView runJavaScriptConfirmPanelWithMessage:(id)message initiatedByFrame:(id)frame
+//{
+//    NSLog(@"got confirm panel with message: %@", message);
+//    // XXX: for some reason if we call super here, we get a crash.  but if we don't
+//    //     override this method, it executes!
+//    [super webView:webView runJavaScriptConfirmPanelWithmessage:message initiatedByFrame:frame];
+//    sleep(3);
+//    return YES;
+//}
+
+//- (NSString *)webView:(WebView *)sender runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt 
+//          defaultText:(NSString *)defaultText initiatedByFrame:(WebFrame *)frame;
+//{
+//    NSLog(@"got javascript text input panel with prompt %@", prompt);
+//    // XXX: for some reason if we call super here, we get a crash.  but if we don't
+//    //     override this method, it executes!
+//    NSString *res = [super webView:sender runJavaScriptTextInputPanelWithPrompt:prompt 
+//                       defaultText:defaultText
+//                  initiatedByFrame:frame];
+//
+//    return res;
 //}
 
 - (void)webView:(id)webView windowScriptObjectAvailable:(id)newWindowScriptObject {
@@ -75,10 +99,6 @@
     // save these goodies
     windowScriptObject = newWindowScriptObject;
     privateWebView = webView;
-    
-//    id inspector = [[WebInspector alloc] initWithWebView:webView];
-//    [inspector attach];
-//    [inspector show];
 
     // enact any latent debugging settings
     [self setScriptDebuggingEnabled:scriptDebuggingEnabled];
@@ -94,7 +114,8 @@
 // UNKNOWN
 - (void)webView:(id)webView unableToImplementPolicyWithError:(id)error frame:(id)frame
 {
-    NSLog(@"unable to implement policy with error: %@", error);
+    NSLog(@"webview=%@, webframe=%@ unable to implement policy with error: %@", 
+          webView, frame, error);
 }
 
 @end
