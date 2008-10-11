@@ -24,6 +24,7 @@ Nitrox.Runtime = {
     port: 58214,
     token: 'none',
     debug: true,
+    iframe: null,
 
     start: function() {
         // any startup functions here
@@ -36,6 +37,26 @@ Nitrox.Runtime = {
     rpcURL: function() {
         var url = this.baseURL() + "/rpc";
         return url;
+    },
+    
+    pageReady: function() {
+        var body = document.getElementsByTagName('body')[0];
+        var div = document.createElement('div');
+        div.style="display:none;";
+        if (body) {
+            this.iframe = document.createElement('iframe');
+            this.iframe.id = '__nitrox_rpc_iframe';
+            body.appendChild(div);
+            div.appendChild(this.iframe);
+            // this.iframe.src = '#';
+            this.iframe.name = '__nitrox_rpc_iframe';
+            this.iframe.style.border="0px";
+            this.iframe.style.width="0px";
+            this.iframe.style.height="0px";
+            this.iframe.style.position="absolute";
+            this.iframe.style.top="-500px";
+            this.iframe.style.left="-500px";
+        }
     },
 
     version: '0.1'
@@ -669,6 +690,7 @@ Nitrox.File.prototype = {
 // final bootstrap
 
 jQuery(function() {
-       Nitrox.log("Nitrox loaded");
+    Nitrox.Runtime.pageReady();
+    Nitrox.log("Nitrox loaded");
 });
 

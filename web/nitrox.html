@@ -13,7 +13,7 @@ Internal Test Page
 <div id="outbox">
 </div>
 
-
+<iframe id="rpciframe" style="display:none;" src="http://127.0.0.1:58214/empty.html"></iframe>
 
 <script type="text/javascript">
 // <![CDATA[
@@ -29,6 +29,7 @@ document.write("HREF = " + window.location.href + "<br/>");
 function debuglog(msg) {
   var oldHTML = jQuery('#debuglog').get(0).innerHTML;
   jQuery('#debuglog').html( encode(msg) + "<br/>--<br/>" + oldHTML );
+  document.getElementById('rpciframe').src = 'nitroxlog://somehost/path?' + escape(msg);
 }
 
 _nibware_result = "UNDEF";
@@ -46,7 +47,9 @@ function bridgecall(fun, argstring) {
   var id = "id" + i++;
   var fullstring = "nibwarejsbridge://localhost/invoke/" + id + "/" + fun + "/args/" + argstring + "/" + i;
   // setTimeout(function() { window.location.href=fullstring; }, 1);
-  window.location.href=fullstring;
+  //window.location.href=fullstring;
+
+  document.getElementById('rpciframe').src = fullstring;
 }
 
 function benchmarkHook() {
@@ -67,6 +70,12 @@ function benchmarkHook() {
       }
     };
   bridgecall("0", "0");
+}
+
+function testHook() {
+  Nitrox.log("beginning hook test");
+  bridgecall("hookfun", "args");
+  Nitrox.log("ending hook test");
 }
 
 function testLocation() {
@@ -230,6 +239,18 @@ function testPhotoPicker() {
   Nitrox.log("photo res is " + res);
 }
 
+function testConfirm() {
+  Nitrox.log("Starting confirm at " + new Date());
+  var answer = confirm('hokay');
+  Nitrox.log("Ending confirm at " + new Date() + ", answer=" + answer);  
+}
+
+function testPrompt() {
+  Nitrox.log("Starting prompt at " + new Date());
+  var answer = prompt('Hokay?', '');
+  Nitrox.log("Ending prompt at " + new Date() + ", answer=" + answer);  
+}
+
 jQuery(function() {
         Nitrox.log("document loaded");
  });
@@ -238,7 +259,8 @@ jQuery(function() {
 // ]]>
 </script>
 
-<a href="javascript:Nitrox.Bridge.call('Device/c/model', {}, false);">Click me to test direct call</a> <br/>
+<a href="javascript:Nitrox.Bridge.call('Device/c/model', {}, false);">Click me to test Ajax</a> <br/>
+<a href="javascript:testHook();">Click me to test hook</a> <br/>
 <a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
 <a href="javascript:window.location.href=window.location.href;">Refresh</a> <br/>
 <a href="javascript:startPhysicalMonitoring();">Start accel</a> <br/>
@@ -268,6 +290,8 @@ jQuery(function() {
 <a href="javascript:jQuery('#debuglog').html('');">Clear log</a> <br/>
 <a href="javascript:Nitrox.System.enableScriptDebugging();">Enable script debugging</a> <br/>
 <a href="javascript:Nitrox.System.disableScriptDebugging();">Disable script debugging</a> <br/>
+<a href="javascript:testConfirm();">Test confirm()</a> <br/>
+<a href="javascript:testPrompt();">Test prompt()</a> <br/>
 
 <a href="javascript:Nitrox.Application.openApplication('http://robertsanders.name/dev/nitrox/demos.html');">Load external demos app</a> <br/>
 <a href="javascript:window.location.href='http://robertsanders.name/dev/nitrox/demos.html';">Set HREF to load demos menu</a> <br/>
@@ -280,6 +304,10 @@ jQuery(function() {
 
 <img src="icon.gif" alt="FAIL REL" />
 <img src="http://robertsanders.name/dev/nitrox/icon.gif" alt="FAIL ABS" />
+
+<script>
+debuglog("started up!");
+</script>
 
 </body>
 </html>
