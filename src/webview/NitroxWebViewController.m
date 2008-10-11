@@ -269,7 +269,7 @@
 
     // mainDocumentURL is for the enclosing page, URL is the frame URL
     if (navigationType == UIWebViewNavigationTypeOther
-        && ! [[request URL] isEqualTo:[request mainDocumentURL]])
+        && ! [[request URL] isEqual:[request mainDocumentURL]])
     {
         return [self handleIFRAMERequest:request];
     }
@@ -346,8 +346,12 @@
 
 - (void)createNewWebView {
     // only auto-enable debugging on simulator; it's WAY too slow on actual HW
+    // also leave disabled for performance testing
+
 #if TARGET_IPHONE_SIMULATOR
+#  ifndef PERFORMANCE_TEST
     [[self webView] setScriptDebuggingEnabled:YES];
+#  endif
 #endif
     return;
 
