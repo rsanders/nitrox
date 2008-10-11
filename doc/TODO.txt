@@ -1,0 +1,6 @@
+* nitrox://  URL handling 
+* pass src file into  nitrox
+* function to change app/page
+* view management?  (size, opacity, etc)
+* app.exit that just exits the current window/app versus whole app - switch?
+

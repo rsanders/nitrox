@@ -1,0 +1,77 @@
+This framework uses some hacks to get what it wants from the wily UIWebView.
+
+=== RPC ===
+
+Most of the iPhone Javascript enhancers out there use the UIWebViewDelegate methods
+to intercept specially crafted URL requests, e.g., you'd do this from javascript:
+
+   window.location.href = 'magic://some/function?arg1=foo&arg2=bar';
+   
+The wrapper would catch that in UIWebViewDelegate's webView:shouldStartLoadWithRequest:navigationType:
+method, execute some/function, schedule a Javascript callback, and return NO, which tells
+UIWebView not to attempt to load that URL.
+
+The asynchronous callback is performed by invoking UIWebView's stringByEvaluatingJavascript 
+method. That is also how Nitrox does it.
+
+However, the current Nitrox method for invoking Objective-C methods from Javascript is to
+use an XMLHTTPRequest Ajax connection to an embedded HTTP server.  This has several benefits:
+
+  * Allows both synchronous and asynchronous operation 
+  * Easily allows multiple outstanding requests, and tracking of each
+  * Better for transferring large data sets
+  * Well-defined, reliable semantics
+  * Relies upon documented and iPhone-kosher networking APIs
+  * Could theoretically be used for distributed RPC between iPhones
+    
+Drawbacks:
+
+  * Has a relatively large code footprint due to embedded HTTP server
+  * Higher latency and CPU overhead
+  * Only allows data types which can be expressed as JSON or other string-serialized
+    form, and cannot manage reference counting between JS and Objective-C.
+    (This is also true of the UIWebViewDelegate hook method)
+
+
+
+=== Cross-Domain Ajax ===
+
+So using Ajax is fine, you say, but what about cross-domain / same-origin issues?
+
+Apparently UIWebView and its underlying classes do not enforce same-origin policy
+restrictions on XMLHTTPRequest if you feed them web pages via NSData rather than
+via NSURLRequest objects.  In other words, if you download it yourself, the origin
+is treated as a wildcard.
+
+The values of baseURL, mainDocumentURL, etc. don't seem to matter if you do that.
+
+However, if you do pass in a NSURLRequest
+
+=== Javascript Errors and Debugging Info ===
+
+To get access to the underlying Javascript engine, you have to extend UIWebView
+and override this method:
+
+  - (void)webView:(WebView *)webView 
+      windowScriptObjectAvailable:(WebScriptObject *)newWindowScriptObject
+      
+Note that you're receiving a standard WebKit WebView object, *not* an iPhone UIWebView.
+This is what's under the hood.  Save both of those objects for later use!
+
+
+References:
+
+http://developer.apple.com/documentation/Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html#//apple_ref/occ/instm/WebView/windowScriptObject
+
+http://developer.apple.com/documentation/Cocoa/Reference/WebKit/Classes/WebScriptObject_Class/Reference/Reference.html#//apple_ref/doc/c_ref/WebScriptObject
+
+WebKit Programming:
+  http://developer.apple.com/documentation/Cocoa/Conceptual/DisplayWebContent/index.html
+
+Interfacing with Javascript from Objective-C:
+
+  http://developer.apple.com/documentation/Cocoa/Conceptual/DisplayWebContent/Tasks/JavaScriptFromObjC.html#//apple_ref/doc/uid/30001214
+
+
+=== Overriding UIWebView Load Requests ===
+
