@@ -447,6 +447,14 @@ Nitrox.System = {
         Nitrox.Bridge.call('Vibrate/c/vibrate', {}, async ? true : false);
     },
     
+    enableScriptDebugging: function() {
+        Nitrox.Bridge.call('System/c/enableScriptDebugging', {}, false);
+    },
+
+    disableScriptDebugging: function() {
+        Nitrox.Bridge.call('System/c/disableScriptDebugging', {}, true);
+    },
+    
     version: '0.1'
 };
 

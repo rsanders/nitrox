@@ -2,12 +2,13 @@
 <head>
 <meta id="viewport" name="viewport" content="width=device-width; user-scalable=0;"/>
 <base href="http://robertsanders.name/dev/nitrox/" />
+<title>Nitrox Test Page</title>
 <script type="text/javascript" src="http://127.0.0.1:58214/lib/jquery.js"></script>
 <script type="text/javascript" src="http://127.0.0.1:58214/lib/nitrox.js"></script>
 </head>
 <body>
 
-This is the about page v2!
+Internal Test Page
 
 <div id="outbox">
 </div>
@@ -123,14 +124,21 @@ function benchmarkDirect() {
 }
 
 function startPhysicalMonitoring() {
-  Nitrox.Location.start(true);
+  Nitrox.log("NOTE: accelerometer monitoring disables orientation updates");
   Nitrox.Accelerometer.start(true);
   Nitrox.Accelerometer.updateFrequency(1/10.0);
 }
 
 function stopPhysicalMonitoring() {
-  Nitrox.Location.stop(true);
   Nitrox.Accelerometer.stop(true);
+}
+
+function startLocation() {
+  Nitrox.Location.start(true);
+}
+
+function stopLocation() {
+  Nitrox.Location.stop(true);
 }
 
 function startOrientation() {
@@ -140,7 +148,6 @@ function startOrientation() {
 function stopOrientation() {
   Nitrox.Device.stop(true);
 }
-
 
 function forceError() {
   Nitrox.log("forcing reference error");
@@ -231,11 +238,13 @@ jQuery(function() {
 // ]]>
 </script>
 
-<a href="javascript:Nitrox.Bridge.call('somefun', {var1: '/js/clicks'}, false);">Click me to test via Ajax</a> <br/>
+<a href="javascript:Nitrox.Bridge.call('Device/c/model', {}, false);">Click me to test direct call</a> <br/>
 <a href="javascript:jQuery('#dtitle').text('New Debug Title');">Set title</a> <br/>
 <a href="javascript:window.location.href=window.location.href;">Refresh</a> <br/>
-<a href="javascript:startPhysicalMonitoring();">Start accel/location</a> <br/>
-<a href="javascript:stopPhysicalMonitoring();">Stop accel/location</a> <br/>
+<a href="javascript:startPhysicalMonitoring();">Start accel</a> <br/>
+<a href="javascript:stopPhysicalMonitoring();">Stop accel</a> <br/>
+<a href="javascript:startLocation();">Start location</a> <br/>
+<a href="javascript:stopLocation();">Stop location</a> <br/>
 <a href="javascript:testLocation();">Get Location</a> <br/>
 <a href="javascript:testVibrate();">Vibrate</a> <br/>
 <a href="javascript:testDevice();">Get Device Model</a> <br/>
@@ -248,15 +257,18 @@ jQuery(function() {
 <a href="javascript:testDirect();">Test Direct</a> <br/>
 <a href="javascript:startOrientation();">Start Orientation</a> <br/>
 <a href="javascript:stopOrientation();">Stop Orientation</a> <br/>
-<a href="javascript:testExit();">Test Exiting</a> <br/>
+<a href="javascript:testExit();">Exit App</a> <br/>
 <a href="javascript:testOpenURL();">Open Reddit in Safari</a> <br/>
 <a href="javascript:testNotification();">Test notifications</a> <br/>
 <a href="javascript:toggleProxyAjax();">Toggle proxy ajax</a> <br/>
 <a href="javascript:testCrossDomainAjax();">Test Cross-Domain Ajax</a> <br/>
-<a href="javascript:testPhotoPicker();">Show Photo Options</a> <br/>
+<a href="javascript:testPhotoPicker();">Show Photo Menu</a> <br/>
 <a href="javascript:Nitrox.Photo.takePhoto();">Take Photo w/Camera</a> <br/>
 <a href="javascript:Nitrox.Photo.chooseFromLibrary();">Choose Pic from Library</a> <br/>
 <a href="javascript:jQuery('#debuglog').html('');">Clear log</a> <br/>
+<a href="javascript:Nitrox.System.enableScriptDebugging();">Enable script debugging</a> <br/>
+<a href="javascript:Nitrox.System.disableScriptDebugging();">Disable script debugging</a> <br/>
+
 <a href="javascript:Nitrox.Application.openApplication('http://robertsanders.name/dev/nitrox/demos.html');">Load external demos app</a> <br/>
 <a href="javascript:window.location.href='http://robertsanders.name/dev/nitrox/demos.html';">Set HREF to load demos menu</a> <br/>
 <a href="javascript:window.location.href='http://localhost:58214/nitrox.html';">Set HREF to load self via server</a> <br/>

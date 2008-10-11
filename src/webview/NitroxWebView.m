@@ -7,7 +7,7 @@
 //
 
 #import "NitroxWebView.h"
-
+#import "NitroxScriptDebugDelegate.h"
 #import "NitroxApiDirectSystem.h"
 
 @implementation NitroxWebView

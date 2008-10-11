@@ -44,6 +44,24 @@
 //    NSLog(@"NSDD: called didParseSource; sid=%d, url=%@", sid, url);
 //}
 
+- (NSString *) webFrameInfo:(WebFrame *)frame
+{
+    NSString *res =
+        [NSString stringWithFormat:@"[webFrame=%@, name=%@]",
+         frame, [frame name]];
+
+    return res;
+}
+
+- (NSString *) webViewInfo:(WebView *)view
+{
+    NSString *res =
+        [NSString stringWithFormat:@"[webView=%@, URL=%@, title=%@]",
+         view, [view mainFrameURL], [view mainFrameTitle]];
+    
+    return res;
+}
+
 // some source was parsed, establishing a "source ID" (>= 0) for future reference
 - (void)webView:(WebView *)webView       didParseSource:(NSString *)source
  baseLineNumber:(unsigned)lineNumber
@@ -51,7 +69,13 @@
        sourceId:(int)sid
     forWebFrame:(WebFrame *)webFrame
 {
-    NSLog(@"NSDD: called didParseSource: sid=%d, url=%@", sid, url);
+    NSLog(@"NSDD: didParseSource: view=%@, sid=%d, line=%d, frame=%@, source=%@", 
+          [self webViewInfo:webView], 
+          sid, 
+          lineNumber, 
+          [self webFrameInfo:webFrame],
+          url ? (id)url : (id)source
+          );
 }
 
 // some source failed to parse
@@ -61,7 +85,13 @@
       withError:(NSError *)error
     forWebFrame:(WebFrame *)webFrame
 {
-    NSLog(@"NSDD: called failedToParseSource: url=%@ line=%d error=%@\nsource=%@", url, lineNumber, error, source);
+    NSLog(@"NSDD: called failedToParseSource: window=%@ url=%@ line=%d frame=%@ error=%@\nsource=%@", 
+          [self webViewInfo:webView], 
+          url, 
+          lineNumber, 
+          [self webFrameInfo:webFrame], 
+          error, 
+          source);
 
 }
 
@@ -98,8 +128,15 @@
            line:(int)lineno
     forWebFrame:(WebFrame *)webFrame
 {
-    NSLog(@"NSDD: exception: sid=%d line=%d function=%@, caller=%@, exception=%@", 
-          sid, lineno, [frame functionName], [frame caller], [frame exception]);
+    NSLog(@"NSDD: exception: webView=%@, webFrame=%@, sid=%d line=%d function=%@, caller=%@, exception=%@, scopeChain=%@", 
+          [self webViewInfo:webView],
+          [self webFrameInfo:webFrame],
+          sid, 
+          lineno, 
+          [frame functionName], 
+          [frame caller], 
+          [frame exception], 
+          [frame scopeChain]);
 }
 
 @end

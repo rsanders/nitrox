@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "NitroxScriptDebugDelegate.h"
 
 @class WebView;
 @class WebInspector;

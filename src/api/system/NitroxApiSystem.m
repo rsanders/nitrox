@@ -8,6 +8,9 @@
 
 #import "NitroxApiSystem.h"
 
+#import "NitroxRPCDispatcher.h"
+#import "NitroxWebViewController.h"
+#import "NitroxWebView.h"
 
 @implementation NitroxApiSystem
 
@@ -56,12 +59,25 @@
         return Nil;
     }
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:[url integerValue]];
+    return Nil;
 }
 
 - (id) applicationBadgeNumber
 {
 
-    return [NSNumber numberWithInteger:[[UIApplication sharedApplication] applicationBadgeNumber]];
+    return [NSNumber numberWithInteger:[[UIApplication sharedApplication] applicationIconBadgeNumber]];
+}
+
+- (id) enableScriptDebugging
+{
+    [[[[self dispatcher] webViewController] webView] setScriptDebuggingEnabled:YES];
+    return Nil;
+}
+
+- (id) disableScriptDebugging
+{
+    [[[[self dispatcher] webViewController] webView] setScriptDebuggingEnabled:NO];
+    return Nil;
 }
 
 #pragma mark Stub methods; should refactor out

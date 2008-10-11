@@ -23,4 +23,7 @@
 
 - (id) setApplicationBadgeNumber:(NSDictionary *)args;
 
+- (id) enableScriptDebugging;
+- (id) disableScriptDebugging;
+
 @end
