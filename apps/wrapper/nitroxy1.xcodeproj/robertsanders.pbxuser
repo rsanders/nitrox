@@ -1858,6 +1858,17 @@
 			B1C8B4310EA19581003FE061 /* PBXTextBookmark */ = B1C8B4310EA19581003FE061 /* PBXTextBookmark */;
 			B1C8B4320EA19581003FE061 /* PBXTextBookmark */ = B1C8B4320EA19581003FE061 /* PBXTextBookmark */;
 			B1C8B4330EA19581003FE061 /* PBXTextBookmark */ = B1C8B4330EA19581003FE061 /* PBXTextBookmark */;
+			B1C8B4340EA26465003FE061 /* PBXTextBookmark */ = B1C8B4340EA26465003FE061 /* PBXTextBookmark */;
+			B1C8B4350EA26465003FE061 /* PBXTextBookmark */ = B1C8B4350EA26465003FE061 /* PBXTextBookmark */;
+			B1C8B43C0EA26664003FE061 /* PBXTextBookmark */ = B1C8B43C0EA26664003FE061 /* PBXTextBookmark */;
+			B1C8B43F0EA26743003FE061 /* PBXTextBookmark */ = B1C8B43F0EA26743003FE061 /* PBXTextBookmark */;
+			B1C8B4400EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4400EA267A1003FE061 /* PBXTextBookmark */;
+			B1C8B4410EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4410EA267A1003FE061 /* PBXTextBookmark */;
+			B1C8B4420EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4420EA267A1003FE061 /* PBXTextBookmark */;
+			B1C8B4430EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4430EA267A1003FE061 /* PBXTextBookmark */;
+			B1C8B4440EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4440EA267A1003FE061 /* PBXTextBookmark */;
+			B1C8B4450EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4450EA267A1003FE061 /* PBXTextBookmark */;
+			B1C8B4460EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4460EA267A1003FE061 /* PBXTextBookmark */;
 			B1D35DF40E8E986B00A1C105 = B1D35DF40E8E986B00A1C105 /* PBXTextBookmark */;
 			B1DD3D380E8EC25500952CD6 = B1DD3D380E8EC25500952CD6 /* PBXTextBookmark */;
 			B1DD3D3D0E8EC25500952CD6 = B1DD3D3D0E8EC25500952CD6 /* PBXTextBookmark */;
@@ -14164,7 +14175,7 @@
 	};
 	B1C8ACBD0E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {804, 1729}}";
+			sepNavIntBoundsRect = "{{0, 0}, {804, 1748}}";
 			sepNavSelRange = "{1591, 0}";
 			sepNavVisRange = "{843, 298}";
 		};
@@ -14199,9 +14210,9 @@
 	};
 	B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1061, 2712}}";
-			sepNavSelRange = "{423, 0}";
-			sepNavVisRange = "{0, 622}";
+			sepNavIntBoundsRect = "{{0, 0}, {1061, 3270}}";
+			sepNavSelRange = "{2251, 0}";
+			sepNavVisRange = "{1528, 1447}";
 		};
 	};
 	B1C8ACD00E9EE0FE003FE061 /* NitroxWebViewController.h */ = {
@@ -14213,9 +14224,9 @@
 	};
 	B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1161, 8246}}";
-			sepNavSelRange = "{11491, 0}";
-			sepNavVisRange = "{11027, 617}";
+			sepNavIntBoundsRect = "{{0, 0}, {1137, 8569}}";
+			sepNavSelRange = "{11954, 27}";
+			sepNavVisRange = "{11416, 1027}";
 		};
 	};
 	B1C8ADB40E9EE112003FE061 /* config */ = {
@@ -18013,7 +18024,7 @@
 	};
 	B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {930, 2822}}";
+			sepNavIntBoundsRect = "{{0, 0}, {930, 2784}}";
 			sepNavSelRange = "{4050, 0}";
 			sepNavVisRange = "{1963, 738}";
 		};
@@ -18113,7 +18124,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 468;
@@ -18133,7 +18144,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1529;
 		vrLoc = 468;
@@ -18163,7 +18174,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1529;
 		vrLoc = 468;
@@ -18223,7 +18234,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 56";
 		rLen = 0;
-		rLoc = 2797;
+		rLoc = 3911;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 514;
@@ -18253,7 +18264,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 46";
 		rLen = 0;
-		rLoc = 1172;
+		rLoc = 2286;
 		rType = 0;
 		vrLen = 1485;
 		vrLoc = 513;
@@ -18273,7 +18284,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 63";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1490;
 		vrLoc = 513;
@@ -18293,7 +18304,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 56";
 		rLen = 0;
-		rLoc = 2797;
+		rLoc = 3911;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 514;
@@ -18393,7 +18404,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 3061;
+		rLoc = 4175;
 		rType = 0;
 		vrLen = 1574;
 		vrLoc = 653;
@@ -18413,7 +18424,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 3061;
+		rLoc = 4175;
 		rType = 0;
 		vrLen = 802;
 		vrLoc = 136;
@@ -18443,7 +18454,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 3061;
+		rLoc = 4175;
 		rType = 0;
 		vrLen = 802;
 		vrLoc = 136;
@@ -18533,7 +18544,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1581;
 		vrLoc = 705;
@@ -18553,7 +18564,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 705;
@@ -18573,7 +18584,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1458;
 		vrLoc = 705;
@@ -18593,7 +18604,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1463;
 		vrLoc = 705;
@@ -18668,7 +18679,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1463;
 		vrLoc = 705;
@@ -18688,7 +18699,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1462;
 		vrLoc = 705;
@@ -18698,7 +18709,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1462;
 		vrLoc = 705;
@@ -18738,7 +18749,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1462;
 		vrLoc = 705;
@@ -18768,7 +18779,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 74";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 902;
@@ -18808,7 +18819,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 74";
 		rLen = 0;
-		rLoc = 3368;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1635;
 		vrLoc = 794;
@@ -18858,7 +18869,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 60";
 		rLen = 717;
-		rLoc = 2798;
+		rLoc = 3912;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 935;
@@ -18898,7 +18909,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 60";
 		rLen = 717;
-		rLoc = 2798;
+		rLoc = 3912;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 935;
@@ -19175,7 +19186,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 60";
 		rLen = 717;
-		rLoc = 2798;
+		rLoc = 3912;
 		rType = 0;
 		vrLen = 1346;
 		vrLoc = 1120;
@@ -19195,7 +19206,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 84";
 		rLen = 0;
-		rLoc = 3165;
+		rLoc = 4279;
 		rType = 0;
 		vrLen = 1429;
 		vrLoc = 1135;
@@ -19205,7 +19216,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 84";
 		rLen = 0;
-		rLoc = 3165;
+		rLoc = 4279;
 		rType = 0;
 		vrLen = 1493;
 		vrLoc = 1135;
@@ -19225,7 +19236,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 84";
 		rLen = 0;
-		rLoc = 3165;
+		rLoc = 4279;
 		rType = 0;
 		vrLen = 1493;
 		vrLoc = 1135;
@@ -19755,7 +19766,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 84;
-		rLoc = 2798;
+		rLoc = 3912;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 1015;
@@ -19825,7 +19836,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 84;
-		rLoc = 2798;
+		rLoc = 3912;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 1015;
@@ -19895,7 +19906,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 84;
-		rLoc = 2798;
+		rLoc = 3912;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 1015;
@@ -19915,7 +19926,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 98";
 		rLen = 0;
-		rLoc = 3724;
+		rLoc = 4838;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 684;
@@ -19925,7 +19936,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 814;
@@ -19935,7 +19946,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 76";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 814;
@@ -19945,7 +19956,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 110";
 		rLen = 32;
-		rLoc = 3556;
+		rLoc = 4670;
 		rType = 0;
 		vrLen = 1294;
 		vrLoc = 2052;
@@ -19955,7 +19966,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 110";
 		rLen = 32;
-		rLoc = 3556;
+		rLoc = 4670;
 		rType = 0;
 		vrLen = 1294;
 		vrLoc = 2052;
@@ -19965,7 +19976,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 81";
 		rLen = 0;
-		rLoc = 2194;
+		rLoc = 3308;
 		rType = 0;
 		vrLen = 1495;
 		vrLoc = 1094;
@@ -19985,7 +19996,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 81";
 		rLen = 0;
-		rLoc = 2194;
+		rLoc = 3308;
 		rType = 0;
 		vrLen = 1310;
 		vrLoc = 1094;
@@ -19995,7 +20006,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 81";
 		rLen = 0;
-		rLoc = 2194;
+		rLoc = 3308;
 		rType = 0;
 		vrLen = 1310;
 		vrLoc = 1094;
@@ -20015,7 +20026,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 1426;
 		vrLoc = 1172;
@@ -20025,7 +20036,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 80";
 		rLen = 0;
-		rLoc = 2194;
+		rLoc = 3308;
 		rType = 0;
 		vrLen = 1534;
 		vrLoc = 1172;
@@ -20035,7 +20046,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 1571;
 		vrLoc = 1172;
@@ -20065,7 +20076,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 1451;
 		vrLoc = 1170;
@@ -20075,7 +20086,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 1451;
 		vrLoc = 1170;
@@ -20105,7 +20116,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 1170;
@@ -20115,7 +20126,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 1170;
@@ -20125,7 +20136,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 66";
 		rLen = 0;
-		rLoc = 1450;
+		rLoc = 2564;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 887;
@@ -20135,7 +20146,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 66";
 		rLen = 0;
-		rLoc = 1450;
+		rLoc = 2564;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 887;
@@ -20155,7 +20166,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 66";
 		rLen = 0;
-		rLoc = 1450;
+		rLoc = 2564;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 887;
@@ -20295,7 +20306,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 66";
 		rLen = 0;
-		rLoc = 1450;
+		rLoc = 2564;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 881;
@@ -20319,6 +20330,116 @@
 		rType = 0;
 		vrLen = 622;
 		vrLoc = 0;
+	};
+	B1C8B4340EA26465003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 21";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 624;
+		vrLoc = 0;
+	};
+	B1C8B4350EA26465003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 67";
+		rLen = 0;
+		rLoc = 1264;
+		rType = 0;
+		vrLen = 914;
+		vrLoc = 703;
+	};
+	B1C8B43C0EA26664003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 65";
+		rLen = 0;
+		rLoc = 1412;
+		rType = 0;
+		vrLen = 1312;
+		vrLoc = 1039;
+	};
+	B1C8B43F0EA26743003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 89";
+		rLen = 0;
+		rLoc = 2217;
+		rType = 0;
+		vrLen = 1548;
+		vrLoc = 1637;
+	};
+	B1C8B4400EA267A1003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
+		name = "NitroxWebViewController.m: 352";
+		rLen = 27;
+		rLoc = 11954;
+		rType = 0;
+		vrLen = 1027;
+		vrLoc = 11416;
+	};
+	B1C8B4410EA267A1003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCD0E9EE0FE003FE061 /* NitroxWebView.h */;
+		name = "NitroxWebView.h: 11";
+		rLen = 0;
+		rLoc = 162;
+		rType = 0;
+		vrLen = 402;
+		vrLoc = 0;
+	};
+	B1C8B4420EA267A1003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 62";
+		rLen = 0;
+		rLoc = 1213;
+		rType = 0;
+		vrLen = 1024;
+		vrLoc = 887;
+	};
+	B1C8B4430EA267A1003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 62";
+		rLen = 0;
+		rLoc = 1213;
+		rType = 0;
+		vrLen = 1024;
+		vrLoc = 887;
+	};
+	B1C8B4440EA267A1003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
+		name = "NitroxWebViewController.m: 352";
+		rLen = 27;
+		rLoc = 11954;
+		rType = 0;
+		vrLen = 1027;
+		vrLoc = 11416;
+	};
+	B1C8B4450EA267A1003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCD0E9EE0FE003FE061 /* NitroxWebView.h */;
+		name = "NitroxWebView.h: 11";
+		rLen = 0;
+		rLoc = 162;
+		rType = 0;
+		vrLen = 402;
+		vrLoc = 0;
+	};
+	B1C8B4460EA267A1003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 94";
+		rLen = 0;
+		rLoc = 2251;
+		rType = 0;
+		vrLen = 1447;
+		vrLoc = 1528;
 	};
 	B1D35D840E8E92ED00A1C105 /* GTMObjC2Runtime.h */ = {
 		isa = PBXFileReference;

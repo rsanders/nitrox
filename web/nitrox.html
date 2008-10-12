@@ -239,15 +239,21 @@ function testPhotoPicker() {
   Nitrox.log("photo res is " + res);
 }
 
+function testAlert() {
+  Nitrox.log("Starting alert at " + new Date());
+  alert('This is an alert');
+  Nitrox.log("Ending alert at " + new Date());  
+}
+
 function testConfirm() {
   Nitrox.log("Starting confirm at " + new Date());
-  var answer = confirm('hokay');
+  var answer = confirm('This is a confirmation');
   Nitrox.log("Ending confirm at " + new Date() + ", answer=" + answer);  
 }
 
 function testPrompt() {
   Nitrox.log("Starting prompt at " + new Date());
-  var answer = prompt('Hokay?', '');
+  var answer = prompt('This is a prompt?', '');
   Nitrox.log("Ending prompt at " + new Date() + ", answer=" + answer);  
 }
 
@@ -290,6 +296,7 @@ jQuery(function() {
 <a href="javascript:jQuery('#debuglog').html('');">Clear log</a> <br/>
 <a href="javascript:Nitrox.System.enableScriptDebugging();">Enable script debugging</a> <br/>
 <a href="javascript:Nitrox.System.disableScriptDebugging();">Disable script debugging</a> <br/>
+<a href="javascript:testAlert();">Test alert()</a> <br/>
 <a href="javascript:testConfirm();">Test confirm()</a> <br/>
 <a href="javascript:testPrompt();">Test prompt()</a> <br/>
 <a href="javascript:Nitrox.Application.openApplication('http://robertsanders.name/dev/nitrox/demos.html');">Load external demos app</a> <br/>

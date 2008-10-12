@@ -47,17 +47,52 @@
 
 #pragma mark Undocumented / Private methods
 
-// DOES NOT WORK
-- (void)webView:(id)webView addMessageToConsole:(id)dictionary
+// never seems to get called
+- (void)webView:(id)webView addMessageToConsole:(NSDictionary *)dictionary
 {
     NSLog(@"adding message to console: %@", dictionary);
 }
 
-// DOES NOT WORK
+// never seems to get called
 - (void) _reportError:(id)error
 {
     NSLog(@"reporting error: %@", error);
 }
+
+#if TARGET_IPHONE_SIMULATOR
+#  ifndef IPHONE_SDK_KOSHER
+
+// Javascript alerts
+- (void) webView: (WebView*)webView runJavaScriptAlertPanelWithMessage: (NSString*)message 
+    initiatedByFrame: (WebFrame*)frame
+{
+    NSLog(@"Javascript Alert: %@", message);
+    
+    UIAlertView *alertSheet = [[UIAlertView alloc] init];
+    [alertSheet setTitle: @"Javascript Alert"];
+    [alertSheet addButtonWithTitle: @"OK"];
+    [alertSheet setMessage:message];
+    [alertSheet setDelegate: self];
+    [alertSheet show];
+}
+
+- (BOOL) webView: (WebView*)webView runJavaScriptConfirmPanelWithMessage: (NSString*)message 
+    initiatedByFrame: (WebFrame*)frame
+{
+    NSLog(@"Javascript Alert: %@", message);
+    
+    UIAlertView *alertSheet = [[UIAlertView alloc] init];
+    [alertSheet setTitle: @"Javascript Alert"];
+    [alertSheet addButtonWithTitle: @"OK"];
+    [alertSheet addButtonWithTitle: @"Cancel"];    
+    [alertSheet setMessage:message];
+    [alertSheet setDelegate: self];
+    [alertSheet show];
+    return YES;
+}
+
+#  endif  // IPHONE_SDK_KOSHER
+#endif // TARGET_IPHONE_SIMULATOR
 
 // WORKS
 //- (void)webView:(id)webView runJavaScriptAlertPanelWithMessage:(id)message initiatedByFrame:(id)frame
