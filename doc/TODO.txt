@@ -1,11 +1,21 @@
 * nitrox://  URL handling to open/download new app - security issues?
+  - should support extensible URL types for different kinds of apps, and passing
+    these URL requests into the app.  e.g.
+      1) boot up the appropriate Nitrox instance
+      2) load the app
+      3) wait for the app to initialize any URL handlers
+      4) pass in the URL request at that time (or keep it in queue, and let the app request it)
+
 * pass src file URL into nitrox when loading a page (if window.location.href is wrong,
   which it may no longer be)
 * file upload API
 * view management?  (size, opacity, etc)
 * app.exit that just exits the current window/app versus whole app - switch?
-* back button support
-* restore multi-app support
+* history and back button support (native goBack/goForward don't work with current loading system)
+* restore multi-app support - e.g., having multiple open NitroxWebViews, each with its own
+  data and context.
+  Will probably need a single HTTP server on a known port for <script> tags and HTML links,
+  and a dynamic one (or a hierarchy of sub-delegates, e.g. http://mainserver/app/<APPID>/rpc/...)
 * position:fixed emulation using native UIKit widgets?
 
 DONE:
