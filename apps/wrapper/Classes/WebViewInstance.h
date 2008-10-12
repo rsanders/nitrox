@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class NitroxWebViewController;
 
 @interface WebViewInstance : NSObject {
     NSURL*     url;
@@ -15,14 +16,15 @@
     NSString*  name;
     BOOL       noBase;
     
-    UIViewController*   controller;
+    NitroxWebViewController*   controller;
 }
 
 @property (readonly)   NSString*          name;
-@property (readonly)   UIViewController*  controller;
+@property (readonly)   NitroxWebViewController*  controller;
 @property (assign)     BOOL               noBase;
 
 + (WebViewInstance*) instanceWithURL:(NSURL*)url baseURL:(NSURL*)url name:(NSString *)name;
 
+- (void) goHome;
 
 @end

@@ -62,6 +62,9 @@
 #if TARGET_IPHONE_SIMULATOR
 #  ifndef IPHONE_SDK_KOSHER
 
+// TODO: the following two methods should be synchronous, and not return until
+//   the user has interacted with the UI.
+
 // Javascript alerts
 - (void) webView: (WebView*)webView runJavaScriptAlertPanelWithMessage: (NSString*)message 
     initiatedByFrame: (WebFrame*)frame
@@ -94,7 +97,8 @@
 #  endif  // IPHONE_SDK_KOSHER
 #endif // TARGET_IPHONE_SIMULATOR
 
-// WORKS
+// // GETS called, but the call to [super ...] fails. Which is weird, because it shows up in the
+// // UIKit dylib
 //- (void)webView:(id)webView runJavaScriptAlertPanelWithMessage:(id)message initiatedByFrame:(id)frame
 //{
 //    NSLog(@"got alert panel on webview %@: %@", webView, message);
@@ -129,7 +133,7 @@
 //}
 
 - (void)webView:(id)webView windowScriptObjectAvailable:(id)newWindowScriptObject {
-    NSLog(@"%@ received readiness %@", self, NSStringFromSelector(_cmd));
+    NSLog(@"%@ received window ScriptObject %@", self, NSStringFromSelector(_cmd));
 
     // save these goodies
     windowScriptObject = newWindowScriptObject;

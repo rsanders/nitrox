@@ -10,6 +10,8 @@
 
 #import "NitroxWebViewController.h"
 
+#import "NitroxWebViewController.h"
+
 @implementation WebViewInstance
 
 @synthesize name, noBase;
@@ -31,32 +33,38 @@
     return oldURL;
 }
 
-- (UIViewController *) controller {
+- (void) goHome {
+    if (controller) {
+        if (!baseURL) {
+            baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:%d/%@", 
+                                            [controller httpPort], 
+                                            [NitroxHTTPUtils stripLeadingSlash:[url path]]]];
+        }
+        
+        [controller setTitle:name];
+        
+        if (! [url isFileURL]) {
+            url = [self rewriteURL:url];
+        }
+        
+        
+        if (baseURL && !noBase) {
+            [controller loadRequest:[NSMutableURLRequest requestWithURL:url] baseURL:baseURL];
+        } else {
+            [controller loadRequest:[NSMutableURLRequest requestWithURL:url]];
+        }
+    }
+}
+
+- (NitroxWebViewController *) controller {
     @synchronized(self) {
         if (!controller) {
             NitroxWebViewController *wvc = [[NitroxWebViewController alloc] 
                                             initWithNibName:@"NitroxWebView" bundle:[NSBundle mainBundle]];
             
-            if (!baseURL) {
-                baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:%d/%@", 
-                                                [wvc httpPort], 
-                                                [NitroxHTTPUtils stripLeadingSlash:[url path]]]];
-            }
-            
-            [wvc setTitle:name];
-            
-            if (! [url isFileURL]) {
-                url = [self rewriteURL:url];
-            }
-            
-
-            if (baseURL && !noBase) {
-                [wvc loadRequest:[NSMutableURLRequest requestWithURL:url] baseURL:baseURL];
-            } else {
-                [wvc loadRequest:[NSMutableURLRequest requestWithURL:url]];
-            }
-            
             controller = wvc;
+            
+            [self goHome];
         }
     }
     return controller;
