@@ -17,6 +17,10 @@
 
 }
 
+/*
+ * See http://trac.webkit.org/wiki/Drosera
+ *
+ */ 
 
 // some source was parsed, establishing a "source ID" (>= 0) for future reference
 // this delegate method is deprecated, please switch to the new version below

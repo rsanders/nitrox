@@ -8,6 +8,8 @@
 
 #import "NitroxApiApplication.h"
 
+#import "NitroxWebViewController.h"
+#import "NitroxWebView.h"
 
 @implementation NitroxApiApplication
 
@@ -76,6 +78,21 @@
 
     return [NSNumber numberWithInteger:[[UIApplication sharedApplication] applicationIconBadgeNumber]];
 }
+
+- (id) back
+{
+    NSLog(@"going back");
+    [[[dispatcher webViewController] webView] goBack];
+    return Nil;
+}
+
+- (id) forward
+{
+    NSLog(@"going forward");
+    [[[dispatcher webViewController] webView] goForward];
+    return Nil;
+}
+
 
 #pragma mark Stub methods; should refactor out
 

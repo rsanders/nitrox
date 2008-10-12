@@ -441,6 +441,14 @@ Nitrox.Application = {
         Nitrox.log('in openApp, DONE opening ' + url);
     },
     
+    back: function() {
+        Nitrox.Bridge.call('Application/c/back', {}, false);
+    },
+
+    forward: function() {
+        Nitrox.Bridge.call('Application/c/forward', {}, false);
+    }, 
+    
     version: '0.1'
 };
 

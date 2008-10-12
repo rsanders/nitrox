@@ -1,6 +1,13 @@
-* nitrox://  URL handling 
-* pass src file into  nitrox
-* function to change app/page
+* nitrox://  URL handling to open/download new app - security issues?
+* pass src file URL into nitrox when loading a page (if window.location.href is wrong,
+  which it may no longer be)
+* file upload API
 * view management?  (size, opacity, etc)
 * app.exit that just exits the current window/app versus whole app - switch?
+* back button support
+* restore multi-app support
+* position:fixed emulation using native UIKit widgets?
 
+DONE:
+
+* function to change app/page
