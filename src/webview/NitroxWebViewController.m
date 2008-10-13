@@ -308,6 +308,15 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"wVDSL");
+
+    NSString *nitroxInfo = [NSString stringWithFormat:
+                            @"_nitrox_info = {port: %d, baseurl: 'http://127.0.0.1:%d/rpc', enabled: true, methods:['ajax']};\n"
+                            "if (Nitrox && Nitrox.Runtime) { Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true; }",
+                            self.httpPort, self.httpPort, self.httpPort];
+    
+    
+    [self insertJavascriptString:nitroxInfo];
+    
     if (loadJSLib && false) {
         NSLog(@"loading JSlib");
         
@@ -324,13 +333,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     NSLog(@"wVDFL");
     
-    NSString *nitroxInfo = [NSString stringWithFormat:
-                            @"_nitrox_info = {port: %d, enabled: true};\n"
-                            "if (Nitrox && Nitrox.Runtime) { Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true; }",
-                            self.httpPort, self.httpPort];
-    
-    
-    [self insertJavascriptString:nitroxInfo];
+
     passNext = NO;
 }
 
