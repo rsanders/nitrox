@@ -65,6 +65,10 @@
     UIViewController* vc = [wvi controller];
     if (vc) {
         [[self navigationController] pushViewController:vc animated:YES];
+        UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind 
+                                                      target:wvi action:@selector(goHome)];
+        UINavigationItem* item = [[self navigationController] navigationItem];
+        [item setRightBarButtonItem:button animated:YES];
     } else {
         NSLog(@"couldn't get view controller");
     }
@@ -81,22 +85,28 @@
 
     [cells addObject:[WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://localhost/nitrox.html"]
                                               baseURL:Nil
-                                                 name:@"LNitrox w/nil"]];
+                                                 name:@"Local Main demo"]];
 
     [cells addObject:
         [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos.html"]
                                  baseURL:Nil
-                                    name:@"Demos menu"]];
+                                    name:@"Remote Demos menu"]];
 
     [cells addObject:
      [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos/photo.html"]
                               baseURL:Nil
-                                 name:@"Photo demo"]];
+                                 name:@"Remote Photo demo"]];
     [cells addObject:
      [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos/main.html"]
                               baseURL:Nil
-                                 name:@"Main demo"]];
+                                 name:@"Remote Main demo"]];
     
+    [cells addObject:
+     [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://nitrox.devlab.vitrue.com/index.html"]
+                              baseURL:Nil
+                                 name:@"Devlab Index"]];    
+    
+/*    
     
     WebViewInstance *remote = [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/nitrox.html"]
                                                        baseURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/nitrox.html"]
@@ -154,7 +164,8 @@
     [cells addObject:[WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://localhost:61607/index.html"]
                                               baseURL:[NSURL URLWithString:@"http://localhost:61607/"]
                                                 name:@"Local index w/local base"]];
-    
+    */
+
     [self setTitle:@"Menu"];
 }
 
