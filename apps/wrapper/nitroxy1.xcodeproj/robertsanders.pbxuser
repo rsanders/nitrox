@@ -37,9 +37,9 @@
 	};
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1316, 4655}}";
-			sepNavSelRange = "{3317, 0}";
-			sepNavVisRange = "{543, 1562}";
+			sepNavIntBoundsRect = "{{0, 0}, {1061, 4864}}";
+			sepNavSelRange = "{2338, 0}";
+			sepNavVisRange = "{1522, 1453}";
 			sepNavWindowFrame = "{{163, 40}, {1195, 786}}";
 		};
 	};
@@ -55,7 +55,7 @@
 			B1C8A3170E99B4EF003FE061 /* NitroxWebViewController.m:234 */,
 			B1C8A3220E99B55C003FE061 /* NitroxWebViewController.m:293 */,
 			B1C8A3240E99B565003FE061 /* NitroxWebViewController.m:318 */,
-			B1C8A32B0E99B5A4003FE061 /* WebViewInstance.m:37 */,
+			B1C8A32B0E99B5A4003FE061 /* WebViewInstance.m:62 */,
 			B1C8A3580E99BEC0003FE061 /* NitroxWebView.m:38 */,
 			B1C8A36C0E99C0E1003FE061 /* NitroxWebView.m:48 */,
 			B1C8A37C0E99C1EA003FE061 /* NitroxWebView.m:44 */,
@@ -67,7 +67,7 @@
 			B1C8A5EE0E9A86B9003FE061 /* NitroxRPCDispatcher.m:110 */,
 			B1C8A6710E9A975A003FE061 /* NitroxApiAccelerometer.m:97 */,
 			B1C8A67E0E9A984D003FE061 /* NitroxStubClass.m:62 */,
-			B1C8A6BE0E9AF7EC003FE061 /* WebViewInstance.m:40 */,
+			B1C8A6BE0E9AF7EC003FE061 /* WebViewInstance.m:67 */,
 			B1C8A6E00E9AFF8D003FE061 /* NitroxApiAccelerometer.m:80 */,
 			B1C8A7A70E9B2F6C003FE061 /* NitroxApiEvent.m:51 */,
 			B1C8A7C50E9B2FD9003FE061 /* NitroxApiEvent.m:84 */,
@@ -87,10 +87,11 @@
 			B1C8B0FF0E9FB291003FE061 /* NitroxImagePicker.m:111 */,
 			B1C8B11F0E9FB843003FE061 /* NitroxWebViewController.m:253 */,
 			B1C8B1370E9FBA22003FE061 /* NitroxApiApplication.m:26 */,
-			B1C8B1750E9FBE01003FE061 /* NitroxWebViewController.m:395 */,
-			B1C8B1CD0E9FD6EF003FE061 /* NitroxWebViewController.m:386 */,
-			B1C8B1F00E9FDC61003FE061 /* NitroxWebViewController.m:381 */,
+			B1C8B1750E9FBE01003FE061 /* NitroxWebViewController.m:398 */,
+			B1C8B1CD0E9FD6EF003FE061 /* NitroxWebViewController.m:389 */,
+			B1C8B1F00E9FDC61003FE061 /* NitroxWebViewController.m:384 */,
 			B1C8B3360EA0EE17003FE061 /* NitroxWebViewController.m:272 */,
+			B1C8B4750EA27190003FE061 /* RootViewController.m:67 */,
 		);
 		codeSenseManager = B14E69A50E8D94B9000BB59F /* Code sense */;
 		executables = (
@@ -1869,6 +1870,43 @@
 			B1C8B4440EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4440EA267A1003FE061 /* PBXTextBookmark */;
 			B1C8B4450EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4450EA267A1003FE061 /* PBXTextBookmark */;
 			B1C8B4460EA267A1003FE061 /* PBXTextBookmark */ = B1C8B4460EA267A1003FE061 /* PBXTextBookmark */;
+			B1C8B4480EA268D4003FE061 /* PBXTextBookmark */ = B1C8B4480EA268D4003FE061 /* PBXTextBookmark */;
+			B1C8B44A0EA26BF5003FE061 /* PBXTextBookmark */ = B1C8B44A0EA26BF5003FE061 /* PBXTextBookmark */;
+			B1C8B44B0EA26BF5003FE061 /* PBXTextBookmark */ = B1C8B44B0EA26BF5003FE061 /* PBXTextBookmark */;
+			B1C8B44C0EA26BF5003FE061 /* PBXTextBookmark */ = B1C8B44C0EA26BF5003FE061 /* PBXTextBookmark */;
+			B1C8B44D0EA26BF5003FE061 /* PBXTextBookmark */ = B1C8B44D0EA26BF5003FE061 /* PBXTextBookmark */;
+			B1C8B4520EA26E3F003FE061 /* PBXTextBookmark */ = B1C8B4520EA26E3F003FE061 /* PBXTextBookmark */;
+			B1C8B4530EA26E3F003FE061 /* PBXTextBookmark */ = B1C8B4530EA26E3F003FE061 /* PBXTextBookmark */;
+			B1C8B4540EA26E3F003FE061 /* PBXTextBookmark */ = B1C8B4540EA26E3F003FE061 /* PBXTextBookmark */;
+			B1C8B4550EA26E3F003FE061 /* PBXTextBookmark */ = B1C8B4550EA26E3F003FE061 /* PBXTextBookmark */;
+			B1C8B45B0EA27062003FE061 /* PBXTextBookmark */ = B1C8B45B0EA27062003FE061 /* PBXTextBookmark */;
+			B1C8B45C0EA27062003FE061 /* PBXTextBookmark */ = B1C8B45C0EA27062003FE061 /* PBXTextBookmark */;
+			B1C8B45D0EA27062003FE061 /* PBXTextBookmark */ = B1C8B45D0EA27062003FE061 /* PBXTextBookmark */;
+			B1C8B45E0EA27062003FE061 /* PBXTextBookmark */ = B1C8B45E0EA27062003FE061 /* PBXTextBookmark */;
+			B1C8B45F0EA27062003FE061 /* PBXTextBookmark */ = B1C8B45F0EA27062003FE061 /* PBXTextBookmark */;
+			B1C8B4600EA27062003FE061 /* PBXTextBookmark */ = B1C8B4600EA27062003FE061 /* PBXTextBookmark */;
+			B1C8B4610EA27062003FE061 /* PBXTextBookmark */ = B1C8B4610EA27062003FE061 /* PBXTextBookmark */;
+			B1C8B4620EA2707D003FE061 /* PBXTextBookmark */ = B1C8B4620EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B4630EA2707D003FE061 /* PBXTextBookmark */ = B1C8B4630EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B4640EA2707D003FE061 /* PBXTextBookmark */ = B1C8B4640EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B4650EA2707D003FE061 /* PBXTextBookmark */ = B1C8B4650EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B4660EA2707D003FE061 /* PBXTextBookmark */ = B1C8B4660EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B4670EA2707D003FE061 /* PBXTextBookmark */ = B1C8B4670EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B4680EA2707D003FE061 /* PBXTextBookmark */ = B1C8B4680EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B4690EA2707D003FE061 /* PBXTextBookmark */ = B1C8B4690EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B46A0EA2707D003FE061 /* PBXTextBookmark */ = B1C8B46A0EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B46B0EA2707D003FE061 /* PBXTextBookmark */ = B1C8B46B0EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B46C0EA2707D003FE061 /* PBXTextBookmark */ = B1C8B46C0EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B46D0EA2707D003FE061 /* PBXTextBookmark */ = B1C8B46D0EA2707D003FE061 /* PBXTextBookmark */;
+			B1C8B46F0EA27185003FE061 /* PBXTextBookmark */ = B1C8B46F0EA27185003FE061 /* PBXTextBookmark */;
+			B1C8B4700EA27185003FE061 /* PBXTextBookmark */ = B1C8B4700EA27185003FE061 /* PBXTextBookmark */;
+			B1C8B4710EA27185003FE061 /* PBXTextBookmark */ = B1C8B4710EA27185003FE061 /* PBXTextBookmark */;
+			B1C8B4720EA27185003FE061 /* PBXTextBookmark */ = B1C8B4720EA27185003FE061 /* PBXTextBookmark */;
+			B1C8B4730EA27185003FE061 /* PBXTextBookmark */ = B1C8B4730EA27185003FE061 /* PBXTextBookmark */;
+			B1C8B4770EA27196003FE061 /* PBXTextBookmark */ = B1C8B4770EA27196003FE061 /* PBXTextBookmark */;
+			B1C8B4790EA4BA29003FE061 /* PBXTextBookmark */ = B1C8B4790EA4BA29003FE061 /* PBXTextBookmark */;
+			B1C8B47A0EA4BA2A003FE061 /* PBXTextBookmark */ = B1C8B47A0EA4BA2A003FE061 /* PBXTextBookmark */;
+			B1C8B47B0EA4BA2F003FE061 /* PBXTextBookmark */ = B1C8B47B0EA4BA2F003FE061 /* PBXTextBookmark */;
 			B1D35DF40E8E986B00A1C105 = B1D35DF40E8E986B00A1C105 /* PBXTextBookmark */;
 			B1DD3D380E8EC25500952CD6 = B1DD3D380E8EC25500952CD6 /* PBXTextBookmark */;
 			B1DD3D3D0E8EC25500952CD6 = B1DD3D3D0E8EC25500952CD6 /* PBXTextBookmark */;
@@ -2052,7 +2090,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -3093,7 +3131,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 85";
 		rLen = 0;
-		rLoc = 5938;
+		rLoc = 6549;
 		rType = 0;
 		vrLen = 1905;
 		vrLoc = 1905;
@@ -3699,7 +3737,7 @@
 		ignoreCount = 0;
 		lineNumber = 234;
 		location = nitroxy1;
-		modificationTime = 245440384.791145;
+		modificationTime = 245526938.024423;
 		state = 2;
 	};
 	B1C8A3220E99B55C003FE061 /* NitroxWebViewController.m:293 */ = {
@@ -3716,7 +3754,7 @@
 		ignoreCount = 0;
 		lineNumber = 293;
 		location = nitroxy1;
-		modificationTime = 245440384.791191;
+		modificationTime = 245526938.024464;
 		state = 2;
 	};
 	B1C8A3240E99B565003FE061 /* NitroxWebViewController.m:318 */ = {
@@ -3733,10 +3771,10 @@
 		ignoreCount = 0;
 		lineNumber = 318;
 		location = nitroxy1;
-		modificationTime = 245440384.79121;
+		modificationTime = 245526938.024482;
 		state = 2;
 	};
-	B1C8A32B0E99B5A4003FE061 /* WebViewInstance.m:37 */ = {
+	B1C8A32B0E99B5A4003FE061 /* WebViewInstance.m:62 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3748,9 +3786,9 @@
 		functionName = "-controller";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 37;
+		lineNumber = 62;
 		location = nitroxy1;
-		modificationTime = 245440384.791233;
+		modificationTime = 245526938.024499;
 		state = 2;
 	};
 	B1C8A32E0E99B5A9003FE061 /* PBXTextBookmark */ = {
@@ -3768,7 +3806,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 29";
 		rLen = 0;
-		rLoc = 748;
+		rLoc = 785;
 		rType = 0;
 		vrLen = 1203;
 		vrLoc = 454;
@@ -3778,7 +3816,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 29";
 		rLen = 0;
-		rLoc = 748;
+		rLoc = 785;
 		rType = 0;
 		vrLen = 1203;
 		vrLoc = 454;
@@ -3797,7 +3835,7 @@
 		ignoreCount = 0;
 		lineNumber = 38;
 		location = nitroxy1;
-		modificationTime = 245440384.791247;
+		modificationTime = 245526938.024617;
 		state = 1;
 	};
 	B1C8A35C0E99BEC4003FE061 /* PBXTextBookmark */ = {
@@ -3844,7 +3882,7 @@
 		ignoreCount = 0;
 		lineNumber = 48;
 		location = nitroxy1;
-		modificationTime = 245440384.791264;
+		modificationTime = 245526938.024635;
 		state = 2;
 	};
 	B1C8A36F0E99C0E9003FE061 /* PBXTextBookmark */ = {
@@ -3881,7 +3919,7 @@
 		ignoreCount = 0;
 		lineNumber = 44;
 		location = nitroxy1;
-		modificationTime = 245440384.791287;
+		modificationTime = 245526938.024653;
 		state = 1;
 	};
 	B1C8A3870E99C40A003FE061 /* PBXTextBookmark */ = {
@@ -4098,7 +4136,7 @@
 		ignoreCount = 0;
 		lineNumber = 79;
 		location = nitroxy1;
-		modificationTime = 245440384.791305;
+		modificationTime = 245526938.024666;
 		state = 1;
 	};
 	B1C8A3E50E99D41C003FE061 /* PBXTextBookmark */ = {
@@ -4125,7 +4163,7 @@
 		ignoreCount = 0;
 		lineNumber = 41;
 		location = nitroxy1;
-		modificationTime = 245440384.791317;
+		modificationTime = 245526938.024676;
 		state = 1;
 	};
 	B1C8A3F60E99D48B003FE061 /* PBXTextBookmark */ = {
@@ -4152,7 +4190,7 @@
 		ignoreCount = 0;
 		lineNumber = 29;
 		location = nitroxy1;
-		modificationTime = 245440384.791335;
+		modificationTime = 245526938.024686;
 		state = 2;
 	};
 	B1C8A4000E99D4FE003FE061 /* PBXTextBookmark */ = {
@@ -4189,7 +4227,7 @@
 		ignoreCount = 0;
 		lineNumber = 41;
 		location = nitroxy1;
-		modificationTime = 245440384.791354;
+		modificationTime = 245526938.0247;
 		state = 1;
 	};
 	B1C8A4160E99D677003FE061 /* PBXTextBookmark */ = {
@@ -5613,7 +5651,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 85";
 		rLen = 0;
-		rLoc = 5938;
+		rLoc = 6549;
 		rType = 0;
 		vrLen = 1383;
 		vrLoc = 2099;
@@ -5623,7 +5661,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 29";
 		rLen = 0;
-		rLoc = 748;
+		rLoc = 785;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 540;
@@ -5663,7 +5701,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 85";
 		rLen = 0;
-		rLoc = 5938;
+		rLoc = 6549;
 		rType = 0;
 		vrLen = 1383;
 		vrLoc = 2099;
@@ -5673,7 +5711,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 29";
 		rLen = 0;
-		rLoc = 748;
+		rLoc = 785;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 540;
@@ -5852,7 +5890,7 @@
 		ignoreCount = 0;
 		lineNumber = 241;
 		location = nitroxy1;
-		modificationTime = 245440384.791376;
+		modificationTime = 245526938.024717;
 		state = 2;
 	};
 	B1C8A5BD0E9A7A06003FE061 /* PBXTextBookmark */ = {
@@ -6269,7 +6307,7 @@
 		ignoreCount = 0;
 		lineNumber = 110;
 		location = nitroxy1;
-		modificationTime = 245440384.791431;
+		modificationTime = 245526938.024734;
 		state = 2;
 	};
 	B1C8A5FA0E9A8891003FE061 /* PBXTextBookmark */ = {
@@ -7146,7 +7184,7 @@
 		ignoreCount = 0;
 		lineNumber = 97;
 		location = nitroxy1;
-		modificationTime = 245440384.791461;
+		modificationTime = 245526938.02475;
 		state = 2;
 	};
 	B1C8A6720E9A975C003FE061 /* PBXTextBookmark */ = {
@@ -7243,7 +7281,7 @@
 		ignoreCount = 0;
 		lineNumber = 62;
 		location = nitroxy1;
-		modificationTime = 245440384.79148;
+		modificationTime = 245526938.024767;
 		state = 2;
 	};
 	B1C8A6810E9A9886003FE061 /* PBXTextBookmark */ = {
@@ -7614,7 +7652,7 @@
 		vrLen = 400;
 		vrLoc = 0;
 	};
-	B1C8A6BE0E9AF7EC003FE061 /* WebViewInstance.m:40 */ = {
+	B1C8A6BE0E9AF7EC003FE061 /* WebViewInstance.m:67 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -7626,9 +7664,9 @@
 		functionName = "-controller";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 40;
+		lineNumber = 67;
 		location = nitroxy1;
-		modificationTime = 245440384.791495;
+		modificationTime = 245526938.024783;
 		state = 2;
 	};
 	B1C8A6C10E9AF7FF003FE061 /* PBXTextBookmark */ = {
@@ -7656,7 +7694,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 85";
 		rLen = 0;
-		rLoc = 5938;
+		rLoc = 6549;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 208;
@@ -7686,7 +7724,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 85";
 		rLen = 0;
-		rLoc = 5938;
+		rLoc = 6549;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 208;
@@ -7696,7 +7734,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 42";
 		rLen = 0;
-		rLoc = 1385;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1240;
 		vrLoc = 454;
@@ -7726,7 +7764,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 42";
 		rLen = 0;
-		rLoc = 1385;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1240;
 		vrLoc = 454;
@@ -7746,7 +7784,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 85";
 		rLen = 0;
-		rLoc = 5938;
+		rLoc = 6549;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 208;
@@ -7756,7 +7794,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 42";
 		rLen = 0;
-		rLoc = 1385;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1240;
 		vrLoc = 454;
@@ -7776,7 +7814,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 96";
 		rLen = 0;
-		rLoc = 5925;
+		rLoc = 6536;
 		rType = 0;
 		vrLen = 1683;
 		vrLoc = 1878;
@@ -7806,7 +7844,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 96";
 		rLen = 0;
-		rLoc = 5925;
+		rLoc = 6536;
 		rType = 0;
 		vrLen = 1683;
 		vrLoc = 1878;
@@ -7836,7 +7874,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 96";
 		rLen = 0;
-		rLoc = 5925;
+		rLoc = 6536;
 		rType = 0;
 		vrLen = 1683;
 		vrLoc = 1878;
@@ -7875,7 +7913,7 @@
 		ignoreCount = 0;
 		lineNumber = 80;
 		location = nitroxy1;
-		modificationTime = 245440384.791513;
+		modificationTime = 245526938.024826;
 		state = 2;
 	};
 	B1C8A6E70E9B012D003FE061 /* PBXTextBookmark */ = {
@@ -7883,7 +7921,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 112";
 		rLen = 0;
-		rLoc = 7098;
+		rLoc = 7709;
 		rType = 0;
 		vrLen = 2251;
 		vrLoc = 2308;
@@ -7913,7 +7951,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 112";
 		rLen = 0;
-		rLoc = 7098;
+		rLoc = 7709;
 		rType = 0;
 		vrLen = 2251;
 		vrLoc = 2308;
@@ -8330,7 +8368,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 42";
 		rLen = 0;
-		rLoc = 1385;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1631;
 		vrLoc = 170;
@@ -8350,7 +8388,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 44";
 		rLen = 0;
-		rLoc = 1385;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1673;
 		vrLoc = 170;
@@ -8380,7 +8418,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 44";
 		rLen = 0;
-		rLoc = 1385;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1673;
 		vrLoc = 170;
@@ -8410,7 +8448,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 44";
 		rLen = 0;
-		rLoc = 1385;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1673;
 		vrLoc = 170;
@@ -8420,7 +8458,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 44";
 		rLen = 0;
-		rLoc = 1385;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1673;
 		vrLoc = 170;
@@ -8665,7 +8703,7 @@
 		ignoreCount = 0;
 		lineNumber = 51;
 		location = nitroxy1;
-		modificationTime = 245440384.791526;
+		modificationTime = 245526938.024844;
 		state = 2;
 	};
 	B1C8A7A80E9B2F74003FE061 /* PBXTextBookmark */ = {
@@ -8922,7 +8960,7 @@
 		ignoreCount = 0;
 		lineNumber = 84;
 		location = nitroxy1;
-		modificationTime = 245440384.791552;
+		modificationTime = 245526938.024861;
 		state = 2;
 	};
 	B1C8A7C60E9B2FEC003FE061 /* PBXTextBookmark */ = {
@@ -9703,7 +9741,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 112";
 		rLen = 0;
-		rLoc = 7098;
+		rLoc = 7709;
 		rType = 0;
 		vrLen = 2250;
 		vrLoc = 2308;
@@ -9733,7 +9771,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 87";
 		rLen = 0;
-		rLoc = 3465;
+		rLoc = 4076;
 		rType = 0;
 		vrLen = 2367;
 		vrLoc = 2308;
@@ -9763,7 +9801,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 88";
 		rLen = 0;
-		rLoc = 3685;
+		rLoc = 4296;
 		rType = 0;
 		vrLen = 2560;
 		vrLoc = 2308;
@@ -9803,7 +9841,7 @@
 		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
 		name = "WebViewInstance.h: 24";
 		rLen = 0;
-		rLoc = 491;
+		rLoc = 537;
 		rType = 0;
 		vrLen = 591;
 		vrLoc = 0;
@@ -9813,7 +9851,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1278;
 		vrLoc = 546;
@@ -9823,7 +9861,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 88";
 		rLen = 0;
-		rLoc = 3685;
+		rLoc = 4296;
 		rType = 0;
 		vrLen = 2150;
 		vrLoc = 2954;
@@ -9833,7 +9871,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 88";
 		rLen = 0;
-		rLoc = 3685;
+		rLoc = 4296;
 		rType = 0;
 		vrLen = 2211;
 		vrLoc = 2954;
@@ -9843,7 +9881,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 44";
 		rLen = 0;
-		rLoc = 1385;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1262;
 		vrLoc = 581;
@@ -9863,7 +9901,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 50";
 		rLen = 0;
-		rLoc = 1602;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1273;
 		vrLoc = 581;
@@ -9873,7 +9911,7 @@
 		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
 		name = "WebViewInstance.h: 16";
 		rLen = 0;
-		rLoc = 294;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 541;
 		vrLoc = 0;
@@ -9883,7 +9921,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 50";
 		rLen = 0;
-		rLoc = 1602;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 0;
@@ -9893,7 +9931,7 @@
 		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
 		name = "WebViewInstance.h: 24";
 		rLen = 0;
-		rLoc = 491;
+		rLoc = 537;
 		rType = 0;
 		vrLen = 591;
 		vrLoc = 0;
@@ -9903,7 +9941,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1278;
 		vrLoc = 546;
@@ -9913,7 +9951,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 90";
 		rLen = 0;
-		rLoc = 3746;
+		rLoc = 4357;
 		rType = 0;
 		vrLen = 1985;
 		vrLoc = 2099;
@@ -9943,7 +9981,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 97";
 		rLen = 0;
-		rLoc = 4512;
+		rLoc = 5123;
 		rType = 0;
 		vrLen = 2005;
 		vrLoc = 2099;
@@ -9983,7 +10021,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 103";
 		rLen = 0;
-		rLoc = 5001;
+		rLoc = 5612;
 		rType = 0;
 		vrLen = 2008;
 		vrLoc = 2105;
@@ -9993,7 +10031,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 103";
 		rLen = 0;
-		rLoc = 5001;
+		rLoc = 5612;
 		rType = 0;
 		vrLen = 2014;
 		vrLoc = 2099;
@@ -10013,7 +10051,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 105";
 		rLen = 0;
-		rLoc = 5122;
+		rLoc = 5733;
 		rType = 0;
 		vrLen = 2073;
 		vrLoc = 2105;
@@ -10043,7 +10081,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 105";
 		rLen = 0;
-		rLoc = 5115;
+		rLoc = 5726;
 		rType = 0;
 		vrLen = 2381;
 		vrLoc = 2475;
@@ -10073,7 +10111,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 105";
 		rLen = 0;
-		rLoc = 5115;
+		rLoc = 5726;
 		rType = 0;
 		vrLen = 2381;
 		vrLoc = 2475;
@@ -10083,7 +10121,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 546;
@@ -10093,7 +10131,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 105";
 		rLen = 0;
-		rLoc = 5115;
+		rLoc = 5726;
 		rType = 0;
 		vrLen = 2381;
 		vrLoc = 2475;
@@ -10103,7 +10141,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 546;
@@ -10133,7 +10171,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 546;
@@ -10163,7 +10201,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 546;
@@ -10193,7 +10231,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1307;
 		vrLoc = 546;
@@ -10223,7 +10261,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1307;
 		vrLoc = 546;
@@ -10253,7 +10291,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1307;
 		vrLoc = 546;
@@ -10283,7 +10321,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 267;
@@ -10293,7 +10331,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 267;
@@ -10303,7 +10341,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 92";
 		rLen = 0;
-		rLoc = 3752;
+		rLoc = 4363;
 		rType = 0;
 		vrLen = 2230;
 		vrLoc = 2110;
@@ -10333,7 +10371,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 95";
 		rLen = 0;
-		rLoc = 4061;
+		rLoc = 4672;
 		rType = 0;
 		vrLen = 2308;
 		vrLoc = 2110;
@@ -10343,7 +10381,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1322;
 		vrLoc = 530;
@@ -10363,7 +10401,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 92";
 		rLen = 0;
-		rLoc = 3752;
+		rLoc = 4363;
 		rType = 0;
 		vrLen = 2308;
 		vrLoc = 2110;
@@ -10373,7 +10411,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 15";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 302;
 		rType = 0;
 		vrLen = 1317;
 		vrLoc = 530;
@@ -10383,7 +10421,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 95";
 		rLen = 0;
-		rLoc = 4061;
+		rLoc = 4672;
 		rType = 0;
 		vrLen = 2308;
 		vrLoc = 2110;
@@ -10403,7 +10441,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1322;
 		vrLoc = 530;
@@ -11036,7 +11074,7 @@
 		ignoreCount = 0;
 		lineNumber = 53;
 		location = nitroxy1;
-		modificationTime = 245440384.791566;
+		modificationTime = 245526938.024873;
 		state = 2;
 	};
 	B1C8A9350E9C0224003FE061 /* PBXTextBookmark */ = {
@@ -11154,7 +11192,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 95";
 		rLen = 0;
-		rLoc = 4061;
+		rLoc = 4672;
 		rType = 0;
 		vrLen = 2308;
 		vrLoc = 2110;
@@ -11174,7 +11212,7 @@
 		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
 		name = "WebViewInstance.h: 24";
 		rLen = 0;
-		rLoc = 491;
+		rLoc = 537;
 		rType = 0;
 		vrLen = 591;
 		vrLoc = 0;
@@ -11304,7 +11342,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 95";
 		rLen = 0;
-		rLoc = 4061;
+		rLoc = 4672;
 		rType = 0;
 		vrLen = 2308;
 		vrLoc = 2110;
@@ -11324,7 +11362,7 @@
 		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
 		name = "WebViewInstance.h: 24";
 		rLen = 0;
-		rLoc = 491;
+		rLoc = 537;
 		rType = 0;
 		vrLen = 591;
 		vrLoc = 0;
@@ -11373,7 +11411,7 @@
 		ignoreCount = 0;
 		lineNumber = 60;
 		location = nitroxy1;
-		modificationTime = 245440384.791585;
+		modificationTime = 245526938.028286;
 		state = 2;
 	};
 	B1C8A9650E9C0755003FE061 /* PBXTextBookmark */ = {
@@ -12410,7 +12448,7 @@
 		ignoreCount = 0;
 		lineNumber = 61;
 		location = nitroxy1;
-		modificationTime = 245440384.791601;
+		modificationTime = 245526938.028314;
 		state = 1;
 	};
 	B1C8AA610E9C1544003FE061 /* PBXTextBookmark */ = {
@@ -12771,7 +12809,7 @@
 		ignoreCount = 0;
 		lineNumber = 104;
 		location = nitroxy1;
-		modificationTime = 245440384.791624;
+		modificationTime = 245526938.028333;
 		state = 1;
 	};
 	B1C8AA970E9C3AFB003FE061 /* PBXTextBookmark */ = {
@@ -13205,7 +13243,7 @@
 		ignoreCount = 0;
 		lineNumber = 60;
 		location = nitroxy1;
-		modificationTime = 245440384.791647;
+		modificationTime = 245526938.028351;
 		state = 1;
 	};
 	B1C8AAD60E9C46DB003FE061 /* PBXTextBookmark */ = {
@@ -13660,7 +13698,7 @@
 		ignoreCount = 0;
 		lineNumber = 55;
 		location = nitroxy1;
-		modificationTime = 245440384.791692;
+		modificationTime = 245526938.028371;
 		state = 1;
 	};
 	B1C8AB2C0E9E6794003FE061 /* PBXTextBookmark */ = {
@@ -14210,9 +14248,9 @@
 	};
 	B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1061, 3270}}";
-			sepNavSelRange = "{2251, 0}";
-			sepNavVisRange = "{1528, 1447}";
+			sepNavIntBoundsRect = "{{0, 0}, {1061, 3175}}";
+			sepNavSelRange = "{4255, 0}";
+			sepNavVisRange = "{2265, 1755}";
 		};
 	};
 	B1C8ACD00E9EE0FE003FE061 /* NitroxWebViewController.h */ = {
@@ -14224,9 +14262,9 @@
 	};
 	B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1137, 8569}}";
-			sepNavSelRange = "{11954, 27}";
-			sepNavVisRange = "{11416, 1027}";
+			sepNavIntBoundsRect = "{{0, 0}, {1164, 8189}}";
+			sepNavSelRange = "{11567, 0}";
+			sepNavVisRange = "{13055, 887}";
 		};
 	};
 	B1C8ADB40E9EE112003FE061 /* config */ = {
@@ -14610,7 +14648,7 @@
 		ignoreCount = 0;
 		lineNumber = 61;
 		location = nitroxy1;
-		modificationTime = 245440384.791715;
+		modificationTime = 245526938.028394;
 		state = 1;
 	};
 	B1C8B04F0E9F7CB9003FE061 /* NitroxImagePicker.m:58 */ = {
@@ -14627,7 +14665,7 @@
 		ignoreCount = 0;
 		lineNumber = 58;
 		location = nitroxy1;
-		modificationTime = 245440384.791734;
+		modificationTime = 245526938.028412;
 		state = 2;
 	};
 	B1C8B0510E9F7D5F003FE061 /* PBXTextBookmark */ = {
@@ -14994,7 +15032,7 @@
 		ignoreCount = 0;
 		lineNumber = 90;
 		location = nitroxy1;
-		modificationTime = 245440384.791758;
+		modificationTime = 245526938.028431;
 		state = 2;
 	};
 	B1C8B07E0E9F80D0003FE061 /* NitroxImagePicker.m:53 */ = {
@@ -15011,7 +15049,7 @@
 		ignoreCount = 0;
 		lineNumber = 53;
 		location = nitroxy1;
-		modificationTime = 245440384.791781;
+		modificationTime = 245526938.028449;
 		state = 2;
 	};
 	B1C8B0800E9F80D0003FE061 /* NitroxImagePicker.m:49 */ = {
@@ -15028,7 +15066,7 @@
 		ignoreCount = 0;
 		lineNumber = 49;
 		location = nitroxy1;
-		modificationTime = 245440384.791806;
+		modificationTime = 245526938.028465;
 		state = 2;
 	};
 	B1C8B0810E9F80D1003FE061 /* PBXTextBookmark */ = {
@@ -15145,7 +15183,7 @@
 		ignoreCount = 0;
 		lineNumber = 67;
 		location = nitroxy1;
-		modificationTime = 245440384.791836;
+		modificationTime = 245526938.028487;
 		state = 1;
 	};
 	B1C8B0970E9F82EB003FE061 /* PBXTextBookmark */ = {
@@ -15582,7 +15620,7 @@
 		ignoreCount = 0;
 		lineNumber = 122;
 		location = nitroxy1;
-		modificationTime = 245440384.791859;
+		modificationTime = 245526938.028512;
 		state = 1;
 	};
 	B1C8B0E20E9FB08A003FE061 /* PBXTextBookmark */ = {
@@ -15709,7 +15747,7 @@
 		ignoreCount = 0;
 		lineNumber = 111;
 		location = nitroxy1;
-		modificationTime = 245440384.791885;
+		modificationTime = 245526938.028531;
 		state = 1;
 	};
 	B1C8B1000E9FB297003FE061 /* PBXTextBookmark */ = {
@@ -15896,7 +15934,7 @@
 		ignoreCount = 0;
 		lineNumber = 253;
 		location = nitroxy1;
-		modificationTime = 245440384.791906;
+		modificationTime = 245526938.028544;
 		state = 2;
 	};
 	B1C8B1210E9FB852003FE061 /* PBXTextBookmark */ = {
@@ -16083,7 +16121,7 @@
 		ignoreCount = 0;
 		lineNumber = 26;
 		location = nitroxy1;
-		modificationTime = 245440384.792311;
+		modificationTime = 245526938.028693;
 		state = 1;
 	};
 	B1C8B1390E9FBA2C003FE061 /* PBXTextBookmark */ = {
@@ -16295,7 +16333,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 299";
 		rLen = 0;
-		rLoc = 11023;
+		rLoc = 11465;
 		rType = 0;
 		vrLen = 1406;
 		vrLoc = 9297;
@@ -16355,7 +16393,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 299";
 		rLen = 0;
-		rLoc = 11023;
+		rLoc = 11465;
 		rType = 0;
 		vrLen = 1406;
 		vrLoc = 9297;
@@ -16470,7 +16508,7 @@
 		vrLen = 1396;
 		vrLoc = 183;
 	};
-	B1C8B1750E9FBE01003FE061 /* NitroxWebViewController.m:395 */ = {
+	B1C8B1750E9FBE01003FE061 /* NitroxWebViewController.m:398 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -16480,11 +16518,11 @@
 		delayBeforeContinue = 0;
 		fileReference = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		functionName = "-loadRequest:baseURL:";
-		hitCount = 0;
+		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 395;
+		lineNumber = 398;
 		location = nitroxy1;
-		modificationTime = 245440384.792336;
+		modificationTime = 245526943.749302;
 		state = 1;
 	};
 	B1C8B1760E9FBE02003FE061 /* PBXTextBookmark */ = {
@@ -16522,7 +16560,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 324";
 		rLen = 0;
-		rLoc = 12782;
+		rLoc = 12858;
 		rType = 0;
 		vrLen = 1318;
 		vrLoc = 10881;
@@ -16532,7 +16570,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 324";
 		rLen = 0;
-		rLoc = 12782;
+		rLoc = 12858;
 		rType = 0;
 		vrLen = 1319;
 		vrLoc = 10880;
@@ -16552,7 +16590,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 324";
 		rLen = 0;
-		rLoc = 12782;
+		rLoc = 12858;
 		rType = 0;
 		vrLen = 1319;
 		vrLoc = 10880;
@@ -16582,7 +16620,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 334";
 		rLen = 0;
-		rLoc = 13326;
+		rLoc = 13402;
 		rType = 0;
 		vrLen = 1368;
 		vrLoc = 10831;
@@ -16632,7 +16670,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 334";
 		rLen = 0;
-		rLoc = 13326;
+		rLoc = 13402;
 		rType = 0;
 		vrLen = 1368;
 		vrLoc = 10831;
@@ -16672,7 +16710,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 334";
 		rLen = 0;
-		rLoc = 13326;
+		rLoc = 13402;
 		rType = 0;
 		vrLen = 1367;
 		vrLoc = 10831;
@@ -16692,7 +16730,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 282";
 		rLen = 0;
-		rLoc = 10541;
+		rLoc = 10983;
 		rType = 0;
 		vrLen = 1412;
 		vrLoc = 8895;
@@ -16702,7 +16740,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 305";
 		rLen = 0;
-		rLoc = 11490;
+		rLoc = 11566;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 9262;
@@ -16712,7 +16750,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 305";
 		rLen = 0;
-		rLoc = 11490;
+		rLoc = 11566;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 9262;
@@ -16732,7 +16770,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 305";
 		rLen = 0;
-		rLoc = 11490;
+		rLoc = 11566;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 9262;
@@ -16862,7 +16900,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -16922,7 +16960,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1583;
 		vrLoc = 239;
@@ -16942,7 +16980,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 89";
 		rLen = 0;
-		rLoc = 2842;
+		rLoc = 3196;
 		rType = 0;
 		vrLen = 2595;
 		vrLoc = 2308;
@@ -16952,7 +16990,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -16992,7 +17030,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 333";
 		rLen = 0;
-		rLoc = 13040;
+		rLoc = 13116;
 		rType = 0;
 		vrLen = 1542;
 		vrLoc = 10158;
@@ -17042,7 +17080,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 333";
 		rLen = 0;
-		rLoc = 13040;
+		rLoc = 13116;
 		rType = 0;
 		vrLen = 1535;
 		vrLoc = 10369;
@@ -17092,12 +17130,12 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 333";
 		rLen = 0;
-		rLoc = 13021;
+		rLoc = 13097;
 		rType = 0;
 		vrLen = 1416;
 		vrLoc = 10310;
 	};
-	B1C8B1CD0E9FD6EF003FE061 /* NitroxWebViewController.m:386 */ = {
+	B1C8B1CD0E9FD6EF003FE061 /* NitroxWebViewController.m:389 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -17109,9 +17147,9 @@
 		functionName = "-loadRequest:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 386;
+		lineNumber = 389;
 		location = nitroxy1;
-		modificationTime = 245440384.792453;
+		modificationTime = 245526938.028784;
 		state = 1;
 	};
 	B1C8B1CE0E9FD6F1003FE061 /* PBXTextBookmark */ = {
@@ -17119,7 +17157,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 333";
 		rLen = 0;
-		rLoc = 13021;
+		rLoc = 13097;
 		rType = 0;
 		vrLen = 1416;
 		vrLoc = 10310;
@@ -17129,7 +17167,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -17139,7 +17177,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 357";
 		rLen = 0;
-		rLoc = 14159;
+		rLoc = 14235;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 10853;
@@ -17149,7 +17187,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 357";
 		rLen = 0;
-		rLoc = 14159;
+		rLoc = 14235;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 10853;
@@ -17159,7 +17197,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -17179,7 +17217,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 368";
 		rLen = 0;
-		rLoc = 14241;
+		rLoc = 14317;
 		rType = 0;
 		vrLen = 1540;
 		vrLoc = 10519;
@@ -17223,7 +17261,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 334";
 		rLen = 0;
-		rLoc = 12588;
+		rLoc = 12664;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 10879;
@@ -17253,7 +17291,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 334";
 		rLen = 0;
-		rLoc = 12588;
+		rLoc = 12664;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 10879;
@@ -17273,7 +17311,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 340";
 		rLen = 0;
-		rLoc = 12517;
+		rLoc = 12593;
 		rType = 0;
 		vrLen = 1238;
 		vrLoc = 10765;
@@ -17283,7 +17321,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 777;
@@ -17293,7 +17331,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 332";
 		rLen = 0;
-		rLoc = 11803;
+		rLoc = 11879;
 		rType = 0;
 		vrLen = 1346;
 		vrLoc = 10765;
@@ -17303,12 +17341,12 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 777;
 	};
-	B1C8B1F00E9FDC61003FE061 /* NitroxWebViewController.m:381 */ = {
+	B1C8B1F00E9FDC61003FE061 /* NitroxWebViewController.m:384 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -17320,9 +17358,9 @@
 		functionName = "-loadRequest:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 381;
+		lineNumber = 384;
 		location = nitroxy1;
-		modificationTime = 245440384.79256;
+		modificationTime = 245526938.028854;
 		state = 1;
 	};
 	B1C8B1F30E9FDC71003FE061 /* PBXTextBookmark */ = {
@@ -17350,7 +17388,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -17360,7 +17398,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 354";
 		rLen = 0;
-		rLoc = 13038;
+		rLoc = 13114;
 		rType = 0;
 		vrLen = 1479;
 		vrLoc = 11538;
@@ -17370,7 +17408,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 354";
 		rLen = 0;
-		rLoc = 13038;
+		rLoc = 13114;
 		rType = 0;
 		vrLen = 1479;
 		vrLoc = 11538;
@@ -17380,7 +17418,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -17410,7 +17448,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -17420,7 +17458,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 354";
 		rLen = 0;
-		rLoc = 13038;
+		rLoc = 13114;
 		rType = 0;
 		vrLen = 1242;
 		vrLoc = 10758;
@@ -17430,7 +17468,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 777;
@@ -17480,7 +17518,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 334";
 		rLen = 0;
-		rLoc = 12227;
+		rLoc = 12303;
 		rType = 0;
 		vrLen = 1350;
 		vrLoc = 10347;
@@ -17490,7 +17528,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 777;
@@ -17500,7 +17538,7 @@
 		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
 		name = "WebViewInstance.h: 24";
 		rLen = 0;
-		rLoc = 491;
+		rLoc = 537;
 		rType = 0;
 		vrLen = 591;
 		vrLoc = 0;
@@ -17510,7 +17548,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 54";
 		rLen = 0;
-		rLoc = 1645;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -17550,7 +17588,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 54";
 		rLen = 0;
-		rLoc = 1645;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -17560,7 +17598,7 @@
 		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
 		name = "WebViewInstance.h: 24";
 		rLen = 0;
-		rLoc = 491;
+		rLoc = 537;
 		rType = 0;
 		vrLen = 591;
 		vrLoc = 0;
@@ -17580,7 +17618,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 54";
 		rLen = 0;
-		rLoc = 1645;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 433;
@@ -17620,7 +17658,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 777;
@@ -17640,7 +17678,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 54";
 		rLen = 0;
-		rLoc = 1645;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 367;
@@ -17660,7 +17698,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 54";
 		rLen = 0;
-		rLoc = 1645;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 367;
@@ -17670,7 +17708,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 98";
 		rLen = 0;
-		rLoc = 3317;
+		rLoc = 3926;
 		rType = 0;
 		vrLen = 1930;
 		vrLoc = 1818;
@@ -17680,7 +17718,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 777;
@@ -17690,7 +17728,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 98";
 		rLen = 0;
-		rLoc = 3317;
+		rLoc = 3926;
 		rType = 0;
 		vrLen = 1562;
 		vrLoc = 543;
@@ -17710,7 +17748,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 98";
 		rLen = 0;
-		rLoc = 3317;
+		rLoc = 3926;
 		rType = 0;
 		vrLen = 1562;
 		vrLoc = 543;
@@ -17720,7 +17758,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 368";
 		rLen = 0;
-		rLoc = 13298;
+		rLoc = 13374;
 		rType = 0;
 		vrLen = 1663;
 		vrLoc = 11184;
@@ -17730,7 +17768,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 777;
@@ -17750,7 +17788,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 777;
@@ -17850,7 +17888,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 349";
 		rLen = 43;
-		rLoc = 12592;
+		rLoc = 12668;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 10953;
@@ -17860,7 +17898,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 141;
@@ -17870,7 +17908,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 349";
 		rLen = 43;
-		rLoc = 12592;
+		rLoc = 12668;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 10911;
@@ -17880,7 +17918,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 141;
@@ -17890,7 +17928,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 349";
 		rLen = 43;
-		rLoc = 12592;
+		rLoc = 12668;
 		rType = 0;
 		vrLen = 1438;
 		vrLoc = 10911;
@@ -17910,7 +17948,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 349";
 		rLen = 43;
-		rLoc = 12592;
+		rLoc = 12668;
 		rType = 0;
 		vrLen = 1438;
 		vrLoc = 10911;
@@ -17930,7 +17968,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 141;
@@ -17950,7 +17988,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 141;
@@ -17980,7 +18018,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 382";
 		rLen = 0;
-		rLoc = 13942;
+		rLoc = 14018;
 		rType = 0;
 		vrLen = 1629;
 		vrLoc = 11766;
@@ -17990,7 +18028,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 141;
@@ -18000,7 +18038,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 333";
 		rLen = 0;
-		rLoc = 12089;
+		rLoc = 12165;
 		rType = 0;
 		vrLen = 1530;
 		vrLoc = 10976;
@@ -18010,7 +18048,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 141;
@@ -18026,7 +18064,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {930, 2784}}";
 			sepNavSelRange = "{4050, 0}";
-			sepNavVisRange = "{1963, 738}";
+			sepNavVisRange = "{2046, 674}";
 		};
 	};
 	B1C8B2610EA00C7C003FE061 /* PBXTextBookmark */ = {
@@ -18034,7 +18072,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 333";
 		rLen = 0;
-		rLoc = 12089;
+		rLoc = 12165;
 		rType = 0;
 		vrLen = 1412;
 		vrLoc = 10976;
@@ -18084,7 +18122,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 333";
 		rLen = 0;
-		rLoc = 12089;
+		rLoc = 12165;
 		rType = 0;
 		vrLen = 1412;
 		vrLoc = 10976;
@@ -18124,7 +18162,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 468;
@@ -18134,7 +18172,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 141;
@@ -18144,7 +18182,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1529;
 		vrLoc = 468;
@@ -18174,7 +18212,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1529;
 		vrLoc = 468;
@@ -18214,7 +18252,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 141;
@@ -18234,7 +18272,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 56";
 		rLen = 0;
-		rLoc = 3911;
+		rLoc = 4139;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 514;
@@ -18264,7 +18302,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 46";
 		rLen = 0;
-		rLoc = 2286;
+		rLoc = 2408;
 		rType = 0;
 		vrLen = 1485;
 		vrLoc = 513;
@@ -18284,7 +18322,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 63";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1490;
 		vrLoc = 513;
@@ -18304,7 +18342,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 56";
 		rLen = 0;
-		rLoc = 3911;
+		rLoc = 4139;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 514;
@@ -18324,7 +18362,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 141;
@@ -18374,7 +18412,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 141;
@@ -18404,7 +18442,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 4175;
+		rLoc = 4413;
 		rType = 0;
 		vrLen = 1574;
 		vrLoc = 653;
@@ -18414,7 +18452,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 141;
@@ -18424,7 +18462,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 4175;
+		rLoc = 4413;
 		rType = 0;
 		vrLen = 802;
 		vrLoc = 136;
@@ -18454,7 +18492,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 64";
 		rLen = 0;
-		rLoc = 4175;
+		rLoc = 4413;
 		rType = 0;
 		vrLen = 802;
 		vrLoc = 136;
@@ -18494,7 +18532,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 141;
@@ -18544,7 +18582,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1581;
 		vrLoc = 705;
@@ -18554,7 +18592,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 141;
@@ -18564,7 +18602,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 705;
@@ -18574,7 +18612,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 141;
@@ -18584,7 +18622,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1458;
 		vrLoc = 705;
@@ -18594,7 +18632,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 141;
@@ -18604,7 +18642,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1463;
 		vrLoc = 705;
@@ -18614,7 +18652,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 141;
@@ -18679,7 +18717,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1463;
 		vrLoc = 705;
@@ -18689,7 +18727,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 53";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 141;
@@ -18699,7 +18737,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1462;
 		vrLoc = 705;
@@ -18709,7 +18747,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1462;
 		vrLoc = 705;
@@ -18749,7 +18787,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 73";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1462;
 		vrLoc = 705;
@@ -18779,7 +18817,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 74";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 902;
@@ -18809,7 +18847,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 333";
 		rLen = 0;
-		rLoc = 12030;
+		rLoc = 12106;
 		rType = 0;
 		vrLen = 1428;
 		vrLoc = 11126;
@@ -18819,7 +18857,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 74";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 4720;
 		rType = 0;
 		vrLen = 1635;
 		vrLoc = 794;
@@ -18829,7 +18867,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 333";
 		rLen = 0;
-		rLoc = 12030;
+		rLoc = 12106;
 		rType = 0;
 		vrLen = 1548;
 		vrLoc = 11126;
@@ -18859,7 +18897,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 335";
 		rLen = 0;
-		rLoc = 12089;
+		rLoc = 12165;
 		rType = 0;
 		vrLen = 1589;
 		vrLoc = 11129;
@@ -18868,8 +18906,8 @@
 		isa = PBXTextBookmark;
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 60";
-		rLen = 717;
-		rLoc = 3912;
+		rLen = 727;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 935;
@@ -18889,7 +18927,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 362";
 		rLen = 0;
-		rLoc = 12977;
+		rLoc = 13053;
 		rType = 0;
 		vrLen = 1433;
 		vrLoc = 12259;
@@ -18899,7 +18937,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 362";
 		rLen = 0;
-		rLoc = 12977;
+		rLoc = 13053;
 		rType = 0;
 		vrLen = 1408;
 		vrLoc = 12284;
@@ -18908,8 +18946,8 @@
 		isa = PBXTextBookmark;
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 60";
-		rLen = 717;
-		rLoc = 3912;
+		rLen = 727;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 935;
@@ -18929,7 +18967,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 362";
 		rLen = 0;
-		rLoc = 12977;
+		rLoc = 13053;
 		rType = 0;
 		vrLen = 1433;
 		vrLoc = 12259;
@@ -19029,7 +19067,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 362";
 		rLen = 0;
-		rLoc = 12977;
+		rLoc = 13053;
 		rType = 0;
 		vrLen = 1268;
 		vrLoc = 12259;
@@ -19049,7 +19087,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 363";
 		rLen = 0;
-		rLoc = 13037;
+		rLoc = 13113;
 		rType = 0;
 		vrLen = 1488;
 		vrLoc = 11509;
@@ -19059,7 +19097,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 320";
 		rLen = 0;
-		rLoc = 11354;
+		rLoc = 11547;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 9849;
@@ -19078,7 +19116,7 @@
 		ignoreCount = 0;
 		lineNumber = 272;
 		location = nitroxy1;
-		modificationTime = 245440384.792838;
+		modificationTime = 245526938.028911;
 		state = 1;
 	};
 	B1C8B3370EA0EE18003FE061 /* PBXTextBookmark */ = {
@@ -19086,7 +19124,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 320";
 		rLen = 0;
-		rLoc = 11354;
+		rLoc = 11547;
 		rType = 0;
 		vrLen = 1548;
 		vrLoc = 7953;
@@ -19096,7 +19134,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 320";
 		rLen = 0;
-		rLoc = 11354;
+		rLoc = 11547;
 		rType = 0;
 		vrLen = 1548;
 		vrLoc = 7953;
@@ -19106,7 +19144,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 320";
 		rLen = 0;
-		rLoc = 11354;
+		rLoc = 11547;
 		rType = 0;
 		vrLen = 1548;
 		vrLoc = 7953;
@@ -19116,7 +19154,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 328";
 		rLen = 0;
-		rLoc = 11354;
+		rLoc = 11547;
 		rType = 0;
 		vrLen = 1389;
 		vrLoc = 7428;
@@ -19136,7 +19174,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 420";
 		rLen = 0;
-		rLoc = 14347;
+		rLoc = 14423;
 		rType = 0;
 		vrLen = 1297;
 		vrLoc = 13027;
@@ -19146,7 +19184,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 420";
 		rLen = 0;
-		rLoc = 14347;
+		rLoc = 14423;
 		rType = 0;
 		vrLen = 1297;
 		vrLoc = 13027;
@@ -19166,7 +19204,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 417";
 		rLen = 0;
-		rLoc = 14347;
+		rLoc = 14423;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 11288;
@@ -19176,7 +19214,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 417";
 		rLen = 0;
-		rLoc = 14347;
+		rLoc = 14423;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 11288;
@@ -19185,8 +19223,8 @@
 		isa = PBXTextBookmark;
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 60";
-		rLen = 717;
-		rLoc = 3912;
+		rLen = 727;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1346;
 		vrLoc = 1120;
@@ -19196,7 +19234,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 417";
 		rLen = 0;
-		rLoc = 14347;
+		rLoc = 14423;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 11288;
@@ -19206,7 +19244,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 84";
 		rLen = 0;
-		rLoc = 4279;
+		rLoc = 4517;
 		rType = 0;
 		vrLen = 1429;
 		vrLoc = 1135;
@@ -19216,7 +19254,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 84";
 		rLen = 0;
-		rLoc = 4279;
+		rLoc = 4517;
 		rType = 0;
 		vrLen = 1493;
 		vrLoc = 1135;
@@ -19236,7 +19274,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 84";
 		rLen = 0;
-		rLoc = 4279;
+		rLoc = 4517;
 		rType = 0;
 		vrLen = 1493;
 		vrLoc = 1135;
@@ -19306,7 +19344,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 417";
 		rLen = 0;
-		rLoc = 14347;
+		rLoc = 14423;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -19446,7 +19484,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 417";
 		rLen = 0;
-		rLoc = 14347;
+		rLoc = 14423;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -19496,7 +19534,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 350";
 		rLen = 0;
-		rLoc = 12009;
+		rLoc = 12085;
 		rType = 0;
 		vrLen = 1164;
 		vrLoc = 11102;
@@ -19536,7 +19574,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 350";
 		rLen = 0;
-		rLoc = 12009;
+		rLoc = 12085;
 		rType = 0;
 		vrLen = 1164;
 		vrLoc = 11102;
@@ -19616,7 +19654,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 349";
 		rLen = 0;
-		rLoc = 11928;
+		rLoc = 12004;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 11102;
@@ -19646,7 +19684,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 350";
 		rLen = 0;
-		rLoc = 11982;
+		rLoc = 12058;
 		rType = 0;
 		vrLen = 1158;
 		vrLoc = 11102;
@@ -19676,7 +19714,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 349";
 		rLen = 0;
-		rLoc = 11928;
+		rLoc = 12004;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 11102;
@@ -19726,7 +19764,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 349";
 		rLen = 0;
-		rLoc = 11928;
+		rLoc = 12004;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 11102;
@@ -19766,7 +19804,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 84;
-		rLoc = 3912;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 1015;
@@ -19836,7 +19874,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 84;
-		rLoc = 3912;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 1015;
@@ -19906,7 +19944,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 84;
-		rLoc = 3912;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 1015;
@@ -19926,7 +19964,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 98";
 		rLen = 0;
-		rLoc = 4838;
+		rLoc = 5076;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 684;
@@ -19936,7 +19974,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 2864;
+		rLoc = 3092;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 814;
@@ -19946,7 +19984,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 76";
 		rLen = 0;
-		rLoc = 2864;
+		rLoc = 3092;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 814;
@@ -19956,7 +19994,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 110";
 		rLen = 32;
-		rLoc = 4670;
+		rLoc = 4908;
 		rType = 0;
 		vrLen = 1294;
 		vrLoc = 2052;
@@ -19966,7 +20004,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 110";
 		rLen = 32;
-		rLoc = 4670;
+		rLoc = 4908;
 		rType = 0;
 		vrLen = 1294;
 		vrLoc = 2052;
@@ -19976,7 +20014,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 81";
 		rLen = 0;
-		rLoc = 3308;
+		rLoc = 3536;
 		rType = 0;
 		vrLen = 1495;
 		vrLoc = 1094;
@@ -19996,7 +20034,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 81";
 		rLen = 0;
-		rLoc = 3308;
+		rLoc = 3536;
 		rType = 0;
 		vrLen = 1310;
 		vrLoc = 1094;
@@ -20006,7 +20044,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 81";
 		rLen = 0;
-		rLoc = 3308;
+		rLoc = 3536;
 		rType = 0;
 		vrLen = 1310;
 		vrLoc = 1094;
@@ -20026,7 +20064,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 2864;
+		rLoc = 3092;
 		rType = 0;
 		vrLen = 1426;
 		vrLoc = 1172;
@@ -20036,7 +20074,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 80";
 		rLen = 0;
-		rLoc = 3308;
+		rLoc = 3536;
 		rType = 0;
 		vrLen = 1534;
 		vrLoc = 1172;
@@ -20046,7 +20084,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 2864;
+		rLoc = 3092;
 		rType = 0;
 		vrLen = 1571;
 		vrLoc = 1172;
@@ -20076,7 +20114,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 2864;
+		rLoc = 3092;
 		rType = 0;
 		vrLen = 1451;
 		vrLoc = 1170;
@@ -20086,7 +20124,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 75";
 		rLen = 0;
-		rLoc = 2864;
+		rLoc = 3092;
 		rType = 0;
 		vrLen = 1451;
 		vrLoc = 1170;
@@ -20116,7 +20154,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 0;
-		rLoc = 2864;
+		rLoc = 3092;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 1170;
@@ -20126,7 +20164,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 72";
 		rLen = 0;
-		rLoc = 2864;
+		rLoc = 3092;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 1170;
@@ -20136,7 +20174,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 66";
 		rLen = 0;
-		rLoc = 2564;
+		rLoc = 2792;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 887;
@@ -20146,7 +20184,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 66";
 		rLen = 0;
-		rLoc = 2564;
+		rLoc = 2792;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 887;
@@ -20166,7 +20204,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 66";
 		rLen = 0;
-		rLoc = 2564;
+		rLoc = 2792;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 887;
@@ -20306,7 +20344,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 66";
 		rLen = 0;
-		rLoc = 2564;
+		rLoc = 2792;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 881;
@@ -20356,7 +20394,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 65";
 		rLen = 0;
-		rLoc = 1412;
+		rLoc = 1534;
 		rType = 0;
 		vrLen = 1312;
 		vrLoc = 1039;
@@ -20366,7 +20404,7 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 89";
 		rLen = 0;
-		rLoc = 2217;
+		rLoc = 2339;
 		rType = 0;
 		vrLen = 1548;
 		vrLoc = 1637;
@@ -20376,7 +20414,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 352";
 		rLen = 27;
-		rLoc = 11954;
+		rLoc = 12030;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 11416;
@@ -20416,7 +20454,7 @@
 		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
 		name = "NitroxWebViewController.m: 352";
 		rLen = 27;
-		rLoc = 11954;
+		rLoc = 12030;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 11416;
@@ -20436,10 +20474,395 @@
 		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
 		name = "NitroxWebView.m: 94";
 		rLen = 0;
-		rLoc = 2251;
+		rLoc = 2373;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 1528;
+	};
+	B1C8B4480EA268D4003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 66";
+		rLen = 0;
+		rLoc = 1386;
+		rType = 0;
+		vrLen = 1250;
+		vrLoc = 1345;
+	};
+	B1C8B44A0EA26BF5003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 136";
+		rLen = 0;
+		rLoc = 4255;
+		rType = 0;
+		vrLen = 1750;
+		vrLoc = 2132;
+	};
+	B1C8B44B0EA26BF5003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
+		name = "NitroxWebViewController.m: 352";
+		rLen = 27;
+		rLoc = 12030;
+		rType = 0;
+		vrLen = 1027;
+		vrLoc = 11416;
+	};
+	B1C8B44C0EA26BF5003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */;
+		name = "NitroxWebView.m: 136";
+		rLen = 0;
+		rLoc = 4255;
+		rType = 0;
+		vrLen = 1750;
+		vrLoc = 2132;
+	};
+	B1C8B44D0EA26BF5003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
+		name = "NitroxWebViewController.m: 311";
+		rLen = 0;
+		rLoc = 10515;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 10440;
+	};
+	B1C8B4520EA26E3F003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
+		name = "NitroxWebViewController.m: 311";
+		rLen = 0;
+		rLoc = 10515;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 10440;
+	};
+	B1C8B4530EA26E3F003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 98";
+		rLen = 0;
+		rLoc = 3926;
+		rType = 0;
+		vrLen = 1323;
+		vrLoc = 782;
+	};
+	B1C8B4540EA26E3F003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */;
+		name = "NitroxWebViewController.m: 311";
+		rLen = 0;
+		rLoc = 10515;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 10440;
+	};
+	B1C8B4550EA26E3F003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 67";
+		rLen = 0;
+		rLoc = 1964;
+		rType = 0;
+		vrLen = 1232;
+		vrLoc = 877;
+	};
+	B1C8B45B0EA27062003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 68";
+		rLen = 0;
+		rLoc = 2038;
+		rType = 0;
+		vrLen = 1590;
+		vrLoc = 1818;
+	};
+	B1C8B45C0EA27062003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
+		name = "WebViewInstance.m: 62";
+		rLen = 0;
+		rLoc = 1869;
+		rType = 0;
+		vrLen = 1065;
+		vrLoc = 804;
+	};
+	B1C8B45D0EA27062003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
+		name = "WebViewInstance.h: 28";
+		rLen = 0;
+		rLoc = 648;
+		rType = 0;
+		vrLen = 608;
+		vrLoc = 0;
+	};
+	B1C8B45E0EA27062003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 68";
+		rLen = 0;
+		rLoc = 2038;
+		rType = 0;
+		vrLen = 1590;
+		vrLoc = 1818;
+	};
+	B1C8B45F0EA27062003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
+		name = "WebViewInstance.h: 28";
+		rLen = 0;
+		rLoc = 648;
+		rType = 0;
+		vrLen = 608;
+		vrLoc = 0;
+	};
+	B1C8B4600EA27062003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
+		name = "WebViewInstance.m: 62";
+		rLen = 0;
+		rLoc = 1869;
+		rType = 0;
+		vrLen = 1065;
+		vrLoc = 804;
+	};
+	B1C8B4610EA27062003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
+		name = "WebViewInstance.h: 23";
+		rLen = 0;
+		rLoc = 458;
+		rType = 0;
+		vrLen = 654;
+		vrLoc = 0;
+	};
+	B1C8B4620EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8AC480E9EE0FE003FE061 /* GTMStackTrace.m */;
+		name = "GTMStackTrace.m: 105";
+		rLen = 0;
+		rLoc = 3442;
+		rType = 0;
+		vrLen = 581;
+		vrLoc = 2007;
+	};
+	B1C8B4630EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8B25A0EA00B30003FE061 /* NitroxScriptDebugDelegate.h */;
+		name = "NitroxScriptDebugDelegate.h: 16";
+		rLen = 75;
+		rLoc = 272;
+		rType = 0;
+		vrLen = 596;
+		vrLoc = 94;
+	};
+	B1C8B4640EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */;
+		name = "NitroxScriptDebugDelegate.m: 135";
+		rLen = 0;
+		rLoc = 4050;
+		rType = 0;
+		vrLen = 720;
+		vrLoc = 1963;
+	};
+	B1C8B4650EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
+		name = "WebViewInstance.h: 11";
+		rLen = 0;
+		rLoc = 197;
+		rType = 0;
+		vrLen = 500;
+		vrLoc = 38;
+	};
+	B1C8B4660EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: conflicting types for '-(UIViewController *)controller'";
+		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
+		rLen = 1;
+		rLoc = 58;
+		rType = 1;
+	};
+	B1C8B4670EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8AC480E9EE0FE003FE061 /* GTMStackTrace.m */;
+		name = "GTMStackTrace.m: 105";
+		rLen = 0;
+		rLoc = 3442;
+		rType = 0;
+		vrLen = 581;
+		vrLoc = 2007;
+	};
+	B1C8B4680EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */;
+		name = "NitroxScriptDebugDelegate.m: 120";
+		rLen = 0;
+		rLoc = 3819;
+		rType = 0;
+		vrLen = 752;
+		vrLoc = 2324;
+	};
+	B1C8B4690EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8B25A0EA00B30003FE061 /* NitroxScriptDebugDelegate.h */;
+		name = "NitroxScriptDebugDelegate.h: 16";
+		rLen = 75;
+		rLoc = 272;
+		rType = 0;
+		vrLen = 596;
+		vrLoc = 94;
+	};
+	B1C8B46A0EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */;
+		name = "NitroxScriptDebugDelegate.m: 135";
+		rLen = 0;
+		rLoc = 4050;
+		rType = 0;
+		vrLen = 720;
+		vrLoc = 1963;
+	};
+	B1C8B46B0EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
+		name = "WebViewInstance.h: 11";
+		rLen = 0;
+		rLoc = 197;
+		rType = 0;
+		vrLen = 500;
+		vrLoc = 38;
+	};
+	B1C8B46C0EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
+		name = "WebViewInstance.m: 59";
+		rLen = 0;
+		rLoc = 1588;
+		rType = 0;
+		vrLen = 649;
+		vrLoc = 1332;
+	};
+	B1C8B46D0EA2707D003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACBD0E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.m */;
+		name = "NitroxHTTPServerFilesystemDelegate.m: 58";
+		rLen = 0;
+		rLoc = 1591;
+		rType = 0;
+		vrLen = 296;
+		vrLoc = 843;
+	};
+	B1C8B46F0EA27185003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
+		name = "WebViewInstance.h: 23";
+		rLen = 0;
+		rLoc = 458;
+		rType = 0;
+		vrLen = 654;
+		vrLoc = 0;
+	};
+	B1C8B4700EA27185003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
+		name = "WebViewInstance.m: 64";
+		rLen = 0;
+		rLoc = 1869;
+		rType = 0;
+		vrLen = 897;
+		vrLoc = 1221;
+	};
+	B1C8B4710EA27185003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
+		name = "WebViewInstance.h: 23";
+		rLen = 0;
+		rLoc = 458;
+		rType = 0;
+		vrLen = 654;
+		vrLoc = 0;
+	};
+	B1C8B4720EA27185003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
+		name = "WebViewInstance.m: 64";
+		rLen = 0;
+		rLoc = 1869;
+		rType = 0;
+		vrLen = 897;
+		vrLoc = 1221;
+	};
+	B1C8B4730EA27185003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 71";
+		rLen = 0;
+		rLoc = 2338;
+		rType = 0;
+		vrLen = 1431;
+		vrLoc = 1522;
+	};
+	B1C8B4750EA27190003FE061 /* RootViewController.m:67 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		functionName = "-tableView:didSelectRowAtIndexPath:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 67;
+		location = nitroxy1;
+		modificationTime = 245526949.623732;
+		state = 1;
+	};
+	B1C8B4770EA27196003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 71";
+		rLen = 0;
+		rLoc = 2338;
+		rType = 0;
+		vrLen = 1431;
+		vrLoc = 1522;
+	};
+	B1C8B4790EA4BA29003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
+		name = "WebViewInstance.m: 59";
+		rLen = 0;
+		rLoc = 1588;
+		rType = 0;
+		vrLen = 675;
+		vrLoc = 1304;
+	};
+	B1C8B47A0EA4BA2A003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C8ACBD0E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.m */;
+		name = "NitroxHTTPServerFilesystemDelegate.m: 58";
+		rLen = 0;
+		rLoc = 1591;
+		rType = 0;
+		vrLen = 298;
+		vrLoc = 843;
+	};
+	B1C8B47B0EA4BA2F003FE061 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 71";
+		rLen = 0;
+		rLoc = 2338;
+		rType = 0;
+		vrLen = 1453;
+		vrLoc = 1522;
 	};
 	B1D35D840E8E92ED00A1C105 /* GTMObjC2Runtime.h */ = {
 		isa = PBXFileReference;
@@ -20909,17 +21332,17 @@
 	};
 	B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1316, 832}}";
-			sepNavSelRange = "{491, 0}";
-			sepNavVisRange = "{0, 591}";
+			sepNavIntBoundsRect = "{{0, 0}, {1061, 702}}";
+			sepNavSelRange = "{458, 0}";
+			sepNavVisRange = "{0, 654}";
 			sepNavWindowFrame = "{{61, 45}, {1195, 786}}";
 		};
 	};
 	B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1136, 1363}}";
-			sepNavSelRange = "{1568, 0}";
-			sepNavVisRange = "{141, 1244}";
+			sepNavIntBoundsRect = "{{0, 0}, {975, 1463}}";
+			sepNavSelRange = "{1588, 0}";
+			sepNavVisRange = "{1304, 675}";
 			sepNavWindowFrame = "{{84, 174}, {1195, 786}}";
 		};
 	};
@@ -20948,7 +21371,7 @@
 		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
 		name = "WebViewInstance.h: 17";
 		rLen = 0;
-		rLoc = 585;
+		rLoc = 648;
 		rType = 0;
 		vrLen = 287;
 		vrLoc = 0;
@@ -20958,7 +21381,7 @@
 		fRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */;
 		name = "WebViewInstance.m: 21";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 1649;
 		rType = 0;
 		vrLen = 779;
 		vrLoc = 0;
@@ -20995,7 +21418,7 @@
 		fRef = B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */;
 		name = "WebViewInstance.h: 25";
 		rLen = 0;
-		rLoc = 585;
+		rLoc = 648;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 0;
