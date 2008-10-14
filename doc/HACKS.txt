@@ -17,12 +17,15 @@ method. That is also how Nitrox does it.
 However, the current Nitrox method for invoking Objective-C methods from Javascript is to
 use an XMLHTTPRequest Ajax connection to an embedded HTTP server.  This has several benefits:
 
-  * Allows both synchronous and asynchronous operation 
+  * Allows both synchronous and asynchronous operation - data can be returned in
+    the HTTP response rather than through the JS callback
   * Easily allows multiple outstanding requests, and tracking of each
   * Better for transferring large data sets
   * Well-defined, reliable semantics
   * Relies upon documented and iPhone-kosher networking APIs
-  * Could theoretically be used for distributed RPC between iPhones
+  * Could potentially be used for distributed RPC between iPhones
+  * Allows separation of the HTML/JS UI from the backend functions - a useful 
+    debugging tool
     
 Drawbacks:
 

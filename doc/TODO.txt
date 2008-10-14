@@ -17,7 +17,11 @@
   Will probably need a single HTTP server on a known port for <script> tags and HTML links,
   and a dynamic one (or a hierarchy of sub-delegates, e.g. http://mainserver/app/<APPID>/rpc/...)
 * position:fixed emulation using native UIKit widgets?
-
+* Multimedia:
+  * Record sound
+  * Start/stop playback of sound file
+  * Play local video file or stream video (can be done with native quicktime better?)
+  
 DONE:
 
 * function to change app/page
