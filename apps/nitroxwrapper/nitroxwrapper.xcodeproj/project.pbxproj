@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* nitroxwrapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* nitroxwrapperAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E55F0DE3E45000AC0155 /* RootViewController.xib */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		B17C290E0E99472D00329098 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17C290D0E99472D00329098 /* AudioToolbox.framework */; };
+		B1C8B01C0E9EE2DF003FE061 /* web in Resources */ = {isa = PBXBuildFile; fileRef = B1C8B01B0E9EE2DF003FE061 /* web */; };
+		B1D35DA20E8E94A300A1C105 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA10E8E94A300A1C105 /* AddressBook.framework */; };
+		B1D35DA40E8E94A300A1C105 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA30E8E94A300A1C105 /* CFNetwork.framework */; };
+		B1D35DA80E8E94A300A1C105 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA70E8E94A300A1C105 /* CoreAudio.framework */; };
+		B1D35DAA0E8E94A300A1C105 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA90E8E94A300A1C105 /* CoreFoundation.framework */; };
+		B1D35DAC0E8E94A300A1C105 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DAB0E8E94A300A1C105 /* CoreLocation.framework */; };
+		B1D35DAE0E8E94A300A1C105 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DAD0E8E94A300A1C105 /* SystemConfiguration.framework */; };
+		B1DD3E0D0E902BA400952CD6 /* nitrox-band.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DD3E0A0E902BA400952CD6 /* nitrox-band.png */; };
+		B1DD3E0E0E902BA400952CD6 /* nitrox-fireball.gif in Resources */ = {isa = PBXBuildFile; fileRef = B1DD3E0B0E902BA400952CD6 /* nitrox-fireball.gif */; };
+		B1DD3E0F0E902BA400952CD6 /* nitrox-fireball.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DD3E0C0E902BA400952CD6 /* nitrox-fireball.png */; };
+		B1DD3E780E90A85F00952CD6 /* WebViewInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */; };
+		B1ED8C470EA56E3E00898C8A /* liblibnitrox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1ED8C460EA56E3700898C8A /* liblibnitrox.a */; };
+		B1ED8C9F0EA593A200898C8A /* NitroxWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1ED8C9E0EA593A200898C8A /* NitroxWebView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1ED8C450EA56E3700898C8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1ED89C90EA5608C00898C8A;
+			remoteInfo = libnitrox;
+		};
+		B1ED8C710EA56EDA00898C8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B1ED89C80EA5608C00898C8A;
+			remoteInfo = libnitrox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B18FFCD30E9652370012F25F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* nitroxwrapperAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nitroxwrapperAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* nitroxwrapperAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nitroxwrapperAppDelegate.m; sourceTree = "<group>"; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E55F0DE3E45000AC0155 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		28A0AAE50D9B0CCF005BE974 /* nitroxwrapper_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nitroxwrapper_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B17C290D0E99472D00329098 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B1C8A4FE0E9A64DD003FE061 /* NitroxdemoCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxdemoCommon.h; sourceTree = "<group>"; };
+		B1C8B01B0E9EE2DF003FE061 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = web; path = ../../web; sourceTree = SOURCE_ROOT; };
+		B1D35DA10E8E94A300A1C105 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		B1D35DA30E8E94A300A1C105 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B1D35DA50E8E94A300A1C105 /* Camera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Camera.framework; path = System/Library/PrivateFrameworks/Camera.framework; sourceTree = SDKROOT; };
+		B1D35DA70E8E94A300A1C105 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		B1D35DA90E8E94A300A1C105 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		B1D35DAB0E8E94A300A1C105 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B1D35DAD0E8E94A300A1C105 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B1DD3E0A0E902BA400952CD6 /* nitrox-band.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nitrox-band.png"; sourceTree = "<group>"; };
+		B1DD3E0B0E902BA400952CD6 /* nitrox-fireball.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "nitrox-fireball.gif"; sourceTree = "<group>"; };
+		B1DD3E0C0E902BA400952CD6 /* nitrox-fireball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nitrox-fireball.png"; sourceTree = "<group>"; };
+		B1DD3E140E902D6B00952CD6 /* general.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; name = general.xcclassmodel; path = doc/design/general.xcclassmodel; sourceTree = "<group>"; };
+		B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewInstance.h; sourceTree = "<group>"; };
+		B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewInstance.m; sourceTree = "<group>"; };
+		B1ED87C90EA558D600898C8A /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
+		B1ED89120EA55B7200898C8A /* nitroxwrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nitroxwrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libnitrox.xcodeproj; path = ../../lib/libnitrox.xcodeproj; sourceTree = SOURCE_ROOT; };
+		B1ED8C9E0EA593A200898C8A /* NitroxWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NitroxWebView.xib; path = ../../src/webview/NitroxWebView.xib; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1ED8C470EA56E3E00898C8A /* liblibnitrox.a in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				B1D35DA20E8E94A300A1C105 /* AddressBook.framework in Frameworks */,
+				B1D35DA40E8E94A300A1C105 /* CFNetwork.framework in Frameworks */,
+				B1D35DA80E8E94A300A1C105 /* CoreAudio.framework in Frameworks */,
+				B1D35DAA0E8E94A300A1C105 /* CoreFoundation.framework in Frameworks */,
+				B1D35DAC0E8E94A300A1C105 /* CoreLocation.framework in Frameworks */,
+				B1D35DAE0E8E94A300A1C105 /* SystemConfiguration.framework in Frameworks */,
+				B17C290E0E99472D00329098 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				1D3623240D0F684500981E51 /* nitroxwrapperAppDelegate.h */,
+				1D3623250D0F684500981E51 /* nitroxwrapperAppDelegate.m */,
+				B1DD3E760E90A85F00952CD6 /* WebViewInstance.h */,
+				B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */,
+				B1C8A4FE0E9A64DD003FE061 /* NitroxdemoCommon.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1ED89120EA55B7200898C8A /* nitroxwrapper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				B1ED8C9E0EA593A200898C8A /* NitroxWebView.xib */,
+				B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */,
+				B1C8B01B0E9EE2DF003FE061 /* web */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AAE50D9B0CCF005BE974 /* nitroxwrapper_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B1DD3E090E902BA400952CD6 /* images */,
+				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				B1DD3E140E902D6B00952CD6 /* general.xcclassmodel */,
+				B1ED87C90EA558D600898C8A /* Info copy.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B17C290D0E99472D00329098 /* AudioToolbox.framework */,
+				B1D35DA10E8E94A300A1C105 /* AddressBook.framework */,
+				B1D35DA30E8E94A300A1C105 /* CFNetwork.framework */,
+				B1D35DA50E8E94A300A1C105 /* Camera.framework */,
+				B1D35DA70E8E94A300A1C105 /* CoreAudio.framework */,
+				B1D35DA90E8E94A300A1C105 /* CoreFoundation.framework */,
+				B1D35DAB0E8E94A300A1C105 /* CoreLocation.framework */,
+				B1D35DAD0E8E94A300A1C105 /* SystemConfiguration.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1DD3E090E902BA400952CD6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B1DD3E0A0E902BA400952CD6 /* nitrox-band.png */,
+				B1DD3E0B0E902BA400952CD6 /* nitrox-fireball.gif */,
+				B1DD3E0C0E902BA400952CD6 /* nitrox-fireball.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		B1ED8C310EA56E3700898C8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1ED8C460EA56E3700898C8A /* liblibnitrox.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* nitroxwrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "nitroxwrapper" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				B18FFCD30E9652370012F25F /* CopyFiles */,
+				B18FFCD00E9652170012F25F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1ED8C720EA56EDA00898C8A /* PBXTargetDependency */,
+			);
+			name = nitroxwrapper;
+			productName = nitroxwrapper;
+			productReference = B1ED89120EA55B7200898C8A /* nitroxwrapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "nitroxwrapper" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B1ED8C310EA56E3700898C8A /* Products */;
+					ProjectRef = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* nitroxwrapper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B1ED8C460EA56E3700898C8A /* liblibnitrox.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibnitrox.a;
+			remoteRef = B1ED8C450EA56E3700898C8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
+				B1DD3E0D0E902BA400952CD6 /* nitrox-band.png in Resources */,
+				B1DD3E0E0E902BA400952CD6 /* nitrox-fireball.gif in Resources */,
+				B1DD3E0F0E902BA400952CD6 /* nitrox-fireball.png in Resources */,
+				B1C8B01C0E9EE2DF003FE061 /* web in Resources */,
+				B1ED8C9F0EA593A200898C8A /* NitroxWebView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B18FFCD00E9652170012F25F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "Table 2-4  Environment variables accessible from a Run Script build phase\nEnvironment variable\nDescription\nACTION\nThe action being performed on the current target, such as build or clean.\nBUILD_VARIANTS\nThe variations—debug, profile or normal—that Xcode is creating for the product being built.\nPROJECT_NAME\nThe name of the project containing the target that is being built.\nPRODUCT_NAME\nThe name of the product being built, without any extension or suffix.\nTARGET_NAME\nThe name of the target being built.\nTARGET_BUILD_DIR\nThe location of the target being built.\nBUILT_PRODUCTS_DIR\nThe directory that holds the products created by building the targets in a project.\nTEMP_FILES_DIR\nThe directory that holds intermediate files for a specific target.\nDERIVED_FILES_DIR\nThe directory that holds intermediate source files generated by the Compile Sources build phase.\nINSTALL_DIR\nThe location of the installed product.\n";
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "#\n# This script exists because Xcode 3.1 doesn't copy changed resource files \n# into the binary when running in the simulator.\n#\n# Robert Sanders\n# rsanders@gmail.com\n#\n\n# http://developer.apple.com/documentation/developertools/Conceptual/XcodeBuildSystem/200_build_phases/chapter_3_section_9.html\n\n\nset > /tmp/buildout.$$.txt\n\nRESOURCE_DEST=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\nWEBDEST=\"$RESOURCE_DEST/web\"\nmkdir -p \"$WEBDEST\"\ncp -R $PROJECT_DIR/../../web/* \"$WEBDEST\"\ndate > \"$WEBDEST/copied.txt\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* nitroxwrapperAppDelegate.m in Sources */,
+				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				B1DD3E780E90A85F00952CD6 /* WebViewInstance.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1ED8C720EA56EDA00898C8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libnitrox;
+			targetProxy = B1ED8C710EA56EDA00898C8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = nitroxwrapper_Prefix.pch;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../**";
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../libs/nitroxkit/gtm/TigerGcov\"",
+					"\"$(SRCROOT)/../../src/gtm/TigerGcov\"",
+					"\"$(SRCROOT)/../../lib/build/Debug-iphonesimulator\"",
+				);
+				PRODUCT_NAME = nitroxwrapper;
+				PROVISIONING_PROFILE = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = DefaultProfileUuid;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = nitroxwrapper_Prefix.pch;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../**";
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../libs/nitroxkit/gtm/TigerGcov\"",
+					"\"$(SRCROOT)/../../src/gtm/TigerGcov\"",
+					"\"$(SRCROOT)/../../lib/build/Debug-iphonesimulator\"",
+				);
+				PRODUCT_NAME = nitroxwrapper;
+			};
+			name = Release;
+		};
+		B1C8A3970E99C55C003FE061 /* Release RS */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Robert Sanders";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "PERFORMANCE_TEST=1";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = DefaultProfileUuid;
+				SDKROOT = iphoneos2.1;
+			};
+			name = "Release RS";
+		};
+		B1C8A3980E99C55C003FE061 /* Release RS */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = nitroxwrapper_Prefix.pch;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../**";
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../libs/nitroxkit/gtm/TigerGcov\"",
+					"\"$(SRCROOT)/../../src/gtm/TigerGcov\"",
+					"\"$(SRCROOT)/../../lib/build/Debug-iphonesimulator\"",
+				);
+				PRODUCT_NAME = nitroxwrapper;
+			};
+			name = "Release RS";
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Robert Sanders";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DEBUGGING_SYMBOLS = full;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphonesimulator2.1]" = DefaultProfileUuid;
+				SDKROOT = iphoneos2.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Robert Sanders";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "B0089552-77D4-44D3-98B8-B1B042AB895B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B0089552-77D4-44D3-98B8-B1B042AB895B";
+				SDKROOT = iphoneos2.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "nitroxwrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				B1C8A3980E99C55C003FE061 /* Release RS */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "nitroxwrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				B1C8A3970E99C55C003FE061 /* Release RS */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

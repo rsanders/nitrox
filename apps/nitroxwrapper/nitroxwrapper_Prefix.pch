@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'nitroxy1' target in the 'nitroxy1' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+    #import "NitroxdemoCommon.h"
+#endif
