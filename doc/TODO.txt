@@ -21,6 +21,13 @@
   * Record sound
   * Start/stop playback of sound file
   * Play local video file or stream video (can be done with native quicktime better?)
+* orientation, location, and accel: be sure to send at least one update nearly immediately after
+  enabling.
+
+* Check out Geolocation API:
+  http://developer.mozilla.org/web-tech/2008/10/14/firefox-31-beta-1-an-overview-of-features-for-web-developers/
+  http://dev.w3.org/geo/api/spec-source.html
+
   
 DONE:
 

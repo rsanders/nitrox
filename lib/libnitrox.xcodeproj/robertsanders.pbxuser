@@ -1,7 +1,7 @@
 // !$*UTF8*$!
 {
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = "Release RS";
+		activeBuildConfigurationName = Debug;
 		activeSDKPreference = iphoneos2.1;
 		activeTarget = B1ED89C80EA5608C00898C8A /* libnitrox */;
 		addToTargets = (

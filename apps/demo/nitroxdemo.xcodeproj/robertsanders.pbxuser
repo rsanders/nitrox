@@ -45,9 +45,9 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = "Release RS";
+		activeBuildConfigurationName = Debug;
 		activeExecutable = B1ED89130EA55B7200898C8A /* nitroxdemo */;
-		activeSDKPreference = iphoneos2.1;
+		activeSDKPreference = iphonesimulator2.1;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* nitroxdemo */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* nitroxdemo */,
