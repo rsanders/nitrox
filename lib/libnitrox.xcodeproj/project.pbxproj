@@ -78,6 +78,8 @@
 		B1ED8B080EA560BF00898C8A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DAB0E8E94A300A1C105 /* CoreLocation.framework */; };
 		B1ED8B090EA560BF00898C8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DAD0E8E94A300A1C105 /* SystemConfiguration.framework */; };
 		B1ED8B0A0EA560BF00898C8A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17C290D0E99472D00329098 /* AudioToolbox.framework */; };
+		B1ED8C150EA56CDA00898C8A /* NibwareLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C8ADE30E9EE112003FE061 /* NibwareLog.h */; };
+		B1ED8CAA0EA5946200898C8A /* libnitrox_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B1ED8CA90EA5946200898C8A /* libnitrox_Prefix.pch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +340,7 @@
 		B1D35DAB0E8E94A300A1C105 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B1D35DAD0E8E94A300A1C105 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B1ED89C90EA5608C00898C8A /* liblibnitrox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibnitrox.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1ED8CA90EA5946200898C8A /* libnitrox_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libnitrox_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +375,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B1ED8CA90EA5946200898C8A /* libnitrox_Prefix.pch */,
 				B1C8ADB10E9EE112003FE061 /* vendor */,
 				B1C8ABA30E9EE0FD003FE061 /* src */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -892,6 +896,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1ED8C150EA56CDA00898C8A /* NibwareLog.h in Headers */,
+				B1ED8CAA0EA5946200898C8A /* libnitrox_Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

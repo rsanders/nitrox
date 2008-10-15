@@ -16,72 +16,7 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		B17C290E0E99472D00329098 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17C290D0E99472D00329098 /* AudioToolbox.framework */; };
-		B1C8ACD20E9EE0FE003FE061 /* NitroxApiAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABA70E9EE0FD003FE061 /* NitroxApiAccelerometer.m */; };
-		B1C8ACD30E9EE0FE003FE061 /* NitroxApiApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABAA0E9EE0FD003FE061 /* NitroxApiApplication.m */; };
-		B1C8ACD40E9EE0FE003FE061 /* NitroxApiBenchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABAD0E9EE0FD003FE061 /* NitroxApiBenchmark.m */; };
-		B1C8ACD50E9EE0FE003FE061 /* NitroxApiDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABB00E9EE0FD003FE061 /* NitroxApiDevice.m */; };
-		B1C8ACD60E9EE0FE003FE061 /* NitroxApiEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABB30E9EE0FD003FE061 /* NitroxApiEvent.m */; };
-		B1C8ACD70E9EE0FE003FE061 /* NitroxApiLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABB60E9EE0FD003FE061 /* NitroxApiLocation.m */; };
-		B1C8ACD80E9EE0FE003FE061 /* NitroxApiPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABBA0E9EE0FD003FE061 /* NitroxApiPhoto.m */; };
-		B1C8ACD90E9EE0FE003FE061 /* NitroxImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABBC0E9EE0FD003FE061 /* NitroxImagePicker.m */; };
-		B1C8ACDA0E9EE0FE003FE061 /* NitroxImagePickerUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C8ABBD0E9EE0FD003FE061 /* NitroxImagePickerUI.xib */; };
-		B1C8ACDB0E9EE0FE003FE061 /* NitroxPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABBF0E9EE0FD003FE061 /* NitroxPhoto.m */; };
-		B1C8ACDC0E9EE0FE003FE061 /* NitroxApiDirectSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABC20E9EE0FD003FE061 /* NitroxApiDirectSystem.m */; };
-		B1C8ACDD0E9EE0FE003FE061 /* NitroxApiSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABC40E9EE0FD003FE061 /* NitroxApiSystem.m */; };
-		B1C8ACDE0E9EE0FE003FE061 /* NitroxApiVibrate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABC70E9EE0FD003FE061 /* NitroxApiVibrate.m */; };
-		B1C8AD310E9EE0FE003FE061 /* GTMMethodCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC280E9EE0FE003FE061 /* GTMMethodCheck.m */; };
-		B1C8AD320E9EE0FE003FE061 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC2B0E9EE0FE003FE061 /* GTMBase64.m */; };
-		B1C8AD340E9EE0FE003FE061 /* GTMHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC2F0E9EE0FE003FE061 /* GTMHTTPFetcher.m */; };
-		B1C8AD350E9EE0FE003FE061 /* GTMHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC310E9EE0FE003FE061 /* GTMHTTPServer.m */; };
-		B1C8AD360E9EE0FE003FE061 /* GTMNSFileManager+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC330E9EE0FE003FE061 /* GTMNSFileManager+Path.m */; };
-		B1C8AD380E9EE0FE003FE061 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC370E9EE0FE003FE061 /* GTMNSString+HTML.m */; };
-		B1C8AD390E9EE0FE003FE061 /* GTMNSString+Replace.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC390E9EE0FE003FE061 /* GTMNSString+Replace.m */; };
-		B1C8AD3A0E9EE0FE003FE061 /* GTMNSString+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC3B0E9EE0FE003FE061 /* GTMNSString+URLArguments.m */; };
-		B1C8AD3B0E9EE0FE003FE061 /* GTMNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC3D0E9EE0FE003FE061 /* GTMNSString+XML.m */; };
-		B1C8AD3C0E9EE0FE003FE061 /* GTMObjC2Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC3F0E9EE0FE003FE061 /* GTMObjC2Runtime.m */; };
-		B1C8AD3D0E9EE0FE003FE061 /* GTMPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC420E9EE0FE003FE061 /* GTMPath.m */; };
-		B1C8AD3E0E9EE0FE003FE061 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC440E9EE0FE003FE061 /* GTMRegex.m */; };
-		B1C8AD3F0E9EE0FE003FE061 /* GTMSignalHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC460E9EE0FE003FE061 /* GTMSignalHandler.m */; };
-		B1C8AD410E9EE0FE003FE061 /* GTMSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC4A0E9EE0FE003FE061 /* GTMSystemVersion.m */; };
-		B1C8AD440E9EE0FE003FE061 /* GTMABAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AC570E9EE0FE003FE061 /* GTMABAddressBook.m */; };
-		B1C8AD830E9EE0FE003FE061 /* NSObject+JSBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACAD0E9EE0FE003FE061 /* NSObject+JSBridge.m */; };
-		B1C8AD840E9EE0FE003FE061 /* NitroxInstanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACB00E9EE0FE003FE061 /* NitroxInstanceManager.m */; };
-		B1C8AD850E9EE0FE003FE061 /* NitroxRPCCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACB30E9EE0FE003FE061 /* NitroxRPCCallback.m */; };
-		B1C8AD860E9EE0FE003FE061 /* NitroxRPCDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACB50E9EE0FE003FE061 /* NitroxRPCDispatcher.m */; };
-		B1C8AD870E9EE0FE003FE061 /* NitroxStubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACB70E9EE0FE003FE061 /* NitroxStubClass.m */; };
-		B1C8AD880E9EE0FE003FE061 /* NitroxHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACBB0E9EE0FE003FE061 /* NitroxHTTPServer.m */; };
-		B1C8AD890E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACBD0E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.m */; };
-		B1C8AD8A0E9EE0FE003FE061 /* NitroxHTTPServerListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACBF0E9EE0FE003FE061 /* NitroxHTTPServerListDelegate.m */; };
-		B1C8AD8B0E9EE0FE003FE061 /* NitroxHTTPServerLogDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACC10E9EE0FE003FE061 /* NitroxHTTPServerLogDelegate.m */; };
-		B1C8AD8C0E9EE0FE003FE061 /* NitroxHTTPServerPathDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACC30E9EE0FE003FE061 /* NitroxHTTPServerPathDelegate.m */; };
-		B1C8AD8D0E9EE0FE003FE061 /* NitroxHTTPServerProxyDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACC50E9EE0FE003FE061 /* NitroxHTTPServerProxyDelegate.m */; };
-		B1C8AD8E0E9EE0FE003FE061 /* NitroxHTTPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACC70E9EE0FE003FE061 /* NitroxHTTPUtils.m */; };
-		B1C8AD8F0E9EE0FE003FE061 /* NitroxApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACCA0E9EE0FE003FE061 /* NitroxApp.m */; };
-		B1C8AD900E9EE0FE003FE061 /* NitroxAppPage.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACCC0E9EE0FE003FE061 /* NitroxAppPage.m */; };
-		B1C8AD910E9EE0FE003FE061 /* NitroxWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */; };
-		B1C8AD920E9EE0FE003FE061 /* NitroxWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C8ACCF0E9EE0FE003FE061 /* NitroxWebView.xib */; };
-		B1C8AD930E9EE0FE003FE061 /* NitroxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */; };
-		B1C8AEF40E9EE112003FE061 /* NibwareAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ADDF0E9EE112003FE061 /* NibwareAlert.m */; };
-		B1C8AEF50E9EE112003FE061 /* NibwareDebugView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C8ADE00E9EE112003FE061 /* NibwareDebugView.xib */; };
-		B1C8AEF60E9EE112003FE061 /* NibwareDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ADE20E9EE112003FE061 /* NibwareDebugViewController.m */; };
-		B1C8AEF70E9EE112003FE061 /* NibwareLog.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ADE40E9EE112003FE061 /* NibwareLog.m */; };
-		B1C8AEF80E9EE112003FE061 /* NibwareMIMEPart.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ADE60E9EE112003FE061 /* NibwareMIMEPart.m */; };
-		B1C8AEF90E9EE112003FE061 /* NibwarePrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ADE80E9EE112003FE061 /* NibwarePrefs.m */; };
-		B1C8AEFA0E9EE112003FE061 /* NibwareStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ADEA0E9EE112003FE061 /* NibwareStringUtils.m */; };
-		B1C8AEFB0E9EE112003FE061 /* NibwareUrlUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ADEC0E9EE112003FE061 /* NibwareUrlUtils.m */; };
-		B1C8AEFC0E9EE112003FE061 /* NibwareWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ADEE0E9EE112003FE061 /* NibwareWebView.m */; };
-		B1C8AEFD0E9EE112003FE061 /* NibwareWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C8ADEF0E9EE112003FE061 /* NibwareWebView.xib */; };
-		B1C8AEFE0E9EE112003FE061 /* NibwareWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ADF10E9EE112003FE061 /* NibwareWebViewController.m */; };
-		B1C8AF670E9EE112003FE061 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE870E9EE112003FE061 /* CDataScanner.m */; };
-		B1C8AF680E9EE112003FE061 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE8A0E9EE112003FE061 /* CDataScanner_Extensions.m */; };
-		B1C8AF690E9EE112003FE061 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE8C0E9EE112003FE061 /* NSCharacterSet_Extensions.m */; };
-		B1C8AF6A0E9EE112003FE061 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE8E0E9EE112003FE061 /* NSDictionary_JSONExtensions.m */; };
-		B1C8AF6B0E9EE112003FE061 /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE900E9EE112003FE061 /* NSScanner_Extensions.m */; };
-		B1C8AF6C0E9EE112003FE061 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE930E9EE112003FE061 /* CJSONDeserializer.m */; };
-		B1C8AF6D0E9EE112003FE061 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE950E9EE112003FE061 /* CJSONScanner.m */; };
-		B1C8AF6E0E9EE112003FE061 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8AE970E9EE112003FE061 /* CJSONSerializer.m */; };
 		B1C8B01C0E9EE2DF003FE061 /* web in Resources */ = {isa = PBXBuildFile; fileRef = B1C8B01B0E9EE2DF003FE061 /* web */; };
-		B1C8B25C0EA00B30003FE061 /* NitroxScriptDebugDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */; };
 		B1D35DA20E8E94A300A1C105 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA10E8E94A300A1C105 /* AddressBook.framework */; };
 		B1D35DA40E8E94A300A1C105 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA30E8E94A300A1C105 /* CFNetwork.framework */; };
 		B1D35DA80E8E94A300A1C105 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA70E8E94A300A1C105 /* CoreAudio.framework */; };
@@ -92,64 +27,24 @@
 		B1DD3E0E0E902BA400952CD6 /* nitrox-fireball.gif in Resources */ = {isa = PBXBuildFile; fileRef = B1DD3E0B0E902BA400952CD6 /* nitrox-fireball.gif */; };
 		B1DD3E0F0E902BA400952CD6 /* nitrox-fireball.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DD3E0C0E902BA400952CD6 /* nitrox-fireball.png */; };
 		B1DD3E780E90A85F00952CD6 /* WebViewInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */; };
+		B1ED8C470EA56E3E00898C8A /* liblibnitrox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1ED8C460EA56E3700898C8A /* liblibnitrox.a */; };
+		B1ED8C9F0EA593A200898C8A /* NitroxWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1ED8C9E0EA593A200898C8A /* NitroxWebView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B1C8ADA00E9EE0FF003FE061 /* PBXContainerItemProxy */ = {
+		B1ED8C450EA56E3700898C8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B1C8AC4C0E9EE0FE003FE061 /* GTM.xcodeproj */;
+			containerPortal = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = F42E086D0D199A5B00D5DDE0;
-			remoteInfo = GTM;
+			remoteGlobalIDString = B1ED89C90EA5608C00898C8A /* liblibnitrox.a */;
+			remoteInfo = libnitrox;
 		};
-		B1C8ADA20E9EE0FF003FE061 /* PBXContainerItemProxy */ = {
+		B1ED8C710EA56EDA00898C8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B1C8AC4C0E9EE0FE003FE061 /* GTM.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F48FE2640D198C1E009257D2;
-			remoteInfo = "UnitTest - AppKit";
-		};
-		B1C8ADA40E9EE0FF003FE061 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B1C8AC4C0E9EE0FE003FE061 /* GTM.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F42E08210D19987200D5DDE0;
-			remoteInfo = "UnitTest - Foundation";
-		};
-		B1C8ADA60E9EE0FF003FE061 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B1C8AC4C0E9EE0FE003FE061 /* GTM.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B45A0280DA4696C001148C5;
-			remoteInfo = "UnitTest - UnitTesting";
-		};
-		B1C8ADA80E9EE0FF003FE061 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B1C8AC4C0E9EE0FE003FE061 /* GTM.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B45A28A0DA49B99001148C5;
-			remoteInfo = UIUnitTestingHarness;
-		};
-		B1C8ADAF0E9EE0FF003FE061 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B1C8AC520E9EE0FE003FE061 /* GTMiPhone.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
-			remoteInfo = GTMiPhoneUnitTesting;
-		};
-		B1C8AFCD0E9EE113003FE061 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B1C8AE980E9EE112003FE061 /* TouchJSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45B15E110947D97B00AE66EB;
-			remoteInfo = UnitTests;
-		};
-		B1C8AFCF0E9EE113003FE061 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B1C8AE980E9EE112003FE061 /* TouchJSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 453111B10A64EDBB00A970C2;
-			remoteInfo = Demo;
+			containerPortal = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B1ED89C80EA5608C00898C8A /* libnitrox */;
+			remoteInfo = libnitrox;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -180,216 +75,7 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B17C290D0E99472D00329098 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B1C8A4FE0E9A64DD003FE061 /* NitroxdemoCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxdemoCommon.h; sourceTree = "<group>"; };
-		B1C8ABA60E9EE0FD003FE061 /* NitroxApiAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiAccelerometer.h; sourceTree = "<group>"; };
-		B1C8ABA70E9EE0FD003FE061 /* NitroxApiAccelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiAccelerometer.m; sourceTree = "<group>"; };
-		B1C8ABA90E9EE0FD003FE061 /* NitroxApiApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiApplication.h; sourceTree = "<group>"; };
-		B1C8ABAA0E9EE0FD003FE061 /* NitroxApiApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiApplication.m; sourceTree = "<group>"; };
-		B1C8ABAC0E9EE0FD003FE061 /* NitroxApiBenchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiBenchmark.h; sourceTree = "<group>"; };
-		B1C8ABAD0E9EE0FD003FE061 /* NitroxApiBenchmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiBenchmark.m; sourceTree = "<group>"; };
-		B1C8ABAF0E9EE0FD003FE061 /* NitroxApiDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiDevice.h; sourceTree = "<group>"; };
-		B1C8ABB00E9EE0FD003FE061 /* NitroxApiDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiDevice.m; sourceTree = "<group>"; };
-		B1C8ABB20E9EE0FD003FE061 /* NitroxApiEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiEvent.h; sourceTree = "<group>"; };
-		B1C8ABB30E9EE0FD003FE061 /* NitroxApiEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiEvent.m; sourceTree = "<group>"; };
-		B1C8ABB50E9EE0FD003FE061 /* NitroxApiLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiLocation.h; sourceTree = "<group>"; };
-		B1C8ABB60E9EE0FD003FE061 /* NitroxApiLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiLocation.m; sourceTree = "<group>"; };
-		B1C8ABB70E9EE0FD003FE061 /* NitroxApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApi.h; sourceTree = "<group>"; };
-		B1C8ABB90E9EE0FD003FE061 /* NitroxApiPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiPhoto.h; sourceTree = "<group>"; };
-		B1C8ABBA0E9EE0FD003FE061 /* NitroxApiPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiPhoto.m; sourceTree = "<group>"; };
-		B1C8ABBB0E9EE0FD003FE061 /* NitroxImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxImagePicker.h; sourceTree = "<group>"; };
-		B1C8ABBC0E9EE0FD003FE061 /* NitroxImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxImagePicker.m; sourceTree = "<group>"; };
-		B1C8ABBD0E9EE0FD003FE061 /* NitroxImagePickerUI.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NitroxImagePickerUI.xib; sourceTree = "<group>"; };
-		B1C8ABBE0E9EE0FD003FE061 /* NitroxPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxPhoto.h; sourceTree = "<group>"; };
-		B1C8ABBF0E9EE0FD003FE061 /* NitroxPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxPhoto.m; sourceTree = "<group>"; };
-		B1C8ABC10E9EE0FD003FE061 /* NitroxApiDirectSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiDirectSystem.h; sourceTree = "<group>"; };
-		B1C8ABC20E9EE0FD003FE061 /* NitroxApiDirectSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiDirectSystem.m; sourceTree = "<group>"; };
-		B1C8ABC30E9EE0FD003FE061 /* NitroxApiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiSystem.h; sourceTree = "<group>"; };
-		B1C8ABC40E9EE0FD003FE061 /* NitroxApiSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiSystem.m; sourceTree = "<group>"; };
-		B1C8ABC60E9EE0FD003FE061 /* NitroxApiVibrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiVibrate.h; sourceTree = "<group>"; };
-		B1C8ABC70E9EE0FD003FE061 /* NitroxApiVibrate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiVibrate.m; sourceTree = "<group>"; };
-		B1C8AC210E9EE0FE003FE061 /* BuildingAndUsing.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BuildingAndUsing.txt; sourceTree = "<group>"; };
-		B1C8AC230E9EE0FE003FE061 /* BuildAllSDKs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = BuildAllSDKs.sh; sourceTree = "<group>"; };
-		B1C8AC240E9EE0FE003FE061 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
-		B1C8AC260E9EE0FE003FE061 /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
-		B1C8AC270E9EE0FE003FE061 /* GTMMethodCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMMethodCheck.h; sourceTree = "<group>"; };
-		B1C8AC280E9EE0FE003FE061 /* GTMMethodCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMMethodCheck.m; sourceTree = "<group>"; };
-		B1C8AC2A0E9EE0FE003FE061 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
-		B1C8AC2B0E9EE0FE003FE061 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
-		B1C8AC2C0E9EE0FE003FE061 /* GTMGarbageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGarbageCollection.h; sourceTree = "<group>"; };
-		B1C8AC2D0E9EE0FE003FE061 /* GTMGetURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMGetURLHandler.m; sourceTree = "<group>"; };
-		B1C8AC2E0E9EE0FE003FE061 /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcher.h; sourceTree = "<group>"; };
-		B1C8AC2F0E9EE0FE003FE061 /* GTMHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetcher.m; sourceTree = "<group>"; };
-		B1C8AC300E9EE0FE003FE061 /* GTMHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPServer.h; sourceTree = "<group>"; };
-		B1C8AC310E9EE0FE003FE061 /* GTMHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPServer.m; sourceTree = "<group>"; };
-		B1C8AC320E9EE0FE003FE061 /* GTMNSFileManager+Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSFileManager+Path.h"; sourceTree = "<group>"; };
-		B1C8AC330E9EE0FE003FE061 /* GTMNSFileManager+Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSFileManager+Path.m"; sourceTree = "<group>"; };
-		B1C8AC340E9EE0FE003FE061 /* GTMNSString+FindFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+FindFolder.h"; sourceTree = "<group>"; };
-		B1C8AC350E9EE0FE003FE061 /* GTMNSString+FindFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+FindFolder.m"; sourceTree = "<group>"; };
-		B1C8AC360E9EE0FE003FE061 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
-		B1C8AC370E9EE0FE003FE061 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
-		B1C8AC380E9EE0FE003FE061 /* GTMNSString+Replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+Replace.h"; sourceTree = "<group>"; };
-		B1C8AC390E9EE0FE003FE061 /* GTMNSString+Replace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+Replace.m"; sourceTree = "<group>"; };
-		B1C8AC3A0E9EE0FE003FE061 /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+URLArguments.h"; sourceTree = "<group>"; };
-		B1C8AC3B0E9EE0FE003FE061 /* GTMNSString+URLArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+URLArguments.m"; sourceTree = "<group>"; };
-		B1C8AC3C0E9EE0FE003FE061 /* GTMNSString+XML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+XML.h"; sourceTree = "<group>"; };
-		B1C8AC3D0E9EE0FE003FE061 /* GTMNSString+XML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+XML.m"; sourceTree = "<group>"; };
-		B1C8AC3E0E9EE0FE003FE061 /* GTMObjC2Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjC2Runtime.h; sourceTree = "<group>"; };
-		B1C8AC3F0E9EE0FE003FE061 /* GTMObjC2Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMObjC2Runtime.m; sourceTree = "<group>"; };
-		B1C8AC400E9EE0FE003FE061 /* GTMObjectSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjectSingleton.h; sourceTree = "<group>"; };
-		B1C8AC410E9EE0FE003FE061 /* GTMPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMPath.h; sourceTree = "<group>"; };
-		B1C8AC420E9EE0FE003FE061 /* GTMPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMPath.m; sourceTree = "<group>"; };
-		B1C8AC430E9EE0FE003FE061 /* GTMRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMRegex.h; sourceTree = "<group>"; };
-		B1C8AC440E9EE0FE003FE061 /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMRegex.m; sourceTree = "<group>"; };
-		B1C8AC450E9EE0FE003FE061 /* GTMSignalHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMSignalHandler.h; sourceTree = "<group>"; };
-		B1C8AC460E9EE0FE003FE061 /* GTMSignalHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMSignalHandler.m; sourceTree = "<group>"; };
-		B1C8AC470E9EE0FE003FE061 /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
-		B1C8AC480E9EE0FE003FE061 /* GTMStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMStackTrace.m; sourceTree = "<group>"; };
-		B1C8AC490E9EE0FE003FE061 /* GTMSystemVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMSystemVersion.h; sourceTree = "<group>"; };
-		B1C8AC4A0E9EE0FE003FE061 /* GTMSystemVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMSystemVersion.m; sourceTree = "<group>"; };
-		B1C8AC4B0E9EE0FE003FE061 /* GTM-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GTM-Info.plist"; sourceTree = "<group>"; };
-		B1C8AC4C0E9EE0FE003FE061 /* GTM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GTM.xcodeproj; sourceTree = "<group>"; };
-		B1C8AC4F0E9EE0FE003FE061 /* GTM_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTM_Prefix.pch; sourceTree = "<group>"; };
-		B1C8AC500E9EE0FE003FE061 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		B1C8AC510E9EE0FE003FE061 /* GTMiPhone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GTMiPhone-Info.plist"; sourceTree = "<group>"; };
-		B1C8AC520E9EE0FE003FE061 /* GTMiPhone.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GTMiPhone.xcodeproj; sourceTree = "<group>"; };
-		B1C8AC560E9EE0FE003FE061 /* GTMABAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMABAddressBook.h; sourceTree = "<group>"; };
-		B1C8AC570E9EE0FE003FE061 /* GTMABAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMABAddressBook.m; sourceTree = "<group>"; };
-		B1C8AC580E9EE0FE003FE061 /* GTMABAddressBook.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = GTMABAddressBook.strings; sourceTree = "<group>"; };
-		B1C8AC590E9EE0FE003FE061 /* GTMABAddressBookTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMABAddressBookTest.m; sourceTree = "<group>"; };
-		B1C8AC5B0E9EE0FE003FE061 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
-		B1C8AC5C0E9EE0FE003FE061 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
-		B1C8AC5E0E9EE0FE003FE061 /* libgcov.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgcov.a; sourceTree = "<group>"; };
-		B1C8AC5F0E9EE0FE003FE061 /* libgcov_readme.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = libgcov_readme.html; sourceTree = "<group>"; };
-		B1C8AC600E9EE0FE003FE061 /* UnitTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
-		B1C8AC900E9EE0FE003FE061 /* DebugiPhone.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugiPhone.xcconfig; sourceTree = "<group>"; };
-		B1C8AC910E9EE0FE003FE061 /* DebugLeopardOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugLeopardOrLater.xcconfig; sourceTree = "<group>"; };
-		B1C8AC920E9EE0FE003FE061 /* DebugTigerOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugTigerOrLater.xcconfig; sourceTree = "<group>"; };
-		B1C8AC930E9EE0FE003FE061 /* ReleaseiPhone.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseiPhone.xcconfig; sourceTree = "<group>"; };
-		B1C8AC940E9EE0FE003FE061 /* ReleaseLeopardOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseLeopardOrLater.xcconfig; sourceTree = "<group>"; };
-		B1C8AC950E9EE0FE003FE061 /* ReleaseTigerOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseTigerOrLater.xcconfig; sourceTree = "<group>"; };
-		B1C8AC970E9EE0FE003FE061 /* CodeCoverage.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CodeCoverage.xcconfig; sourceTree = "<group>"; };
-		B1C8AC980E9EE0FE003FE061 /* CodeCoverageStatic.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CodeCoverageStatic.xcconfig; sourceTree = "<group>"; };
-		B1C8AC990E9EE0FE003FE061 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		B1C8AC9A0E9EE0FE003FE061 /* GCSupported.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = GCSupported.xcconfig; sourceTree = "<group>"; };
-		B1C8AC9B0E9EE0FE003FE061 /* General.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = General.xcconfig; sourceTree = "<group>"; };
-		B1C8AC9C0E9EE0FE003FE061 /* iPhone.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = iPhone.xcconfig; sourceTree = "<group>"; };
-		B1C8AC9D0E9EE0FE003FE061 /* LeopardOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = LeopardOrLater.xcconfig; sourceTree = "<group>"; };
-		B1C8AC9E0E9EE0FE003FE061 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		B1C8AC9F0E9EE0FE003FE061 /* TigerOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TigerOrLater.xcconfig; sourceTree = "<group>"; };
-		B1C8ACA00E9EE0FE003FE061 /* Unittest.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Unittest.xcconfig; sourceTree = "<group>"; };
-		B1C8ACA20E9EE0FE003FE061 /* DebugUnittest.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugUnittest.xcconfig; sourceTree = "<group>"; };
-		B1C8ACA30E9EE0FE003FE061 /* LoadableBundle.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = LoadableBundle.xcconfig; sourceTree = "<group>"; };
-		B1C8ACA40E9EE0FE003FE061 /* LoadableBundleGCSupported.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = LoadableBundleGCSupported.xcconfig; sourceTree = "<group>"; };
-		B1C8ACA50E9EE0FE003FE061 /* ReleaseUnittest.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseUnittest.xcconfig; sourceTree = "<group>"; };
-		B1C8ACA60E9EE0FE003FE061 /* SharedLibrary.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SharedLibrary.xcconfig; sourceTree = "<group>"; };
-		B1C8ACA70E9EE0FE003FE061 /* SharedLibraryGCSupported.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SharedLibraryGCSupported.xcconfig; sourceTree = "<group>"; };
-		B1C8ACA80E9EE0FE003FE061 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
-		B1C8ACA90E9EE0FE003FE061 /* StaticLibraryGCSupported.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = StaticLibraryGCSupported.xcconfig; sourceTree = "<group>"; };
-		B1C8ACAA0E9EE0FE003FE061 /* xcconfigs-readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "xcconfigs-readme.txt"; sourceTree = "<group>"; };
-		B1C8ACAC0E9EE0FE003FE061 /* NSObject+JSBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSBridge.h"; sourceTree = "<group>"; };
-		B1C8ACAD0E9EE0FE003FE061 /* NSObject+JSBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSBridge.m"; sourceTree = "<group>"; };
-		B1C8ACAF0E9EE0FE003FE061 /* NitroxInstanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxInstanceManager.h; sourceTree = "<group>"; };
-		B1C8ACB00E9EE0FE003FE061 /* NitroxInstanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxInstanceManager.m; sourceTree = "<group>"; };
-		B1C8ACB10E9EE0FE003FE061 /* NitroxRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxRPC.h; sourceTree = "<group>"; };
-		B1C8ACB20E9EE0FE003FE061 /* NitroxRPCCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxRPCCallback.h; sourceTree = "<group>"; };
-		B1C8ACB30E9EE0FE003FE061 /* NitroxRPCCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxRPCCallback.m; sourceTree = "<group>"; };
-		B1C8ACB40E9EE0FE003FE061 /* NitroxRPCDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxRPCDispatcher.h; sourceTree = "<group>"; };
-		B1C8ACB50E9EE0FE003FE061 /* NitroxRPCDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxRPCDispatcher.m; sourceTree = "<group>"; };
-		B1C8ACB60E9EE0FE003FE061 /* NitroxStubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxStubClass.h; sourceTree = "<group>"; };
-		B1C8ACB70E9EE0FE003FE061 /* NitroxStubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxStubClass.m; sourceTree = "<group>"; };
-		B1C8ACB90E9EE0FE003FE061 /* NitroxHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxHTTP.h; sourceTree = "<group>"; };
-		B1C8ACBA0E9EE0FE003FE061 /* NitroxHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxHTTPServer.h; sourceTree = "<group>"; };
-		B1C8ACBB0E9EE0FE003FE061 /* NitroxHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxHTTPServer.m; sourceTree = "<group>"; };
-		B1C8ACBC0E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxHTTPServerFilesystemDelegate.h; sourceTree = "<group>"; };
-		B1C8ACBD0E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxHTTPServerFilesystemDelegate.m; sourceTree = "<group>"; };
-		B1C8ACBE0E9EE0FE003FE061 /* NitroxHTTPServerListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxHTTPServerListDelegate.h; sourceTree = "<group>"; };
-		B1C8ACBF0E9EE0FE003FE061 /* NitroxHTTPServerListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxHTTPServerListDelegate.m; sourceTree = "<group>"; };
-		B1C8ACC00E9EE0FE003FE061 /* NitroxHTTPServerLogDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxHTTPServerLogDelegate.h; sourceTree = "<group>"; };
-		B1C8ACC10E9EE0FE003FE061 /* NitroxHTTPServerLogDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxHTTPServerLogDelegate.m; sourceTree = "<group>"; };
-		B1C8ACC20E9EE0FE003FE061 /* NitroxHTTPServerPathDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxHTTPServerPathDelegate.h; sourceTree = "<group>"; };
-		B1C8ACC30E9EE0FE003FE061 /* NitroxHTTPServerPathDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxHTTPServerPathDelegate.m; sourceTree = "<group>"; };
-		B1C8ACC40E9EE0FE003FE061 /* NitroxHTTPServerProxyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxHTTPServerProxyDelegate.h; sourceTree = "<group>"; };
-		B1C8ACC50E9EE0FE003FE061 /* NitroxHTTPServerProxyDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxHTTPServerProxyDelegate.m; sourceTree = "<group>"; };
-		B1C8ACC60E9EE0FE003FE061 /* NitroxHTTPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxHTTPUtils.h; sourceTree = "<group>"; };
-		B1C8ACC70E9EE0FE003FE061 /* NitroxHTTPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxHTTPUtils.m; sourceTree = "<group>"; };
-		B1C8ACC90E9EE0FE003FE061 /* NitroxApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApp.h; sourceTree = "<group>"; };
-		B1C8ACCA0E9EE0FE003FE061 /* NitroxApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApp.m; sourceTree = "<group>"; };
-		B1C8ACCB0E9EE0FE003FE061 /* NitroxAppPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxAppPage.h; sourceTree = "<group>"; };
-		B1C8ACCC0E9EE0FE003FE061 /* NitroxAppPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxAppPage.m; sourceTree = "<group>"; };
-		B1C8ACCD0E9EE0FE003FE061 /* NitroxWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxWebView.h; sourceTree = "<group>"; };
-		B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxWebView.m; sourceTree = "<group>"; };
-		B1C8ACCF0E9EE0FE003FE061 /* NitroxWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NitroxWebView.xib; sourceTree = "<group>"; };
-		B1C8ACD00E9EE0FE003FE061 /* NitroxWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxWebViewController.h; sourceTree = "<group>"; };
-		B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxWebViewController.m; sourceTree = "<group>"; };
-		B1C8ADB40E9EE112003FE061 /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
-		B1C8ADB50E9EE112003FE061 /* description */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = description; sourceTree = "<group>"; };
-		B1C8ADB60E9EE112003FE061 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		B1C8ADB80E9EE112003FE061 /* applypatch-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "applypatch-msg.sample"; sourceTree = "<group>"; };
-		B1C8ADB90E9EE112003FE061 /* commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "commit-msg.sample"; sourceTree = "<group>"; };
-		B1C8ADBA0E9EE112003FE061 /* post-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-commit.sample"; sourceTree = "<group>"; };
-		B1C8ADBB0E9EE112003FE061 /* post-receive.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-receive.sample"; sourceTree = "<group>"; };
-		B1C8ADBC0E9EE112003FE061 /* post-update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-update.sample"; sourceTree = "<group>"; };
-		B1C8ADBD0E9EE112003FE061 /* pre-applypatch.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-applypatch.sample"; sourceTree = "<group>"; };
-		B1C8ADBE0E9EE112003FE061 /* pre-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-commit.sample"; sourceTree = "<group>"; };
-		B1C8ADBF0E9EE112003FE061 /* pre-rebase.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-rebase.sample"; sourceTree = "<group>"; };
-		B1C8ADC00E9EE112003FE061 /* prepare-commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg.sample"; sourceTree = "<group>"; };
-		B1C8ADC10E9EE112003FE061 /* update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sample; sourceTree = "<group>"; };
-		B1C8ADC20E9EE112003FE061 /* index */ = {isa = PBXFileReference; lastKnownFileType = file; path = index; sourceTree = "<group>"; };
-		B1C8ADC40E9EE112003FE061 /* exclude */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exclude; sourceTree = "<group>"; };
-		B1C8ADC60E9EE112003FE061 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		B1C8ADC90E9EE112003FE061 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
-		B1C8ADCC0E9EE112003FE061 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		B1C8ADD00E9EE112003FE061 /* pack-a44a0b24e5b4da4edab935d6d34214a2fa03ca67.idx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-a44a0b24e5b4da4edab935d6d34214a2fa03ca67.idx"; sourceTree = "<group>"; };
-		B1C8ADD10E9EE112003FE061 /* pack-a44a0b24e5b4da4edab935d6d34214a2fa03ca67.pack */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-a44a0b24e5b4da4edab935d6d34214a2fa03ca67.pack"; sourceTree = "<group>"; };
-		B1C8ADD20E9EE112003FE061 /* packed-refs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "packed-refs"; sourceTree = "<group>"; };
-		B1C8ADD50E9EE112003FE061 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
-		B1C8ADD80E9EE112003FE061 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		B1C8ADDB0E9EE112003FE061 /* issue-fc30344fe04417e465e52ebca15b583f0d80a942.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "issue-fc30344fe04417e465e52ebca15b583f0d80a942.yaml"; sourceTree = "<group>"; };
-		B1C8ADDC0E9EE112003FE061 /* project.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = project.yaml; sourceTree = "<group>"; };
-		B1C8ADDD0E9EE112003FE061 /* Nibware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nibware.h; sourceTree = "<group>"; };
-		B1C8ADDE0E9EE112003FE061 /* NibwareAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibwareAlert.h; sourceTree = "<group>"; };
-		B1C8ADDF0E9EE112003FE061 /* NibwareAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibwareAlert.m; sourceTree = "<group>"; };
-		B1C8ADE00E9EE112003FE061 /* NibwareDebugView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibwareDebugView.xib; sourceTree = "<group>"; };
-		B1C8ADE10E9EE112003FE061 /* NibwareDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibwareDebugViewController.h; sourceTree = "<group>"; };
-		B1C8ADE20E9EE112003FE061 /* NibwareDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibwareDebugViewController.m; sourceTree = "<group>"; };
-		B1C8ADE30E9EE112003FE061 /* NibwareLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibwareLog.h; sourceTree = "<group>"; };
-		B1C8ADE40E9EE112003FE061 /* NibwareLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibwareLog.m; sourceTree = "<group>"; };
-		B1C8ADE50E9EE112003FE061 /* NibwareMIMEPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibwareMIMEPart.h; sourceTree = "<group>"; };
-		B1C8ADE60E9EE112003FE061 /* NibwareMIMEPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibwareMIMEPart.m; sourceTree = "<group>"; };
-		B1C8ADE70E9EE112003FE061 /* NibwarePrefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibwarePrefs.h; sourceTree = "<group>"; };
-		B1C8ADE80E9EE112003FE061 /* NibwarePrefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibwarePrefs.m; sourceTree = "<group>"; };
-		B1C8ADE90E9EE112003FE061 /* NibwareStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibwareStringUtils.h; sourceTree = "<group>"; };
-		B1C8ADEA0E9EE112003FE061 /* NibwareStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibwareStringUtils.m; sourceTree = "<group>"; };
-		B1C8ADEB0E9EE112003FE061 /* NibwareUrlUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibwareUrlUtils.h; sourceTree = "<group>"; };
-		B1C8ADEC0E9EE112003FE061 /* NibwareUrlUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibwareUrlUtils.m; sourceTree = "<group>"; };
-		B1C8ADED0E9EE112003FE061 /* NibwareWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibwareWebView.h; sourceTree = "<group>"; };
-		B1C8ADEE0E9EE112003FE061 /* NibwareWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibwareWebView.m; sourceTree = "<group>"; };
-		B1C8ADEF0E9EE112003FE061 /* NibwareWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibwareWebView.xib; sourceTree = "<group>"; };
-		B1C8ADF00E9EE112003FE061 /* NibwareWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibwareWebViewController.h; sourceTree = "<group>"; };
-		B1C8ADF10E9EE112003FE061 /* NibwareWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibwareWebViewController.m; sourceTree = "<group>"; };
-		B1C8ADF20E9EE112003FE061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		B1C8AE800E9EE112003FE061 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		B1C8AE810E9EE112003FE061 /* Nukefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nukefile; sourceTree = "<group>"; };
-		B1C8AE840E9EE112003FE061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		B1C8AE860E9EE112003FE061 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
-		B1C8AE870E9EE112003FE061 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
-		B1C8AE890E9EE112003FE061 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
-		B1C8AE8A0E9EE112003FE061 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
-		B1C8AE8B0E9EE112003FE061 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet_Extensions.h; sourceTree = "<group>"; };
-		B1C8AE8C0E9EE112003FE061 /* NSCharacterSet_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCharacterSet_Extensions.m; sourceTree = "<group>"; };
-		B1C8AE8D0E9EE112003FE061 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
-		B1C8AE8E0E9EE112003FE061 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
-		B1C8AE8F0E9EE112003FE061 /* NSScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSScanner_Extensions.h; sourceTree = "<group>"; };
-		B1C8AE900E9EE112003FE061 /* NSScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSScanner_Extensions.m; sourceTree = "<group>"; };
-		B1C8AE920E9EE112003FE061 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
-		B1C8AE930E9EE112003FE061 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
-		B1C8AE940E9EE112003FE061 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
-		B1C8AE950E9EE112003FE061 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
-		B1C8AE960E9EE112003FE061 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
-		B1C8AE970E9EE112003FE061 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
-		B1C8AE980E9EE112003FE061 /* TouchJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TouchJSON.xcodeproj; sourceTree = "<group>"; };
 		B1C8B01B0E9EE2DF003FE061 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = web; path = ../../web; sourceTree = SOURCE_ROOT; };
-		B1C8B25A0EA00B30003FE061 /* NitroxScriptDebugDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxScriptDebugDelegate.h; sourceTree = "<group>"; };
-		B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxScriptDebugDelegate.m; sourceTree = "<group>"; };
 		B1D35DA10E8E94A300A1C105 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		B1D35DA30E8E94A300A1C105 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B1D35DA50E8E94A300A1C105 /* Camera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Camera.framework; path = System/Library/PrivateFrameworks/Camera.framework; sourceTree = SDKROOT; };
@@ -405,6 +91,8 @@
 		B1DD3E770E90A85F00952CD6 /* WebViewInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewInstance.m; sourceTree = "<group>"; };
 		B1ED87C90EA558D600898C8A /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
 		B1ED89120EA55B7200898C8A /* nitroxdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nitroxdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libnitrox.xcodeproj; path = ../../lib/libnitrox.xcodeproj; sourceTree = SOURCE_ROOT; };
+		B1ED8C9E0EA593A200898C8A /* NitroxWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NitroxWebView.xib; path = ../../src/webview/NitroxWebView.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1ED8C470EA56E3E00898C8A /* liblibnitrox.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -453,9 +142,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B1ED8C9E0EA593A200898C8A /* NitroxWebView.xib */,
+				B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */,
 				B1C8B01B0E9EE2DF003FE061 /* web */,
-				B1C8ADB10E9EE112003FE061 /* vendor */,
-				B1C8ABA30E9EE0FD003FE061 /* src */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -505,636 +194,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B1C8ABA30E9EE0FD003FE061 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABA40E9EE0FD003FE061 /* api */,
-				B1C8ABC80E9EE0FD003FE061 /* gtm */,
-				B1C8ACAB0E9EE0FE003FE061 /* lang */,
-				B1C8ACAE0E9EE0FE003FE061 /* rpc */,
-				B1C8ACB80E9EE0FE003FE061 /* server */,
-				B1C8ACC80E9EE0FE003FE061 /* webview */,
-			);
-			name = src;
-			path = ../../src;
-			sourceTree = SOURCE_ROOT;
-		};
-		B1C8ABA40E9EE0FD003FE061 /* api */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABA50E9EE0FD003FE061 /* accel */,
-				B1C8ABA80E9EE0FD003FE061 /* application */,
-				B1C8ABAB0E9EE0FD003FE061 /* benchmark */,
-				B1C8ABAE0E9EE0FD003FE061 /* device */,
-				B1C8ABB10E9EE0FD003FE061 /* event */,
-				B1C8ABB40E9EE0FD003FE061 /* location */,
-				B1C8ABB70E9EE0FD003FE061 /* NitroxApi.h */,
-				B1C8ABB80E9EE0FD003FE061 /* photo */,
-				B1C8ABC00E9EE0FD003FE061 /* system */,
-				B1C8ABC50E9EE0FD003FE061 /* vibrate */,
-			);
-			path = api;
-			sourceTree = "<group>";
-		};
-		B1C8ABA50E9EE0FD003FE061 /* accel */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABA60E9EE0FD003FE061 /* NitroxApiAccelerometer.h */,
-				B1C8ABA70E9EE0FD003FE061 /* NitroxApiAccelerometer.m */,
-			);
-			path = accel;
-			sourceTree = "<group>";
-		};
-		B1C8ABA80E9EE0FD003FE061 /* application */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABA90E9EE0FD003FE061 /* NitroxApiApplication.h */,
-				B1C8ABAA0E9EE0FD003FE061 /* NitroxApiApplication.m */,
-			);
-			path = application;
-			sourceTree = "<group>";
-		};
-		B1C8ABAB0E9EE0FD003FE061 /* benchmark */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABAC0E9EE0FD003FE061 /* NitroxApiBenchmark.h */,
-				B1C8ABAD0E9EE0FD003FE061 /* NitroxApiBenchmark.m */,
-			);
-			path = benchmark;
-			sourceTree = "<group>";
-		};
-		B1C8ABAE0E9EE0FD003FE061 /* device */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABAF0E9EE0FD003FE061 /* NitroxApiDevice.h */,
-				B1C8ABB00E9EE0FD003FE061 /* NitroxApiDevice.m */,
-			);
-			path = device;
-			sourceTree = "<group>";
-		};
-		B1C8ABB10E9EE0FD003FE061 /* event */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABB20E9EE0FD003FE061 /* NitroxApiEvent.h */,
-				B1C8ABB30E9EE0FD003FE061 /* NitroxApiEvent.m */,
-			);
-			path = event;
-			sourceTree = "<group>";
-		};
-		B1C8ABB40E9EE0FD003FE061 /* location */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABB50E9EE0FD003FE061 /* NitroxApiLocation.h */,
-				B1C8ABB60E9EE0FD003FE061 /* NitroxApiLocation.m */,
-			);
-			path = location;
-			sourceTree = "<group>";
-		};
-		B1C8ABB80E9EE0FD003FE061 /* photo */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABB90E9EE0FD003FE061 /* NitroxApiPhoto.h */,
-				B1C8ABBA0E9EE0FD003FE061 /* NitroxApiPhoto.m */,
-				B1C8ABBB0E9EE0FD003FE061 /* NitroxImagePicker.h */,
-				B1C8ABBC0E9EE0FD003FE061 /* NitroxImagePicker.m */,
-				B1C8ABBD0E9EE0FD003FE061 /* NitroxImagePickerUI.xib */,
-				B1C8ABBE0E9EE0FD003FE061 /* NitroxPhoto.h */,
-				B1C8ABBF0E9EE0FD003FE061 /* NitroxPhoto.m */,
-			);
-			path = photo;
-			sourceTree = "<group>";
-		};
-		B1C8ABC00E9EE0FD003FE061 /* system */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABC10E9EE0FD003FE061 /* NitroxApiDirectSystem.h */,
-				B1C8ABC20E9EE0FD003FE061 /* NitroxApiDirectSystem.m */,
-				B1C8ABC30E9EE0FD003FE061 /* NitroxApiSystem.h */,
-				B1C8ABC40E9EE0FD003FE061 /* NitroxApiSystem.m */,
-			);
-			path = system;
-			sourceTree = "<group>";
-		};
-		B1C8ABC50E9EE0FD003FE061 /* vibrate */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ABC60E9EE0FD003FE061 /* NitroxApiVibrate.h */,
-				B1C8ABC70E9EE0FD003FE061 /* NitroxApiVibrate.m */,
-			);
-			path = vibrate;
-			sourceTree = "<group>";
-		};
-		B1C8ABC80E9EE0FD003FE061 /* gtm */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC210E9EE0FE003FE061 /* BuildingAndUsing.txt */,
-				B1C8AC220E9EE0FE003FE061 /* BuildScripts */,
-				B1C8AC240E9EE0FE003FE061 /* COPYING */,
-				B1C8AC250E9EE0FE003FE061 /* DebugUtils */,
-				B1C8AC290E9EE0FE003FE061 /* Foundation */,
-				B1C8AC4B0E9EE0FE003FE061 /* GTM-Info.plist */,
-				B1C8AC4C0E9EE0FE003FE061 /* GTM.xcodeproj */,
-				B1C8AC4F0E9EE0FE003FE061 /* GTM_Prefix.pch */,
-				B1C8AC500E9EE0FE003FE061 /* GTMDefines.h */,
-				B1C8AC510E9EE0FE003FE061 /* GTMiPhone-Info.plist */,
-				B1C8AC520E9EE0FE003FE061 /* GTMiPhone.xcodeproj */,
-				B1C8AC550E9EE0FE003FE061 /* iPhone */,
-				B1C8AC5C0E9EE0FE003FE061 /* ReleaseNotes.txt */,
-				B1C8AC5D0E9EE0FE003FE061 /* TigerGcov */,
-				B1C8AC600E9EE0FE003FE061 /* UnitTest-Info.plist */,
-				B1C8AC8E0E9EE0FE003FE061 /* XcodeConfig */,
-			);
-			path = gtm;
-			sourceTree = "<group>";
-		};
-		B1C8AC220E9EE0FE003FE061 /* BuildScripts */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC230E9EE0FE003FE061 /* BuildAllSDKs.sh */,
-			);
-			path = BuildScripts;
-			sourceTree = "<group>";
-		};
-		B1C8AC250E9EE0FE003FE061 /* DebugUtils */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC260E9EE0FE003FE061 /* GTMDebugSelectorValidation.h */,
-				B1C8AC270E9EE0FE003FE061 /* GTMMethodCheck.h */,
-				B1C8AC280E9EE0FE003FE061 /* GTMMethodCheck.m */,
-			);
-			path = DebugUtils;
-			sourceTree = "<group>";
-		};
-		B1C8AC290E9EE0FE003FE061 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC2A0E9EE0FE003FE061 /* GTMBase64.h */,
-				B1C8AC2B0E9EE0FE003FE061 /* GTMBase64.m */,
-				B1C8AC2C0E9EE0FE003FE061 /* GTMGarbageCollection.h */,
-				B1C8AC2D0E9EE0FE003FE061 /* GTMGetURLHandler.m */,
-				B1C8AC2E0E9EE0FE003FE061 /* GTMHTTPFetcher.h */,
-				B1C8AC2F0E9EE0FE003FE061 /* GTMHTTPFetcher.m */,
-				B1C8AC300E9EE0FE003FE061 /* GTMHTTPServer.h */,
-				B1C8AC310E9EE0FE003FE061 /* GTMHTTPServer.m */,
-				B1C8AC320E9EE0FE003FE061 /* GTMNSFileManager+Path.h */,
-				B1C8AC330E9EE0FE003FE061 /* GTMNSFileManager+Path.m */,
-				B1C8AC340E9EE0FE003FE061 /* GTMNSString+FindFolder.h */,
-				B1C8AC350E9EE0FE003FE061 /* GTMNSString+FindFolder.m */,
-				B1C8AC360E9EE0FE003FE061 /* GTMNSString+HTML.h */,
-				B1C8AC370E9EE0FE003FE061 /* GTMNSString+HTML.m */,
-				B1C8AC380E9EE0FE003FE061 /* GTMNSString+Replace.h */,
-				B1C8AC390E9EE0FE003FE061 /* GTMNSString+Replace.m */,
-				B1C8AC3A0E9EE0FE003FE061 /* GTMNSString+URLArguments.h */,
-				B1C8AC3B0E9EE0FE003FE061 /* GTMNSString+URLArguments.m */,
-				B1C8AC3C0E9EE0FE003FE061 /* GTMNSString+XML.h */,
-				B1C8AC3D0E9EE0FE003FE061 /* GTMNSString+XML.m */,
-				B1C8AC3E0E9EE0FE003FE061 /* GTMObjC2Runtime.h */,
-				B1C8AC3F0E9EE0FE003FE061 /* GTMObjC2Runtime.m */,
-				B1C8AC400E9EE0FE003FE061 /* GTMObjectSingleton.h */,
-				B1C8AC410E9EE0FE003FE061 /* GTMPath.h */,
-				B1C8AC420E9EE0FE003FE061 /* GTMPath.m */,
-				B1C8AC430E9EE0FE003FE061 /* GTMRegex.h */,
-				B1C8AC440E9EE0FE003FE061 /* GTMRegex.m */,
-				B1C8AC450E9EE0FE003FE061 /* GTMSignalHandler.h */,
-				B1C8AC460E9EE0FE003FE061 /* GTMSignalHandler.m */,
-				B1C8AC470E9EE0FE003FE061 /* GTMStackTrace.h */,
-				B1C8AC480E9EE0FE003FE061 /* GTMStackTrace.m */,
-				B1C8AC490E9EE0FE003FE061 /* GTMSystemVersion.h */,
-				B1C8AC4A0E9EE0FE003FE061 /* GTMSystemVersion.m */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		B1C8AC4D0E9EE0FE003FE061 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADA10E9EE0FF003FE061 /* GoogleToolboxForMac.framework */,
-				B1C8ADA30E9EE0FF003FE061 /* UnitTest - AppKit.octest */,
-				B1C8ADA50E9EE0FF003FE061 /* UnitTest - Foundation.octest */,
-				B1C8ADA70E9EE0FF003FE061 /* UnitTest - UnitTesting.octest */,
-				B1C8ADA90E9EE0FF003FE061 /* GTMUIUnitTestingHarness.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B1C8AC530E9EE0FE003FE061 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADB00E9EE0FF003FE061 /* GTMiPhoneTest.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B1C8AC550E9EE0FE003FE061 /* iPhone */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC560E9EE0FE003FE061 /* GTMABAddressBook.h */,
-				B1C8AC570E9EE0FE003FE061 /* GTMABAddressBook.m */,
-				B1C8AC580E9EE0FE003FE061 /* GTMABAddressBook.strings */,
-				B1C8AC590E9EE0FE003FE061 /* GTMABAddressBookTest.m */,
-				B1C8AC5A0E9EE0FE003FE061 /* TestData */,
-			);
-			path = iPhone;
-			sourceTree = "<group>";
-		};
-		B1C8AC5A0E9EE0FE003FE061 /* TestData */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC5B0E9EE0FE003FE061 /* phone.png */,
-			);
-			path = TestData;
-			sourceTree = "<group>";
-		};
-		B1C8AC5D0E9EE0FE003FE061 /* TigerGcov */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC5E0E9EE0FE003FE061 /* libgcov.a */,
-				B1C8AC5F0E9EE0FE003FE061 /* libgcov_readme.html */,
-			);
-			path = TigerGcov;
-			sourceTree = "<group>";
-		};
-		B1C8AC8E0E9EE0FE003FE061 /* XcodeConfig */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC8F0E9EE0FE003FE061 /* Project */,
-				B1C8AC960E9EE0FE003FE061 /* subconfig */,
-				B1C8ACA10E9EE0FE003FE061 /* Target */,
-				B1C8ACAA0E9EE0FE003FE061 /* xcconfigs-readme.txt */,
-			);
-			path = XcodeConfig;
-			sourceTree = "<group>";
-		};
-		B1C8AC8F0E9EE0FE003FE061 /* Project */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC900E9EE0FE003FE061 /* DebugiPhone.xcconfig */,
-				B1C8AC910E9EE0FE003FE061 /* DebugLeopardOrLater.xcconfig */,
-				B1C8AC920E9EE0FE003FE061 /* DebugTigerOrLater.xcconfig */,
-				B1C8AC930E9EE0FE003FE061 /* ReleaseiPhone.xcconfig */,
-				B1C8AC940E9EE0FE003FE061 /* ReleaseLeopardOrLater.xcconfig */,
-				B1C8AC950E9EE0FE003FE061 /* ReleaseTigerOrLater.xcconfig */,
-			);
-			path = Project;
-			sourceTree = "<group>";
-		};
-		B1C8AC960E9EE0FE003FE061 /* subconfig */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AC970E9EE0FE003FE061 /* CodeCoverage.xcconfig */,
-				B1C8AC980E9EE0FE003FE061 /* CodeCoverageStatic.xcconfig */,
-				B1C8AC990E9EE0FE003FE061 /* Debug.xcconfig */,
-				B1C8AC9A0E9EE0FE003FE061 /* GCSupported.xcconfig */,
-				B1C8AC9B0E9EE0FE003FE061 /* General.xcconfig */,
-				B1C8AC9C0E9EE0FE003FE061 /* iPhone.xcconfig */,
-				B1C8AC9D0E9EE0FE003FE061 /* LeopardOrLater.xcconfig */,
-				B1C8AC9E0E9EE0FE003FE061 /* Release.xcconfig */,
-				B1C8AC9F0E9EE0FE003FE061 /* TigerOrLater.xcconfig */,
-				B1C8ACA00E9EE0FE003FE061 /* Unittest.xcconfig */,
-			);
-			path = subconfig;
-			sourceTree = "<group>";
-		};
-		B1C8ACA10E9EE0FE003FE061 /* Target */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ACA20E9EE0FE003FE061 /* DebugUnittest.xcconfig */,
-				B1C8ACA30E9EE0FE003FE061 /* LoadableBundle.xcconfig */,
-				B1C8ACA40E9EE0FE003FE061 /* LoadableBundleGCSupported.xcconfig */,
-				B1C8ACA50E9EE0FE003FE061 /* ReleaseUnittest.xcconfig */,
-				B1C8ACA60E9EE0FE003FE061 /* SharedLibrary.xcconfig */,
-				B1C8ACA70E9EE0FE003FE061 /* SharedLibraryGCSupported.xcconfig */,
-				B1C8ACA80E9EE0FE003FE061 /* StaticLibrary.xcconfig */,
-				B1C8ACA90E9EE0FE003FE061 /* StaticLibraryGCSupported.xcconfig */,
-			);
-			path = Target;
-			sourceTree = "<group>";
-		};
-		B1C8ACAB0E9EE0FE003FE061 /* lang */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ACAC0E9EE0FE003FE061 /* NSObject+JSBridge.h */,
-				B1C8ACAD0E9EE0FE003FE061 /* NSObject+JSBridge.m */,
-			);
-			path = lang;
-			sourceTree = "<group>";
-		};
-		B1C8ACAE0E9EE0FE003FE061 /* rpc */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ACAF0E9EE0FE003FE061 /* NitroxInstanceManager.h */,
-				B1C8ACB00E9EE0FE003FE061 /* NitroxInstanceManager.m */,
-				B1C8ACB10E9EE0FE003FE061 /* NitroxRPC.h */,
-				B1C8ACB20E9EE0FE003FE061 /* NitroxRPCCallback.h */,
-				B1C8ACB30E9EE0FE003FE061 /* NitroxRPCCallback.m */,
-				B1C8ACB40E9EE0FE003FE061 /* NitroxRPCDispatcher.h */,
-				B1C8ACB50E9EE0FE003FE061 /* NitroxRPCDispatcher.m */,
-				B1C8ACB60E9EE0FE003FE061 /* NitroxStubClass.h */,
-				B1C8ACB70E9EE0FE003FE061 /* NitroxStubClass.m */,
-			);
-			path = rpc;
-			sourceTree = "<group>";
-		};
-		B1C8ACB80E9EE0FE003FE061 /* server */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ACB90E9EE0FE003FE061 /* NitroxHTTP.h */,
-				B1C8ACBA0E9EE0FE003FE061 /* NitroxHTTPServer.h */,
-				B1C8ACBB0E9EE0FE003FE061 /* NitroxHTTPServer.m */,
-				B1C8ACBC0E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.h */,
-				B1C8ACBD0E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.m */,
-				B1C8ACBE0E9EE0FE003FE061 /* NitroxHTTPServerListDelegate.h */,
-				B1C8ACBF0E9EE0FE003FE061 /* NitroxHTTPServerListDelegate.m */,
-				B1C8ACC00E9EE0FE003FE061 /* NitroxHTTPServerLogDelegate.h */,
-				B1C8ACC10E9EE0FE003FE061 /* NitroxHTTPServerLogDelegate.m */,
-				B1C8ACC20E9EE0FE003FE061 /* NitroxHTTPServerPathDelegate.h */,
-				B1C8ACC30E9EE0FE003FE061 /* NitroxHTTPServerPathDelegate.m */,
-				B1C8ACC40E9EE0FE003FE061 /* NitroxHTTPServerProxyDelegate.h */,
-				B1C8ACC50E9EE0FE003FE061 /* NitroxHTTPServerProxyDelegate.m */,
-				B1C8ACC60E9EE0FE003FE061 /* NitroxHTTPUtils.h */,
-				B1C8ACC70E9EE0FE003FE061 /* NitroxHTTPUtils.m */,
-			);
-			path = server;
-			sourceTree = "<group>";
-		};
-		B1C8ACC80E9EE0FE003FE061 /* webview */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ACC90E9EE0FE003FE061 /* NitroxApp.h */,
-				B1C8ACCA0E9EE0FE003FE061 /* NitroxApp.m */,
-				B1C8ACCB0E9EE0FE003FE061 /* NitroxAppPage.h */,
-				B1C8ACCC0E9EE0FE003FE061 /* NitroxAppPage.m */,
-				B1C8ACCD0E9EE0FE003FE061 /* NitroxWebView.h */,
-				B1C8ACCE0E9EE0FE003FE061 /* NitroxWebView.m */,
-				B1C8ACCF0E9EE0FE003FE061 /* NitroxWebView.xib */,
-				B1C8ACD00E9EE0FE003FE061 /* NitroxWebViewController.h */,
-				B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */,
-				B1C8B25A0EA00B30003FE061 /* NitroxScriptDebugDelegate.h */,
-				B1C8B25B0EA00B30003FE061 /* NitroxScriptDebugDelegate.m */,
-			);
-			path = webview;
-			sourceTree = "<group>";
-		};
-		B1C8ADB10E9EE112003FE061 /* vendor */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADB20E9EE112003FE061 /* nibwarelib */,
-				B1C8ADF30E9EE112003FE061 /* TouchJSON */,
-			);
-			name = vendor;
-			path = ../../vendor;
-			sourceTree = SOURCE_ROOT;
-		};
-		B1C8ADB20E9EE112003FE061 /* nibwarelib */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADB30E9EE112003FE061 /* .git */,
-				B1C8ADDA0E9EE112003FE061 /* bugs */,
-				B1C8ADDD0E9EE112003FE061 /* Nibware.h */,
-				B1C8ADDE0E9EE112003FE061 /* NibwareAlert.h */,
-				B1C8ADDF0E9EE112003FE061 /* NibwareAlert.m */,
-				B1C8ADE00E9EE112003FE061 /* NibwareDebugView.xib */,
-				B1C8ADE10E9EE112003FE061 /* NibwareDebugViewController.h */,
-				B1C8ADE20E9EE112003FE061 /* NibwareDebugViewController.m */,
-				B1C8ADE30E9EE112003FE061 /* NibwareLog.h */,
-				B1C8ADE40E9EE112003FE061 /* NibwareLog.m */,
-				B1C8ADE50E9EE112003FE061 /* NibwareMIMEPart.h */,
-				B1C8ADE60E9EE112003FE061 /* NibwareMIMEPart.m */,
-				B1C8ADE70E9EE112003FE061 /* NibwarePrefs.h */,
-				B1C8ADE80E9EE112003FE061 /* NibwarePrefs.m */,
-				B1C8ADE90E9EE112003FE061 /* NibwareStringUtils.h */,
-				B1C8ADEA0E9EE112003FE061 /* NibwareStringUtils.m */,
-				B1C8ADEB0E9EE112003FE061 /* NibwareUrlUtils.h */,
-				B1C8ADEC0E9EE112003FE061 /* NibwareUrlUtils.m */,
-				B1C8ADED0E9EE112003FE061 /* NibwareWebView.h */,
-				B1C8ADEE0E9EE112003FE061 /* NibwareWebView.m */,
-				B1C8ADEF0E9EE112003FE061 /* NibwareWebView.xib */,
-				B1C8ADF00E9EE112003FE061 /* NibwareWebViewController.h */,
-				B1C8ADF10E9EE112003FE061 /* NibwareWebViewController.m */,
-				B1C8ADF20E9EE112003FE061 /* README.txt */,
-			);
-			path = nibwarelib;
-			sourceTree = "<group>";
-		};
-		B1C8ADB30E9EE112003FE061 /* .git */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADB40E9EE112003FE061 /* config */,
-				B1C8ADB50E9EE112003FE061 /* description */,
-				B1C8ADB60E9EE112003FE061 /* HEAD */,
-				B1C8ADB70E9EE112003FE061 /* hooks */,
-				B1C8ADC20E9EE112003FE061 /* index */,
-				B1C8ADC30E9EE112003FE061 /* info */,
-				B1C8ADC50E9EE112003FE061 /* logs */,
-				B1C8ADCD0E9EE112003FE061 /* objects */,
-				B1C8ADD20E9EE112003FE061 /* packed-refs */,
-				B1C8ADD30E9EE112003FE061 /* refs */,
-			);
-			path = .git;
-			sourceTree = "<group>";
-		};
-		B1C8ADB70E9EE112003FE061 /* hooks */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADB80E9EE112003FE061 /* applypatch-msg.sample */,
-				B1C8ADB90E9EE112003FE061 /* commit-msg.sample */,
-				B1C8ADBA0E9EE112003FE061 /* post-commit.sample */,
-				B1C8ADBB0E9EE112003FE061 /* post-receive.sample */,
-				B1C8ADBC0E9EE112003FE061 /* post-update.sample */,
-				B1C8ADBD0E9EE112003FE061 /* pre-applypatch.sample */,
-				B1C8ADBE0E9EE112003FE061 /* pre-commit.sample */,
-				B1C8ADBF0E9EE112003FE061 /* pre-rebase.sample */,
-				B1C8ADC00E9EE112003FE061 /* prepare-commit-msg.sample */,
-				B1C8ADC10E9EE112003FE061 /* update.sample */,
-			);
-			path = hooks;
-			sourceTree = "<group>";
-		};
-		B1C8ADC30E9EE112003FE061 /* info */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADC40E9EE112003FE061 /* exclude */,
-			);
-			path = info;
-			sourceTree = "<group>";
-		};
-		B1C8ADC50E9EE112003FE061 /* logs */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADC60E9EE112003FE061 /* HEAD */,
-				B1C8ADC70E9EE112003FE061 /* refs */,
-			);
-			path = logs;
-			sourceTree = "<group>";
-		};
-		B1C8ADC70E9EE112003FE061 /* refs */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADC80E9EE112003FE061 /* heads */,
-				B1C8ADCA0E9EE112003FE061 /* remotes */,
-			);
-			path = refs;
-			sourceTree = "<group>";
-		};
-		B1C8ADC80E9EE112003FE061 /* heads */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADC90E9EE112003FE061 /* master */,
-			);
-			path = heads;
-			sourceTree = "<group>";
-		};
-		B1C8ADCA0E9EE112003FE061 /* remotes */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADCB0E9EE112003FE061 /* origin */,
-			);
-			path = remotes;
-			sourceTree = "<group>";
-		};
-		B1C8ADCB0E9EE112003FE061 /* origin */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADCC0E9EE112003FE061 /* HEAD */,
-			);
-			path = origin;
-			sourceTree = "<group>";
-		};
-		B1C8ADCD0E9EE112003FE061 /* objects */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADCE0E9EE112003FE061 /* info */,
-				B1C8ADCF0E9EE112003FE061 /* pack */,
-			);
-			path = objects;
-			sourceTree = "<group>";
-		};
-		B1C8ADCE0E9EE112003FE061 /* info */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = info;
-			sourceTree = "<group>";
-		};
-		B1C8ADCF0E9EE112003FE061 /* pack */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADD00E9EE112003FE061 /* pack-a44a0b24e5b4da4edab935d6d34214a2fa03ca67.idx */,
-				B1C8ADD10E9EE112003FE061 /* pack-a44a0b24e5b4da4edab935d6d34214a2fa03ca67.pack */,
-			);
-			path = pack;
-			sourceTree = "<group>";
-		};
-		B1C8ADD30E9EE112003FE061 /* refs */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADD40E9EE112003FE061 /* heads */,
-				B1C8ADD60E9EE112003FE061 /* remotes */,
-				B1C8ADD90E9EE112003FE061 /* tags */,
-			);
-			path = refs;
-			sourceTree = "<group>";
-		};
-		B1C8ADD40E9EE112003FE061 /* heads */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADD50E9EE112003FE061 /* master */,
-			);
-			path = heads;
-			sourceTree = "<group>";
-		};
-		B1C8ADD60E9EE112003FE061 /* remotes */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADD70E9EE112003FE061 /* origin */,
-			);
-			path = remotes;
-			sourceTree = "<group>";
-		};
-		B1C8ADD70E9EE112003FE061 /* origin */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADD80E9EE112003FE061 /* HEAD */,
-			);
-			path = origin;
-			sourceTree = "<group>";
-		};
-		B1C8ADD90E9EE112003FE061 /* tags */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = tags;
-			sourceTree = "<group>";
-		};
-		B1C8ADDA0E9EE112003FE061 /* bugs */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8ADDB0E9EE112003FE061 /* issue-fc30344fe04417e465e52ebca15b583f0d80a942.yaml */,
-				B1C8ADDC0E9EE112003FE061 /* project.yaml */,
-			);
-			path = bugs;
-			sourceTree = "<group>";
-		};
-		B1C8ADF30E9EE112003FE061 /* TouchJSON */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AE800E9EE112003FE061 /* LICENSE.txt */,
-				B1C8AE810E9EE112003FE061 /* Nukefile */,
-				B1C8AE840E9EE112003FE061 /* README.txt */,
-				B1C8AE850E9EE112003FE061 /* Source */,
-				B1C8AE980E9EE112003FE061 /* TouchJSON.xcodeproj */,
-			);
-			path = TouchJSON;
-			sourceTree = "<group>";
-		};
-		B1C8AE850E9EE112003FE061 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AE860E9EE112003FE061 /* CDataScanner.h */,
-				B1C8AE870E9EE112003FE061 /* CDataScanner.m */,
-				B1C8AE880E9EE112003FE061 /* Extensions */,
-				B1C8AE910E9EE112003FE061 /* JSON */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		B1C8AE880E9EE112003FE061 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AE890E9EE112003FE061 /* CDataScanner_Extensions.h */,
-				B1C8AE8A0E9EE112003FE061 /* CDataScanner_Extensions.m */,
-				B1C8AE8B0E9EE112003FE061 /* NSCharacterSet_Extensions.h */,
-				B1C8AE8C0E9EE112003FE061 /* NSCharacterSet_Extensions.m */,
-				B1C8AE8D0E9EE112003FE061 /* NSDictionary_JSONExtensions.h */,
-				B1C8AE8E0E9EE112003FE061 /* NSDictionary_JSONExtensions.m */,
-				B1C8AE8F0E9EE112003FE061 /* NSScanner_Extensions.h */,
-				B1C8AE900E9EE112003FE061 /* NSScanner_Extensions.m */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B1C8AE910E9EE112003FE061 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AE920E9EE112003FE061 /* CJSONDeserializer.h */,
-				B1C8AE930E9EE112003FE061 /* CJSONDeserializer.m */,
-				B1C8AE940E9EE112003FE061 /* CJSONScanner.h */,
-				B1C8AE950E9EE112003FE061 /* CJSONScanner.m */,
-				B1C8AE960E9EE112003FE061 /* CJSONSerializer.h */,
-				B1C8AE970E9EE112003FE061 /* CJSONSerializer.m */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		B1C8AE990E9EE112003FE061 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B1C8AFCE0E9EE113003FE061 /* UnitTests.octest */,
-				B1C8AFD00E9EE113003FE061 /* CocoaJSON Demo */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B1DD3E090E902BA400952CD6 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1143,6 +202,14 @@
 				B1DD3E0C0E902BA400952CD6 /* nitrox-fireball.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		B1ED8C310EA56E3700898C8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1ED8C460EA56E3700898C8A /* liblibnitrox.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1161,6 +228,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B1ED8C720EA56EDA00898C8A /* PBXTargetDependency */,
 			);
 			name = nitroxdemo;
 			productName = nitroxdemo;
@@ -1186,16 +254,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B1C8AC4D0E9EE0FE003FE061 /* Products */;
-					ProjectRef = B1C8AC4C0E9EE0FE003FE061 /* GTM.xcodeproj */;
-				},
-				{
-					ProductGroup = B1C8AC530E9EE0FE003FE061 /* Products */;
-					ProjectRef = B1C8AC520E9EE0FE003FE061 /* GTMiPhone.xcodeproj */;
-				},
-				{
-					ProductGroup = B1C8AE990E9EE112003FE061 /* Products */;
-					ProjectRef = B1C8AE980E9EE112003FE061 /* TouchJSON.xcodeproj */;
+					ProductGroup = B1ED8C310EA56E3700898C8A /* Products */;
+					ProjectRef = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1206,60 +266,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B1C8ADA10E9EE0FF003FE061 /* GoogleToolboxForMac.framework */ = {
+		B1ED8C460EA56E3700898C8A /* liblibnitrox.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GoogleToolboxForMac.framework;
-			remoteRef = B1C8ADA00E9EE0FF003FE061 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1C8ADA30E9EE0FF003FE061 /* UnitTest - AppKit.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "UnitTest - AppKit.octest";
-			remoteRef = B1C8ADA20E9EE0FF003FE061 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1C8ADA50E9EE0FF003FE061 /* UnitTest - Foundation.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "UnitTest - Foundation.octest";
-			remoteRef = B1C8ADA40E9EE0FF003FE061 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1C8ADA70E9EE0FF003FE061 /* UnitTest - UnitTesting.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "UnitTest - UnitTesting.octest";
-			remoteRef = B1C8ADA60E9EE0FF003FE061 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1C8ADA90E9EE0FF003FE061 /* GTMUIUnitTestingHarness.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = GTMUIUnitTestingHarness.app;
-			remoteRef = B1C8ADA80E9EE0FF003FE061 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1C8ADB00E9EE0FF003FE061 /* GTMiPhoneTest.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = GTMiPhoneTest.app;
-			remoteRef = B1C8ADAF0E9EE0FF003FE061 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1C8AFCE0E9EE113003FE061 /* UnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = UnitTests.octest;
-			remoteRef = B1C8AFCD0E9EE113003FE061 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1C8AFD00E9EE113003FE061 /* CocoaJSON Demo */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "CocoaJSON Demo";
-			remoteRef = B1C8AFCF0E9EE113003FE061 /* PBXContainerItemProxy */;
+			fileType = archive.ar;
+			path = liblibnitrox.a;
+			remoteRef = B1ED8C450EA56E3700898C8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1274,11 +285,8 @@
 				B1DD3E0D0E902BA400952CD6 /* nitrox-band.png in Resources */,
 				B1DD3E0E0E902BA400952CD6 /* nitrox-fireball.gif in Resources */,
 				B1DD3E0F0E902BA400952CD6 /* nitrox-fireball.png in Resources */,
-				B1C8ACDA0E9EE0FE003FE061 /* NitroxImagePickerUI.xib in Resources */,
-				B1C8AD920E9EE0FE003FE061 /* NitroxWebView.xib in Resources */,
-				B1C8AEF50E9EE112003FE061 /* NibwareDebugView.xib in Resources */,
-				B1C8AEFD0E9EE112003FE061 /* NibwareWebView.xib in Resources */,
 				B1C8B01C0E9EE2DF003FE061 /* web in Resources */,
+				B1ED8C9F0EA593A200898C8A /* NitroxWebView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1310,71 +318,18 @@
 				1D3623260D0F684500981E51 /* nitroxdemoAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
 				B1DD3E780E90A85F00952CD6 /* WebViewInstance.m in Sources */,
-				B1C8ACD20E9EE0FE003FE061 /* NitroxApiAccelerometer.m in Sources */,
-				B1C8ACD30E9EE0FE003FE061 /* NitroxApiApplication.m in Sources */,
-				B1C8ACD40E9EE0FE003FE061 /* NitroxApiBenchmark.m in Sources */,
-				B1C8ACD50E9EE0FE003FE061 /* NitroxApiDevice.m in Sources */,
-				B1C8ACD60E9EE0FE003FE061 /* NitroxApiEvent.m in Sources */,
-				B1C8ACD70E9EE0FE003FE061 /* NitroxApiLocation.m in Sources */,
-				B1C8ACD80E9EE0FE003FE061 /* NitroxApiPhoto.m in Sources */,
-				B1C8ACD90E9EE0FE003FE061 /* NitroxImagePicker.m in Sources */,
-				B1C8ACDB0E9EE0FE003FE061 /* NitroxPhoto.m in Sources */,
-				B1C8ACDC0E9EE0FE003FE061 /* NitroxApiDirectSystem.m in Sources */,
-				B1C8ACDD0E9EE0FE003FE061 /* NitroxApiSystem.m in Sources */,
-				B1C8ACDE0E9EE0FE003FE061 /* NitroxApiVibrate.m in Sources */,
-				B1C8AD310E9EE0FE003FE061 /* GTMMethodCheck.m in Sources */,
-				B1C8AD320E9EE0FE003FE061 /* GTMBase64.m in Sources */,
-				B1C8AD340E9EE0FE003FE061 /* GTMHTTPFetcher.m in Sources */,
-				B1C8AD350E9EE0FE003FE061 /* GTMHTTPServer.m in Sources */,
-				B1C8AD360E9EE0FE003FE061 /* GTMNSFileManager+Path.m in Sources */,
-				B1C8AD380E9EE0FE003FE061 /* GTMNSString+HTML.m in Sources */,
-				B1C8AD390E9EE0FE003FE061 /* GTMNSString+Replace.m in Sources */,
-				B1C8AD3A0E9EE0FE003FE061 /* GTMNSString+URLArguments.m in Sources */,
-				B1C8AD3B0E9EE0FE003FE061 /* GTMNSString+XML.m in Sources */,
-				B1C8AD3C0E9EE0FE003FE061 /* GTMObjC2Runtime.m in Sources */,
-				B1C8AD3D0E9EE0FE003FE061 /* GTMPath.m in Sources */,
-				B1C8AD3E0E9EE0FE003FE061 /* GTMRegex.m in Sources */,
-				B1C8AD3F0E9EE0FE003FE061 /* GTMSignalHandler.m in Sources */,
-				B1C8AD410E9EE0FE003FE061 /* GTMSystemVersion.m in Sources */,
-				B1C8AD440E9EE0FE003FE061 /* GTMABAddressBook.m in Sources */,
-				B1C8AD830E9EE0FE003FE061 /* NSObject+JSBridge.m in Sources */,
-				B1C8AD840E9EE0FE003FE061 /* NitroxInstanceManager.m in Sources */,
-				B1C8AD850E9EE0FE003FE061 /* NitroxRPCCallback.m in Sources */,
-				B1C8AD860E9EE0FE003FE061 /* NitroxRPCDispatcher.m in Sources */,
-				B1C8AD870E9EE0FE003FE061 /* NitroxStubClass.m in Sources */,
-				B1C8AD880E9EE0FE003FE061 /* NitroxHTTPServer.m in Sources */,
-				B1C8AD890E9EE0FE003FE061 /* NitroxHTTPServerFilesystemDelegate.m in Sources */,
-				B1C8AD8A0E9EE0FE003FE061 /* NitroxHTTPServerListDelegate.m in Sources */,
-				B1C8AD8B0E9EE0FE003FE061 /* NitroxHTTPServerLogDelegate.m in Sources */,
-				B1C8AD8C0E9EE0FE003FE061 /* NitroxHTTPServerPathDelegate.m in Sources */,
-				B1C8AD8D0E9EE0FE003FE061 /* NitroxHTTPServerProxyDelegate.m in Sources */,
-				B1C8AD8E0E9EE0FE003FE061 /* NitroxHTTPUtils.m in Sources */,
-				B1C8AD8F0E9EE0FE003FE061 /* NitroxApp.m in Sources */,
-				B1C8AD900E9EE0FE003FE061 /* NitroxAppPage.m in Sources */,
-				B1C8AD910E9EE0FE003FE061 /* NitroxWebView.m in Sources */,
-				B1C8AD930E9EE0FE003FE061 /* NitroxWebViewController.m in Sources */,
-				B1C8AEF40E9EE112003FE061 /* NibwareAlert.m in Sources */,
-				B1C8AEF60E9EE112003FE061 /* NibwareDebugViewController.m in Sources */,
-				B1C8AEF70E9EE112003FE061 /* NibwareLog.m in Sources */,
-				B1C8AEF80E9EE112003FE061 /* NibwareMIMEPart.m in Sources */,
-				B1C8AEF90E9EE112003FE061 /* NibwarePrefs.m in Sources */,
-				B1C8AEFA0E9EE112003FE061 /* NibwareStringUtils.m in Sources */,
-				B1C8AEFB0E9EE112003FE061 /* NibwareUrlUtils.m in Sources */,
-				B1C8AEFC0E9EE112003FE061 /* NibwareWebView.m in Sources */,
-				B1C8AEFE0E9EE112003FE061 /* NibwareWebViewController.m in Sources */,
-				B1C8AF670E9EE112003FE061 /* CDataScanner.m in Sources */,
-				B1C8AF680E9EE112003FE061 /* CDataScanner_Extensions.m in Sources */,
-				B1C8AF690E9EE112003FE061 /* NSCharacterSet_Extensions.m in Sources */,
-				B1C8AF6A0E9EE112003FE061 /* NSDictionary_JSONExtensions.m in Sources */,
-				B1C8AF6B0E9EE112003FE061 /* NSScanner_Extensions.m in Sources */,
-				B1C8AF6C0E9EE112003FE061 /* CJSONDeserializer.m in Sources */,
-				B1C8AF6D0E9EE112003FE061 /* CJSONScanner.m in Sources */,
-				B1C8AF6E0E9EE112003FE061 /* CJSONSerializer.m in Sources */,
-				B1C8B25C0EA00B30003FE061 /* NitroxScriptDebugDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1ED8C720EA56EDA00898C8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libnitrox;
+			targetProxy = B1ED8C710EA56EDA00898C8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -1390,13 +345,17 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = nitroxdemo_Prefix.pch;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../**";
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../libs/nitroxkit/gtm/TigerGcov\"",
 					"\"$(SRCROOT)/../../src/gtm/TigerGcov\"",
+					"\"$(SRCROOT)/../../lib/build/Debug-iphonesimulator\"",
 				);
 				PRODUCT_NAME = nitroxdemo;
+				PROVISIONING_PROFILE = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = DefaultProfileUuid;
 			};
 			name = Debug;
 		};
@@ -1411,11 +370,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = nitroxdemo_Prefix.pch;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../**";
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../libs/nitroxkit/gtm/TigerGcov\"",
 					"\"$(SRCROOT)/../../src/gtm/TigerGcov\"",
+					"\"$(SRCROOT)/../../lib/build/Debug-iphonesimulator\"",
 				);
 				PRODUCT_NAME = nitroxdemo;
 			};
@@ -1448,11 +409,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = nitroxdemo_Prefix.pch;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../**";
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../libs/nitroxkit/gtm/TigerGcov\"",
 					"\"$(SRCROOT)/../../src/gtm/TigerGcov\"",
+					"\"$(SRCROOT)/../../lib/build/Debug-iphonesimulator\"",
 				);
 				PRODUCT_NAME = nitroxdemo;
 			};
@@ -1472,6 +435,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphonesimulator2.1]" = DefaultProfileUuid;
 				SDKROOT = iphoneos2.1;
 				STRIP_INSTALLED_PRODUCT = NO;
 			};

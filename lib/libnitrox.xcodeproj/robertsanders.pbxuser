@@ -1,10 +1,11 @@
 // !$*UTF8*$!
 {
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
-		activeSDKPreference = iphonesimulator2.1;
+		activeBuildConfigurationName = "Release RS";
+		activeSDKPreference = iphoneos2.1;
 		activeTarget = B1ED89C80EA5608C00898C8A /* libnitrox */;
 		addToTargets = (
+			B1ED89C80EA5608C00898C8A /* libnitrox */,
 		);
 		breakpoints = (
 		);
@@ -109,8 +110,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 245719753;
-			PBXWorkspaceStateSaveDate = 245719753;
+			PBXPerProjectTemplateStateSaveDate = 245722706;
+			PBXWorkspaceStateSaveDate = 245722706;
 		};
 		perUserProjectItems = {
 			B17C250F0E96A2D700329098 /* PBXTextBookmark */ = B17C250F0E96A2D700329098 /* PBXTextBookmark */;
@@ -139,11 +140,12 @@
 			B1DD3EED0E90B05D00952CD6 /* PBXTextBookmark */ = B1DD3EED0E90B05D00952CD6 /* PBXTextBookmark */;
 			B1ED8B180EA561BC00898C8A /* PBXTextBookmark */ = B1ED8B180EA561BC00898C8A /* PBXTextBookmark */;
 			B1ED8B1A0EA561BC00898C8A /* PBXTextBookmark */ = B1ED8B1A0EA561BC00898C8A /* PBXTextBookmark */;
-			B1ED8B470EA5622900898C8A /* PBXTextBookmark */ = B1ED8B470EA5622900898C8A /* PBXTextBookmark */;
-			B1ED8B680EA562D900898C8A /* PBXTextBookmark */ = B1ED8B680EA562D900898C8A /* PBXTextBookmark */;
+			B1ED8C2D0EA56E2800898C8A /* PBXTextBookmark */ = B1ED8C2D0EA56E2800898C8A /* PBXTextBookmark */;
+			B1ED8CB00EA5948F00898C8A /* PBXTextBookmark */ = B1ED8CB00EA5948F00898C8A /* PBXTextBookmark */;
 		};
 		sourceControlManager = B14E69A40E8D94B9000BB59F /* Source Control */;
 		userBuildSettings = {
+			SYMROOT = /Users/Shared/vitrue/src/xcode/libs/nitroxkit/build;
 		};
 	};
 	B14E69A40E8D94B9000BB59F /* Source Control */ = {
@@ -647,11 +649,27 @@
 			sepNavVisRange = "{0, 579}";
 		};
 	};
+	B1C8ADDE0E9EE112003FE061 /* NibwareAlert.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1136, 658}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 520}";
+			sepNavWindowFrame = "{{15, 87}, {1195, 786}}";
+		};
+	};
+	B1C8ADE70E9EE112003FE061 /* NibwarePrefs.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1136, 658}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 377}";
+			sepNavWindowFrame = "{{38, 66}, {1195, 786}}";
+		};
+	};
 	B1C8ADEB0E9EE112003FE061 /* NibwareUrlUtils.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1025, 724}}";
-			sepNavSelRange = "{139, 40}";
-			sepNavVisRange = "{0, 643}";
+			sepNavSelRange = "{161, 0}";
+			sepNavVisRange = "{0, 667}";
 		};
 	};
 	B1C8ADF20E9EE112003FE061 /* README.txt */ = {
@@ -788,24 +806,32 @@
 		vrLen = 812;
 		vrLoc = 0;
 	};
-	B1ED8B470EA5622900898C8A /* PBXTextBookmark */ = {
+	B1ED8C2D0EA56E2800898C8A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = B1C8ADEB0E9EE112003FE061 /* NibwareUrlUtils.h */;
 		name = "NibwareUrlUtils.h: 10";
 		rLen = 40;
-		rLoc = 139;
+		rLoc = 163;
 		rType = 0;
 		vrLen = 643;
 		vrLoc = 0;
 	};
-	B1ED8B680EA562D900898C8A /* PBXTextBookmark */ = {
+	B1ED8CA90EA5946200898C8A /* libnitrox_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1136, 658}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 185}";
+			sepNavWindowFrame = "{{61, 45}, {1195, 786}}";
+		};
+	};
+	B1ED8CB00EA5948F00898C8A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = B1C8ADEB0E9EE112003FE061 /* NibwareUrlUtils.h */;
-		name = "NibwareUrlUtils.h: 10";
-		rLen = 40;
-		rLoc = 139;
+		name = "NibwareUrlUtils.h: 9";
+		rLen = 0;
+		rLoc = 161;
 		rType = 0;
-		vrLen = 643;
+		vrLen = 667;
 		vrLoc = 0;
 	};
 }
