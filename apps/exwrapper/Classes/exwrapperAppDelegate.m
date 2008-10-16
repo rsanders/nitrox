@@ -11,6 +11,9 @@
 #import "NitroxCore.h"
 #import "NitroxApp.h"
 
+#import "PopupViewController.h"
+#import "MainWindowViewController.h"
+
 @implementation exwrapperAppDelegate
 
 
@@ -45,6 +48,19 @@
 
 - (IBAction) open {
     NSLog(@"open called");
+    popupViewController.view.hidden = NO;
+    [mainViewController presentModalViewController:popupViewController animated:YES];
 }
+
+- (void) popupCanceled {
+    NSLog(@"open url popup canceled");
+}
+
+- (void) popupValueSubmitted:(NSString *)text {
+    NSLog(@"open url value submitted: %@", text);
+    [app openApplication:text];
+}
+
+
 
 @end

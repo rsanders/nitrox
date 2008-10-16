@@ -28,6 +28,8 @@
 		B15F077F0EA6CFE600B34B71 /* NitroxApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B15F077B0EA6CFE600B34B71 /* NitroxApp.m */; };
 		B15F08060EA6EBDE00B34B71 /* web in Resources */ = {isa = PBXBuildFile; fileRef = B15F08050EA6EBDE00B34B71 /* web */; };
 		B15F08230EA6EC3600B34B71 /* NitroxWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C8ACCF0E9EE0FE003FE061 /* NitroxWebView.xib */; };
+		B15F09E90EA798A600B34B71 /* MainWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15F09E80EA798A600B34B71 /* MainWindowViewController.m */; };
+		B15F09EE0EA79AEB00B34B71 /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15F09ED0EA79AEB00B34B71 /* PopupViewController.m */; };
 		B1C043150EA65640000858B3 /* NitroxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C043130EA65640000858B3 /* NitroxCore.h */; };
 		B1C043160EA65640000858B3 /* NitroxCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043140EA65640000858B3 /* NitroxCore.m */; };
 		B1ED89CD0EA560A800898C8A /* NitroxApiAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABA70E9EE0FD003FE061 /* NitroxApiAccelerometer.m */; };
@@ -180,6 +182,10 @@
 		B15F077A0EA6CFE600B34B71 /* NitroxAppPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxAppPage.h; sourceTree = "<group>"; };
 		B15F077B0EA6CFE600B34B71 /* NitroxApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApp.m; sourceTree = "<group>"; };
 		B15F08050EA6EBDE00B34B71 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = web; path = ../web; sourceTree = SOURCE_ROOT; };
+		B15F09E70EA798A600B34B71 /* MainWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowViewController.h; sourceTree = "<group>"; };
+		B15F09E80EA798A600B34B71 /* MainWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowViewController.m; sourceTree = "<group>"; };
+		B15F09EC0EA79AEB00B34B71 /* PopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
+		B15F09ED0EA79AEB00B34B71 /* PopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
 		B17C290D0E99472D00329098 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B1C043130EA65640000858B3 /* NitroxCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxCore.h; sourceTree = "<group>"; };
 		B1C043140EA65640000858B3 /* NitroxCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxCore.m; sourceTree = "<group>"; };
@@ -508,6 +514,10 @@
 				B1C043320EA6580E000858B3 /* exwrapperAppDelegate.h */,
 				B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */,
 				B1C043340EA6580E000858B3 /* ExwrapperCommon.h */,
+				B15F09E70EA798A600B34B71 /* MainWindowViewController.h */,
+				B15F09E80EA798A600B34B71 /* MainWindowViewController.m */,
+				B15F09EC0EA79AEB00B34B71 /* PopupViewController.h */,
+				B15F09ED0EA79AEB00B34B71 /* PopupViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1177,6 +1187,8 @@
 			files = (
 				B15F06170EA6B37200B34B71 /* exwrapperAppDelegate.m in Sources */,
 				B15F06180EA6B37200B34B71 /* main.m in Sources */,
+				B15F09E90EA798A600B34B71 /* MainWindowViewController.m in Sources */,
+				B15F09EE0EA79AEB00B34B71 /* PopupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
