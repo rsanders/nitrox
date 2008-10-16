@@ -22,6 +22,7 @@ Nitrox.prototype = {
 Nitrox.Runtime = {
     enabled: true,
     port: 58214,
+    appid: '',
     token: 'none',
     debug: true,
     iframe: null,
@@ -34,8 +35,12 @@ Nitrox.Runtime = {
         return "http://127.0.0.1:" + this.port;
     },
 
+    appURL: function() {
+        return "http://127.0.0.1:" + this.port + "/_app/" + _nitrox_info.appid;
+    },
+
     rpcURL: function() {
-        var url = this.baseURL() + "/rpc";
+        var url = this.appURL() + "/rpc";
         return url;
     },
     
@@ -61,6 +66,12 @@ Nitrox.Runtime = {
 
     version: '0.1'
 };
+
+// if (this._nitrox_info) {
+//     Nitrox.Runtime.appid = _nitrox_info.appid;
+// }
+
+alert("appid = " + _nitrox_info.appid);
 
 if (this.console && console.log) { 
     Nitrox.consolelog = console.log;
@@ -120,14 +131,14 @@ Nitrox.Bridge = {
             try {
                 var ajaxObject = {url: fullstring, data: args, async: async, type: 'get'};
                 ajaxObject = jQuery.extend(ajaxObject, ajaxOpts);
-                //window.nadirect.log("NBc: ajax object: " + Nitrox.Lang.toJSON(ajaxObject));
+                window.nadirect.log("NBc: ajax object: " + Nitrox.Lang.toJSON(ajaxObject));
                 req = jQuery.ajax(ajaxObject);
                 //window.nadirect.log("NBc: ajax returned without exception");
                 if (req.readyState == 4) {
                     //window.nadirect.log("NBc: ajax status is " + req.status);                    
                 }
             } catch (e) {
-                //window.nadirect.log("NBc: caught error in Nitrox.Bridge.call: " + e);
+                window.nadirect.log("NBc: caught error in Nitrox.Bridge.call: " + e);
                 req = {error: e, status:401, responseText: "Error: " + e};
             }
             var res = null;
@@ -350,7 +361,7 @@ Nitrox.Proxy = {
         var url = args[1];
         if (!url.match(new RegExp("^http(s?)://(127\.0\.0\.1|localhost)[:/]")))
         {
-            var baseURL = Nitrox.Runtime.baseURL();
+            var baseURL = Nitrox.Runtime.appURL();
             url = url.replace(new RegExp("^(http(s?))://"), baseURL + "/proxy/ajax/$1/");
             window.nadirect.log("new url is " + url);
         }
@@ -371,7 +382,7 @@ Nitrox.Proxy = {
         }
 
         var data = { url: url };
-        url = Nitrox.Runtime.baseURL() + "/proxy/retrieve";
+        url = Nitrox.Runtime.appURL() + "/proxy/retrieve";
         var ajax = jQuery.ajax({url: url, data: data, async: (callback ? true : false), type: method});
         var res = false;
 

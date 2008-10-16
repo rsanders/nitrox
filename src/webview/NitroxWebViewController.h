@@ -14,8 +14,11 @@
 #import "NitroxRPCCallback.h"
 
 @protocol NitroxWebViewDelegate;
+@class NitroxApp;
 
 @interface NitroxWebViewController : UIViewController <UIWebViewDelegate> {
+    NitroxApp*             app;
+    
     // properties
     BOOL                   loadJSLib;
     NSArray*               otherJSLibs;
@@ -35,8 +38,9 @@
     NSString*              authToken;
 }
 
+@property (assign) NitroxApp*                   app;
 @property (assign) BOOL                         loadJSLib;
-@property (assign) NSInteger                    httpPort;
+@property (readonly) NSInteger                    httpPort;
 @property (retain) NSArray*                     otherJSLibs;
 @property (assign) id<NitroxWebViewDelegate>    delegate;
 @property (retain) NSString*                    webRootPath;

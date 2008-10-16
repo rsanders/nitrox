@@ -15,15 +15,15 @@
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    app = [[NitroxApp alloc] init];
     
-//    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-//    [window addSubview:toplevelView];
-//    [window makeKeyAndVisible];
-
-	// Configure and show the window
-	//[window addSubview:[navigationController view]];
-	//[window makeKeyAndVisible];
+    NitroxCore *core = [NitroxCore singleton];
+    
+    [core start];
+    
+    app = [core createApp];
+    [app setParentView:containerView];
+    
+    [app openApplication:@"demos/ex.html"];
 }
 
 

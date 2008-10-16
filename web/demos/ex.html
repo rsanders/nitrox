@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta id="viewport" name="viewport" content="width=device-width; user-scalable=0;"/>
+<title>Ex Test Page</title>
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/jquery.js"></script>
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/nitrox.js"></script>
+</head>
+<body>
+
+Ex Test Page
+
+<div id="outbox">
+</div>
+
+<script type="text/javascript">
+// <![CDATA[
+function encode(string) {
+   	return string.replace('&','&amp;')
+   	             .replace('<','&lt;')
+   	             .replace('>','&gt;')
+   	             .replace('\'','&apos;')
+   	             .replace('"','&quot;');
+}
+
+document.write("HREF = " + window.location.href + "<br/>");
+function debuglog(msg) {
+  var oldHTML = jQuery('#debuglog').get(0).innerHTML;
+  jQuery('#debuglog').html( encode(msg) + "<br/>--<br/>" + oldHTML );
+  document.getElementById('rpciframe').src = 'nitroxlog://somehost/path?' + escape(msg);
+}
+
+function startOrientation() {
+  Nitrox.Device.start(true);
+}
+
+function stopOrientation() {
+  Nitrox.Device.stop(true);
+}
+
+
+function testExit() {
+  Nitrox.log("exiting...");
+  Nitrox.System.exit();
+}
+
+function testOpenURL() {
+  Nitrox.log("opening a URL");
+  Nitrox.System.openURL("http://reddit.com/");
+}
+
+
+jQuery(function() {
+        Nitrox.log("document loaded");
+ });
+ 
+
+// ]]>
+</script>
+
+
+<a href="javascript:startOrientation();">Start Orientation</a> <br/>
+<a href="javascript:stopOrientation();">Stop Orientation</a> <br/>
+<a href="javascript:testExit();">Exit App</a> <br/>
+<a href="javascript:testOpenURL();">Open Reddit in Safari</a> <br/>
+<a href="javascript:window.location.href='http://localhost:58214/nitrox.html';">Set HREF to load main via server</a> <br/>
+
+<h3 id="dtitle">Debug</h3>
+<div id="debuglog">
+</div>
+
+
+</body>
+</html>

@@ -36,7 +36,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = B15F060D0EA6B33C00B34B71 /* exw2.app */;
+			remoteGlobalIDString = B15F060D0EA6B33C00B34B71;
 			remoteInfo = exw2;
 		};
 		B1ED8C450EA56E3700898C8A /* PBXContainerItemProxy */ = {

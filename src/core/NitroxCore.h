@@ -8,16 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NitroxHTTPServer.h"
+
 @class NitroxApp;
+@class NitroxHTTPServerPathDelegate;
 
 @interface NitroxCore : NSObject {
-
+    NSMutableDictionary*       apps;
+    NitroxHTTPServer*   server;
+    
+    NitroxHTTPServerPathDelegate*  rootPathDelegate;
+    NitroxHTTPServerPathDelegate*  appPathDelegate;
 }
+
+@property (retain) NSDictionary*       apps;
+@property (retain) NitroxHTTPServer*   server;
 
 + (NitroxCore*) singleton;
 
 - (NitroxApp*) createApp;
 
+- (NitroxCore*) init;
 - (void) start;
 - (void) stop;
 

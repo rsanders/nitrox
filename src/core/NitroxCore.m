@@ -7,8 +7,92 @@
 //
 
 #import "NitroxCore.h"
+#import "NitroxApp.h"
+#import "NitroxHTTPServer.h"
+#import "NitroxHTTPServerPathDelegate.h"
 
+static NitroxCore *singleton;
+
+@interface NitroxCore (Private)
+- (void) startHTTPServer;
+@end
 
 @implementation NitroxCore
+
+@synthesize apps, server;
+
++ (NitroxCore*) singleton
+{
+    @synchronized (self) {
+        if (!singleton) {
+            singleton = [[NitroxCore alloc] init];
+        }
+        
+        return singleton;
+    }
+    
+    // shut up, xcode
+    return singleton;
+}
+
+- (NitroxCore *) init {
+    [super init];
+    self.apps = [[NSMutableDictionary alloc] init];
+    rootPathDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
+    self.server = [[NitroxHTTPServer alloc] initWithDelegate:rootPathDelegate];
+    [server setPort:58214];
+    [server setAcceptWithRunLoop:NO];
+    [server setLocalhostOnly:YES];
+    
+    return self;
+}
+
+- (NitroxApp*) createApp
+{
+    NitroxApp *app = [[NitroxApp alloc] initWithCore:self];
+    
+    [apps setValue:app forKey:[app appID]];
+    
+    // TODO: save in dictionary
+    [appPathDelegate addPath:[app appID] delegate:[app appServerDelegate]];
+    
+    return app;
+}
+
+- (void) start
+{
+    [self startHTTPServer];
+}
+
+- (void) stop
+{
+    [self.server stop];
+}
+
+- (void) dealloc {
+    self.apps = Nil;
+    self.server = Nil;
+    [appPathDelegate release];
+    [rootPathDelegate release];
+    [super dealloc];
+}
+
+- (void) startHTTPServer {
+    
+    // fallback is an authoritative filesystem server rooted at APP.app/web
+    [rootPathDelegate setDefaultDelegate:
+     [[[NitroxHTTPServerFilesystemDelegate alloc] 
+       initWithRoot:[NSString stringWithFormat:@"%@/web",
+                     [[NSBundle mainBundle] bundlePath]]
+       authoritative:YES] 
+      autorelease]];
+    
+    appPathDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
+    [rootPathDelegate addPath:@"_app" delegate:appPathDelegate];
+
+    NSError *error;
+    [self.server start:&error];
+}
+
 
 @end

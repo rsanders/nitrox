@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "NitroxApp.h"
-
 @class NitroxApp;
+@class NitroxWebView;
 
 @interface NitroxAppPage : NSObject {
     NSDictionary*                  objectMap;
