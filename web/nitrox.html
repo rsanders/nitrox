@@ -13,7 +13,9 @@ Internal Test Page
 <div id="outbox">
 </div>
 
+<!--
 <iframe id="rpciframe" style="display:none;" src="http://127.0.0.1:58214/empty.html"></iframe>
+-->
 
 <script type="text/javascript">
 // <![CDATA[
@@ -29,7 +31,7 @@ document.write("HREF = " + window.location.href + "<br/>");
 function debuglog(msg) {
   var oldHTML = jQuery('#debuglog').get(0).innerHTML;
   jQuery('#debuglog').html( encode(msg) + "<br/>--<br/>" + oldHTML );
-  document.getElementById('rpciframe').src = 'nitroxlog://somehost/path?' + escape(msg);
+  // document.getElementById('rpciframe').src = 'nitroxlog://somehost/path?' + escape(msg);
 }
 
 _nibware_result = "UNDEF";
@@ -82,6 +84,12 @@ function testLocation() {
   var loc = Nitrox.Location.getLocation();
   Nitrox.log("location return is " + loc);
   debuglog("location is " + loc);
+}
+
+function showConfig() {
+  debuglog("Nitrox = " + Nitrox);
+  debuglog("Nitrox.Runtime = " + Nitrox.Runtime);
+  debuglog("APPID is " + Nitrox.Runtime.appid + "_nitrox appid is " + _nitrox_info.appid);
 }
 
 function testVibrate() {
@@ -258,12 +266,17 @@ function testPrompt() {
 }
 
 function loadUserUrl() {
-  var url = prompt("Enter URL");
+  // var url = prompt("Enter URL");
+  var url = jQuery('#gotourl').val();
   Nitrox.log("Opening " + url);
   if (url) {
     Nitrox.Application.openApplication(url);
   }
 }
+
+Nitrox(function() {
+  Nitrox.log("user nitroxready handler run");
+});
 
 jQuery(function() {
         Nitrox.log("document loaded");
@@ -313,7 +326,10 @@ jQuery(function() {
 <a href="javascript:Nitrox.Application.back();">Go back</a><br/>
 <a href="javascript:Nitrox.Application.forward();">Go forward</a><br/>
 <a href="javascript:window.location.href='http://localhost:58214/demos/replace.html';">Replace test</a> <br/>
-<a href="javascript:loadUserUrl()';">Load specified URL</a> <br/>
+<a href="javascript:loadUserUrl();">Load specified URL</a> <br/>
+<a href="javascript:showConfig();">Show Nitrox Config</a> <br/>
+
+<input id="gotourl" type="text" name="gotourl" size="128" />
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">

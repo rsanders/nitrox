@@ -27,8 +27,9 @@
     
     NSString*              webRootPath;
     
-    // private
+    // private state
     BOOL                   passNext;
+    BOOL                   doRunInit;
 
     NitroxHTTPServer*             server;
     id<NitroxHTTPServerDelegate>  serverDelegate;

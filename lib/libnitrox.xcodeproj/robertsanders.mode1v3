@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -290,12 +288,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
+									<integer>60</integer>
+									<integer>55</integer>
+									<integer>27</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {296, 759}}</string>
+							<string>{{0, 446}, {296, 759}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -325,12 +325,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>exwrapperAppDelegate.m</string>
+								<string>NitroxWebViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -338,11 +340,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>exwrapperAppDelegate.m</string>
+										<string>NitroxWebViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B15F096D0EA7042D00B34B71</string>
+										<string>B15F09E30EA7889A00B34B71</string>
 										<key>history</key>
 										<array>
 											<string>B1DD3D380E8EC25500952CD6</string>
@@ -368,14 +370,15 @@
 											<string>B15F07D20EA6DBCC00B34B71</string>
 											<string>B15F07E30EA6E6BB00B34B71</string>
 											<string>B15F08C80EA6F66C00B34B71</string>
-											<string>B15F09010EA6FA7D00B34B71</string>
-											<string>B15F09120EA6FBA100B34B71</string>
 											<string>B15F09370EA6FE0C00B34B71</string>
 											<string>B15F09380EA6FE0C00B34B71</string>
 											<string>B15F09390EA6FE0C00B34B71</string>
 											<string>B15F09690EA7042D00B34B71</string>
-											<string>B15F096A0EA7042D00B34B71</string>
-											<string>B15F092A0EA6FD2500B34B71</string>
+											<string>B15F09B70EA7720C00B34B71</string>
+											<string>B15F09C40EA77A8400B34B71</string>
+											<string>B15F09D30EA77E9900B34B71</string>
+											<string>B15F09D40EA77E9900B34B71</string>
+											<string>B15F09DF0EA77FAE00B34B71</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -555,6 +558,21 @@
 											<string>B15F09420EA6FE0C00B34B71</string>
 											<string>B15F096B0EA7042D00B34B71</string>
 											<string>B15F096C0EA7042D00B34B71</string>
+											<string>B15F09760EA7056D00B34B71</string>
+											<string>B15F097D0EA705ED00B34B71</string>
+											<string>B15F097E0EA705ED00B34B71</string>
+											<string>B15F098B0EA7075E00B34B71</string>
+											<string>B15F098C0EA7075E00B34B71</string>
+											<string>B15F099C0EA708DA00B34B71</string>
+											<string>B15F099D0EA708DA00B34B71</string>
+											<string>B15F09A40EA770D700B34B71</string>
+											<string>B15F09AE0EA7713200B34B71</string>
+											<string>B15F09B80EA7720C00B34B71</string>
+											<string>B15F09C50EA77A8400B34B71</string>
+											<string>B15F09C60EA77A8400B34B71</string>
+											<string>B15F09D60EA77E9900B34B71</string>
+											<string>B15F09D70EA77E9900B34B71</string>
+											<string>B15F09D80EA77E9900B34B71</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -750,10 +768,10 @@
 	<array>
 		<string>B15F07380EA6B3B200B34B71</string>
 		<string>B15F062C0EA6B39300B34B71</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>B14E69EA0E8D9692000BB59F</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/Shared/vitrue/src/xcode/libs/nitroxkit/lib/libnitrox.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>32 57 1404 818 0 0 1440 878 </string>
@@ -772,8 +790,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -796,6 +812,8 @@
 							<string>383pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -846,7 +864,7 @@
 			<key>WindowToolGUID</key>
 			<string>B14E69EA0E8D9692000BB59F</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -1129,7 +1147,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

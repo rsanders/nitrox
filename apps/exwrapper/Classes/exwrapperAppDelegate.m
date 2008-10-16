@@ -23,7 +23,7 @@
     app = [core createApp];
     [app setParentView:containerView];
     
-    [app openApplication:@"demos/ex.html"];
+    [app openApplication:@"nitrox.html"];
 }
 
 
@@ -39,6 +39,7 @@
 #pragma mark IBActions
 
 - (IBAction) goHome {
+    [app openApplication:@"nitrox.html"];
     NSLog(@"goHome called");
 }
 

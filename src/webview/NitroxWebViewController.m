@@ -189,7 +189,6 @@
     } else {
         jsstring = [NSString stringWithFormat:
                           @""
-                          "alert('no runny');"                              
                           "(function() {"
                           "  var head = document.getElementsByTagName('head')[0];"
                           "  var script = document.createElement('script');"
@@ -207,8 +206,10 @@
     [self insertJavascriptByURL:[NSURL fileURLWithPath:path] asReference:NO];
 }
 
+#define MAX_SCRIPT_LENGTH(script) ((script).length <= 80 ? (script).length-1 : 80)
+
 - (void)insertJavascriptString:(NSString *)script {
-    NSLog(@"inserting JS: %@", [script substringToIndex:80]);
+    NSLog(@"inserting JS: %@", [script substringToIndex:MAX_SCRIPT_LENGTH(script)]);
     [[self webView] stringByEvaluatingJavaScriptFromString:script];
 }
 
@@ -232,10 +233,6 @@
 {
     NSString *msg = [[request.URL query]  stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"WEB LOG: %@", msg);
-    
-    // doesn't do anything useful
-    // [(NSMutableURLRequest *)request setURL:[NSURL URLWithString:@"http://localhost:58214/foobar.html"]];
-    
     return NO;
 }
 
@@ -295,6 +292,7 @@
     // TODO: configurable remapping isn't done yet 
     if (passNext) {
         passNext = NO;
+        doRunInit = YES;
         return YES;
     } 
 
@@ -315,31 +313,39 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"wVDSL");
+    passNext = NO;
 
-    NSString *nitroxInfo = [NSString stringWithFormat:
-                            @"_nitrox_info = {appid: '%@', port: %d, baseurl: 'http://127.0.0.1:%d/_app/%@/rpc', enabled: true, methods:['ajax']};\n"
-                            "if (Nitrox && Nitrox.Runtime) { Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true; }",
-                            [self.app appID], self.httpPort, self.httpPort, [self.app appID], self.httpPort];
-    
-    
-    [self insertJavascriptString:nitroxInfo];
-    
-    if (loadJSLib && false) {
-        NSLog(@"loading JSlib");
-        
-        NSString *jspath = [[NSBundle mainBundle] pathForResource:@"jquery" ofType:@"js" inDirectory:@"web/lib"];
-        [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
+    /*
+     * This is the old way; now we just use <script> tags and load from local HTTP server
+     */
+    //    if (loadJSLib && false) {
+    //        NSLog(@"loading JSlib");
+    //        
+    //        NSString *jspath = [[NSBundle mainBundle] pathForResource:@"jquery" ofType:@"js" inDirectory:@"web/lib"];
+    //        [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
+    //
+    //        jspath = [[NSBundle mainBundle] pathForResource:@"nitrox" ofType:@"js" inDirectory:@"web/lib"];
+    //        [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
+    //    }
 
-        jspath = [[NSBundle mainBundle] pathForResource:@"nitrox" ofType:@"js" inDirectory:@"web/lib"];
-        [self insertJavascriptByURL:[NSURL fileURLWithPath:jspath] asReference:NO];
-    }
-
-    NSLog(@"inserted configuration info");
+    //    NSLog(@"inserted configuration info");
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     NSLog(@"wVDFL");
-    
+
+    // this bit apparently has to run in the finish-load handler, not the start-load,
+    // or sometimes (subsequent page loads in the same webview) it doesn't work.
+    if (doRunInit) {
+        doRunInit = NO;
+        NSString *nitroxInfo = [NSString stringWithFormat:
+                                @"_nitrox_info = {appid: '%@', port: %d, baseurl: 'http://127.0.0.1:%d/_app/%@/rpc', enabled: true, methods:['ajax']};\n"
+                                "if (Nitrox && Nitrox.Runtime) { Nitrox.Runtime.port = %d; Nitrox.Runtime.enabled = true; }"
+                                "Nitrox.Runtime.finishedLoading();",
+                                [self.app appID], self.httpPort, self.httpPort, [self.app appID], self.httpPort];
+        
+        [self insertJavascriptString:nitroxInfo];
+    }
 
     passNext = NO;
 }

@@ -13,7 +13,11 @@ function msgencode(string) {
 
 
 Nitrox = function() {
-    };
+    if (arguments.length == 1 && typeof arguments[0] == 'function') {
+        Nitrox.log("Scheduling function for onready");
+        jQuery(document).one('nitroxready', arguments[0]);
+    }
+};
 
 
 Nitrox.prototype = {
@@ -44,6 +48,11 @@ Nitrox.Runtime = {
         return url;
     },
     
+    finishedLoading: function() {
+        Nitrox.log("finishedLoading() called");
+        jQuery(document).trigger('nitroxready');
+    },
+    
     pageReady: function() {
         var body = document.getElementsByTagName('body')[0];
         var div = document.createElement('div');
@@ -67,16 +76,9 @@ Nitrox.Runtime = {
     version: '0.1'
 };
 
-// if (this._nitrox_info) {
-//     Nitrox.Runtime.appid = _nitrox_info.appid;
-// }
-
-alert("appid = " + _nitrox_info.appid);
-
 if (this.console && console.log) { 
     Nitrox.consolelog = console.log;
 }
-
 
 Nitrox.log = function(msg, skipremote) {
     if (!Nitrox.Runtime.debug) {
@@ -99,6 +101,7 @@ Nitrox.log = function(msg, skipremote) {
         // async; need to create an outbound ajax queue
         jQuery.ajax({url: "http://127.0.0.1:" + Nitrox.Runtime.port + "/log", 
                     data: msg, async: false, type: 'post'});
+        
     } else if (Nitrox.consolelog) {
         Nitrox.consolelog(msg);
     }
@@ -133,7 +136,7 @@ Nitrox.Bridge = {
                 ajaxObject = jQuery.extend(ajaxObject, ajaxOpts);
                 window.nadirect.log("NBc: ajax object: " + Nitrox.Lang.toJSON(ajaxObject));
                 req = jQuery.ajax(ajaxObject);
-                //window.nadirect.log("NBc: ajax returned without exception");
+                window.nadirect.log("NBc: ajax returned without exception");
                 if (req.readyState == 4) {
                     //window.nadirect.log("NBc: ajax status is " + req.status);                    
                 }
@@ -143,18 +146,18 @@ Nitrox.Bridge = {
             }
             var res = null;
             if (async) {
-                //window.nadirect.log("NBc: returning from async " + fun + " , id=" + id);
+                window.nadirect.log("NBc: returning from async " + fun + " , id=" + id);
                 return null;
             }
             if (! req) {
-                //window.nadirect.log("NBc: No request object returned");
+                window.nadirect.log("NBc: No request object returned");
                 req = {error: "unknown", status:500, responseText:"No req object returned"};
             }
             if (req && req.status == 200 && req.readyState == 4) {
                 res = req.responseText; 
-                //window.nadirect.log('NBc: response text for ajax is: ' + res);
+                window.nadirect.log('NBc: response text for ajax is: ' + res);
             } else {
-                //window.nadirect.log('NBc: not ready: state = ' + (req ? req.readyState : "no req"));
+                window.nadirect.log('NBc: not ready: state = ' + (req ? req.readyState : "no req"));
             }
             return res;
         },
