@@ -1277,6 +1277,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Robert Sanders";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos2.1]" = "iPhone Developer: Robert Sanders";
+				CODE_SIGN_RESOURCE_RULES_PATH = iphoneos2.1/ResourceRules.plist;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1292,6 +1294,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = exw2;
+				PROVISIONING_PROFILE = DefaultProfileUuid;
 				SDKROOT = iphonesimulator2.1;
 			};
 			name = Debug;
@@ -1338,6 +1341,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = exw2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B0089552-77D4-44D3-98B8-B1B042AB895B";
 				SDKROOT = iphoneos2.1;
 			};
 			name = "Release RS";

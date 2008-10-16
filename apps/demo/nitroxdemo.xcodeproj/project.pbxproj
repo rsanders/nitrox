@@ -370,7 +370,8 @@
 				);
 				PRODUCT_NAME = nitroxdemo;
 				PROVISIONING_PROFILE = DefaultProfileUuid;
-				"PROVISIONING_PROFILE[sdk=iphoneos2.1]" = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B0089552-77D4-44D3-98B8-B1B042AB895B";
+				"PROVISIONING_PROFILE[sdk=iphoneos2.1]" = "B0089552-77D4-44D3-98B8-B1B042AB895B";
 			};
 			name = Debug;
 		};
