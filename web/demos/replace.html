@@ -1,0 +1,62 @@
+<html>
+<head>
+<script type="text/javascript" src="http://localhost:58214/lib/jquery.js"></script>
+<script type="text/javascript" src="http://localhost:58214/lib/nitrox.js"></script>
+</head>
+
+<a href="http://localhost:58214/nitrox.html">Home</a><br/>
+<a href="javascript:start()">Start</a><br/>
+<a href="javascript:stop()">Stop</a><br/>
+
+Result is:
+
+<div id="output">
+</div>
+<hr/>
+Yep.
+
+<body>
+  
+<script type="text/javascript">
+// <![CDATA[
+function handleContent(event)
+{
+  Nitrox.log("Handling event, readystate = " + event.target.readyState);
+  Nitrox.log("responseXML = " + event.target.responseXML);
+  if (event.target.readyState == 2 || event.target.readyState == 3) {
+    var result = event.target.responseText;
+    jQuery('#output').html("New response at " + new Date() + ":<br/>" + result.substr(offset));
+    offset = result.length;
+  }
+}
+
+var xrequest = null;
+var offset = 0;
+
+function start() {
+  if (xrequest) {
+    Nitrox.log("Already started");
+    return;
+  }
+  jQuery('#output').html("Starting...<br/>");
+  xrequest = new XMLHttpRequest();
+  // xrequest.multipart = true;
+  xrequest.open("GET","http://robertsanders.name/dev/nitrox/replace.php", true);
+  xrequest.onreadystatechange = handleContent;
+
+  Nitrox.log("Sending...");
+  xrequest.send(null);
+}
+
+function stop() {
+  xrequest.abort();
+  xrequest = null;
+  jQuery('#output').html("Stopping");
+}
+
+
+// ]]>
+</script>
+  
+</body>
+</html>

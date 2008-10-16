@@ -1,0 +1,25 @@
+http://twisted.ecritters.biz/replacedemo
+
+
+$ curl -i http://twisted.ecritters.biz/replacedemo           [6]
+HTTP/1.1 200 OK
+Transfer-encoding: chunked
+Date: Wed, 15 Oct 2008 11:53:49 GMT
+Content-type: multipart/x-mixed-replace; boundary=hicuriousperson
+Server: TwistedWeb/8.1.0
+
+Content-Type: text/plain
+
+The time is:
++--------+
+|11:53:49|
++--------+
+--hicuriousperson
+Content-Type: text/plain
+
+The time is:
++--------+
+|11:53:50|
++--------+
+--hicuriousperson
+

@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B15F06170EA6B37200B34B71 /* exwrapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */; };
+		B15F06180EA6B37200B34B71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043360EA6580E000858B3 /* main.m */; };
+		B15F06190EA6B37200B34B71 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C043370EA6580E000858B3 /* MainWindow.xib */; };
+		B15F061D0EA6B38F00B34B71 /* liblibnitrox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1ED89C90EA5608C00898C8A /* liblibnitrox.a */; };
+		B15F07240EA6B3AD00B34B71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		B15F07250EA6B3AD00B34B71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		B15F07260EA6B3AD00B34B71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		B15F07270EA6B3AD00B34B71 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA10E8E94A300A1C105 /* AddressBook.framework */; };
+		B15F07280EA6B3AD00B34B71 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA30E8E94A300A1C105 /* CFNetwork.framework */; };
+		B15F07290EA6B3AD00B34B71 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA70E8E94A300A1C105 /* CoreAudio.framework */; };
+		B15F072A0EA6B3AD00B34B71 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DA90E8E94A300A1C105 /* CoreFoundation.framework */; };
+		B15F072B0EA6B3AD00B34B71 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DAB0E8E94A300A1C105 /* CoreLocation.framework */; };
+		B15F072C0EA6B3AD00B34B71 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35DAD0E8E94A300A1C105 /* SystemConfiguration.framework */; };
+		B15F072D0EA6B3AD00B34B71 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17C290D0E99472D00329098 /* AudioToolbox.framework */; };
+		B15F075A0EA6BDDB00B34B71 /* nitrox-band.png in Resources */ = {isa = PBXBuildFile; fileRef = B1C045CA0EA6B1F3000858B3 /* nitrox-band.png */; };
+		B1C043150EA65640000858B3 /* NitroxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C043130EA65640000858B3 /* NitroxCore.h */; };
+		B1C043160EA65640000858B3 /* NitroxCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043140EA65640000858B3 /* NitroxCore.m */; };
 		B1ED89CD0EA560A800898C8A /* NitroxApiAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABA70E9EE0FD003FE061 /* NitroxApiAccelerometer.m */; };
 		B1ED89CE0EA560A800898C8A /* NitroxApiApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABAA0E9EE0FD003FE061 /* NitroxApiApplication.m */; };
 		B1ED89CF0EA560A800898C8A /* NitroxApiBenchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABAD0E9EE0FD003FE061 /* NitroxApiBenchmark.m */; };
@@ -83,6 +100,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B15F061B0EA6B38800B34B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1ED89C80EA5608C00898C8A /* libnitrox */;
+			remoteInfo = libnitrox;
+		};
 		B1C8ADA00E9EE0FF003FE061 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B1C8AC4C0E9EE0FE003FE061 /* GTM.xcodeproj */;
@@ -145,7 +169,20 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B15F060D0EA6B33C00B34B71 /* exw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B15F060F0EA6B33C00B34B71 /* exw2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exw2-Info.plist"; sourceTree = "<group>"; };
 		B17C290D0E99472D00329098 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B1C043130EA65640000858B3 /* NitroxCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxCore.h; sourceTree = "<group>"; };
+		B1C043140EA65640000858B3 /* NitroxCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxCore.m; sourceTree = "<group>"; };
+		B1C0431D0EA656CE000858B3 /* exwrapper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exwrapper-Info.plist"; sourceTree = "<group>"; };
+		B1C043320EA6580E000858B3 /* exwrapperAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exwrapperAppDelegate.h; sourceTree = "<group>"; };
+		B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exwrapperAppDelegate.m; sourceTree = "<group>"; };
+		B1C043340EA6580E000858B3 /* ExwrapperCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExwrapperCommon.h; sourceTree = "<group>"; };
+		B1C043360EA6580E000858B3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B1C043370EA6580E000858B3 /* MainWindow.xib */ = {isa = PBXFileReference; explicitFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		B1C044EC0EA6A697000858B3 /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
+		B1C0452F0EA6A90E000858B3 /* exwrapperrules.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = exwrapperrules.plist; sourceTree = "<group>"; };
+		B1C045CA0EA6B1F3000858B3 /* nitrox-band.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nitrox-band.png"; path = "../apps/demo/images/nitrox-band.png"; sourceTree = SOURCE_ROOT; };
 		B1C8ABA60E9EE0FD003FE061 /* NitroxApiAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiAccelerometer.h; sourceTree = "<group>"; };
 		B1C8ABA70E9EE0FD003FE061 /* NitroxApiAccelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiAccelerometer.m; sourceTree = "<group>"; };
 		B1C8ABA90E9EE0FD003FE061 /* NitroxApiApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiApplication.h; sourceTree = "<group>"; };
@@ -344,6 +381,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B15F060B0EA6B33C00B34B71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15F07240EA6B3AD00B34B71 /* Foundation.framework in Frameworks */,
+				B15F07250EA6B3AD00B34B71 /* UIKit.framework in Frameworks */,
+				B15F07260EA6B3AD00B34B71 /* CoreGraphics.framework in Frameworks */,
+				B15F07270EA6B3AD00B34B71 /* AddressBook.framework in Frameworks */,
+				B15F07280EA6B3AD00B34B71 /* CFNetwork.framework in Frameworks */,
+				B15F07290EA6B3AD00B34B71 /* CoreAudio.framework in Frameworks */,
+				B15F072A0EA6B3AD00B34B71 /* CoreFoundation.framework in Frameworks */,
+				B15F072B0EA6B3AD00B34B71 /* CoreLocation.framework in Frameworks */,
+				B15F072C0EA6B3AD00B34B71 /* SystemConfiguration.framework in Frameworks */,
+				B15F072D0EA6B3AD00B34B71 /* AudioToolbox.framework in Frameworks */,
+				B15F061D0EA6B38F00B34B71 /* liblibnitrox.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1ED89C70EA5608C00898C8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				B1ED89C90EA5608C00898C8A /* liblibnitrox.a */,
+				B15F060D0EA6B33C00B34B71 /* exw2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -375,12 +431,16 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B1C043300EA6580E000858B3 /* exwrapper */,
 				B1ED8CA90EA5946200898C8A /* libnitrox_Prefix.pch */,
 				B1C8ADB10E9EE112003FE061 /* vendor */,
 				B1C8ABA30E9EE0FD003FE061 /* src */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				B1C0431D0EA656CE000858B3 /* exwrapper-Info.plist */,
+				B1C044EC0EA6A697000858B3 /* Test-Info.plist */,
+				B15F060F0EA6B33C00B34B71 /* exw2-Info.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -388,6 +448,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B1C045CA0EA6B1F3000858B3 /* nitrox-band.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -410,9 +471,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B1C043120EA655F3000858B3 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				B1C043130EA65640000858B3 /* NitroxCore.h */,
+				B1C043140EA65640000858B3 /* NitroxCore.m */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		B1C043300EA6580E000858B3 /* exwrapper */ = {
+			isa = PBXGroup;
+			children = (
+				B1C043310EA6580E000858B3 /* Classes */,
+				B1C043360EA6580E000858B3 /* main.m */,
+				B1C043370EA6580E000858B3 /* MainWindow.xib */,
+				B1C0452F0EA6A90E000858B3 /* exwrapperrules.plist */,
+			);
+			name = exwrapper;
+			path = ../apps/exwrapper;
+			sourceTree = SOURCE_ROOT;
+		};
+		B1C043310EA6580E000858B3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B1C043320EA6580E000858B3 /* exwrapperAppDelegate.h */,
+				B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */,
+				B1C043340EA6580E000858B3 /* ExwrapperCommon.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		B1C8ABA30E9EE0FD003FE061 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				B1C043120EA655F3000858B3 /* core */,
 				B1C8ABA40E9EE0FD003FE061 /* api */,
 				B1C8ABC80E9EE0FD003FE061 /* gtm */,
 				B1C8ACAB0E9EE0FE003FE061 /* lang */,
@@ -898,12 +991,31 @@
 			files = (
 				B1ED8C150EA56CDA00898C8A /* NibwareLog.h in Headers */,
 				B1ED8CAA0EA5946200898C8A /* libnitrox_Prefix.pch in Headers */,
+				B1C043150EA65640000858B3 /* NitroxCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B15F060C0EA6B33C00B34B71 /* exw2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B15F06160EA6B33D00B34B71 /* Build configuration list for PBXNativeTarget "exw2" */;
+			buildPhases = (
+				B15F06090EA6B33C00B34B71 /* Resources */,
+				B15F060A0EA6B33C00B34B71 /* Sources */,
+				B15F060B0EA6B33C00B34B71 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B15F061C0EA6B38800B34B71 /* PBXTargetDependency */,
+			);
+			name = exw2;
+			productName = exw2;
+			productReference = B15F060D0EA6B33C00B34B71 /* exw2.app */;
+			productType = "com.apple.product-type.application";
+		};
 		B1ED89C80EA5608C00898C8A /* libnitrox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1ED8B0E0EA560DD00898C8A /* Build configuration list for PBXNativeTarget "libnitrox" */;
@@ -955,6 +1067,7 @@
 			projectRoot = "";
 			targets = (
 				B1ED89C80EA5608C00898C8A /* libnitrox */,
+				B15F060C0EA6B33C00B34B71 /* exw2 */,
 			);
 		};
 /* End PBXProject section */
@@ -1018,7 +1131,28 @@
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXResourcesBuildPhase section */
+		B15F06090EA6B33C00B34B71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15F06190EA6B37200B34B71 /* MainWindow.xib in Resources */,
+				B15F075A0EA6BDDB00B34B71 /* nitrox-band.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		B15F060A0EA6B33C00B34B71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15F06170EA6B37200B34B71 /* exwrapperAppDelegate.m in Sources */,
+				B15F06180EA6B37200B34B71 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1ED89C60EA5608C00898C8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1084,12 +1218,91 @@
 				B1ED8A070EA560A800898C8A /* CJSONScanner.m in Sources */,
 				B1ED8A080EA560A800898C8A /* CJSONSerializer.m in Sources */,
 				B1ED8A090EA560A800898C8A /* NitroxScriptDebugDelegate.m in Sources */,
+				B1C043160EA65640000858B3 /* NitroxCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B15F061C0EA6B38800B34B71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1ED89C80EA5608C00898C8A /* libnitrox */;
+			targetProxy = B15F061B0EA6B38800B34B71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B15F06130EA6B33D00B34B71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Robert Sanders";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "exw2-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = exw2;
+				SDKROOT = iphonesimulator2.1;
+			};
+			name = Debug;
+		};
+		B15F06140EA6B33D00B34B71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "exw2-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = exw2;
+				SDKROOT = iphoneos2.1;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		B15F06150EA6B33D00B34B71 /* Release RS */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "exw2-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = exw2;
+				SDKROOT = iphoneos2.1;
+			};
+			name = "Release RS";
+		};
 		B1C8A3970E99C55C003FE061 /* Release RS */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1178,6 +1391,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B15F06160EA6B33D00B34B71 /* Build configuration list for PBXNativeTarget "exw2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B15F06130EA6B33D00B34B71 /* Debug */,
+				B15F06140EA6B33D00B34B71 /* Release */,
+				B15F06150EA6B33D00B34B71 /* Release RS */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B1ED8B0E0EA560DD00898C8A /* Build configuration list for PBXNativeTarget "libnitrox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

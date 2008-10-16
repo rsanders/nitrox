@@ -5,40 +5,28 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>exwrapper</string>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string>nitrox-fireball.png</string>
+	<string>exwrapper</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.esquimaux.iphone.nitroxdemo</string>
+	<string>org.esquimaux.iphone.exwrapper</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>exwrapper</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>0.2</string>
+	<key>DTPlatformName</key>
+	<string>iphonesimulator</string>
+	<key>DTSDKName</key>
+	<string>iphonesimulator2.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
-	<key>NitroxHTTPPort</key>
-	<string>45851</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>org.esquimaux.iphone.nitrox</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>nitrox</string>
-				<string>nitroxapp</string>
-			</array>
-		</dict>
-	</array>
 </dict>
 </plist>

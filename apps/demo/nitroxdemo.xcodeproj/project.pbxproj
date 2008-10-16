@@ -32,18 +32,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B15F06110EA6B33D00B34B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B15F060D0EA6B33C00B34B71 /* exw2.app */;
+			remoteInfo = exw2;
+		};
 		B1ED8C450EA56E3700898C8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = B1ED89C90EA5608C00898C8A /* liblibnitrox.a */;
+			remoteGlobalIDString = B1ED89C90EA5608C00898C8A;
 			remoteInfo = libnitrox;
 		};
 		B1ED8C710EA56EDA00898C8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B1ED8C300EA56E3700898C8A /* libnitrox.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = B1ED89C80EA5608C00898C8A /* libnitrox */;
+			remoteGlobalIDString = B1ED89C80EA5608C00898C8A;
 			remoteInfo = libnitrox;
 		};
 /* End PBXContainerItemProxy section */
@@ -208,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				B1ED8C460EA56E3700898C8A /* liblibnitrox.a */,
+				B15F06120EA6B33D00B34B71 /* exw2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,6 +274,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		B15F06120EA6B33D00B34B71 /* exw2.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = exw2.app;
+			remoteRef = B15F06110EA6B33D00B34B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B1ED8C460EA56E3700898C8A /* liblibnitrox.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -355,7 +370,7 @@
 				);
 				PRODUCT_NAME = nitroxdemo;
 				PROVISIONING_PROFILE = DefaultProfileUuid;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphoneos2.1]" = DefaultProfileUuid;
 			};
 			name = Debug;
 		};

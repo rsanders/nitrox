@@ -257,6 +257,14 @@ function testPrompt() {
   Nitrox.log("Ending prompt at " + new Date() + ", answer=" + answer);  
 }
 
+function loadUserUrl() {
+  var url = prompt("Enter URL"):
+  Nitrox.log("Opening " + url);
+  if (url) {
+    Nitrox.Application.openApplication(url);
+  }
+}
+
 jQuery(function() {
         Nitrox.log("document loaded");
  });
@@ -304,7 +312,8 @@ jQuery(function() {
 <a href="javascript:window.location.href='http://localhost:58214/nitrox.html';">Set HREF to load self via server</a> <br/>
 <a href="javascript:Nitrox.Application.back();">Go back</a><br/>
 <a href="javascript:Nitrox.Application.forward();">Go forward</a><br/>
-
+<a href="javascript:window.location.href='http://localhost:58214/demos/replace.html';">Replace test</a> <br/>
+<a href="javascript:loadUserUrl()';">Load specified URL</a> <br/>
 
 <h3 id="dtitle">Debug</h3>
 <div id="debuglog">
