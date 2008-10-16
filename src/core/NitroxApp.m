@@ -51,7 +51,9 @@
         [parentView release];
     }
     parentView = view;
-    [[webViewController view] setFrame:[parentView frame]];
+
+    // i accidentally the whole view
+    [[webViewController view] setFrame:[parentView bounds]];
     [parentView addSubview:[webViewController view]];
 }
 
@@ -80,7 +82,9 @@
 - (void) openApplication:(NSString *)ref
 {
     NSURL *url = [self convertToUrl:ref];
-    [webViewController loadRequest:[NSURLRequest requestWithURL:url]];
+//    NSURL *baseURL =  [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:58214/%@", 
+//                                            [NitroxHTTPUtils stripLeadingSlash:[url path]]]];
+    [webViewController loadRequest:[NSURLRequest requestWithURL:url] /* baseURL:baseURL */ ];
 }
 
 - (void) openApplicationwWithURL:(NSURL *)url
