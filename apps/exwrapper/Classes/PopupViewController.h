@@ -10,7 +10,7 @@
 
 @class exwrapperAppDelegate;
 
-@interface PopupViewController : UIViewController {
+@interface PopupViewController : UIViewController <UITextFieldDelegate> {
     IBOutlet exwrapperAppDelegate*   appDelegate;
     IBOutlet UITextField*            textField;
     IBOutlet id                      delegate;
