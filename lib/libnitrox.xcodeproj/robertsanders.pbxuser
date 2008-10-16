@@ -630,6 +630,9 @@
 			B15F0A890EA7A80B00B34B71 /* PBXTextBookmark */ = B15F0A890EA7A80B00B34B71 /* PBXTextBookmark */;
 			B15F0A8C0EA7A88700B34B71 /* PBXTextBookmark */ = B15F0A8C0EA7A88700B34B71 /* PBXTextBookmark */;
 			B15F0A8D0EA7A88700B34B71 /* PBXTextBookmark */ = B15F0A8D0EA7A88700B34B71 /* PBXTextBookmark */;
+			B15F0A900EA7AA4400B34B71 /* PBXTextBookmark */ = B15F0A900EA7AA4400B34B71 /* PBXTextBookmark */;
+			B15F0A910EA7AA4400B34B71 /* PBXTextBookmark */ = B15F0A910EA7AA4400B34B71 /* PBXTextBookmark */;
+			B15F0A920EA7AA4400B34B71 /* PBXTextBookmark */ = B15F0A920EA7AA4400B34B71 /* PBXTextBookmark */;
 			B17C250F0E96A2D700329098 = B17C250F0E96A2D700329098 /* PBXTextBookmark */;
 			B17C28240E96D82300329098 = B17C28240E96D82300329098 /* PBXTextBookmark */;
 			B18FFAAF0E92D8140012F25F = B18FFAAF0E92D8140012F25F /* PBXTextBookmark */;
@@ -1166,7 +1169,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1025, 3192}}";
 			sepNavSelRange = "{5648, 263}";
-			sepNavVisRange = "{4130, 1815}";
+			sepNavVisRange = "{4130, 1820}";
 		};
 	};
 	B15F07800EA6CFF000B34B71 /* PBXTextBookmark */ = {
@@ -5948,6 +5951,36 @@
 		vrLen = 1815;
 		vrLoc = 4130;
 	};
+	B15F0A900EA7AA4400B34B71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B15F077B0EA6CFE600B34B71 /* NitroxApp.m */;
+		name = "NitroxApp.m: 157";
+		rLen = 263;
+		rLoc = 5648;
+		rType = 0;
+		vrLen = 1820;
+		vrLoc = 4130;
+	};
+	B15F0A910EA7AA4400B34B71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B15F077B0EA6CFE600B34B71 /* NitroxApp.m */;
+		name = "NitroxApp.m: 157";
+		rLen = 263;
+		rLoc = 5648;
+		rType = 0;
+		vrLen = 1820;
+		vrLoc = 4130;
+	};
+	B15F0A920EA7AA4400B34B71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */;
+		name = "exwrapperAppDelegate.m: 78";
+		rLen = 0;
+		rLoc = 1776;
+		rType = 0;
+		vrLen = 999;
+		vrLoc = 787;
+	};
 	B17C250F0E96A2D700329098 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = B18FFBEE0E9581AB0012F25F /* nitrox.js */;
@@ -6191,9 +6224,9 @@
 	};
 	B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1025, 1273}}";
-			sepNavSelRange = "{1235, 0}";
-			sepNavVisRange = "{559, 687}";
+			sepNavIntBoundsRect = "{{0, 0}, {1025, 1577}}";
+			sepNavSelRange = "{1776, 0}";
+			sepNavVisRange = "{787, 999}";
 			sepNavWindowFrame = "{{107, 92}, {1195, 786}}";
 		};
 	};
@@ -6704,9 +6737,9 @@
 	};
 	B1C8ACD10E9EE0FE003FE061 /* NitroxWebViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1161, 8360}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1161, 8721}}";
 			sepNavSelRange = "{13708, 0}";
-			sepNavVisRange = "{8843, 743}";
+			sepNavVisRange = "{8909, 677}";
 		};
 	};
 	B1C8ADDC0E9EE112003FE061 /* project.yaml */ = {

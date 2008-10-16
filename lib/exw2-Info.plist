@@ -20,5 +20,17 @@
 	<string>nitrox-band.png</string>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>org.esquimaux.iphone.nitroxapp</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>nitroxapp</string>
+				<string>exw2app</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

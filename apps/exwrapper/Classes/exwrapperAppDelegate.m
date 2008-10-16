@@ -61,6 +61,22 @@
     [app openApplication:text];
 }
 
+#pragma mark URL handling
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    NSLog(@"got new app URL request: %@", url);
+
+    NSString *scheme = [url scheme];
+    if ([scheme isEqualToString:@"nitroxapp"]) {
+        NSString *newUrl = [[url absoluteString] stringByReplacingOccurrencesOfString:@"nitroxapp://" 
+                                                                           withString:@"http://"];
+        [app openApplication:newUrl];
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 
 @end
