@@ -688,7 +688,7 @@ Nitrox.Photo = {
     },
     
     _success: function(path, metadata) {
-        var url = Nitrox.Runtime.baseURL() + "/photoresults/" + path;
+        var url = Nitrox.Runtime.appURL() + "/photoresults/" + path;
         Nitrox.log("NPsP: photo url is " + url + " metadata = " + Nitrox.Lang.toJSON(metadata));
         this.handlers.handle('photo_picked', [url, metadata]);
     },
