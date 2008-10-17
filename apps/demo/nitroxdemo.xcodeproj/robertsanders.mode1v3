@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>B107E6F50EA9274C00CEF255</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>AppInstance.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>B107E6F60EA9274C00CEF255</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>AppInstance.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>B107E6FD0EA9275100CEF255</string>
-						<key>history</key>
-						<array>
-							<string>B107E6DC0EA9273B00CEF255</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1195, 689}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>84 230 1195 730 0 0 1680 1028 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -272,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -357,14 +318,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>nitroxdemoAppDelegate.m</string>
+								<string></string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -372,11 +331,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>nitroxdemoAppDelegate.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>B107E6FC0EA9275100CEF255</string>
+										<string></string>
 										<key>history</key>
 										<array>
 											<string>B1DD3D380E8EC25500952CD6</string>
@@ -409,7 +364,6 @@
 											<string>B1C8B1210E9FB852003FE061</string>
 											<string>B1C8B14D0E9FBBDC003FE061</string>
 											<string>B1C8B1840E9FBEF8003FE061</string>
-											<string>B1C8B19D0E9FC431003FE061</string>
 											<string>B1C8B1AD0E9FD57B003FE061</string>
 											<string>B1C8B1C00E9FD6E5003FE061</string>
 											<string>B1C8B2520EA0013B003FE061</string>
@@ -427,7 +381,6 @@
 											<string>B107E6DE0EA9274C00CEF255</string>
 											<string>B107E6DF0EA9274C00CEF255</string>
 											<string>B107E6E00EA9274C00CEF255</string>
-											<string>B107E6E10EA9274C00CEF255</string>
 											<string>B107E6E30EA9274C00CEF255</string>
 											<string>B107E6E40EA9274C00CEF255</string>
 										</array>
@@ -478,23 +431,10 @@
 											<string>B1C8B0C50E9FAAB5003FE061</string>
 											<string>B1C8B12B0E9FB964003FE061</string>
 											<string>B1C8B1520E9FBBDC003FE061</string>
-											<string>B1C8B1A10E9FC431003FE061</string>
 											<string>B1C8B1C50E9FD6E5003FE061</string>
 											<string>B1C8B2530EA0013B003FE061</string>
 											<string>B1C8B2670EA00C7C003FE061</string>
 											<string>B15F09550EA701FE00B34B71</string>
-											<string>B107E6E50EA9274C00CEF255</string>
-											<string>B107E6E60EA9274C00CEF255</string>
-											<string>B107E6E70EA9274C00CEF255</string>
-											<string>B107E6E80EA9274C00CEF255</string>
-											<string>B107E6E90EA9274C00CEF255</string>
-											<string>B107E6EA0EA9274C00CEF255</string>
-											<string>B107E6EB0EA9274C00CEF255</string>
-											<string>B107E6EC0EA9274C00CEF255</string>
-											<string>B107E6ED0EA9274C00CEF255</string>
-											<string>B107E6EE0EA9274C00CEF255</string>
-											<string>B107E6EF0EA9274C00CEF255</string>
-											<string>B107E6F10EA9274C00CEF255</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -552,9 +492,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B107E6F30EA9274C00CEF255</string>
+				<string>B107E7180EA92E9300CEF255</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B107E6F40EA9274C00CEF255</string>
+				<string>B107E7190EA92E9300CEF255</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -688,12 +628,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B107E6D90EA9271D00CEF255</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/Shared/vitrue/src/xcode/libs/nitroxkit/apps/demo/nitroxdemo.xcodeproj</string>
-		<string>B14E69EA0E8D9692000BB59F</string>
-		<string>B107E6F50EA9274C00CEF255</string>
-		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>219 140 1404 818 0 0 1680 1028 </string>
@@ -1034,7 +969,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1004, 604}}</string>
 								<key>RubberWindowFrame</key>
-								<string>567 210 1004 645 0 0 1680 1028 </string>
+								<string>226 223 1004 645 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1063,7 +998,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>567 210 1004 645 0 0 1680 1028 </string>
+			<string>226 223 1004 645 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta id="viewport" name="viewport" content="width=device-width; user-scalable=0;"/>
+<base href="http://robertsanders.name/dev/nitrox/" />
+<title>Nitrox Test Page</title>
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/jquery.js"></script>
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/nitrox.js"></script>
+</head>
+<body>
+
+Internal Test Page
+
+<div id="outbox">
+</div>
+
+<iframe id="rpciframe" style="display:none;" src="http://127.0.0.1:58214/empty.html"></iframe>
+
+<script type="text/javascript">
+// <![CDATA[
+
+document.write("HREF = " + window.location.href + "<br/>");
+function debuglog(msg) {
+  var oldHTML = jQuery('#debuglog').get(0).innerHTML;
+  jQuery('#debuglog').html( encode(msg) + "<br/>--<br/>" + oldHTML );
+  document.getElementById('rpciframe').src = 'nitroxlog://somehost/path?' + escape(msg);
+}
+
+Nitrox(function() {
+  Nitrox.log("user nitroxready handler run");
+});
+
+jQuery(function() {
+        Nitrox.log("document loaded");
+ });
+ 
+
+function createFile() {
+  
+}
+
+function getCwd() {
+  Nitrox.log("CWD is " + Nitrox.File.getcwd());
+}
+
+// ]]>
+</script>
+
+<a href="javascript:createFile();">Create file</a> <br/>
+<a href="javascript:getCwd();">Get current directory</a> <br/>
+
+
+<h3 id="dtitle">Debug</h3>
+<div id="debuglog">
+</div>
+
+<script>
+debuglog("started up!");
+</script>
+
+</body>
+</html>

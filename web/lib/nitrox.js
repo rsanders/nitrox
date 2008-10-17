@@ -761,9 +761,97 @@ Nitrox.Photo = {
 
 Nitrox.File = function(path) {
     Nitrox.log("File constructed at path " + path);
+    this._type = "Nitrox.File";
+    this.path = path;
 };
 
+Nitrox.File.getcwd = function() {
+    return Nitrox.Bridge.call("File/c/getcwd", {}, false);
+}
+
 Nitrox.File.prototype = {
+    exists: function() {
+        return this.access("f");
+    },
+    
+    isFile: function() {
+        var stat = this.stat();
+        return (stat.st_mode & 0170000) == 040000;
+    },
+
+    isDir: function() {
+        var stat = this.stat();
+        return (stat.st_mode & 0170000) == 0100000;
+    },
+
+    isSymlink: function() {
+        var stat = this.stat();
+        return (stat.st_mode & 0170000) == 0120000;
+    },
+    
+    // mode is a string containing one or more of "f", "r", "w", and "x"
+    // returns true / false
+    access: function(mode) {
+        return (Nitrox.Bridge.call("File/c/access", {path: path, mode: mode}, false) != -1);
+    },
+
+
+
+     // struct stat {
+     //     dev_t    st_dev;    /* device inode resides on */
+     //     ino_t    st_ino;    /* inode's number */
+     //     mode_t   st_mode;   /* inode protection mode */
+     //     nlink_t  st_nlink;  /* number or hard links to the file */
+     //     uid_t    st_uid;    /* user-id of owner */
+     //     gid_t    st_gid;    /* group-id of owner */
+     //     dev_t    st_rdev;   /* device type, for special file inode */
+     //     struct timespec st_atimespec;  /* time of last access */
+     //     struct timespec st_mtimespec;  /* time of last data modification */
+     //     struct timespec st_ctimespec;  /* time of last file status change */
+     //     off_t    st_size;   /* file size, in bytes */
+     //     quad_t   st_blocks; /* blocks allocated for file */
+     //     u_long   st_blksize;/* optimal file sys I/O ops blocksize */
+     //     u_long   st_flags;  /* user defined flags for file */
+     //     u_long   st_gen;    /* file generation number */
+     // };
+     //
+     // returns a json object with those field names except times are in fractional
+     // unix format (e.g., seconds.partialseconds)
+    stat: function() {
+        return Nitrox.Bridge.call("File/c/stat", {path: path}, false);
+    },
+
+    chmod: function(mode) {
+        return Nitrox.Bridge.call("File/c/chmod", {path: path, mode: mode}, false);
+    },
+
+    link: function(path2) {
+        return Nitrox.Bridge.call("File/c/link", {path: path, path2: path2}, false);
+    },
+
+    symlink: function(path2) {
+        return Nitrox.Bridge.call("File/c/symlink", {path: path, path2: path2}, false);
+    },
+    
+    unlink: function() {
+        return Nitrox.Bridge.call("File/c/unlink", {path: path}, false);
+    },
+    
+    truncate: function(size) {
+        return Nitrox.Bridge.call("File/c/truncate", {path: path, size: size}, false);
+    },
+    
+    // if offset is null, read whole file
+    // if size is null, read from offset to end of file
+    read: function(offset, size) {
+        return Nitrox.Bridge.call("File/c/read", {path: path, offset: offset, size: size}, false);
+    },
+    
+    // mode can be "w" for truncate and write, "w+" for append
+    // if offset is not null, "w" is the same as "seek to offset and write" w/out truncating
+    write: function(data, mode, offset, async) {
+        return Nitrox.Bridge.call("File/c/write", {path: path, data: data, mode: mode, offset: offset}, async);
+    },
 };
 
 // final bootstrap

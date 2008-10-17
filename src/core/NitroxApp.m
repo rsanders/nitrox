@@ -141,6 +141,11 @@
     [rpcDelegate addPath:@"Application" delegate:[[NitroxRPCDispatcher alloc] 
                                                   initWithStubClass:[[NitroxApiApplication alloc] init]
                                                   webViewController:webViewController]];
+
+    [rpcDelegate addPath:@"File" delegate:[[NitroxRPCDispatcher alloc] 
+                                                  initWithStubClass:[[NitroxApiFile alloc] init]
+                                                  webViewController:webViewController]];
+    
     
     NitroxApiPhoto *photo = [[NitroxApiPhoto alloc] init];
     [rpcDelegate addPath:@"Photo" delegate:[[NitroxRPCDispatcher alloc] 
