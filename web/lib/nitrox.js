@@ -253,8 +253,9 @@ Nitrox.Device = {
         return Nitrox.Device.getDeviceAttribute('orientation');
     },
 
-    orientationDelegate: function(newOrientation, oldOrientation) {
-        Nitrox.log("default orientation delegate: changed orientation from " + oldOrientation + " to " + newOrientation);
+    orientationDelegate: function(newOrientation, oldOrientation, type) {
+        Nitrox.log("default orientation delegate: changed orientation from " + oldOrientation + 
+                   " to " + newOrientation + " event type = " + type);
     },
     
     version: '0.1'

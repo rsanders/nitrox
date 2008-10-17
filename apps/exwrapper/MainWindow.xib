@@ -181,7 +181,7 @@
 						<float key="IBUIMinimumFontSize">1.000000e+01</float>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 135}</string>
+				<string key="NSFrameSize">{320, 0}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -462,15 +462,15 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>exwrapperAppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{703, 216}, {320, 480}}</string>
+					<string>{{-680, 595}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>MainWindowViewController</string>
-					<string>{{0, 365}, {320, 480}}</string>
+					<string>{{-680, 595}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>PopupViewController</string>
-					<string>{{21, 342}, {320, 480}}</string>
+					<string>{{-680, 595}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{638, 635}, {320, 135}}</string>
+					<string>{{-680, 1031}, {320, 0}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

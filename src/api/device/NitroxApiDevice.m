@@ -16,6 +16,8 @@
     [super init];
     
     monitoringOrientation = NO;
+    lastOrientation = -1;
+    
     return self;
 }
 
@@ -52,16 +54,24 @@
         
         NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
 
+        // this triggers when the UI reorients
         [center addObserver:self 
                    selector:@selector(orientationDidChange:) 
                        name:UIApplicationDidChangeStatusBarOrientationNotification
                      object:Nil];
 
-//        [center addObserver:self 
-//                   selector:@selector(orientationDidChange:) 
-//                       name:UIDeviceOrientationDidChangeNotification
-//                     object:Nil];        
+        // this triggers when the device reorients
+        [center addObserver:self 
+                   selector:@selector(orientationDidChange:) 
+                       name:UIDeviceOrientationDidChangeNotification
+                     object:Nil];        
         
+        
+        lastOrientation = [[UIDevice currentDevice] orientation];
+        if (lastOrientation == -1 || lastOrientation == UIDeviceOrientationUnknown) {
+            lastOrientation = UIDeviceOrientationPortrait;
+        }
+        [self sendOrientationNotification:lastOrientation from:lastOrientation ofType:@"initial"];
         
         monitoringOrientation = YES;
     }
@@ -81,21 +91,32 @@
 
 #pragma mark delegate and notification methods
 
+- (void) sendOrientationNotification:(NSInteger)newOrientation from:(NSInteger)oldOrientation
+                              ofType:(NSString*)type
+{
+    [self scheduleCallbackScript:[NSString stringWithFormat:@"Nitrox.Device.orientationDelegate(%d, %d, '%@')",
+                                      newOrientation, oldOrientation, type]];
+}
+
 - (void) orientationDidChange:(NSNotification *)notification
 {
     NSDictionary *dict = notification.userInfo;
     NSNumber *orientation = [dict objectForKey:UIApplicationStatusBarOrientationUserInfoKey];
     
-    UIDeviceOrientation oldOrientation = [orientation intValue];
+    UIDeviceOrientation oldOrientation;
+    if (orientation) {
+        oldOrientation = [orientation intValue];
+    } else {
+        oldOrientation = lastOrientation;
+    }
     UIDeviceOrientation newOrientation = [[UIDevice currentDevice] orientation];
     
     NSLog(@"got orientation update for type %@: from %d to %d", 
           notification.name, oldOrientation, newOrientation);
     
-    if (orientation) {
-        [self scheduleCallbackScript:[NSString stringWithFormat:@"Nitrox.Device.orientationDelegate(%d, %d)",
-                                      newOrientation, oldOrientation]];
-    }
+    [self sendOrientationNotification:newOrientation from:oldOrientation ofType:notification.name];
+    
+    lastOrientation = newOrientation;
 }
 
 #pragma mark Generic Stub methods

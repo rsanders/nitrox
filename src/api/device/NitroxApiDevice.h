@@ -13,6 +13,7 @@
 @interface NitroxApiDevice : NitroxStubClass {
 @private
     BOOL monitoringOrientation;
+    NSInteger lastOrientation;
 }
 
 - (NitroxApiDevice *)init;
@@ -20,5 +21,7 @@
 - (id) startMonitoringOrientation;
 - (id) stopMonitoringOrientation;
 
+- (void) sendOrientationNotification:(NSInteger)newOrientation from:(NSInteger)oldOrientation
+                              ofType:(NSString*)type;
 
 @end
