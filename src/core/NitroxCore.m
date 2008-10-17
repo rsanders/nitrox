@@ -41,9 +41,9 @@ static NitroxCore *singleton;
     rootPathDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
     self.server = [[NitroxHTTPServer alloc] initWithDelegate:rootPathDelegate];
 
-    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
-    if ([info objectForKey:@"nitrox_http_port"]) {
-        httpPort = [(NSString *)[info objectForKey:@"nitrox_http_port"] intValue];
+    NSString *portString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"nitrox_http_port"];
+    if (portString) {
+        httpPort = [portString intValue];
     } else {
         httpPort = 58214;
     }
@@ -97,6 +97,10 @@ static NitroxCore *singleton;
     
     appPathDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
     [rootPathDelegate addPath:@"_app" delegate:appPathDelegate];
+
+    [rootPathDelegate addPath:@"log" delegate:[NitroxHTTPServerLogDelegate singleton]];
+    
+    [rootPathDelegate addPath:@"proxy" delegate:[[[NitroxHTTPServerProxyDelegate alloc] init] autorelease]];
 
     NSError *error;
     [self.server start:&error];
