@@ -5,4 +5,7 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
+#  ifndef PERFORMANCE_TEST
+    #import "NibwareLog.h"
+#  endif
 #endif

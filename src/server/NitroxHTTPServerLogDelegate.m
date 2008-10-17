@@ -8,7 +8,9 @@
 
 #import "NitroxHTTPServerLogDelegate.h"
 
+#import "NibwareLog.h"
 
+#undef NSLog
 
 @implementation NitroxHTTPServerLogDelegate
 
@@ -47,6 +49,7 @@
                                            encoding:NSUTF8StringEncoding] 
                      autorelease];
     NSLog(@"JSLOG: %@", msg);
+    [[NibwareLog singleton] logWithFormat:@"JSLOG: %@", msg];
 
     return [NitroxHTTPResponseMessage emptyResponseWithCode:200];
 }
