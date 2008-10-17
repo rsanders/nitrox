@@ -32,5 +32,7 @@
 	<string>1.0</string>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>nitrox_http_port</key>
+	<string>58215</string>
 </dict>
 </plist>

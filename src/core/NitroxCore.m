@@ -19,7 +19,7 @@ static NitroxCore *singleton;
 
 @implementation NitroxCore
 
-@synthesize apps, server;
+@synthesize apps, server, httpPort;
 
 + (NitroxCore*) singleton
 {
@@ -40,7 +40,15 @@ static NitroxCore *singleton;
     self.apps = [[NSMutableDictionary alloc] init];
     rootPathDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
     self.server = [[NitroxHTTPServer alloc] initWithDelegate:rootPathDelegate];
-    [server setPort:58214];
+
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    if ([info objectForKey:@"nitrox_http_port"]) {
+        httpPort = [(NSString *)[info objectForKey:@"nitrox_http_port"] intValue];
+    } else {
+        httpPort = 58214;
+    }
+    
+    [server setPort:httpPort];
     [server setAcceptWithRunLoop:NO];
     [server setLocalhostOnly:YES];
     

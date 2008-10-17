@@ -19,10 +19,13 @@
     
     NitroxHTTPServerPathDelegate*  rootPathDelegate;
     NitroxHTTPServerPathDelegate*  appPathDelegate;
+    
+    NSInteger   httpPort;
 }
 
 @property (retain) NSDictionary*       apps;
 @property (retain) NitroxHTTPServer*   server;
+@property (readonly) NSInteger httpPort;
 
 + (NitroxCore*) singleton;
 

@@ -16,9 +16,24 @@
 
 @implementation exwrapperAppDelegate
 
+@synthesize homeApp;
+
+- (void) setupPreferences
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (! [defaults boolForKey:@"defaults_set"]) {
+        [defaults setBool:YES forKey:@"autoload_home_app"];
+        [defaults setObject:@"nitrox.html" forKey:@"home_app"];
+        [defaults setBool:YES forKey:@"defaults_set"];
+    }
+}
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
+    [self setupPreferences];
+    
+    self.homeApp = [[NSUserDefaults standardUserDefaults] stringForKey:@"home_app"];
+
     NitroxCore *core = [NitroxCore singleton];
     
     [core start];
@@ -26,7 +41,11 @@
     app = [core createApp];
     [app setParentView:containerView];
     
-    [app openApplication:@"nitrox.html"];
+    if (self.homeApp && [[NSUserDefaults standardUserDefaults] boolForKey:@"autoload_home_app"]) {
+        [app openApplication:self.homeApp];
+    } else {
+        [app openApplication:@"blank.html"];
+    }
 }
 
 
@@ -42,8 +61,10 @@
 #pragma mark IBActions
 
 - (IBAction) goHome {
-    [app openApplication:@"nitrox.html"];
-    NSLog(@"goHome called");
+    NSLog(@"goHome called, homeapp=%@", self.homeApp);
+    if (self.homeApp) {
+        [app openApplication:self.homeApp];
+    }
 }
 
 - (IBAction) open {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B11856FD0EA8F563008581D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B11856FC0EA8F563008581D0 /* Settings.bundle */; };
 		B15F06170EA6B37200B34B71 /* exwrapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */; };
 		B15F06180EA6B37200B34B71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043360EA6580E000858B3 /* main.m */; };
 		B15F06190EA6B37200B34B71 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C043370EA6580E000858B3 /* MainWindow.xib */; };
@@ -176,6 +177,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B11856FC0EA8F563008581D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B15F060D0EA6B33C00B34B71 /* exw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F060F0EA6B33C00B34B71 /* exw2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exw2-Info.plist"; sourceTree = "<group>"; };
 		B15F07780EA6CFE600B34B71 /* NitroxAppPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxAppPage.m; sourceTree = "<group>"; };
@@ -197,7 +199,6 @@
 		B1C043340EA6580E000858B3 /* ExwrapperCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExwrapperCommon.h; sourceTree = "<group>"; };
 		B1C043360EA6580E000858B3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B1C043370EA6580E000858B3 /* MainWindow.xib */ = {isa = PBXFileReference; explicitFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		B1C044EC0EA6A697000858B3 /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
 		B1C0452F0EA6A90E000858B3 /* exwrapperrules.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = exwrapperrules.plist; sourceTree = "<group>"; };
 		B1C045CA0EA6B1F3000858B3 /* nitrox-band.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nitrox-band.png"; path = "../apps/demo/images/nitrox-band.png"; sourceTree = SOURCE_ROOT; };
 		B1C8ABA60E9EE0FD003FE061 /* NitroxApiAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiAccelerometer.h; sourceTree = "<group>"; };
@@ -444,6 +445,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B15F08050EA6EBDE00B34B71 /* web */,
 				B1C043300EA6580E000858B3 /* exwrapper */,
 				B1ED8CA90EA5946200898C8A /* libnitrox_Prefix.pch */,
 				B1C8ADB10E9EE112003FE061 /* vendor */,
@@ -452,7 +454,6 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				B1C0431D0EA656CE000858B3 /* exwrapper-Info.plist */,
-				B1C044EC0EA6A697000858B3 /* Test-Info.plist */,
 				B15F060F0EA6B33C00B34B71 /* exw2-Info.plist */,
 			);
 			name = CustomTemplate;
@@ -500,12 +501,12 @@
 		B1C043300EA6580E000858B3 /* exwrapper */ = {
 			isa = PBXGroup;
 			children = (
-				B15F08050EA6EBDE00B34B71 /* web */,
 				B1C043310EA6580E000858B3 /* Classes */,
 				B1C043360EA6580E000858B3 /* main.m */,
 				B1C043370EA6580E000858B3 /* MainWindow.xib */,
 				B1C0452F0EA6A90E000858B3 /* exwrapperrules.plist */,
 				B1B075630EA7FF44006EB800 /* Entitlements.plist */,
+				B11856FC0EA8F563008581D0 /* Settings.bundle */,
 			);
 			name = exwrapper;
 			path = ../apps/exwrapper;
@@ -1163,6 +1164,7 @@
 				B15F08060EA6EBDE00B34B71 /* web in Resources */,
 				B15F08230EA6EC3600B34B71 /* NitroxWebView.xib in Resources */,
 				B1B075640EA7FF44006EB800 /* Entitlements.plist in Resources */,
+				B11856FD0EA8F563008581D0 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1361,6 +1363,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "PERFORMANCE_TEST=1";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = DefaultProfileUuid;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = DefaultProfileUuid;
@@ -1465,7 +1468,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = DefaultProfileUuid;
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphonesimulator2.1;
 				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;

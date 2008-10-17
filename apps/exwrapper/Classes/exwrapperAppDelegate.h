@@ -17,7 +17,11 @@
     IBOutlet UIView*          containerView;
     IBOutlet UIViewController*  mainViewController;
     IBOutlet PopupViewController*  popupViewController;
+    
+    NSString*                 homeApp;
 }
+
+@property (retain) NSString*  homeApp;
 
 - (IBAction) goHome;
 - (IBAction) open;
