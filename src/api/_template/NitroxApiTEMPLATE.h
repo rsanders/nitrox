@@ -1,8 +1,7 @@
 //
-//  NitroxApiPhoto.h
+//  NitroxApiTEMPLATE.h
 //
-//  Created by Robert Sanders on 10/3/08.
-//  Copyright 2008 ViTrue, Inc.. All rights reserved.
+//  Created by Robert Sanders 
 //
 
 #import <UIKit/UIKit.h>
