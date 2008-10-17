@@ -11,7 +11,7 @@
 
 #import "NitroxWebViewController.h"
 
-#import "WebViewInstance.h"
+#import "AppInstance.h"
 
 @implementation RootViewController
 
@@ -83,26 +83,26 @@
 
     cells = [[NSMutableArray alloc] initWithCapacity:4];
 
-    [cells addObject:[WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://localhost/nitrox.html"]
+    [cells addObject:[AppInstance instanceWithURL:[NSURL URLWithString:@"http://localhost/nitrox.html"]
                                               baseURL:Nil
                                                  name:@"Local Main demo"]];
 
     [cells addObject:
-        [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos.html"]
+        [AppInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos.html"]
                                  baseURL:Nil
                                     name:@"Remote Demos menu"]];
 
     [cells addObject:
-     [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos/photo.html"]
+     [AppInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos/photo.html"]
                               baseURL:Nil
                                  name:@"Remote Photo demo"]];
     [cells addObject:
-     [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos/main.html"]
+     [AppInstance instanceWithURL:[NSURL URLWithString:@"http://robertsanders.name/dev/nitrox/demos/main.html"]
                               baseURL:Nil
                                  name:@"Remote Main demo"]];
     
     [cells addObject:
-     [WebViewInstance instanceWithURL:[NSURL URLWithString:@"http://nitrox.devlab.vitrue.com/index.html"]
+     [AppInstance instanceWithURL:[NSURL URLWithString:@"http://nitrox.devlab.vitrue.com/index.html"]
                               baseURL:Nil
                                  name:@"Devlab Index"]];    
     

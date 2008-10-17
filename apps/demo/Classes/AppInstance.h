@@ -9,21 +9,25 @@
 #import <UIKit/UIKit.h>
 
 @class NitroxWebViewController;
+@class NitroxApp;
 
-@interface WebViewInstance : NSObject {
+@interface AppInstance : NSObject {
     NSURL*     url;
     NSURL*     baseURL;
     NSString*  name;
     BOOL       noBase;
     
-    NitroxWebViewController*   controller;
+    // NitroxWebViewController*   controller;
+    NitroxApp* app;
 }
 
 @property (readonly)   NSString*          name;
 @property (readonly)   NitroxWebViewController*  controller;
+@property (readonly)   NitroxApp*         app;
+
 @property (assign)     BOOL               noBase;
 
-+ (WebViewInstance*) instanceWithURL:(NSURL*)url baseURL:(NSURL*)url name:(NSString *)name;
++ (AppInstance*) instanceWithURL:(NSURL*)url baseURL:(NSURL*)url name:(NSString *)name;
 
 - (void) goHome;
 

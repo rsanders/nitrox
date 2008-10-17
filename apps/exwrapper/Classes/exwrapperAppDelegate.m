@@ -41,6 +41,9 @@
     app = [core createApp];
     [app setParentView:containerView];
     
+    //window.autoresizesSubviews = YES;
+    //window.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleWidth;
+    
     if (self.homeApp && [[NSUserDefaults standardUserDefaults] boolForKey:@"autoload_home_app"]) {
         [app openApplication:self.homeApp];
     } else {

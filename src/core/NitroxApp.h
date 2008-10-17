@@ -55,7 +55,10 @@
 @property (readonly) id<NitroxHTTPServerDelegate>     appServerDelegate;
 
 - (NitroxApp*) initWithCore:(NitroxCore*)core;
-- (NSURL *) convertToUrl:(NSString *)ref;
+
 - (void) openApplication:(NSString *)ref;
+- (void) openApplicationwWithURL:(NSURL *)url;
+
+- (NSURL *) convertToUrl:(NSString *)ref;
 
 @end

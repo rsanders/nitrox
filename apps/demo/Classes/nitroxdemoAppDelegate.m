@@ -8,7 +8,7 @@
 
 #import "nitroxdemoAppDelegate.h"
 #import "RootViewController.h"
-
+#import "NitroxCore.h"
 
 @implementation nitroxdemoAppDelegate
 
@@ -20,6 +20,10 @@
 	// Configure and show the window
 	[window addSubview:[navigationController view]];
 	[window makeKeyAndVisible];
+    
+    NitroxCore *core = [NitroxCore singleton];
+    
+    [core start];
 }
 
 
