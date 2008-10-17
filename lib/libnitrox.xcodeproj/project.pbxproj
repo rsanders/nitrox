@@ -30,6 +30,7 @@
 		B15F08230EA6EC3600B34B71 /* NitroxWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C8ACCF0E9EE0FE003FE061 /* NitroxWebView.xib */; };
 		B15F09E90EA798A600B34B71 /* MainWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15F09E80EA798A600B34B71 /* MainWindowViewController.m */; };
 		B15F09EE0EA79AEB00B34B71 /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15F09ED0EA79AEB00B34B71 /* PopupViewController.m */; };
+		B1B075640EA7FF44006EB800 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1B075630EA7FF44006EB800 /* Entitlements.plist */; };
 		B1C043150EA65640000858B3 /* NitroxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C043130EA65640000858B3 /* NitroxCore.h */; };
 		B1C043160EA65640000858B3 /* NitroxCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043140EA65640000858B3 /* NitroxCore.m */; };
 		B1ED89CD0EA560A800898C8A /* NitroxApiAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C8ABA70E9EE0FD003FE061 /* NitroxApiAccelerometer.m */; };
@@ -110,7 +111,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B1ED89C80EA5608C00898C8A /* libnitrox */;
+			remoteGlobalIDString = B1ED89C80EA5608C00898C8A;
 			remoteInfo = libnitrox;
 		};
 		B1C8ADA00E9EE0FF003FE061 /* PBXContainerItemProxy */ = {
@@ -187,6 +188,7 @@
 		B15F09EC0EA79AEB00B34B71 /* PopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
 		B15F09ED0EA79AEB00B34B71 /* PopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
 		B17C290D0E99472D00329098 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B1B075630EA7FF44006EB800 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		B1C043130EA65640000858B3 /* NitroxCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxCore.h; sourceTree = "<group>"; };
 		B1C043140EA65640000858B3 /* NitroxCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxCore.m; sourceTree = "<group>"; };
 		B1C0431D0EA656CE000858B3 /* exwrapper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exwrapper-Info.plist"; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 				B1C043360EA6580E000858B3 /* main.m */,
 				B1C043370EA6580E000858B3 /* MainWindow.xib */,
 				B1C0452F0EA6A90E000858B3 /* exwrapperrules.plist */,
+				B1B075630EA7FF44006EB800 /* Entitlements.plist */,
 			);
 			name = exwrapper;
 			path = ../apps/exwrapper;
@@ -1159,6 +1162,7 @@
 				B15F075A0EA6BDDB00B34B71 /* nitrox-band.png in Resources */,
 				B15F08060EA6EBDE00B34B71 /* web in Resources */,
 				B15F08230EA6EC3600B34B71 /* NitroxWebView.xib in Resources */,
+				B1B075640EA7FF44006EB800 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1328,7 +1332,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Robert Sanders";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos2.1]" = "iPhone Developer: Robert Sanders";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "exw2-Info.plist";
@@ -1341,10 +1346,59 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = exw2;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B0089552-77D4-44D3-98B8-B1B042AB895B";
+				"PROVISIONING_PROFILE[sdk=iphoneos2.1]" = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphonesimulator2.1]" = DefaultProfileUuid;
 				SDKROOT = iphoneos2.1;
 			};
 			name = "Release RS";
+		};
+		B1B075560EA7FE82006EB800 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Robert Sanders";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "PERFORMANCE_TEST=1";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = DefaultProfileUuid;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = DefaultProfileUuid;
+				SDKROOT = iphoneos2.1;
+			};
+			name = Distribution;
+		};
+		B1B075570EA7FE82006EB800 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = libnitrox;
+			};
+			name = Distribution;
+		};
+		B1B075580EA7FE82006EB800 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = ../apps/exwrapper/Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Robert Sanders";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "exw2-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = exw2;
+				PROVISIONING_PROFILE = "50116A4B-E629-47D0-BAE8-451452EDEE48";
+				SDKROOT = iphoneos2.1;
+			};
+			name = Distribution;
 		};
 		B1C8A3970E99C55C003FE061 /* Release RS */ = {
 			isa = XCBuildConfiguration;
@@ -1440,6 +1494,7 @@
 				B15F06130EA6B33D00B34B71 /* Debug */,
 				B15F06140EA6B33D00B34B71 /* Release */,
 				B15F06150EA6B33D00B34B71 /* Release RS */,
+				B1B075580EA7FE82006EB800 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1450,6 +1505,7 @@
 				B1ED89CA0EA5608D00898C8A /* Debug */,
 				B1ED89CB0EA5608D00898C8A /* Release */,
 				B1ED89CC0EA5608D00898C8A /* Release RS */,
+				B1B075570EA7FE82006EB800 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1460,6 +1516,7 @@
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
 				B1C8A3970E99C55C003FE061 /* Release RS */,
+				B1B075560EA7FE82006EB800 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
