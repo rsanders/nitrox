@@ -1,0 +1,9 @@
+http://www.dyn-web.com/tutorials/iframes/
+
+Dojo / window.name iframe communication transport
+
+fixed positioning in mobilesafari:
+
+  http://doctyper.com/archives/200808/fixed-positioning-on-mobile-safari/
+  
+  

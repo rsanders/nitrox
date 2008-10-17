@@ -1,16 +1,24 @@
-NEW API:
-
+NEW APIs:
 
 * file upload API
+* Local file read/write API
+* Socket read/write API
+* Background threads API (hidden UIWebView and RPC between webviews)
 * view management?  (size, opacity, etc)
 * Multimedia:
   * Record sound
   * Start/stop playback of sound file
   * Play local video file or stream video (can be done with native quicktime better?)
 * iPhone preferences (NSUserDefaults) API
-
+* Bonjour / server socket API
+  * Mozilla's: http://www.xulplanet.com/tutorials/mozsdk/serverpush.php
 
 ENHANCEMENTS:
+
+* standard listener / event dispatch library
+  * should we just use events triggered on document (or another elt)
+  * or manage a per-API listeners list?  the advantage here is that we can know whether
+    anybody is listening for a given kind of event, and turn them off if not.  (e.g., accel)
 
 * nitrox://  URL handling to open/download new app - security issues?
   - should support extensible URL types for different kinds of apps, and passing
@@ -19,26 +27,48 @@ ENHANCEMENTS:
       2) load the app
       3) wait for the app to initialize any URL handlers
       4) pass in the URL request at that time (or keep it in queue, and let the app request it)
-* use of Nitrox app/view as a subrouting for the main app -- e.g., run it, collect some data,
+
+* use of Nitrox app/view as a subroutine for the main app -- e.g., run it, collect some data,
   return that data to the calling app.
-* pass src file URL into nitrox when loading a page (if window.location.href is wrong,
-  which it may no longer be)
+
 * app.exit that just exits the current window/app versus whole app - switch?
+
 * history and back button support (native goBack/goForward don't work with current loading system)
+
 * restore multi-app support - e.g., having multiple open NitroxWebViews, each with its own
   data and context.
   Will probably need a single HTTP server on a known port for <script> tags and HTML links,
   and a dynamic one (or a hierarchy of sub-delegates, e.g. http://mainserver/app/<APPID>/rpc/...)
+
 * position:fixed emulation using native UIKit widgets?
+
 * orientation, location, and accel: be sure to send at least one update nearly immediately after
   enabling.
+
+* multi-window support, multiple UIWebViews
 
 * Check out Geolocation API:
   http://developer.mozilla.org/web-tech/2008/10/14/firefox-31-beta-1-an-overview-of-features-for-web-developers/
   http://dev.w3.org/geo/api/spec-source.html
 
-* Rewrite HTML pages so taht localhost URLs point to main NitroxHTTPPort
+* Rewrite HTML pages during loading so that localhost URLs point to main NitroxHTTPPort (or use
+  fixed port)
+
+* dictionary of data which persists between page loads.  use files and JSON, SQL, etc.?
+
+* SQL that is accessible by both Cocoa and JS
+
+* Debug console
+
+* Caching / mirroring functionality.  Cache "app" from remote site, then execute from local web server.
+
+* expand JSON-capable classes
   
 DONE:
 
 * function to change app/page
+
+* pass src file URL into nitrox when loading a page (if window.location.href is wrong,
+  which it may no longer be)
+
+
