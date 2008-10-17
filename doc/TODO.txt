@@ -4,12 +4,12 @@ NEW APIs:
 * Local file read/write API
 * Socket read/write API
 * Background threads API (hidden UIWebView and RPC between webviews)
+  * multi-window support, multiple UIWebViews for a single app
 * view management?  (size, opacity, etc)
 * Multimedia:
   * Record sound
   * Start/stop playback of sound file
   * Play local video file or stream video (can be done with native quicktime better?)
-* iPhone preferences (NSUserDefaults) API
 * Bonjour / server socket API
   * Mozilla's: http://www.xulplanet.com/tutorials/mozsdk/serverpush.php
 
@@ -35,17 +35,10 @@ ENHANCEMENTS:
 
 * history and back button support (native goBack/goForward don't work with current loading system)
 
-* restore multi-app support - e.g., having multiple open NitroxWebViews, each with its own
-  data and context.
-  Will probably need a single HTTP server on a known port for <script> tags and HTML links,
-  and a dynamic one (or a hierarchy of sub-delegates, e.g. http://mainserver/app/<APPID>/rpc/...)
-
 * position:fixed emulation using native UIKit widgets?
 
 * orientation, location, and accel: be sure to send at least one update nearly immediately after
   enabling.
-
-* multi-window support, multiple UIWebViews
 
 * Check out Geolocation API:
   http://developer.mozilla.org/web-tech/2008/10/14/firefox-31-beta-1-an-overview-of-features-for-web-developers/
@@ -71,4 +64,13 @@ DONE:
 * pass src file URL into nitrox when loading a page (if window.location.href is wrong,
   which it may no longer be)
 
+* restore multi-app support - e.g., having multiple open NitroxWebViews, each with its own
+  data and context.
+  Will probably need a single HTTP server on a known port for <script> tags and HTML links,
+  and a dynamic one (or a hierarchy of sub-delegates, e.g. http://mainserver/app/<APPID>/rpc/...)
 
+* iPhone preferences (NSUserDefaults) API
+
+* Access to app bundle and documents directories
+
+* Log subscription

@@ -64,7 +64,7 @@
 
 - (id) setApplicationIconBadgeNumber:(NSDictionary *)args
 {
-    NSString *url = [args objectForKey:@"number"];
+    NSString *url = [args objectForKey:@"value"];
     if (! url) {
         NSLog(@"no number supplied to openURL");
         return Nil;
@@ -93,6 +93,138 @@
     return Nil;
 }
 
+#pragma mark app config and path information
+
+- (id) bundleDirectory
+{
+    return [[NSBundle mainBundle] bundlePath];
+}
+
+- (id) documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
+                                                         NSUserDomainMask, YES); 
+    NSString *documentsDirectory = [paths objectAtIndex:0]; 
+    return documentsDirectory;
+}
+
+- (id) tmpDirectory
+{
+    return NSTemporaryDirectory();
+}
+
+- (id) homeDirectory
+{
+    return NSHomeDirectory();
+}
+
+
+- (id) translateDictionary:(NSDictionary *)dict
+{
+    NSMutableDictionary *res = [[NSMutableDictionary alloc] init];
+    NSString *key;
+    for (key in [dict keyEnumerator]) {
+        [res setObject:[NSString stringWithFormat:@"%@", [dict objectForKey:key]] 
+                forKey:[NSString stringWithFormat:@"%@", key]];
+//        [res setObject:[dict objectForKey:key] forKey:[NSString stringWithFormat:@"%@", key]];
+    }
+    return [res autorelease];
+}
+
+- (id) infoDictionary
+{
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    
+    return [self translateDictionary:info];
+}
+
+- (id) getInfoValue:(NSDictionary *)args
+{
+    NSString *key = [args objectForKey:@"name"];
+    if (!key) {
+        return Nil;
+    }
+    
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:key];
+}
+
+- (id) userDefaults
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [self translateDictionary:[defaults dictionaryRepresentation]];
+}
+
+- (id) getUserDefaults:(NSDictionary *)args
+{
+    NSArray *keys = [args objectForKey:@"names"];
+    if (!keys) {
+        return Nil;
+    }
+
+    NSMutableDictionary *results = [[NSMutableDictionary alloc] init];
+    NSString *key;
+    for (key in [keys objectEnumerator]) {
+        [results setObject:[[NSUserDefaults standardUserDefaults] objectForKey:key]
+                    forKey:key];
+    }
+    
+    return results;
+}
+
+- (id) setUserDefaults:(NSDictionary *)args
+{
+    NSDictionary *defaults = [args objectForKey:@"defaults"];
+    if (!defaults) {
+        return Nil;
+    }
+    
+    NSString *key;
+    for (key in [defaults keyEnumerator]) {
+        [[NSUserDefaults standardUserDefaults] setObject:[defaults objectForKey:key] forKey:key];
+    }
+    
+    return Nil;
+}
+
+- (id) getUserDefault:(NSDictionary *)args
+{
+    NSString *key = [args objectForKey:@"name"];
+    if (!key) {
+        return Nil;
+    }
+    
+    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
+}
+
+- (id) setUserDefault:(NSDictionary *)args
+{
+    NSString *key = [args objectForKey:@"name"];
+    if (!key) {
+        return Nil;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[args objectForKey:@"value"]
+                                              forKey:key];
+    return Nil;
+}
+
+
+- (id) appConfiguration
+{
+    @try {
+        return [NSDictionary dictionaryWithObjectsAndKeys:
+                [self bundleDirectory], @"bundleDirectory",
+                [self documentsDirectory], @"documentsDirectory",
+                [self tmpDirectory], @"tmpDirectory",
+                [self homeDirectory], @"homeDirectory",
+                [self infoDictionary], @"infoDictionary",
+                // [self userDefaults], @"userDefaults",
+            Nil];
+    } @catch (NSException *e) {
+        NSLog(@"caught exception doing appConfiguration: %@", e);
+    }
+    return @"error";
+}
 
 #pragma mark Stub methods; should refactor out
 

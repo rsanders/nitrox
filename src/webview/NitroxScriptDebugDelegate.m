@@ -135,7 +135,7 @@
           lineno, 
           [frame functionName], 
           [frame caller], 
-          [frame exception], 
+          [[frame exception] stringRepresentation], 
           [frame scopeChain]);
 }
 

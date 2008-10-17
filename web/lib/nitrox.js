@@ -443,7 +443,7 @@ Nitrox.Application = {
     },
 
     setIconBadgeNumber: function(number) {
-        Nitrox.Bridge.call('Application/c/setApplicationIconBadgeNumber', {number: number}, true);
+        Nitrox.Bridge.call('Application/c/setApplicationIconBadgeNumber', {value: number}, true);
     },
     
     vibrate: function(async) {
@@ -462,10 +462,57 @@ Nitrox.Application = {
 
     forward: function() {
         Nitrox.Bridge.call('Application/c/forward', {}, false);
-    }, 
+    },
+    
+    appConfiguration: function() {
+        return Nitrox.Bridge.call('Application/c/appConfiguration', {}, false);
+    },
+
+    infoDictionary: function() {
+        return Nitrox.Bridge.call('Application/c/infoDictionary', {}, false);
+    },
+
+    getInfoValue: function(name) {
+        return Nitrox.Bridge.call('Application/c/getInfoValue', {name: name}, false);
+    },
+
+
+    bundleDirectory: function() {
+        return Nitrox.Bridge.call('Application/c/bundleDirectory', {}, false);
+    },
+
+    documentsDirectory: function() {
+        return Nitrox.Bridge.call('Application/c/documentsDirectory', {}, false);
+    },
+
+    getUserDefault: function(name) {
+        return Nitrox.Bridge.call('Application/c/getUserDefault', {name: name}, false);
+    },
+
+    setUserDefault: function(name, value) {
+        Nitrox.Bridge.call('Application/c/setUserDefault', {name: name, value: value}, false);
+    },
+
+    getUserDefaults: function(names) {
+        return Nitrox.Bridge.call('Application/c/getUserDefaults', {names: names}, false);
+    },
+
+    setUserDefaults: function(defaults) {
+        Nitrox.Bridge.call('Application/c/setUserDefaults', {defaults: defaults}, false);
+    },
+
+    version: '0.1'
+};
+
+Nitrox.Phone = {
+    call: function(number) {
+        Nitrox.Application.openURL('tel:' + number);
+    },
     
     version: '0.1'
 };
+
+
 
 Nitrox.System = {
     delegate: null,
