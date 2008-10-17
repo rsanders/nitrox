@@ -154,7 +154,7 @@ Nitrox.Bridge = {
                 req = {error: "unknown", status:500, responseText:"No req object returned"};
             }
             if (req && req.status == 200 && req.readyState == 4) {
-                res = req.responseText; 
+                res = jQuery.evalJSON(req.responseText);
                 window.nadirect.log('NBc: response text for ajax is: ' + res);
             } else {
                 window.nadirect.log('NBc: not ready: state = ' + (req ? req.readyState : "no req"));
@@ -301,8 +301,17 @@ Nitrox.Lang = {
         return res;
     },
     
+    fromJSON: function(str) {
+        if (!jQuery.toJSON) {
+            Nitrox.Lang.require("lib/jquery/jquery.json.js");
+        }
+        return jQuery.secureEvalJSON(str);
+    },
+    
     toJSON: function(obj) {
-        Nitrox.Lang.require("lib/jquery/jquery.json.js");
+        if (! jQuery.toJSON) {
+            Nitrox.Lang.require("lib/jquery/jquery.json.js");
+        }
         return jQuery.toJSON(obj);
     },
     
@@ -761,6 +770,7 @@ Nitrox.File.prototype = {
 
 jQuery(function() {
     Nitrox.Runtime.pageReady();
+    Nitrox.Lang.require("lib/jquery/jquery.json.js");
     Nitrox.log("Nitrox loaded");
 });
 
