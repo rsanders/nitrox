@@ -524,7 +524,7 @@ Nitrox.Application = {
 
 Nitrox.Phone = {
     call: function(number) {
-        Nitrox.Application.openURL('tel:' + number);
+        Nitrox.Application.openURL('tel://' + number);
     },
     
     version: '0.1'
