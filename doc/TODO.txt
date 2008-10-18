@@ -10,12 +10,18 @@ NEW APIs:
   * Record sound
   * Start/stop playback of sound file
   * Play local video file or stream video (can be done with native quicktime better?)
+  * Resize/crop/convert images and sounds
 * Bonjour / server socket API
   * Mozilla's: http://www.xulplanet.com/tutorials/mozsdk/serverpush.php
 
+CORE CAPABILITIES:
+
+* JavascriptCore-like bridging: ability to put Obj-C object references into JS namespace and
+  send message to them from JS.
+
 ENHANCEMENTS:
 
-* standard listener / event dispatch library
+* standard listener / event dispatch library for Nitrox user code
   * should we just use events triggered on document (or another elt)
   * or manage a per-API listeners list?  the advantage here is that we can know whether
     anybody is listening for a given kind of event, and turn them off if not.  (e.g., accel)
@@ -74,3 +80,9 @@ DONE:
 * Access to app bundle and documents directories
 
 * Log subscription
+
+* getenv/setenv functions for C environment
+
+NOTES:
+
+* multiple NitroxApps can communicate with each other through notifications

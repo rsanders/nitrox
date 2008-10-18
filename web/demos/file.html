@@ -42,11 +42,16 @@ function getCwd() {
   Nitrox.log("CWD is " + Nitrox.File.getcwd());
 }
 
+function lsDir() {
+  Nitrox.log("dir contents are " + Nitrox.Lang.toJSON(new Nitrox.File("/").readdir()));
+}
+
 // ]]>
 </script>
 
 <a href="javascript:createFile();">Create file</a> <br/>
 <a href="javascript:getCwd();">Get current directory</a> <br/>
+<a href="javascript:lsDir();">List root dir</a> <br/>
 
 
 <h3 id="dtitle">Debug</h3>

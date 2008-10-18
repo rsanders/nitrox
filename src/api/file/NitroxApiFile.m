@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <dirent.h>
 
 @implementation NitroxApiFile
 
@@ -16,6 +17,7 @@
 {
     [super init];
 
+    fileManager = [NSFileManager defaultManager];
     return self;
 }
 
@@ -224,6 +226,43 @@
     int res = symlink([self path2cString:path], [self path2cString:path2]);
     return [NSNumber numberWithChar:(res == 0 ? YES : NO)];    
 }
+
+- (id) mkdir:(NSDictionary *)args
+{
+    NSString *path = [args objectForKey:@"path"];
+    if (!path) {
+        return Nil;
+    }
+    int mode = 0755;
+    NSString *smode = [args objectForKey:@"mode"];
+    if (smode) {
+        mode = [smode intValue];
+    }
+    
+    int res = mkdir([self path2cString:path], mode);
+    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];
+}
+
+- (id) rmdir:(NSDictionary *)args
+{
+    NSString *path = [args objectForKey:@"path"];
+    if (!path) {
+        return Nil;
+    }
+    int res = rmdir([self path2cString:path]);
+    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];
+}
+
+- (id) readdir:(NSDictionary *)args
+{
+    NSString *path = [args objectForKey:@"path"];
+    if (!path) {
+        return Nil;
+    }
+    
+    return [fileManager directoryContentsAtPath:path];
+}
+
 
 # pragma mark non-filehandle methods (class methods)
 

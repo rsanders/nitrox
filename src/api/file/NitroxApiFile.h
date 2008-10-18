@@ -8,7 +8,7 @@
 #import "NitroxRPC.h"
 
 @interface NitroxApiFile : NitroxStubClass {
-
+    NSFileManager   *fileManager;
 }
 
 - (NitroxApiFile *)init;

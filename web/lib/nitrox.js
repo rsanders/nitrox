@@ -801,7 +801,7 @@ Nitrox.File.prototype = {
     // mode is a string containing one or more of "f", "r", "w", and "x"
     // returns true / false
     access: function(mode) {
-        return (Nitrox.Bridge.call("File/c/access", {path: path, mode: mode}, false) != -1);
+        return (Nitrox.Bridge.call("File/c/access", {path: this.path, mode: mode}, false) != -1);
     },
 
 
@@ -827,40 +827,55 @@ Nitrox.File.prototype = {
      // returns a json object with those field names except times are in fractional
      // unix format (e.g., seconds.partialseconds)
     stat: function() {
-        return Nitrox.Bridge.call("File/c/stat", {path: path}, false);
+        return Nitrox.Bridge.call("File/c/stat", {path: this.path}, false);
     },
 
     chmod: function(mode) {
-        return Nitrox.Bridge.call("File/c/chmod", {path: path, mode: mode}, false);
+        return Nitrox.Bridge.call("File/c/chmod", {path: this.path, mode: mode}, false);
     },
 
     link: function(path2) {
-        return Nitrox.Bridge.call("File/c/link", {path: path, path2: path2}, false);
+        return Nitrox.Bridge.call("File/c/link", {path: this.path, path2: path2}, false);
     },
 
     symlink: function(path2) {
-        return Nitrox.Bridge.call("File/c/symlink", {path: path, path2: path2}, false);
+        return Nitrox.Bridge.call("File/c/symlink", {path: this.path, path2: path2}, false);
     },
     
     unlink: function() {
-        return Nitrox.Bridge.call("File/c/unlink", {path: path}, false);
+        return Nitrox.Bridge.call("File/c/unlink", {path: this.path}, false);
     },
     
     truncate: function(size) {
-        return Nitrox.Bridge.call("File/c/truncate", {path: path, size: size}, false);
+        return Nitrox.Bridge.call("File/c/truncate", {path: this.path, size: size}, false);
     },
     
     // if offset is null, read whole file
     // if size is null, read from offset to end of file
     read: function(offset, size) {
-        return Nitrox.Bridge.call("File/c/read", {path: path, offset: offset, size: size}, false);
+        return Nitrox.Bridge.call("File/c/read", {path: this.path, offset: offset, size: size}, false);
     },
     
     // mode can be "w" for truncate and write, "w+" for append
     // if offset is not null, "w" is the same as "seek to offset and write" w/out truncating
     write: function(data, mode, offset, async) {
-        return Nitrox.Bridge.call("File/c/write", {path: path, data: data, mode: mode, offset: offset}, async);
+        return Nitrox.Bridge.call("File/c/write", {path: this.path, data: data, mode: mode, offset: offset}, async);
     },
+    
+    mkdir: function(mode) {
+        if (mode == undefined) { mode = 0755; }
+        return Nitrox.Bridge.call("File/c/mkdir", {path: this.path, mode: mode}, false);
+    },
+    
+    rmdir: function() {
+        return Nitrox.Bridge.call("File/c/rmdir", {path: this.path}, false);
+    },
+    
+    readdir: function() {
+        return Nitrox.Bridge.call("File/c/readdir", {path: this.path}, false);
+    },
+    
+    version: '0.1'
 };
 
 // final bootstrap
