@@ -8,6 +8,7 @@ NEW APIs:
   * Client socket open/read/write/close/getinfo API
   * Server socket listen/accept/getinfo
     * Mozilla's: http://www.xulplanet.com/tutorials/mozsdk/serverpush.php
+  * Interface/IP address list
   * DNS API
   * Bonjour
 

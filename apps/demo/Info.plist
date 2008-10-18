@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>nitrox-fireball.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.esquimaux.iphone.nitroxdemo</string>
+	<string>com.vitrue.nitroxdemo</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -32,7 +32,7 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>org.esquimaux.iphone.nitrox</string>
+			<string>com.vitrue.nitrox</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>nitrox</string>

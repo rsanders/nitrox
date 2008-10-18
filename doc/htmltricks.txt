@@ -9,6 +9,7 @@ fixed positioning in mobilesafari:
 iPhone CSS info:
 
   http://www.westciv.com/iphonetests/
+  http://www.quirksmode.org/css/contents.html
   
 CSS overflow sort of works, but scroll bars don't appear to show and you have
 to use a 2-fingered gesture inside the box.
