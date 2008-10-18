@@ -295,6 +295,14 @@ function testBridgeClass() {
   Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
 }
 
+function testBridgeClassNum() {
+  var num1 = 10;
+  var num2 = 20.0;
+  
+  var res = Nitrox.Bridge.call('BridgeTest/c/add:and:', {parameters: Nitrox.Lang.toJSON([num1, num2])}, false);
+  Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
+}
+
 Nitrox(function() {
   Nitrox.log("user nitroxready handler run");
 });
@@ -308,6 +316,7 @@ jQuery(function() {
 </script>
 
 <a href="javascript:testBridgeClass();">Test bridge clss</a> <br/>
+<a href="javascript:testBridgeClassNum();">Test bridge class w/nums</a> <br/>
 
 <a href="javascript:window.location.href='demos/file.html';">Load File Demo</a> <br/>
 <a href="javascript:window.location.href='demos/filebrowser.html';">Filebrowser Demo</a> <br/>

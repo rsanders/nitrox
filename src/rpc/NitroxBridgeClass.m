@@ -53,9 +53,53 @@
     return NSSelectorFromString(name);
 }
 
+// only works for all string args
+// see http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/Articles/chapter_13_section_9.html#//apple_ref/doc/uid/TP30001163-CH9-TPXREF165
+
+/*
+ Overview
+ 
+ WebScripting is an informal protocol that defines methods that classes can implement to export their interfaces 
+ to a WebScript environment such as JavaScript.
+ 
+ Not all properties and methods are exported to JavaScript by default. The object need to implement the 
+ class methods described below to specify the properties and methods to export. Furthermore, a method 
+ is not exported if its return type and all its parameters are not Objective-C objects or scalars.
+ 
+ Method argument and return types that are Objective-C objects will be converted to appropriate types 
+ for the scripting environment. For example:
+ 
+ nil is converted to undefined.
+ NSNumber objects will be converted to JavaScript numbers.
+ NSString objects will be converted to JavaScript strings.
+ NSArray objects will be mapped to special read-only arrays.
+ NSNull will be converted to JavaScript’s null.
+ WebUndefined will be converted to undefined.
+ WebScriptObject instances will be unwrapped for the scripting environment.
+ Instances of all other classes will be wrapped before being passed to the script, and unwrapped as they 
+ return to Objective-C. Primitive types such as int and char are cast to a numeric in JavaScript.
+ 
+ Access to an object’s attributes, such as instance variables, is managed by key-value coding (KVC). The 
+ KVC methods setValue:forKey: and valueForKey: are used to access the attributes of an object from the 
+ scripting environment. Additionally, the scripting environment can attempt any number of attribute requests 
+ or method invocations that are not exported by your class. You can manage these requests by overriding the 
+ setValue:forUndefinedKey: and valueForUndefinedKey: methods from the key-value coding protocol.
+ 
+ Exceptions can be raised from the scripting environment by sending a throwException: message to the relevant 
+ WebScriptObject instance. The method raising the exception must be within the scope of the script invocation.
+ 
+ 
+ */
 - (NSArray *)convertArguments:(NSArray *)parameters bySignature:(NSMethodSignature *)signature
 {
-    // only works for all string args
+    
+    for (int i = 0; i < [signature numberOfArguments]-2; i++)
+    {
+        const char *argType = [signature getArgumentTypeAtIndex:i+2];
+        NSLog(@"argument type at idx %d is %s, provided type is %@", 
+              i, argType, [[parameters objectAtIndex:i] class]);
+    }
+    
     return parameters;
 }
 
