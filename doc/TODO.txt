@@ -50,6 +50,13 @@ CORE CAPABILITIES:
 
 ENHANCEMENTS:
 
+* FILES: read and transfer binary files
+  - also provide a rooted web service for that so that e.g. images can be seen
+  - limit size of file slurped into mem and sent back by read()
+  - provide pass-by-ref for binary data
+  - file(1) like facility for read()/stat() to tell possible file type
+  - readdir() should also return file types
+
 * NSLog-like Nitrox.Log (format strings)
 
 * standard listener / event dispatch library for Nitrox user code
