@@ -39,17 +39,31 @@ function clearViewer() {
   jQuery('#viewer').html('');
 }
 
-function handleClick(name) {
-  clearViewer();
-  // Nitrox.log("handling click on " + name);
+function handleEntryClick() {
+  var name = arguments[0];
   var file = new Nitrox.File(name);
-  if (file.isDir()) {
-    // Nitrox.log(name + " is a directory");
+  var ftype = null;
+  if (arguments.length > 1) {
+    ftype = arguments[1];
+    if (ftype == "NSFileTypeSymbolicLink") {
+      ftype = null;
+    }
+  }
+
+  if (!ftype) {
+    if (file.isDir()) {
+      ftype = "NSFileTypeDirectory";
+    } else {
+      ftype = "NSFileTypeRegular";
+    }
+  }
+
+  clearViewer();
+  if (ftype == "NSFileTypeDirectory") {
     Nitrox.File.chdir(name);
     cwd = Nitrox.File.getcwd();
     showCurrentDirPlus();
   } else {
-    // Nitrox.log(name + " is a file");
     showFile(name);
   }
 }
@@ -58,14 +72,13 @@ function showCurrentDir() {
   dirname = cwd;
   var dir = new Nitrox.File(cwd);
   var files = dir.readdir();
-  // Nitrox.log("files is " + Nitrox.Lang.toJSON(files));
   files = files.sort();
   files.unshift('..');
   var idx, entry, html;
   html = "<h3>" + dirname + "</h3>";
   for (idx in files) {
     entry = files[idx];
-    html += "<a href='javascript:handleClick(" + Nitrox.Lang.toJSON(entry) + ");'>" + entry + "</a><br/>";
+    html += "<a href='javascript:handleEntryClick(" + Nitrox.Lang.toJSON(entry) + ");'>" + entry + "</a><br/>";
   }
   jQuery('#browser').html(html);
 }
@@ -92,7 +105,8 @@ function showCurrentDirPlus() {
     } else {
       html += "&nbsp;&nbsp;";
     }
-    html += "<a href='javascript:handleClick(" + Nitrox.Lang.toJSON(entry) + ");'>" + entry + "</a><br/>";
+    var ftype = attr["NSFileType"];
+    html += "<a href='javascript:handleEntryClick(" + Nitrox.Lang.toJSON(entry) + ',"' + ftype + '"' + ");'>" + entry + "</a><br/>";
   }
   jQuery('#browser').html(html);
 }
@@ -104,16 +118,16 @@ function showFile(filename) {
   jQuery("#viewer").html("<i>" + filename + "</i><hr/><pre>" + encode(data) + "</pre>");
 }
 
-Nitrox(function() { handleClick("/"); });
+Nitrox(function() { handleEntryClick("/"); });
 
 // ]]>
 </script>
 
-<a href="javascript:handleClick('/');">Root</a> 
-<a href="javascript:handleClick('..');">Up</a> 
-<a href="javascript:handleClick(Nitrox.Application.tmpDirectory());">tmp</a> 
-<a href="javascript:handleClick(Nitrox.Application.documentsDirectory());">Doc</a> 
-<a href="javascript:handleClick(Nitrox.Application.homeDirectory());">Home</a> 
+<a href="javascript:handleEntryClick('/');">Root</a> 
+<a href="javascript:handleEntryClick('..');">Up</a> 
+<a href="javascript:handleEntryClick(Nitrox.Application.tmpDirectory());">tmp</a> 
+<a href="javascript:handleEntryClick(Nitrox.Application.documentsDirectory());">Doc</a> 
+<a href="javascript:handleEntryClick(Nitrox.Application.homeDirectory());">Home</a> 
 
 <div id="browser" style="font-family:monospace;">
 </div>
