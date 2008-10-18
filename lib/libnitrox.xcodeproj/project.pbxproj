@@ -11,6 +11,8 @@
 		B107E7EE0EA94A7900CEF255 /* NitroxApiFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */; };
 		B107E87D0EA96BC500CEF255 /* NitroxBool.h in Headers */ = {isa = PBXBuildFile; fileRef = B107E87B0EA96BC500CEF255 /* NitroxBool.h */; };
 		B107E87E0EA96BC500CEF255 /* NitroxBool.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E87C0EA96BC500CEF255 /* NitroxBool.m */; };
+		B107E8E50EA9848E00CEF255 /* NitroxBinaryData.h in Headers */ = {isa = PBXBuildFile; fileRef = B107E8E30EA9848E00CEF255 /* NitroxBinaryData.h */; };
+		B107E8E60EA9848E00CEF255 /* NitroxBinaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E8E40EA9848E00CEF255 /* NitroxBinaryData.m */; };
 		B11856FD0EA8F563008581D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B11856FC0EA8F563008581D0 /* Settings.bundle */; };
 		B15F06170EA6B37200B34B71 /* exwrapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */; };
 		B15F06180EA6B37200B34B71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043360EA6580E000858B3 /* main.m */; };
@@ -185,6 +187,8 @@
 		B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiFile.m; sourceTree = "<group>"; };
 		B107E87B0EA96BC500CEF255 /* NitroxBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxBool.h; sourceTree = "<group>"; };
 		B107E87C0EA96BC500CEF255 /* NitroxBool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxBool.m; sourceTree = "<group>"; };
+		B107E8E30EA9848E00CEF255 /* NitroxBinaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxBinaryData.h; sourceTree = "<group>"; };
+		B107E8E40EA9848E00CEF255 /* NitroxBinaryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxBinaryData.m; sourceTree = "<group>"; };
 		B11856FC0EA8F563008581D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B15F060D0EA6B33C00B34B71 /* exw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F060F0EA6B33C00B34B71 /* exw2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exw2-Info.plist"; sourceTree = "<group>"; };
@@ -855,6 +859,8 @@
 			children = (
 				B1C8ACAC0E9EE0FE003FE061 /* NSObject+JSBridge.h */,
 				B1C8ACAD0E9EE0FE003FE061 /* NSObject+JSBridge.m */,
+				B107E8E30EA9848E00CEF255 /* NitroxBinaryData.h */,
+				B107E8E40EA9848E00CEF255 /* NitroxBinaryData.m */,
 			);
 			path = lang;
 			sourceTree = "<group>";
@@ -1036,6 +1042,7 @@
 				B15F077E0EA6CFE600B34B71 /* NitroxAppPage.h in Headers */,
 				B107E7ED0EA94A7900CEF255 /* NitroxApiFile.h in Headers */,
 				B107E87D0EA96BC500CEF255 /* NitroxBool.h in Headers */,
+				B107E8E50EA9848E00CEF255 /* NitroxBinaryData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,6 +1295,7 @@
 				B15F077F0EA6CFE600B34B71 /* NitroxApp.m in Sources */,
 				B107E7EE0EA94A7900CEF255 /* NitroxApiFile.m in Sources */,
 				B107E87E0EA96BC500CEF255 /* NitroxBool.m in Sources */,
+				B107E8E60EA9848E00CEF255 /* NitroxBinaryData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

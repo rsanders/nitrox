@@ -154,8 +154,9 @@ Nitrox.Bridge = {
                 req = {error: "unknown", status:500, responseText:"No req object returned"};
             }
             if (req && req.status == 200 && req.readyState == 4) {
+                window.nadirect.log('NBc: plain response text is: ' + req.responseText);
                 res = jQuery.evalJSON(req.responseText);
-                window.nadirect.log('NBc: response text for ajax is: ' + res);
+                window.nadirect.log('NBc: decoded response text for ajax is: ' + res);
             } else {
                 window.nadirect.log('NBc: not ready: state = ' + (req ? req.readyState : "no req"));
             }

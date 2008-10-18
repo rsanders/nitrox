@@ -4,6 +4,7 @@
 //
 
 #import "NitroxApiFile.h"
+#import "NitroxBinaryData.h"
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -83,7 +84,7 @@
     
     [fh closeFile];
     
-    return res;
+    return [[[NitroxBinaryData alloc] initWithData:res] autorelease];
 }
 
 // accepts: data, offset, mode
