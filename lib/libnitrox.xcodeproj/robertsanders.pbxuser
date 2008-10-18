@@ -19,6 +19,7 @@
 			B15F09730EA7056B00B34B71 /* NitroxWebViewController.m:271 */,
 			B15F097A0EA705EB00B34B71 /* NitroxWebViewController.m:398 */,
 			B107E75F0EA9394A00CEF255 /* NitroxRPCDispatcher.m:96 */,
+			B107E8B50EA974F100CEF255 /* NitroxApiFile.m:335 */,
 		);
 		codeSenseManager = B14E69A50E8D94B9000BB59F /* Code sense */;
 		executables = (
@@ -414,6 +415,13 @@
 			B107E8A30EA96FB900CEF255 /* PBXTextBookmark */ = B107E8A30EA96FB900CEF255 /* PBXTextBookmark */;
 			B107E8A70EA9704F00CEF255 /* PBXTextBookmark */ = B107E8A70EA9704F00CEF255 /* PBXTextBookmark */;
 			B107E8A90EA9706F00CEF255 /* PBXTextBookmark */ = B107E8A90EA9706F00CEF255 /* PBXTextBookmark */;
+			B107E8AB0EA9716400CEF255 /* PBXTextBookmark */ = B107E8AB0EA9716400CEF255 /* PBXTextBookmark */;
+			B107E8AF0EA974A600CEF255 /* PBXTextBookmark */ = B107E8AF0EA974A600CEF255 /* PBXTextBookmark */;
+			B107E8B00EA974A600CEF255 /* PBXTextBookmark */ = B107E8B00EA974A600CEF255 /* PBXTextBookmark */;
+			B107E8B10EA974A600CEF255 /* PBXTextBookmark */ = B107E8B10EA974A600CEF255 /* PBXTextBookmark */;
+			B107E8B20EA974A600CEF255 /* PBXTextBookmark */ = B107E8B20EA974A600CEF255 /* PBXTextBookmark */;
+			B107E8B30EA974A600CEF255 /* PBXTextBookmark */ = B107E8B30EA974A600CEF255 /* PBXTextBookmark */;
+			B107E8B60EA974F500CEF255 /* PBXTextBookmark */ = B107E8B60EA974F500CEF255 /* PBXTextBookmark */;
 			B118565A0EA8041E008581D0 = B118565A0EA8041E008581D0 /* PBXTextBookmark */;
 			B118566B0EA80437008581D0 = B118566B0EA80437008581D0 /* PBXTextBookmark */;
 			B118566E0EA8046A008581D0 = B118566E0EA8046A008581D0 /* PBXTextBookmark */;
@@ -1434,7 +1442,7 @@
 		ignoreCount = 0;
 		lineNumber = 96;
 		location = exw2;
-		modificationTime = 245985357.075873;
+		modificationTime = 245986546.083341;
 		state = 2;
 	};
 	B107E7600EA9395000CEF255 /* PBXTextBookmark */ = {
@@ -2391,9 +2399,9 @@
 	};
 	B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1061, 7619}}";
-			sepNavSelRange = "{8494, 0}";
-			sepNavVisRange = "{4988, 822}";
+			sepNavIntBoundsRect = "{{0, 0}, {1061, 8436}}";
+			sepNavSelRange = "{8913, 9}";
+			sepNavVisRange = "{8471, 1161}";
 		};
 	};
 	B107E7F50EA9521700CEF255 /* PBXTextBookmark */ = {
@@ -2411,7 +2419,7 @@
 		comments = "warning: return discards qualifiers from pointer target type";
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		rLen = 1;
-		rLoc = 52;
+		rLoc = 31;
 		rType = 1;
 	};
 	B107E7F70EA9521700CEF255 /* PBXTextBookmark */ = {
@@ -2429,7 +2437,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 48";
 		rLen = 0;
-		rLoc = 1456;
+		rLoc = 420;
 		rType = 0;
 		vrLen = 307;
 		vrLoc = 1310;
@@ -2479,7 +2487,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 107";
 		rLen = 0;
-		rLoc = 5343;
+		rLoc = 4697;
 		rType = 0;
 		vrLen = 826;
 		vrLoc = 1887;
@@ -2519,7 +2527,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 107";
 		rLen = 0;
-		rLoc = 5343;
+		rLoc = 4697;
 		rType = 0;
 		vrLen = 826;
 		vrLoc = 1887;
@@ -2539,7 +2547,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 214";
 		rLen = 0;
-		rLoc = 8826;
+		rLoc = 8172;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 5503;
@@ -2559,7 +2567,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 235";
 		rLen = 0;
-		rLoc = 10246;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 747;
 		vrLoc = 5822;
@@ -2579,7 +2587,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 235";
 		rLen = 0;
-		rLoc = 10246;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 820;
 		vrLoc = 5749;
@@ -2599,7 +2607,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 234";
 		rLen = 0;
-		rLoc = 10215;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 5652;
@@ -2619,7 +2627,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 235";
 		rLen = 0;
-		rLoc = 10090;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 5652;
@@ -2639,7 +2647,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 235";
 		rLen = 0;
-		rLoc = 10090;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 5652;
@@ -2659,7 +2667,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 235";
 		rLen = 0;
-		rLoc = 10090;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 5652;
@@ -2679,7 +2687,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 235";
 		rLen = 0;
-		rLoc = 10090;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 5652;
@@ -2689,7 +2697,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 235";
 		rLen = 0;
-		rLoc = 10090;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 5652;
@@ -2709,7 +2717,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 235";
 		rLen = 0;
-		rLoc = 10090;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 945;
 		vrLoc = 0;
@@ -2729,7 +2737,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 235";
 		rLen = 0;
-		rLoc = 10090;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 945;
 		vrLoc = 0;
@@ -2789,7 +2797,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 229";
 		rLen = 0;
-		rLoc = 9973;
+		rLoc = 10586;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 5653;
@@ -2839,7 +2847,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 263";
 		rLen = 0;
-		rLoc = 9884;
+		rLoc = 10289;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 5954;
@@ -2849,7 +2857,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 236";
 		rLen = 0;
-		rLoc = 9285;
+		rLoc = 9499;
 		rType = 0;
 		vrLen = 895;
 		vrLoc = 1848;
@@ -2869,7 +2877,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 27";
 		rLen = 0;
-		rLoc = 351;
+		rLoc = 376;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 0;
@@ -2889,7 +2897,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 263";
 		rLen = 0;
-		rLoc = 9884;
+		rLoc = 10289;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 6940;
@@ -2919,7 +2927,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 263";
 		rLen = 0;
-		rLoc = 9884;
+		rLoc = 10289;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 5954;
@@ -2959,7 +2967,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 263";
 		rLen = 0;
-		rLoc = 9884;
+		rLoc = 10289;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 5954;
@@ -2979,7 +2987,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 78";
 		rLen = 0;
-		rLoc = 3178;
+		rLoc = 2142;
 		rType = 0;
 		vrLen = 857;
 		vrLoc = 1873;
@@ -2989,7 +2997,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 95";
 		rLen = 147;
-		rLoc = 4097;
+		rLoc = 3057;
 		rType = 0;
 		vrLen = 862;
 		vrLoc = 1873;
@@ -2999,7 +3007,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 98";
 		rLen = 0;
-		rLoc = 4091;
+		rLoc = 3051;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 1745;
@@ -3009,7 +3017,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 98";
 		rLen = 0;
-		rLoc = 4091;
+		rLoc = 3051;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 1745;
@@ -3019,7 +3027,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 51";
 		rLen = 0;
-		rLoc = 1456;
+		rLoc = 420;
 		rType = 0;
 		vrLen = 364;
 		vrLoc = 1256;
@@ -3037,7 +3045,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 51";
 		rLen = 0;
-		rLoc = 1456;
+		rLoc = 420;
 		rType = 0;
 		vrLen = 364;
 		vrLoc = 1256;
@@ -3057,7 +3065,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 98";
 		rLen = 0;
-		rLoc = 4091;
+		rLoc = 3051;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 1745;
@@ -3087,7 +3095,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 89";
 		rLen = 0;
-		rLoc = 3644;
+		rLoc = 2608;
 		rType = 0;
 		vrLen = 1141;
 		vrLoc = 1745;
@@ -3097,7 +3105,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 89";
 		rLen = 0;
-		rLoc = 3644;
+		rLoc = 2608;
 		rType = 0;
 		vrLen = 1141;
 		vrLoc = 1745;
@@ -3147,7 +3155,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 86";
 		rLen = 16;
-		rLoc = 3375;
+		rLoc = 2339;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 1736;
@@ -3157,7 +3165,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 88";
 		rLen = 0;
-		rLoc = 3481;
+		rLoc = 2445;
 		rType = 0;
 		vrLen = 1186;
 		vrLoc = 1736;
@@ -3167,7 +3175,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 76";
 		rLen = 0;
-		rLoc = 3012;
+		rLoc = 1976;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 1736;
@@ -3177,7 +3185,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 102";
 		rLen = 0;
-		rLoc = 2686;
+		rLoc = 1650;
 		rType = 0;
 		vrLen = 869;
 		vrLoc = 2116;
@@ -3187,16 +3195,16 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 102";
 		rLen = 0;
-		rLoc = 2686;
+		rLoc = 1650;
 		rType = 0;
 		vrLen = 869;
 		vrLoc = 2116;
 	};
 	B107E87B0EA96BC500CEF255 /* NitroxBool.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1061, 727}}";
-			sepNavSelRange = "{244, 29}";
-			sepNavVisRange = "{0, 417}";
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 494}}";
+			sepNavSelRange = "{243, 0}";
+			sepNavVisRange = "{199, 213}";
 		};
 	};
 	B107E87C0EA96BC500CEF255 /* NitroxBool.m */ = {
@@ -3251,7 +3259,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 102";
 		rLen = 0;
-		rLoc = 2686;
+		rLoc = 1650;
 		rType = 0;
 		vrLen = 869;
 		vrLoc = 2116;
@@ -3261,7 +3269,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 102";
 		rLen = 0;
-		rLoc = 2686;
+		rLoc = 1650;
 		rType = 0;
 		vrLen = 869;
 		vrLoc = 2116;
@@ -3431,7 +3439,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 171";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 3442;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 4274;
@@ -3451,7 +3459,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 171";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 3442;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 4274;
@@ -3461,7 +3469,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 171";
 		rLen = 0;
-		rLoc = 4482;
+		rLoc = 3442;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 4274;
@@ -3481,7 +3489,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 315";
 		rLen = 0;
-		rLoc = 8705;
+		rLoc = 8051;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 8120;
@@ -3491,7 +3499,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 308";
 		rLen = 0;
-		rLoc = 8494;
+		rLoc = 7840;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 8760;
@@ -3501,7 +3509,7 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 308";
 		rLen = 0;
-		rLoc = 8494;
+		rLoc = 7840;
 		rType = 0;
 		vrLen = 822;
 		vrLoc = 4988;
@@ -3511,10 +3519,97 @@
 		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
 		name = "NitroxApiFile.m: 308";
 		rLen = 0;
-		rLoc = 8494;
+		rLoc = 7840;
 		rType = 0;
 		vrLen = 822;
 		vrLoc = 4988;
+	};
+	B107E8AB0EA9716400CEF255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
+		name = "NitroxApiFile.m: 20";
+		rLen = 0;
+		rLoc = 286;
+		rType = 0;
+		vrLen = 825;
+		vrLoc = 0;
+	};
+	B107E8AF0EA974A600CEF255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B107E7EB0EA94A7900CEF255 /* NitroxApiFile.h */;
+		name = "NitroxApiFile.h: 18";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 192;
+		vrLoc = 0;
+	};
+	B107E8B00EA974A600CEF255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
+		name = "NitroxApiFile.m: 365";
+		rLen = 398;
+		rLoc = 9499;
+		rType = 0;
+		vrLen = 1224;
+		vrLoc = 8760;
+	};
+	B107E8B10EA974A600CEF255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
+		name = "NitroxApiFile.m: 365";
+		rLen = 398;
+		rLoc = 9499;
+		rType = 0;
+		vrLen = 1224;
+		vrLoc = 8760;
+	};
+	B107E8B20EA974A600CEF255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B107E7EB0EA94A7900CEF255 /* NitroxApiFile.h */;
+		name = "NitroxApiFile.h: 18";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 192;
+		vrLoc = 0;
+	};
+	B107E8B30EA974A600CEF255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
+		name = "NitroxApiFile.m: 358";
+		rLen = 0;
+		rLoc = 9372;
+		rType = 0;
+		vrLen = 1161;
+		vrLoc = 8471;
+	};
+	B107E8B50EA974F100CEF255 /* NitroxApiFile.m:335 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
+		functionName = "-mkdir:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 335;
+		location = exw2;
+		modificationTime = 245986546.878499;
+		state = 1;
+	};
+	B107E8B60EA974F500CEF255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */;
+		name = "NitroxApiFile.m: 348";
+		rLen = 9;
+		rLoc = 8913;
+		rType = 0;
+		vrLen = 1161;
+		vrLoc = 8471;
 	};
 	B118565A0EA8041E008581D0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3999,7 +4094,7 @@
 		ignoreCount = 0;
 		lineNumber = 39;
 		location = exw2;
-		modificationTime = 245985357.075738;
+		modificationTime = 245986546.083274;
 		state = 2;
 	};
 	B15F082B0EA6EC7D00B34B71 /* exwrapperAppDelegate.m:41 */ = {
@@ -4016,7 +4111,7 @@
 		ignoreCount = 0;
 		lineNumber = 41;
 		location = exw2;
-		modificationTime = 245985357.075763;
+		modificationTime = 245986546.08329;
 		state = 2;
 	};
 	B15F08510EA6EDBA00B34B71 /* NitroxCore.m:40 */ = {
@@ -4033,7 +4128,7 @@
 		ignoreCount = 0;
 		lineNumber = 40;
 		location = exw2;
-		modificationTime = 245985357.075776;
+		modificationTime = 245986546.083296;
 		state = 2;
 	};
 	B15F08560EA6EDD000B34B71 /* PBXTextBookmark */ = {
@@ -4070,7 +4165,7 @@
 		ignoreCount = 0;
 		lineNumber = 65;
 		location = exw2;
-		modificationTime = 245985357.075796;
+		modificationTime = 245986546.083306;
 		state = 2;
 	};
 	B15F08AF0EA6F5B600B34B71 /* PBXTextBookmark */ = {
@@ -4107,7 +4202,7 @@
 		ignoreCount = 0;
 		lineNumber = 84;
 		location = exw2;
-		modificationTime = 245985357.075804;
+		modificationTime = 245986546.083314;
 		state = 2;
 	};
 	B15F08E30EA6F6D900B34B71 /* NitroxApp.m:71 */ = {
@@ -4124,7 +4219,7 @@
 		ignoreCount = 0;
 		lineNumber = 71;
 		location = exw2;
-		modificationTime = 245985357.075822;
+		modificationTime = 245986546.08332;
 		state = 2;
 	};
 	B15F09300EA6FD3700B34B71 /* NitroxCore.m:89 */ = {
@@ -4141,7 +4236,7 @@
 		ignoreCount = 0;
 		lineNumber = 89;
 		location = exw2;
-		modificationTime = 245985357.075837;
+		modificationTime = 245986546.083325;
 		state = 2;
 	};
 	B15F09370EA6FE0C00B34B71 /* PBXTextBookmark */ = {
@@ -4208,7 +4303,7 @@
 		ignoreCount = 0;
 		lineNumber = 271;
 		location = exw2;
-		modificationTime = 245985357.075849;
+		modificationTime = 245986546.08333;
 		state = 2;
 	};
 	B15F097A0EA705EB00B34B71 /* NitroxWebViewController.m:398 */ = {
@@ -4225,7 +4320,7 @@
 		ignoreCount = 0;
 		lineNumber = 398;
 		location = exw2;
-		modificationTime = 245985357.075861;
+		modificationTime = 245986546.083336;
 		state = 2;
 	};
 	B15F09B00EA7713200B34B71 /* task_info.h */ = {

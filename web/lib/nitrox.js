@@ -856,6 +856,11 @@ Nitrox.File.prototype = {
     unlink: function() {
         return Nitrox.Bridge.call("File/c/unlink", {path: this.path}, false);
     },
+
+    // this is the recursive one
+    deleteRecursively: function() {
+        return Nitrox.Bridge.call("File/c/delete", {path: this.path}, false);
+    },
     
     truncate: function(size) {
         return Nitrox.Bridge.call("File/c/truncate", {path: this.path, size: size}, false);
@@ -873,9 +878,10 @@ Nitrox.File.prototype = {
         return Nitrox.Bridge.call("File/c/write", {path: this.path, data: data, mode: mode, offset: offset}, async);
     },
     
-    mkdir: function(mode) {
+    mkdir: function(mode, recurse) {
         if (mode == undefined) { mode = 0755; }
-        return Nitrox.Bridge.call("File/c/mkdir", {path: this.path, mode: mode}, false);
+        if (recurse == undefined) { recurse = true; }
+        return Nitrox.Bridge.call("File/c/mkdir", {path: this.path, mode: mode, 'recursive': recurse}, false);
     },
     
     rmdir: function() {

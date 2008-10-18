@@ -76,6 +76,12 @@ function getCwd() {
   Nitrox.log("CWD is " + Nitrox.File.getcwd());
 }
 
+function mkdir() {
+  var dirname = "bar/" + (new Date().getTime());
+  Nitrox.log("doing mkdir of " + dirname);
+  Nitrox.log("result = " + new Nitrox.File(dirname).mkdir());
+}
+
 function lsBundleDir() {
   var dir = Nitrox.Application.bundleDirectory();
   Nitrox.log("bundle dir contents are " + Nitrox.Lang.toJSON(new Nitrox.File(dir).readdir()));
@@ -97,6 +103,8 @@ function lsTmpDir() {
 <a href="javascript:statFile();">Stat file</a> <br/>
 <a href="javascript:chdir();">Chdir to tmpdir</a> <br/>
 <a href="javascript:getCwd();">Get current directory</a> <br/>
+<a href="javascript:mkdir();">Make a new directory</a> <br/>
+
 <a href="javascript:lsBundleDir();">List bundle dir</a> <br/>
 <a href="javascript:lsTmpDir();">List tmp dir</a> <br/>
 

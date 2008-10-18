@@ -350,7 +350,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B107E8A90EA9706F00CEF255</string>
+										<string>B107E8B60EA974F500CEF255</string>
 										<key>history</key>
 										<array>
 											<string>B1DD3D380E8EC25500952CD6</string>
@@ -418,8 +418,8 @@
 											<string>B107E8860EA96D8400CEF255</string>
 											<string>B107E8870EA96D8400CEF255</string>
 											<string>B107E8880EA96D8400CEF255</string>
-											<string>B107E89D0EA96F6C00CEF255</string>
-											<string>B107E89E0EA96F6C00CEF255</string>
+											<string>B107E8AF0EA974A600CEF255</string>
+											<string>B107E8B00EA974A600CEF255</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -551,6 +551,8 @@
 											<string>B107E89A0EA96D8400CEF255</string>
 											<string>B107E89F0EA96F6C00CEF255</string>
 											<string>B107E8A00EA96F6C00CEF255</string>
+											<string>B107E8B10EA974A600CEF255</string>
+											<string>B107E8B20EA974A600CEF255</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -744,15 +746,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B107E8AA0EA9706F00CEF255</string>
-		<string>B107E8A80EA9704F00CEF255</string>
+		<string>B107E8B70EA974F500CEF255</string>
 		<string>B107E77D0EA9395000CEF255</string>
 		<string>B107E78A0EA9395000CEF255</string>
 		<string>B107E78B0EA9395000CEF255</string>
 		<string>B14E69EA0E8D9692000BB59F</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Shared/vitrue/src/xcode/libs/nitroxkit/lib/libnitrox.xcodeproj</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 	</array>
 	<key>WindowString</key>
 	<string>145 199 1440 819 0 0 1680 1028 </string>

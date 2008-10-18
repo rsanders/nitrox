@@ -27,28 +27,6 @@
 }
 
 #pragma mark API specific methods
-
-// struct stat {
-//     dev_t    st_dev;    /* device inode resides on */
-//     ino_t    st_ino;    /* inode's number */
-//     mode_t   st_mode;   /* inode protection mode */
-//     nlink_t  st_nlink;  /* number or hard links to the file */
-//     uid_t    st_uid;    /* user-id of owner */
-//     gid_t    st_gid;    /* group-id of owner */
-//     dev_t    st_rdev;   /* device type, for special file inode */
-//     struct timespec st_atimespec;  /* time of last access */
-//     struct timespec st_mtimespec;  /* time of last data modification */
-//     struct timespec st_ctimespec;  /* time of last file status change */
-//     off_t    st_size;   /* file size, in bytes */
-//     quad_t   st_blocks; /* blocks allocated for file */
-//     u_long   st_blksize;/* optimal file sys I/O ops blocksize */
-//     u_long   st_flags;  /* user defined flags for file */
-//     u_long   st_gen;    /* file generation number */
-// };
-//
-// returns a json object with those field names except times are in fractional
-// unix format (e.g., seconds.partialseconds)
-
 - (const char *) path2cString:(NSString *)string
 {
     return [string cStringUsingEncoding:[NSString defaultCStringEncoding]];
@@ -151,7 +129,7 @@
     
     BOOL res = YES;
     @try {
-            [fh writeData:data];
+        [fh writeData:data];
     } @catch (NSException *e) {
         res = NO;
         NSLog(@"failed to write to file %@: %@", path, e);
@@ -170,6 +148,23 @@
 
     int res = unlink([self path2cString:path]);
     return [self boolObject:(res == 0 ? YES : NO)];
+}
+
+// recursive
+- (id) delete:(NSDictionary *)args
+{
+    NSString *path = [args objectForKey:@"path"];
+    if (!path) {
+        return Nil;
+    }
+    
+    NSError *error = Nil;
+    if (! [fileManager removeItemAtPath:path error:&error]) {
+        NSLog(@"could not delete item %@: %@", path, error);
+        return [self boolObject:NO];
+    } else {
+        return [self boolObject:YES];
+    }
 }
 
 - (id) access:(NSDictionary *)args
@@ -329,9 +324,11 @@
     if (!path2) {
         return Nil;
     }
+
     int res = symlink([self path2cString:path], [self path2cString:path2]);
     return [self boolObject:(res == 0 ? YES : NO)];    
 }
+
 
 - (id) mkdir:(NSDictionary *)args
 {
@@ -345,9 +342,41 @@
         mode = [smode intValue];
     }
     
-    int res = mkdir([self path2cString:path], mode);
-    return [self boolObject:(res == 0 ? YES : NO)];
+    BOOL recursive = YES;
+    NSString *srecursive = [args objectForKey:@"recursive"];
+    if (srecursive && ! [srecursive isEqualToString:@""]) {
+        recursive = [srecursive boolValue];
+    }
+    
+    NSDictionary *attr = [NSDictionary dictionaryWithObject:[NSNumber numberWithLong:mode]
+                                                     forKey:NSFilePosixPermissions];
+    
+    NSError *error = Nil;
+    BOOL res = [fileManager createDirectoryAtPath:path
+                      withIntermediateDirectories:recursive 
+                                       attributes:attr
+                                            error:&error];
+    if (! res) {
+        NSLog(@"failed to create directory %@: %@", path, error);
+    }
+    return [self boolObject:res];
 }
+
+//- (id) mkdir:(NSDictionary *)args
+//{
+//    NSString *path = [args objectForKey:@"path"];
+//    if (!path) {
+//        return Nil;
+//    }
+//    int mode = 0755;
+//    NSString *smode = [args objectForKey:@"mode"];
+//    if (smode) {
+//        mode = [smode intValue];
+//    }
+//    
+//    int res = mkdir([self path2cString:path], mode);
+//    return [self boolObject:(res == 0 ? YES : NO)];
+//}
 
 - (id) rmdir:(NSDictionary *)args
 {
