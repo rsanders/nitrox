@@ -13,8 +13,31 @@
 @class WebView;
 @class WebScriptCallFrame;
 
-@interface NitroxScriptDebugDelegate : NSObject <WebScriptDebugDelegate> {
+@interface NitroxScriptDebugSourceInfo : NSObject {
+    NSInteger    lineNumber;
+    NSString*    url;
+    NSString*    body;
+    NSInteger    sid;
+}
 
+@property (assign) NSInteger lineNumber;
+@property (retain) NSString *url;
+@property (retain) NSString *body;
+@property (assign) NSInteger sid;
+
+
+- (NSString *) description;
+- (NitroxScriptDebugSourceInfo*) initWithURL:(NSString *)url
+                                        body:(NSString *)body
+                                         sid:(NSInteger)sid
+                                  lineNumber:(NSInteger)line;
+
+@end
+
+
+
+@interface NitroxScriptDebugDelegate : NSObject <WebScriptDebugDelegate> {
+    NSMutableDictionary*       sources;
 }
 
 /*

@@ -7,9 +7,60 @@
 //
 
 #import "NitroxScriptDebugDelegate.h"
+@implementation NitroxScriptDebugSourceInfo 
+@synthesize    sid, lineNumber, url, body;
+
+- (NSString *) description {
+    return [NSString stringWithFormat:@"[SID=%d source=%@ parseline=%d]",
+            self.sid, self.url ? self.url : self.body, self.lineNumber];
+}
+
+- (NitroxScriptDebugSourceInfo*) initWithURL:(NSString *)newurl
+                                        body:(NSString *)newbody
+                                         sid:(NSInteger)newsid
+                                  lineNumber:(NSInteger)newline
+{
+    self.url = newurl;
+    self.body = newbody;
+    self.sid = newsid;
+    self.lineNumber = newline;
+    return self;
+}
+
+- (void) dealloc {
+    self.url = nil;
+    self.body = nil;
+    [super dealloc];
+}
+
+@end
+
 
 
 @implementation NitroxScriptDebugDelegate
+
+- (NitroxScriptDebugDelegate*)init {
+    [super init];
+    sources = [[NSMutableDictionary alloc] init];
+    return self;
+}
+
+- (void) dealloc {
+    [sources release];
+    [super dealloc];
+}
+
+- (void) recordSourceInfo:(NitroxScriptDebugSourceInfo*)source
+{
+    [sources setObject:source forKey:[NSNumber numberWithInt:source.sid]];
+}
+
+- (NitroxScriptDebugSourceInfo *) getSourceInfo:(int)sid
+{
+    NitroxScriptDebugSourceInfo *res = [sources objectForKey:[NSNumber numberWithInt:sid]];
+    
+    return res;
+}
 
 /*
  WebScriptCallFrame methods:
@@ -69,6 +120,8 @@
        sourceId:(int)sid
     forWebFrame:(WebFrame *)webFrame
 {
+    [self recordSourceInfo:[[NitroxScriptDebugSourceInfo alloc]
+                            initWithURL:url body:source sid:sid lineNumber:lineNumber]];
     NSLog(@"NSDD: didParseSource: view=%@, sid=%d, line=%d, frame=%@, source=%@", 
           [self webViewInfo:webView], 
           sid, 
@@ -128,7 +181,7 @@
            line:(int)lineno
     forWebFrame:(WebFrame *)webFrame
 {
-    NSLog(@"NSDD: exception: webView=%@, webFrame=%@, sid=%d line=%d function=%@, caller=%@, exception=%@, scopeChain=%@", 
+    NSLog(@"NSDD: exception: webView=%@, webFrame=%@, sid=%d line=%d function=%@, caller=%@, exception=%@, scopeChain=%@\nsource=%@", 
           [self webViewInfo:webView],
           [self webFrameInfo:webFrame],
           sid, 
@@ -136,7 +189,9 @@
           [frame functionName], 
           [frame caller], 
           [[frame exception] stringRepresentation], 
-          [frame scopeChain]);
+          [frame scopeChain],
+          [[self getSourceInfo:sid] description]
+    );
 }
 
 @end
