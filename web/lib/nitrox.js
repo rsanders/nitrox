@@ -792,12 +792,13 @@ Nitrox.File.prototype = {
     
     isFile: function() {
         var stat = this.stat();
-        return (stat.st_mode & 0170000) == 040000;
+        return (stat.st_mode & 0170000) == 0100000;
     },
 
     isDir: function() {
         var stat = this.stat();
-        return (stat.st_mode & 0170000) == 0100000;
+        // Nitrox.log("st_mode = " + stat.st_mode + ", masked = " + (stat.st_mode & 0170000));
+        return (stat.st_mode & 0170000) == 040000;
     },
 
     isSymlink: function() {

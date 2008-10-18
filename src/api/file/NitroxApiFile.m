@@ -238,7 +238,7 @@
                           [self time2number:buf.st_atimespec], @"st_atime",
                           [self time2number:buf.st_mtimespec], @"st_mtime",
                           [self time2number:buf.st_ctimespec], @"st_ctime",
-                          [self time2number:buf.st_birthtimespec], @"st_birthtime",
+                          // [self time2number:buf.st_birthtimespec], @"st_birthtime",
                           
                           [NSNumber numberWithInteger:buf.st_size], @"st_size",
                           [NSNumber numberWithInteger:buf.st_blocks], @"st_blocks",
