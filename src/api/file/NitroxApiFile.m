@@ -399,6 +399,26 @@
     return [fileManager directoryContentsAtPath:path];
 }
 
+- (id) readdirplus:(NSDictionary *)args
+{
+    NSString *path = [args objectForKey:@"path"];
+    if (!path) {
+        return Nil;
+    }
+    
+    NSArray *files = [fileManager directoryContentsAtPath:path];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    NSString *key;
+    for (key in [files objectEnumerator]) {
+        NSString *fullPath = [NSString stringWithFormat:@"%@/%@", path, key];
+        [dict setObject:[fileManager fileAttributesAtPath:fullPath traverseLink:NO]
+                 forKey:key];
+    }
+    
+    return dict;
+}
+
 
 # pragma mark non-filehandle methods (class methods)
 

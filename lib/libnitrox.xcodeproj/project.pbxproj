@@ -11,8 +11,10 @@
 		B107E7EE0EA94A7900CEF255 /* NitroxApiFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */; };
 		B107E87D0EA96BC500CEF255 /* NitroxBool.h in Headers */ = {isa = PBXBuildFile; fileRef = B107E87B0EA96BC500CEF255 /* NitroxBool.h */; };
 		B107E87E0EA96BC500CEF255 /* NitroxBool.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E87C0EA96BC500CEF255 /* NitroxBool.m */; };
-		B107E8E50EA9848E00CEF255 /* NitroxBinaryData.h in Headers */ = {isa = PBXBuildFile; fileRef = B107E8E30EA9848E00CEF255 /* NitroxBinaryData.h */; };
-		B107E8E60EA9848E00CEF255 /* NitroxBinaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E8E40EA9848E00CEF255 /* NitroxBinaryData.m */; };
+		B107E91F0EA9963700CEF255 /* NitroxBinaryData.h in Headers */ = {isa = PBXBuildFile; fileRef = B107E91D0EA9963700CEF255 /* NitroxBinaryData.h */; };
+		B107E9200EA9963700CEF255 /* NitroxBinaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E91E0EA9963700CEF255 /* NitroxBinaryData.m */; };
+		B107E9380EA99EBB00CEF255 /* NSDate+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = B107E9360EA99EBB00CEF255 /* NSDate+JSON.h */; };
+		B107E9390EA99EBB00CEF255 /* NSDate+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E9370EA99EBB00CEF255 /* NSDate+JSON.m */; };
 		B11856FD0EA8F563008581D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B11856FC0EA8F563008581D0 /* Settings.bundle */; };
 		B15F06170EA6B37200B34B71 /* exwrapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */; };
 		B15F06180EA6B37200B34B71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043360EA6580E000858B3 /* main.m */; };
@@ -187,8 +189,10 @@
 		B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiFile.m; sourceTree = "<group>"; };
 		B107E87B0EA96BC500CEF255 /* NitroxBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxBool.h; sourceTree = "<group>"; };
 		B107E87C0EA96BC500CEF255 /* NitroxBool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxBool.m; sourceTree = "<group>"; };
-		B107E8E30EA9848E00CEF255 /* NitroxBinaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxBinaryData.h; sourceTree = "<group>"; };
-		B107E8E40EA9848E00CEF255 /* NitroxBinaryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxBinaryData.m; sourceTree = "<group>"; };
+		B107E91D0EA9963700CEF255 /* NitroxBinaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxBinaryData.h; sourceTree = "<group>"; };
+		B107E91E0EA9963700CEF255 /* NitroxBinaryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxBinaryData.m; sourceTree = "<group>"; };
+		B107E9360EA99EBB00CEF255 /* NSDate+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JSON.h"; sourceTree = "<group>"; };
+		B107E9370EA99EBB00CEF255 /* NSDate+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JSON.m"; sourceTree = "<group>"; };
 		B11856FC0EA8F563008581D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B15F060D0EA6B33C00B34B71 /* exw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F060F0EA6B33C00B34B71 /* exw2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exw2-Info.plist"; sourceTree = "<group>"; };
@@ -859,8 +863,8 @@
 			children = (
 				B1C8ACAC0E9EE0FE003FE061 /* NSObject+JSBridge.h */,
 				B1C8ACAD0E9EE0FE003FE061 /* NSObject+JSBridge.m */,
-				B107E8E30EA9848E00CEF255 /* NitroxBinaryData.h */,
-				B107E8E40EA9848E00CEF255 /* NitroxBinaryData.m */,
+				B107E9360EA99EBB00CEF255 /* NSDate+JSON.h */,
+				B107E9370EA99EBB00CEF255 /* NSDate+JSON.m */,
 			);
 			path = lang;
 			sourceTree = "<group>";
@@ -868,6 +872,8 @@
 		B1C8ACAE0E9EE0FE003FE061 /* rpc */ = {
 			isa = PBXGroup;
 			children = (
+				B107E91D0EA9963700CEF255 /* NitroxBinaryData.h */,
+				B107E91E0EA9963700CEF255 /* NitroxBinaryData.m */,
 				B1C8ACAF0E9EE0FE003FE061 /* NitroxInstanceManager.h */,
 				B1C8ACB00E9EE0FE003FE061 /* NitroxInstanceManager.m */,
 				B1C8ACB10E9EE0FE003FE061 /* NitroxRPC.h */,
@@ -1042,7 +1048,8 @@
 				B15F077E0EA6CFE600B34B71 /* NitroxAppPage.h in Headers */,
 				B107E7ED0EA94A7900CEF255 /* NitroxApiFile.h in Headers */,
 				B107E87D0EA96BC500CEF255 /* NitroxBool.h in Headers */,
-				B107E8E50EA9848E00CEF255 /* NitroxBinaryData.h in Headers */,
+				B107E91F0EA9963700CEF255 /* NitroxBinaryData.h in Headers */,
+				B107E9380EA99EBB00CEF255 /* NSDate+JSON.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1295,7 +1302,8 @@
 				B15F077F0EA6CFE600B34B71 /* NitroxApp.m in Sources */,
 				B107E7EE0EA94A7900CEF255 /* NitroxApiFile.m in Sources */,
 				B107E87E0EA96BC500CEF255 /* NitroxBool.m in Sources */,
-				B107E8E60EA9848E00CEF255 /* NitroxBinaryData.m in Sources */,
+				B107E9200EA9963700CEF255 /* NitroxBinaryData.m in Sources */,
+				B107E9390EA99EBB00CEF255 /* NSDate+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

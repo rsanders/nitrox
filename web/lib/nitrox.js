@@ -499,6 +499,10 @@ Nitrox.Application = {
         return Nitrox.Bridge.call('Application/c/tmpDirectory', {}, false);
     },
 
+    homeDirectory: function() {
+        return Nitrox.Bridge.call('Application/c/homeDirectory', {}, false);
+    },
+
     getUserDefault: function(name) {
         return Nitrox.Bridge.call('Application/c/getUserDefault', {name: name}, false);
     },
@@ -893,7 +897,11 @@ Nitrox.File.prototype = {
     readdir: function() {
         return Nitrox.Bridge.call("File/c/readdir", {path: this.path}, false);
     },
-    
+
+    readdirplus: function() {
+        return Nitrox.Bridge.call("File/c/readdirplus", {path: this.path}, false);
+    },
+
     version: '0.1'
 };
 

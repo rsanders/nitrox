@@ -47,6 +47,10 @@ else if ([inObject isKindOfClass:[NSDictionary class]])
 	{
 	theResult = [self serializeDictionary:inObject];
 	}
+else if ([inObject isKindOfClass:[NSDate class]])
+    {
+    theResult = [(NSDate*)inObject descriptionWithCalendarFormat:@"\"%Y-%m-%dT%H:%M:%S%z\"" timeZone:nil locale:nil];
+    }
 else if ([inObject isKindOfClass:[NSData class]])
 	{
 	NSString *theString = [[[NSString alloc] initWithData:inObject encoding:NSUTF8StringEncoding] autorelease];
@@ -54,6 +58,7 @@ else if ([inObject isKindOfClass:[NSData class]])
 	}
 else
 	{
+        NSLog(@"cannot serialize data of type '%@'", NSStringFromClass([inObject class]));
 	[NSException raise:NSGenericException format:@"Cannot serialize data of type '%@'", NSStringFromClass([inObject class])];
 	}
 if (theResult == NULL)

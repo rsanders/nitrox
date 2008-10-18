@@ -21,7 +21,7 @@ function encode(string) {
 function debuglog(msg) {
   var oldHTML = jQuery('#debuglog').get(0).innerHTML;
   jQuery('#debuglog').html( encode(msg) + "<br/>--<br/>" + oldHTML );
-  document.getElementById('rpciframe').src = 'nitroxlog://somehost/path?' + escape(msg);
+  // document.getElementById('rpciframe').src = 'nitroxlog://somehost/path?' + escape(msg);
 }
 
 Nitrox(function() {
@@ -35,14 +35,19 @@ jQuery(function() {
 
 var cwd = "/";
 
+function clearViewer() {
+  jQuery('#viewer').html('');
+}
+
 function handleClick(name) {
+  clearViewer();
   // Nitrox.log("handling click on " + name);
   var file = new Nitrox.File(name);
   if (file.isDir()) {
     // Nitrox.log(name + " is a directory");
     Nitrox.File.chdir(name);
     cwd = Nitrox.File.getcwd();
-    showCurrentDir();
+    showCurrentDirPlus();
   } else {
     // Nitrox.log(name + " is a file");
     showFile(name);
@@ -65,10 +70,38 @@ function showCurrentDir() {
   jQuery('#browser').html(html);
 }
 
+function showCurrentDirPlus() {
+  dirname = cwd;
+  var dir = new Nitrox.File(cwd);
+  var files = dir.readdirplus();
+  Nitrox.log("files is " + Nitrox.Lang.toJSON(files));
+  var idx, entry, attr, html;
+  var names = [];
+  for (idx in files) {
+    names.push(idx);
+  }
+  names = names.sort();
+  html = "<h3>" + dirname + "</h3>";
+  for (idx in names) {
+    entry = names[idx];
+    attr = files[entry];
+    if (attr["NSFileType"] == "NSFileTypeDirectory") {
+      html += "d&nbsp;";
+    } else if (attr["NSFileType"] == "NSFileTypeSymbolicLink") {
+      html += "@&nbsp;";
+    } else {
+      html += "&nbsp;&nbsp;";
+    }
+    html += "<a href='javascript:handleClick(" + Nitrox.Lang.toJSON(entry) + ");'>" + entry + "</a><br/>";
+  }
+  jQuery('#browser').html(html);
+}
+
+
 function showFile(filename) {
   var file = new Nitrox.File(filename);
   var data = file.read();
-  jQuery("#viewer").html("<pre>" + encode(data) + "</pre>");
+  jQuery("#viewer").html("<i>" + filename + "</i><hr/><pre>" + encode(data) + "</pre>");
 }
 
 Nitrox(function() { handleClick("/"); });
@@ -76,9 +109,13 @@ Nitrox(function() { handleClick("/"); });
 // ]]>
 </script>
 
-<a href="javascript:handleClick('/');">Home</a>
+<a href="javascript:handleClick('/');">Root</a> 
+<a href="javascript:handleClick('..');">Up</a> 
+<a href="javascript:handleClick(Nitrox.Application.tmpDirectory());">tmp</a> 
+<a href="javascript:handleClick(Nitrox.Application.documentsDirectory());">Doc</a> 
+<a href="javascript:handleClick(Nitrox.Application.homeDirectory());">Home</a> 
 
-<div id="browser">
+<div id="browser" style="font-family:monospace;">
 </div>
 <hr/>
 
