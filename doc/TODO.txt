@@ -4,6 +4,13 @@ NEW APIs:
   * For special files, like images (picker) and address book (ABook API)
   * General files, with a file picker
   * Progress events, plus abort function
+
+* System
+  * Free file space / filesystems
+  * Free memory space
+  * Screen dimensions, OS version, model #, etc.
+  * whether headphones are connected
+
 * Generic network
   * Client socket open/read/write/close/getinfo API
   * Server socket listen/accept/getinfo
@@ -50,6 +57,8 @@ CORE CAPABILITIES:
 * Binary data transfer for functions where it makes sense (e.g. file read/write)
 
 ENHANCEMENTS:
+
+* each app should always know its current URL and other state; methods to report
 
 * FILES: read and transfer binary files
   - also provide a rooted web service for that so that e.g. images can be seen
