@@ -1,0 +1,23 @@
+<html>
+<head>
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/jquery.js"></script>
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/nitrox.js"></script>
+</head>
+<body>
+This is text.
+<script>
+function fakeit(id)
+{
+  // jQuery(selector).click();
+  window.location.href = document.getElementById(id).href;
+}
+</script>
+<a id="popup" href="javascript:alert('popped up');">Popup</a>
+<a id="call1" href="tel:18004664411">Call noplus</a>
+<a id="call2" href="tel:+18004664411">Call withplus</a>
+<a id="fake" href="javascript:fakeit('popup')">Fake popup</a>
+<a id="fake2" href="javascript:fakeit('call1')">Fake call1</a>
+<br/>
+<a id="reload" href="javascript:window.location.href=window.location.href;">Reload</a>
+</body>
+</html>

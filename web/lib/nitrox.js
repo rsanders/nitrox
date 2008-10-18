@@ -72,6 +72,10 @@ Nitrox.Runtime = {
             this.iframe.style.left="-500px";
         }
     },
+    
+    setRPCFrameURL: function(url) {
+        this.iframe.src = url;
+    },
 
     version: '0.1'
 };
@@ -524,7 +528,8 @@ Nitrox.Application = {
 
 Nitrox.Phone = {
     call: function(number) {
-        Nitrox.Application.openURL('tel://' + number);
+        // Nitrox.Application.openURL('tel://' + number);
+        Nitrox.Runtime.setRPCFrameURL('tel:' + number);
     },
     
     version: '0.1'

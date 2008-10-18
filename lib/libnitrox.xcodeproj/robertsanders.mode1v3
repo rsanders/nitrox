@@ -268,6 +268,7 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>B15F08050EA6EBDE00B34B71</string>
+								<string>B107E9E30EA9B44400CEF255</string>
 								<string>B1C043300EA6580E000858B3</string>
 								<string>B1C043310EA6580E000858B3</string>
 								<string>B11856FC0EA8F563008581D0</string>
@@ -298,15 +299,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>71</integer>
+									<integer>69</integer>
 									<integer>64</integer>
-									<integer>62</integer>
-									<integer>57</integer>
-									<integer>49</integer>
+									<integer>56</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 379}, {296, 955}}</string>
+							<string>{{0, 0}, {296, 955}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -355,7 +356,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B107E9D90EA9B1B700CEF255</string>
+										<string>B107EA1A0EA9B6E400CEF255</string>
 										<key>history</key>
 										<array>
 											<string>B1DD3D380E8EC25500952CD6</string>
@@ -776,12 +777,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B107E9DA0EA9B1B700CEF255</string>
+		<string>B107EA1B0EA9B6E400CEF255</string>
 		<string>B107E77D0EA9395000CEF255</string>
 		<string>B107E78A0EA9395000CEF255</string>
 		<string>B107E78B0EA9395000CEF255</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B14E69EA0E8D9692000BB59F</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/Shared/vitrue/src/xcode/libs/nitroxkit/lib/libnitrox.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>
