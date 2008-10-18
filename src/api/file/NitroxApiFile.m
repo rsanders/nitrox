@@ -220,8 +220,8 @@
         return Nil;
     }
     
-    struct stat64 buf;
-    int res = stat64([self path2cString:path], &buf);
+    struct stat buf;
+    int res = stat([self path2cString:path], &buf);
     if (res == -1) {
         return Nil;
     }
