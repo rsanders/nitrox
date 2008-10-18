@@ -33,6 +33,7 @@
 {
     int max = [data length];
     if (max > 100) { max = 100; }
+    if (max > 1) { max--; }
     NSLog(@"serializing binary to JSON: %@", [[data description] substringToIndex:max]);
     NSString* string = [[NSString alloc] initWithData:data encoding:NSNEXTSTEPStringEncoding];
     if (!string ) {
