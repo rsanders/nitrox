@@ -287,6 +287,14 @@ function testPhoneCall() {
   Nitrox.Phone.call("18004664411");
 }
 
+function testBridgeClass() {
+  var str1 = "first string";
+  var str2 = "...secondstring";
+  
+  var res = Nitrox.Bridge.call('BridgeTest/c/concat:and:', {parameters: Nitrox.Lang.toJSON([str1, str2])}, false);
+  Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
+}
+
 Nitrox(function() {
   Nitrox.log("user nitroxready handler run");
 });
@@ -298,6 +306,8 @@ jQuery(function() {
 
 // ]]>
 </script>
+
+<a href="javascript:testBridgeClass();">Test bridge clss</a> <br/>
 
 <a href="javascript:window.location.href='demos/file.html';">Load File Demo</a> <br/>
 <a href="javascript:window.location.href='demos/filebrowser.html';">Filebrowser Demo</a> <br/>

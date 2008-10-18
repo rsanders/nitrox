@@ -15,7 +15,7 @@
 
 #import "NitroxApi.h"
 #import "NitroxRPC.h"
-
+#import "NitroxBridgeClass.h"
 #import "Nibware.h"
 
 @interface NitroxApp (Private) 
@@ -145,6 +145,8 @@
     [rpcDelegate addPath:@"File" delegate:[[NitroxRPCDispatcher alloc] 
                                                   initWithStubClass:[[NitroxApiFile alloc] init]
                                                   webViewController:webViewController]];
+
+    [rpcDelegate addPath:@"BridgeTest" delegate:[[NitroxBridgeClass alloc] initWithApp:self]];
     
     
     NitroxApiPhoto *photo = [[NitroxApiPhoto alloc] init];

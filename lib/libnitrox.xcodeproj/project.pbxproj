@@ -15,6 +15,8 @@
 		B107E9200EA9963700CEF255 /* NitroxBinaryData.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E91E0EA9963700CEF255 /* NitroxBinaryData.m */; };
 		B107E9380EA99EBB00CEF255 /* NSDate+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = B107E9360EA99EBB00CEF255 /* NSDate+JSON.h */; };
 		B107E9390EA99EBB00CEF255 /* NSDate+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E9370EA99EBB00CEF255 /* NSDate+JSON.m */; };
+		B107EA8C0EAA284600CEF255 /* NitroxBridgeClass.h in Headers */ = {isa = PBXBuildFile; fileRef = B107EA8A0EAA284600CEF255 /* NitroxBridgeClass.h */; };
+		B107EA8D0EAA284600CEF255 /* NitroxBridgeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B107EA8B0EAA284600CEF255 /* NitroxBridgeClass.m */; };
 		B11856FD0EA8F563008581D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B11856FC0EA8F563008581D0 /* Settings.bundle */; };
 		B15F06170EA6B37200B34B71 /* exwrapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */; };
 		B15F06180EA6B37200B34B71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043360EA6580E000858B3 /* main.m */; };
@@ -193,6 +195,8 @@
 		B107E91E0EA9963700CEF255 /* NitroxBinaryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxBinaryData.m; sourceTree = "<group>"; };
 		B107E9360EA99EBB00CEF255 /* NSDate+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JSON.h"; sourceTree = "<group>"; };
 		B107E9370EA99EBB00CEF255 /* NSDate+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JSON.m"; sourceTree = "<group>"; };
+		B107EA8A0EAA284600CEF255 /* NitroxBridgeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxBridgeClass.h; sourceTree = "<group>"; };
+		B107EA8B0EAA284600CEF255 /* NitroxBridgeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxBridgeClass.m; sourceTree = "<group>"; };
 		B11856FC0EA8F563008581D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B15F060D0EA6B33C00B34B71 /* exw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F060F0EA6B33C00B34B71 /* exw2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exw2-Info.plist"; sourceTree = "<group>"; };
@@ -872,6 +876,8 @@
 		B1C8ACAE0E9EE0FE003FE061 /* rpc */ = {
 			isa = PBXGroup;
 			children = (
+				B107EA8A0EAA284600CEF255 /* NitroxBridgeClass.h */,
+				B107EA8B0EAA284600CEF255 /* NitroxBridgeClass.m */,
 				B107E91D0EA9963700CEF255 /* NitroxBinaryData.h */,
 				B107E91E0EA9963700CEF255 /* NitroxBinaryData.m */,
 				B1C8ACAF0E9EE0FE003FE061 /* NitroxInstanceManager.h */,
@@ -1050,6 +1056,7 @@
 				B107E87D0EA96BC500CEF255 /* NitroxBool.h in Headers */,
 				B107E91F0EA9963700CEF255 /* NitroxBinaryData.h in Headers */,
 				B107E9380EA99EBB00CEF255 /* NSDate+JSON.h in Headers */,
+				B107EA8C0EAA284600CEF255 /* NitroxBridgeClass.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1304,6 +1311,7 @@
 				B107E87E0EA96BC500CEF255 /* NitroxBool.m in Sources */,
 				B107E9200EA9963700CEF255 /* NitroxBinaryData.m in Sources */,
 				B107E9390EA99EBB00CEF255 /* NSDate+JSON.m in Sources */,
+				B107EA8D0EAA284600CEF255 /* NitroxBridgeClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
