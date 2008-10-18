@@ -350,7 +350,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B107E8B60EA974F500CEF255</string>
+										<string>B107E8C70EA97C1000CEF255</string>
 										<key>history</key>
 										<array>
 											<string>B1DD3D380E8EC25500952CD6</string>
@@ -746,14 +746,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B107E8B70EA974F500CEF255</string>
+		<string>B107E8C80EA97C1000CEF255</string>
 		<string>B107E77D0EA9395000CEF255</string>
 		<string>B107E78A0EA9395000CEF255</string>
 		<string>B107E78B0EA9395000CEF255</string>
-		<string>B14E69EA0E8D9692000BB59F</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Shared/vitrue/src/xcode/libs/nitroxkit/lib/libnitrox.xcodeproj</string>
+		<string>B14E69EA0E8D9692000BB59F</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>145 199 1440 819 0 0 1680 1028 </string>
@@ -779,21 +779,21 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NitroxBool.h</string>
+								<string>NitroxApiFile.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1071, 277}}</string>
+								<string>{{0, 0}, {1089, 287}}</string>
 								<key>RubberWindowFrame</key>
-								<string>462 403 1071 574 0 0 1680 1028 </string>
+								<string>462 188 1089 789 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>277pt</string>
+							<string>287pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -810,18 +810,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 282}, {1071, 251}}</string>
+								<string>{{0, 292}, {1089, 456}}</string>
 								<key>RubberWindowFrame</key>
-								<string>462 403 1071 574 0 0 1680 1028 </string>
+								<string>462 188 1089 789 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
 							<key>Proportion</key>
-							<string>251pt</string>
+							<string>456pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>533pt</string>
+					<string>748pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -842,7 +842,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.buildV3</string>
 			<key>WindowString</key>
-			<string>462 403 1071 574 0 0 1680 1028 </string>
+			<string>462 188 1089 789 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>B14E69EA0E8D9692000BB59F</string>
 			<key>WindowToolIsVisible</key>

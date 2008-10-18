@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta id="viewport" name="viewport" content="width=device-width; user-scalable=0;"/>
+<base href="http://robertsanders.name/dev/nitrox/" />
+<title>File Browser</title>
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/jquery.js"></script>
+<script type="text/javascript" src="http://127.0.0.1:58214/lib/nitrox.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+// <![CDATA[
+function encode(string) {
+   	return string.replace('&','&amp;')
+   	             .replace('<','&lt;')
+   	             .replace('>','&gt;')
+   	             .replace('\'','&apos;')
+   	             .replace('"','&quot;');
+}
+
+function debuglog(msg) {
+  var oldHTML = jQuery('#debuglog').get(0).innerHTML;
+  jQuery('#debuglog').html( encode(msg) + "<br/>--<br/>" + oldHTML );
+  document.getElementById('rpciframe').src = 'nitroxlog://somehost/path?' + escape(msg);
+}
+
+Nitrox(function() {
+  Nitrox.log("user nitroxready handler run");
+});
+
+jQuery(function() {
+        Nitrox.log("document loaded");
+ });
+ 
+
+var cwd = "/";
+
+function handleClick(name) {
+  // Nitrox.log("handling click on " + name);
+  var file = new Nitrox.File(name);
+  if (file.isDir()) {
+    // Nitrox.log(name + " is a directory");
+    Nitrox.File.chdir(name);
+    cwd = Nitrox.File.getcwd();
+    showCurrentDir();
+  } else {
+    // Nitrox.log(name + " is a file");
+    showFile(name);
+  }
+}
+
+function showCurrentDir() {
+  dirname = cwd;
+  var dir = new Nitrox.File(cwd);
+  var files = dir.readdir();
+  // Nitrox.log("files is " + Nitrox.Lang.toJSON(files));
+  files = files.sort();
+  files.unshift('..');
+  var idx, entry, html;
+  html = "<h3>" + dirname + "</h3>";
+  for (idx in files) {
+    entry = files[idx];
+    html += "<a href='javascript:handleClick(" + Nitrox.Lang.toJSON(entry) + ");'>" + entry + "</a><br/>";
+  }
+  jQuery('#browser').html(html);
+}
+
+function showFile(filename) {
+  var file = new Nitrox.File(filename);
+  var data = file.read();
+  jQuery("#viewer").html("<pre>" + encode(data) + "</pre>");
+}
+
+Nitrox(function() { handleClick("/"); });
+
+// ]]>
+</script>
+
+<a href="javascript:handleClick('/');">Home</a>
+
+<div id="browser">
+</div>
+<hr/>
+
+<div id="viewer">
+</div>
+
+<h3 id="dtitle">Debug</h3>
+<div id="debuglog" style="display:none;">
+</div>
+
+<script>
+debuglog("started up!");
+</script>
+
+</body>
+</html>
