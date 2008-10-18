@@ -555,6 +555,15 @@ Nitrox.System = {
         Nitrox.Bridge.call('System/c/disableScriptDebugging', {}, true);
     },
     
+    getEnv: function(name) {
+        return Nitrox.Bridge.call('System/c/getEnv', {name: name}, false);
+    },
+
+    setEnv: function(name, value) {
+        return Nitrox.Bridge.call('System/c/setEnv', {name: name, value: value}, false);
+    },
+
+    
     version: '0.1'
 };
 

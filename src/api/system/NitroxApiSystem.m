@@ -80,6 +80,36 @@
     return Nil;
 }
 
+- (id) getEnv:(NSDictionary *)args
+{
+    NSString *name = [args objectForKey:@"name"];
+    if (!name) {
+        return Nil;
+    }
+    
+    char *val = getenv([name cStringUsingEncoding:NSISOLatin1StringEncoding]);
+    if (! val) {
+        return Nil;
+    }
+    return [NSString stringWithCString:val encoding:NSISOLatin1StringEncoding];
+}
+
+- (id) setEnv:(NSDictionary *)args
+{
+    NSString *name = [args objectForKey:@"name"];
+    if (!name) {
+        return Nil;
+    }
+    NSString *value = [args objectForKey:@"value"];
+    if (value) {
+        setenv([name cStringUsingEncoding:NSISOLatin1StringEncoding],
+               [value cStringUsingEncoding:NSISOLatin1StringEncoding], 1);
+    } else {
+        unsetenv([name cStringUsingEncoding:NSISOLatin1StringEncoding]);
+    }
+    return Nil;
+}
+
 #pragma mark Stub methods; should refactor out
 
 

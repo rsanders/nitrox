@@ -26,4 +26,7 @@
 - (id) enableScriptDebugging;
 - (id) disableScriptDebugging;
 
+- (id) getEnv:(NSDictionary *)args;
+- (id) setEnv:(NSDictionary *)args;
+
 @end
