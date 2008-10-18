@@ -44,6 +44,10 @@ else if ([inObject isKindOfClass:[NSData class]])
 	NSString *theString = [[[NSString alloc] initWithData:inObject encoding:NSUTF8StringEncoding] autorelease];
 	theResult = [self serializeString:theString];
 	}
+else if ([object respondsToSelector:@selector(serializeToJSON)])
+    {
+    theResult = [object serializeToJSON];
+    }
 else
 	{
 	[NSException raise:NSGenericException format:@"Cannot serialize data of type '%@'", NSStringFromClass([inObject class])];
