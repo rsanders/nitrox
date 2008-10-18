@@ -8,6 +8,10 @@
 
 #import "CJSONSerializer.h"
 
+@interface NSObject (JSONSerializable)
+- (NSString *)serializeToJSON;
+@end
+
 @implementation CJSONSerializer
 
 + (id)serializer
@@ -44,9 +48,9 @@ else if ([inObject isKindOfClass:[NSData class]])
 	NSString *theString = [[[NSString alloc] initWithData:inObject encoding:NSUTF8StringEncoding] autorelease];
 	theResult = [self serializeString:theString];
 	}
-else if ([object respondsToSelector:@selector(serializeToJSON)])
+else if ([inObject respondsToSelector:@selector(serializeToJSON)])
     {
-    theResult = [object serializeToJSON];
+    theResult = [inObject serializeToJSON];
     }
 else
 	{

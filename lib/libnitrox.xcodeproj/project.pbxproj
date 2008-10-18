@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B107E7ED0EA94A7900CEF255 /* NitroxApiFile.h in Headers */ = {isa = PBXBuildFile; fileRef = B107E7EB0EA94A7900CEF255 /* NitroxApiFile.h */; };
 		B107E7EE0EA94A7900CEF255 /* NitroxApiFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */; };
+		B107E87D0EA96BC500CEF255 /* NitroxBool.h in Headers */ = {isa = PBXBuildFile; fileRef = B107E87B0EA96BC500CEF255 /* NitroxBool.h */; };
+		B107E87E0EA96BC500CEF255 /* NitroxBool.m in Sources */ = {isa = PBXBuildFile; fileRef = B107E87C0EA96BC500CEF255 /* NitroxBool.m */; };
 		B11856FD0EA8F563008581D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B11856FC0EA8F563008581D0 /* Settings.bundle */; };
 		B15F06170EA6B37200B34B71 /* exwrapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043330EA6580E000858B3 /* exwrapperAppDelegate.m */; };
 		B15F06180EA6B37200B34B71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043360EA6580E000858B3 /* main.m */; };
@@ -181,6 +183,8 @@
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B107E7EB0EA94A7900CEF255 /* NitroxApiFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxApiFile.h; sourceTree = "<group>"; };
 		B107E7EC0EA94A7900CEF255 /* NitroxApiFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxApiFile.m; sourceTree = "<group>"; };
+		B107E87B0EA96BC500CEF255 /* NitroxBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxBool.h; sourceTree = "<group>"; };
+		B107E87C0EA96BC500CEF255 /* NitroxBool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxBool.m; sourceTree = "<group>"; };
 		B11856FC0EA8F563008581D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B15F060D0EA6B33C00B34B71 /* exw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F060F0EA6B33C00B34B71 /* exw2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exw2-Info.plist"; sourceTree = "<group>"; };
@@ -867,6 +871,8 @@
 				B1C8ACB50E9EE0FE003FE061 /* NitroxRPCDispatcher.m */,
 				B1C8ACB60E9EE0FE003FE061 /* NitroxStubClass.h */,
 				B1C8ACB70E9EE0FE003FE061 /* NitroxStubClass.m */,
+				B107E87B0EA96BC500CEF255 /* NitroxBool.h */,
+				B107E87C0EA96BC500CEF255 /* NitroxBool.m */,
 			);
 			path = rpc;
 			sourceTree = "<group>";
@@ -1029,6 +1035,7 @@
 				B15F077D0EA6CFE600B34B71 /* NitroxApp.h in Headers */,
 				B15F077E0EA6CFE600B34B71 /* NitroxAppPage.h in Headers */,
 				B107E7ED0EA94A7900CEF255 /* NitroxApiFile.h in Headers */,
+				B107E87D0EA96BC500CEF255 /* NitroxBool.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1280,6 +1287,7 @@
 				B15F077C0EA6CFE600B34B71 /* NitroxAppPage.m in Sources */,
 				B15F077F0EA6CFE600B34B71 /* NitroxApp.m in Sources */,
 				B107E7EE0EA94A7900CEF255 /* NitroxApiFile.m in Sources */,
+				B107E87E0EA96BC500CEF255 /* NitroxBool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

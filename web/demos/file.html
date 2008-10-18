@@ -34,24 +34,65 @@ jQuery(function() {
  });
  
 
+function appConfig() {
+  Nitrox.log("appConfig is " + Nitrox.Lang.toJSON(Nitrox.Application.appConfig()));
+}
+
+var lastFilename = Nitrox.Application.tmpDirectory() + "/notarealfile";
+var id = 0;
+
 function createFile() {
-  
+  var dir = Nitrox.Application.tmpDirectory();
+  var now = new Date().getTime();
+  lastFilename = dir + "/" + now;
+  Nitrox.log("Creating file " + lastFilename);
+  var file = new Nitrox.File(lastFilename);
+  Nitrox.log("result = " + file.write("this is text " + now + " " + (id++), "w"));
+}
+
+function readFile() {
+  Nitrox.log("reading file " + lastFilename);
+  var file = new Nitrox.File(lastFilename);
+  var data = file.read();
+  Nitrox.log("file contents are: '" + data + "'");
+}
+
+function unlinkFile() {
+  Nitrox.log("unlinking file " + lastFilename);
+  Nitrox.log("result = " + new Nitrox.File(lastFilename).unlink());
+}
+
+function statFile() {
+  Nitrox.log("statting file " + lastFilename);
+  Nitrox.log("result = " + Nitrox.Lang.toJSON(new Nitrox.File(lastFilename).stat()));
 }
 
 function getCwd() {
   Nitrox.log("CWD is " + Nitrox.File.getcwd());
 }
 
-function lsDir() {
-  Nitrox.log("dir contents are " + Nitrox.Lang.toJSON(new Nitrox.File("/").readdir()));
+function lsBundleDir() {
+  var dir = Nitrox.Application.bundleDirectory();
+  Nitrox.log("bundle dir contents are " + Nitrox.Lang.toJSON(new Nitrox.File(dir).readdir()));
 }
+
+function lsTmpDir() {
+  var dir = Nitrox.Application.tmpDirectory();
+  Nitrox.log("tmp dir contents are " + Nitrox.Lang.toJSON(new Nitrox.File(dir).readdir()));
+}
+
 
 // ]]>
 </script>
 
+<a href="javascript:appConfig();">App Config</a> <br/>
 <a href="javascript:createFile();">Create file</a> <br/>
+<a href="javascript:readFile();">Read file</a> <br/>
+<a href="javascript:unlinkFile();">Unlink file</a> <br/>
+<a href="javascript:statFile();">Stat file</a> <br/>
 <a href="javascript:getCwd();">Get current directory</a> <br/>
-<a href="javascript:lsDir();">List root dir</a> <br/>
+<a href="javascript:lsBundleDir();">List bundle dir</a> <br/>
+<a href="javascript:lsTmpDir();">List tmp dir</a> <br/>
 
 
 <h3 id="dtitle">Debug</h3>

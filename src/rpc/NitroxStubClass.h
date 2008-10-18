@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NitroxBool.h"
+
 @class NitroxRPCDispatcher;
 
 @interface NitroxStubClass : NSObject {
@@ -29,5 +31,7 @@
 
 - (NSString *) serialize:(id)object;
 - (void) scheduleCallbackScript:(NSString *)jsscript;
+
+- (id) boolObject:(BOOL)val;
 
 @end

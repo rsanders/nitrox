@@ -1,25 +1,56 @@
 NEW APIs:
 
 * file upload API
-* Local file read/write API
-* Socket read/write API
+  * For special files, like images (picker) and address book (ABook API)
+  * General files, with a file picker
+  * Progress events, plus abort function
+* Generic network
+  * Client socket open/read/write/close/getinfo API
+  * Server socket listen/accept/getinfo
+    * Mozilla's: http://www.xulplanet.com/tutorials/mozsdk/serverpush.php
+  * DNS API
+  * Bonjour
+
+* Application interoperation
+  * Address book API
+  * Send and edit email API (use mailto:?)
+
+* Standards
+  * Check Mozilla out Geolocation API:
+    http://developer.mozilla.org/web-tech/2008/10/14/firefox-31-beta-1-an-overview-of-features-for-web-developers/
+    http://dev.w3.org/geo/api/spec-source.html
+  * HTML5 cross-domain ajax
+  * AIR classes
+
 * Background threads API (hidden UIWebView and RPC between webviews)
   * multi-window support, multiple UIWebViews for a single app
+
 * view management?  (size, opacity, etc)
+
 * Multimedia:
   * Record sound
   * Start/stop playback of sound file
   * Play local video file or stream video (can be done with native quicktime better?)
   * Resize/crop/convert images and sounds
-* Bonjour / server socket API
-  * Mozilla's: http://www.xulplanet.com/tutorials/mozsdk/serverpush.php
+
+NEW UI CLASSES:
+
+* File picker UI
+* Address Book picker UI
+* Debug screen UI
+* HTML / DOM inspector UI
+
 
 CORE CAPABILITIES:
 
 * JavascriptCore-like bridging: ability to put Obj-C object references into JS namespace and
   send message to them from JS.
+* Asynchronous functions in all cases
+* Binary data transfer for functions where it makes sense (e.g. file read/write)
 
 ENHANCEMENTS:
+
+* NSLog-like Nitrox.Log (format strings)
 
 * standard listener / event dispatch library for Nitrox user code
   * should we just use events triggered on document (or another elt)
@@ -39,16 +70,12 @@ ENHANCEMENTS:
 
 * app.exit that just exits the current window/app versus whole app - switch?
 
+* NitroxApp delegate for wrapper/shell apps -- catch app exit and other events,
+  handle unknown function calls, filter allow/deny function calls, etc.
+
 * history and back button support (native goBack/goForward don't work with current loading system)
 
 * position:fixed emulation using native UIKit widgets?
-
-* orientation, location, and accel: be sure to send at least one update nearly immediately after
-  enabling.
-
-* Check out Geolocation API:
-  http://developer.mozilla.org/web-tech/2008/10/14/firefox-31-beta-1-an-overview-of-features-for-web-developers/
-  http://dev.w3.org/geo/api/spec-source.html
 
 * Rewrite HTML pages during loading so that localhost URLs point to main NitroxHTTPPort (or use
   fixed port)
@@ -57,11 +84,9 @@ ENHANCEMENTS:
 
 * SQL that is accessible by both Cocoa and JS
 
-* Debug console
+* Caching / mirroring functionality.  Cache "app" bundle from remote site, then execute from local web server.
 
-* Caching / mirroring functionality.  Cache "app" from remote site, then execute from local web server.
-
-* expand JSON-capable classes
+* expand JSON-capable classes using categories to add serializeToJSON to them
   
 DONE:
 
@@ -82,6 +107,13 @@ DONE:
 * Log subscription
 
 * getenv/setenv functions for C environment
+
+* Local file read/write API
+
+* orientation (DONE), location (AUTOMATIC), and accel (PER FREQ): be sure to send at least one update nearly immediately after
+  enabling.
+
+
 
 NOTES:
 

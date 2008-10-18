@@ -54,6 +54,7 @@
 }
 
 // TODO
+// accepts offset, size
 - (id) read:(NSDictionary *)args
 {
     NSString *path = [args objectForKey:@"path"];
@@ -61,18 +62,102 @@
         return Nil;
     }
     
-    return Nil;
+    NSData *res = Nil;
+
+    NSString *soffset = [args objectForKey:@"offset"];
+    NSString *ssize = [args objectForKey:@"size"];
+    
+    off_t offset = 0;
+    if (soffset && ! [soffset isEqualToString:@""]) {
+        offset = [soffset longLongValue];
+    }
+
+    off_t size = 0;
+    if (ssize && ! [ssize isEqualToString:@""]) {
+        size = [ssize longLongValue];
+    }
+    
+    if (! [fileManager fileExistsAtPath:path]) {
+        return Nil;
+    }
+
+    NSFileHandle *fh = [NSFileHandle fileHandleForReadingAtPath:path];
+    if (!fh) {
+        NSLog(@"got null fh for writing to path %@", path);
+        return Nil;
+    }
+
+    if (offset > 0) {
+        [fh seekToFileOffset:offset];
+        if ([fh offsetInFile] != offset) {
+            NSLog(@"premature end of file when seeking");
+            [fh closeFile];
+            return Nil;
+        }
+    }
+
+    if (size > 0) {
+        res = [fh readDataOfLength:size];
+    } else {
+        res = [fh readDataToEndOfFile];
+    }
+    
+    [fh closeFile];
+    
+    return res;
 }
 
-// TODO
+// accepts: data, offset, mode
 - (id) write:(NSDictionary *)args
 {
     NSString *path = [args objectForKey:@"path"];
-    if (!path) {
+    NSString *sdata = [args objectForKey:@"data"];
+    if (!path || !sdata) {
         return Nil;
     }
+    NSData *data = [sdata dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *smode = [args objectForKey:@"mode"];
+    NSString *soffset = [args objectForKey:@"offset"];
     
-    return Nil;
+    off_t offset = 0;
+    if (soffset && ! [soffset isEqualToString:@""]) {
+        offset = [soffset longLongValue];
+    }
+
+    if (! [fileManager fileExistsAtPath:path]) {
+        BOOL res = [fileManager createFileAtPath:path 
+                                        contents:data 
+                                      attributes:Nil];
+        if (!res) {
+            NSLog(@"error creating file at path: %@", path);
+        }
+        return [self boolObject:res];
+    }
+    NSFileHandle *fh = [NSFileHandle fileHandleForWritingAtPath:path];
+    if (!fh) {
+        NSLog(@"got null fh for writing to path %@", path);
+        return Nil;
+    }
+    if ((smode && [smode isEqualToString:@"w+"])
+        || offset > 0)
+    {
+        if (offset <= 0) {
+            [fh seekToEndOfFile];
+        } else {
+            [fh seekToFileOffset:offset];
+        }
+    }
+    
+    BOOL res = YES;
+    @try {
+            [fh writeData:data];
+    } @catch (NSException *e) {
+        res = NO;
+        NSLog(@"failed to write to file %@: %@", path, e);
+    }
+    [fh closeFile];
+    
+    return [self boolObject:res];
 }
 
 - (id) unlink:(NSDictionary *)args
@@ -83,7 +168,7 @@
     }
 
     int res = unlink([self path2cString:path]);
-    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];
+    return [self boolObject:(res == 0 ? YES : NO)];
 }
 
 - (id) access:(NSDictionary *)args
@@ -119,7 +204,7 @@
     }
     
     int res = access([self path2cString:path], amode);
-    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];
+    return [self boolObject:(res == 0 ? YES : NO)];
 }
 
 - (NSNumber *)time2number:(struct timespec)spec
@@ -180,7 +265,7 @@
     int mode = [smode intValue];
     
     int res = chmod([self path2cString:path], mode);
-    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];
+    return [self boolObject:(res == 0 ? YES : NO)];
 }
 
 - (id) truncate:(NSDictionary *)args
@@ -194,7 +279,7 @@
     size_t size = [ssize integerValue];
     
     int res = truncate([self path2cString:path], size);
-    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];
+    return [self boolObject:(res == 0 ? YES : NO)];
 }
 
 - (id) link:(NSDictionary *)args
@@ -209,7 +294,28 @@
         return Nil;
     }
     int res = link([self path2cString:path], [self path2cString:path2]);
-    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];
+    return [self boolObject:(res == 0 ? YES : NO)];
+}
+
+- (id) copy:(NSDictionary *)args
+{
+    NSString *path = [args objectForKey:@"path"];
+    if (!path) {
+        return Nil;
+    }
+    
+    NSString *path2 = [args objectForKey:@"path2"];
+    if (!path2) {
+        return Nil;
+    }
+
+    NSError *error = Nil;
+    BOOL res = [fileManager copyItemAtPath:path toPath:path2 error:&error];
+    if (! res) {
+        NSLog(@"failed to copy from %@ to %@: %@", path, path2, error);
+    }
+    
+    return [self boolObject:res];
 }
 
 - (id) symlink:(NSDictionary *)args
@@ -224,7 +330,7 @@
         return Nil;
     }
     int res = symlink([self path2cString:path], [self path2cString:path2]);
-    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];    
+    return [self boolObject:(res == 0 ? YES : NO)];    
 }
 
 - (id) mkdir:(NSDictionary *)args
@@ -240,7 +346,7 @@
     }
     
     int res = mkdir([self path2cString:path], mode);
-    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];
+    return [self boolObject:(res == 0 ? YES : NO)];
 }
 
 - (id) rmdir:(NSDictionary *)args
@@ -250,7 +356,7 @@
         return Nil;
     }
     int res = rmdir([self path2cString:path]);
-    return [NSNumber numberWithChar:(res == 0 ? YES : NO)];
+    return [self boolObject:(res == 0 ? YES : NO)];
 }
 
 - (id) readdir:(NSDictionary *)args

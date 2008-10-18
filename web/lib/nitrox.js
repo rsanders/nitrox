@@ -494,6 +494,10 @@ Nitrox.Application = {
         return Nitrox.Bridge.call('Application/c/documentsDirectory', {}, false);
     },
 
+    tmpDirectory: function() {
+        return Nitrox.Bridge.call('Application/c/tmpDirectory', {}, false);
+    },
+
     getUserDefault: function(name) {
         return Nitrox.Bridge.call('Application/c/getUserDefault', {name: name}, false);
     },
@@ -769,7 +773,6 @@ Nitrox.Photo = {
 // file functions
 
 Nitrox.File = function(path) {
-    Nitrox.log("File constructed at path " + path);
     this._type = "Nitrox.File";
     this.path = path;
 };
@@ -832,6 +835,10 @@ Nitrox.File.prototype = {
 
     chmod: function(mode) {
         return Nitrox.Bridge.call("File/c/chmod", {path: this.path, mode: mode}, false);
+    },
+
+    copy: function(path2) {
+        return Nitrox.Bridge.call("File/c/copy", {path: this.path, path2: path2}, false);
     },
 
     link: function(path2) {

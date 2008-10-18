@@ -71,4 +71,10 @@
     return [serializer serializeObject:object];
 }
 
+- (id) boolObject:(BOOL)val
+{
+    return [NitroxBool objectForBool:val];
+}
+
+
 @end
