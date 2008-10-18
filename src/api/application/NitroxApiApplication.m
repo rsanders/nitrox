@@ -31,7 +31,7 @@
                                                    waitUntilDone:NO];
 
     
-    return Nil;
+    return nil;
 }
 
 - (id) openURL:(NSDictionary *)args
@@ -39,10 +39,10 @@
     NSString *url = [args objectForKey:@"url"];
     if (! url) {
         NSLog(@"no URL supplied to openURL");
-        return Nil;
+        return nil;
     }
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-    return Nil;
+    return nil;
 }
 
 - (id) exit:(NSDictionary *)args
@@ -59,7 +59,7 @@
 
     NSLog(@"exiting...");
     exit(0);
-    return Nil;
+    return nil;
 }
 
 - (id) setApplicationIconBadgeNumber:(NSDictionary *)args
@@ -67,10 +67,10 @@
     NSString *url = [args objectForKey:@"value"];
     if (! url) {
         NSLog(@"no number supplied to openURL");
-        return Nil;
+        return nil;
     }
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:[url integerValue]];
-    return Nil;
+    return nil;
 }
 
 - (id) applicationIconBadgeNumber
@@ -83,14 +83,14 @@
 {
     NSLog(@"going back");
     [[[dispatcher webViewController] webView] goBack];
-    return Nil;
+    return nil;
 }
 
 - (id) forward
 {
     NSLog(@"going forward");
     [[[dispatcher webViewController] webView] goForward];
-    return Nil;
+    return nil;
 }
 
 #pragma mark app config and path information
@@ -142,7 +142,7 @@
 {
     NSString *key = [args objectForKey:@"name"];
     if (!key) {
-        return Nil;
+        return nil;
     }
     
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:key];
@@ -158,7 +158,7 @@
 {
     NSArray *keys = [args objectForKey:@"names"];
     if (!keys) {
-        return Nil;
+        return nil;
     }
 
     NSMutableDictionary *results = [[NSMutableDictionary alloc] init];
@@ -175,7 +175,7 @@
 {
     NSDictionary *defaults = [args objectForKey:@"defaults"];
     if (!defaults) {
-        return Nil;
+        return nil;
     }
     
     NSString *key;
@@ -183,14 +183,14 @@
         [[NSUserDefaults standardUserDefaults] setObject:[defaults objectForKey:key] forKey:key];
     }
     
-    return Nil;
+    return nil;
 }
 
 - (id) getUserDefault:(NSDictionary *)args
 {
     NSString *key = [args objectForKey:@"name"];
     if (!key) {
-        return Nil;
+        return nil;
     }
     
     return [[NSUserDefaults standardUserDefaults] objectForKey:key];
@@ -200,12 +200,12 @@
 {
     NSString *key = [args objectForKey:@"name"];
     if (!key) {
-        return Nil;
+        return nil;
     }
     
     [[NSUserDefaults standardUserDefaults] setObject:[args objectForKey:@"value"]
                                               forKey:key];
-    return Nil;
+    return nil;
 }
 
 
@@ -219,7 +219,7 @@
                 [self homeDirectory], @"homeDirectory",
                 [self infoDictionary], @"infoDictionary",
                 // [self userDefaults], @"userDefaults",
-            Nil];
+            nil];
     } @catch (NSException *e) {
         NSLog(@"caught exception doing appConfiguration: %@", e);
     }

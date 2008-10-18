@@ -46,8 +46,8 @@
         return [NitroxHTTPResponseMessage emptyResponseWithCode:400];
     }
     
-    NSURLResponse *response = Nil;
-    NSError *error = Nil;
+    NSURLResponse *response = nil;
+    NSError *error = nil;
     NSURLRequest *proxyRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     
     NSData *data = [NSURLConnection sendSynchronousRequest:proxyRequest returningResponse:&response error:&error];

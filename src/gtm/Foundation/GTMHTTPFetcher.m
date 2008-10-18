@@ -136,10 +136,10 @@ const NSTimeInterval kDefaultMaxRetryInterval = 60. * 10.; // 10 minutes
              didFinishSelector:(SEL)finishedSEL
                didFailSelector:(SEL)failedSEL {
   
-  GTMAssertSelectorNilOrImplementedWithArguments(delegate, finishedSEL, @encode(GTMHTTPFetcher *), @encode(NSData *), NULL);
-  GTMAssertSelectorNilOrImplementedWithArguments(delegate, failedSEL, @encode(GTMHTTPFetcher *), @encode(NSError *), NULL);
-  GTMAssertSelectorNilOrImplementedWithArguments(delegate, receivedDataSEL_, @encode(GTMHTTPFetcher *), @encode(NSData *), NULL);
-  GTMAssertSelectorNilOrImplementedWithReturnTypeAndArguments(delegate, retrySEL_, @encode(BOOL), @encode(GTMHTTPFetcher *), @encode(BOOL), @encode(NSError *), NULL);
+  GTMAssertSelectornilOrImplementedWithArguments(delegate, finishedSEL, @encode(GTMHTTPFetcher *), @encode(NSData *), NULL);
+  GTMAssertSelectornilOrImplementedWithArguments(delegate, failedSEL, @encode(GTMHTTPFetcher *), @encode(NSError *), NULL);
+  GTMAssertSelectornilOrImplementedWithArguments(delegate, receivedDataSEL_, @encode(GTMHTTPFetcher *), @encode(NSData *), NULL);
+  GTMAssertSelectornilOrImplementedWithReturnTypeAndArguments(delegate, retrySEL_, @encode(BOOL), @encode(GTMHTTPFetcher *), @encode(BOOL), @encode(NSError *), NULL);
     
   if (connection_ != nil) {
     // COV_NF_START - since we want the assert, we can't really test this

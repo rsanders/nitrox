@@ -28,7 +28,7 @@
         if ([delegate willHandlePath:path fromRequest:request onServer:server])
             return delegate;
     }
-    return Nil;
+    return nil;
 }
 
 
@@ -36,7 +36,7 @@
             fromRequest:(NitroxHTTPRequest *)request
                onServer:(NitroxHTTPServer *)server
 {
-    return [self getDelegateForPath:path fromRequest:request onServer:server] != Nil;
+    return [self getDelegateForPath:path fromRequest:request onServer:server] != nil;
 }
 
 
@@ -47,10 +47,10 @@
 {
     id <NitroxHTTPServerDelegate> delegate;
     delegate = [self getDelegateForPath:path fromRequest:request onServer:server];
-    if (delegate != Nil) {
+    if (delegate != nil) {
         return [delegate httpServer:server handleRequest:request atPath:path];
     } else {
-        return Nil;
+        return nil;
     }
 }
 

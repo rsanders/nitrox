@@ -73,7 +73,7 @@
     } else if (authoritative) {
         message = [NitroxHTTPResponseMessage emptyResponseWithCode:404];
     } else {
-        message = Nil;
+        message = nil;
     }
     
     return message;

@@ -40,7 +40,7 @@
         if (val) {
             [privateWebView setScriptDebugDelegate:[[NitroxScriptDebugDelegate alloc] init]];
         } else {
-            [privateWebView setScriptDebugDelegate:Nil];
+            [privateWebView setScriptDebugDelegate:nil];
         }
     }
 }

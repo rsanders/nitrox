@@ -156,8 +156,8 @@
 
 
 - (void)dealloc {
-    self.hostingController = Nil;
-    self.delegate = Nil;
+    self.hostingController = nil;
+    self.delegate = nil;
     [myView setDelegate:nil];
     [myView release];
     [mainView release];

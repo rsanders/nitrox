@@ -19,7 +19,7 @@
  {
      accelerometer = mgr;
      self.frequency = 1/20.0;
-     self.currentAcceleration = Nil;
+     self.currentAcceleration = nil;
      return self;
  }
 
@@ -32,8 +32,8 @@
     if (started) {
         [self stop];
     }
-    accelerometer = Nil;
-    self.currentAcceleration = Nil;
+    accelerometer = nil;
+    self.currentAcceleration = nil;
     [super dealloc];
 }
 
@@ -42,26 +42,26 @@
 
 - (id) start {
     if (! started) {
-        self.currentAcceleration = Nil;
+        self.currentAcceleration = nil;
         accelerometer.delegate = self; 
         accelerometer.updateInterval = 1 / self.frequency;
         started = YES;
     }
-    return Nil;
+    return nil;
 }
 
 - (id) stop {
     if (started) {
         accelerometer.updateInterval = 0;
-        accelerometer.delegate = Nil; 
+        accelerometer.delegate = nil; 
         started = NO;
     }
-    return Nil;
+    return nil;
 }
 
 - (id) getAcceleration {
-     if (!started || currentAcceleration == Nil) {
-         return Nil;
+     if (!started || currentAcceleration == nil) {
+         return nil;
      }
  
      NSLog(@"current acceleration info is %@", self.currentAcceleration);
@@ -71,7 +71,7 @@
                           [NSNumber numberWithDouble:currentAcceleration.y], @"y",
                           [NSNumber numberWithDouble:currentAcceleration.z], @"z",
                           [NSNumber numberWithDouble:currentAcceleration.timestamp], @"timestamp",
-                          Nil];
+                          nil];
      return [linfo autorelease];
 }
 
@@ -80,12 +80,12 @@
     NSString *arg = [dict objectForKey:@"frequency"];
     double newFreq = [arg doubleValue];
     if (newFreq <= 0) {
-        return Nil;
+        return nil;
     }
     self.frequency = newFreq;
     accelerometer.updateInterval = 1/self.frequency;
     
-    return Nil;
+    return nil;
 }
 
 
@@ -112,19 +112,19 @@
 }
 
 - (NSString *) instanceMethods {
-    return Nil;
+    return nil;
 }
 
 - (NSString *) classMethods {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstance {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstanceWithArgs:(NSDictionary *)args {
-    return Nil;
+    return nil;
 }
 
 

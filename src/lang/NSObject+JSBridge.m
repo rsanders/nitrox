@@ -56,7 +56,7 @@
     if (error) {
         NSLog(@"failed to deserialize in class %@ from json: %@", 
               NSStringFromClass([self class]), json);
-        return Nil;
+        return nil;
     } else {
         return retval;
     }

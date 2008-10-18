@@ -22,7 +22,7 @@
 
 
 - (void) dealloc {
-    self.script = Nil;
+    self.script = nil;
     [super dealloc];
 }
 

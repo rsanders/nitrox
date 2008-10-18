@@ -31,7 +31,7 @@
 
 - (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args {
     
-    NSString *res = Nil;
+    NSString *res = nil;
     UIDevice *device = [UIDevice currentDevice];
     
     SEL sel = NSSelectorFromString( [method stringByAppendingString:@":"] );       
@@ -58,13 +58,13 @@
         [center addObserver:self 
                    selector:@selector(orientationDidChange:) 
                        name:UIApplicationDidChangeStatusBarOrientationNotification
-                     object:Nil];
+                     object:nil];
 
         // this triggers when the device reorients
         [center addObserver:self 
                    selector:@selector(orientationDidChange:) 
                        name:UIDeviceOrientationDidChangeNotification
-                     object:Nil];        
+                     object:nil];        
         
         
         lastOrientation = [[UIDevice currentDevice] orientation];
@@ -75,7 +75,7 @@
         
         monitoringOrientation = YES;
     }
-    return Nil;
+    return nil;
 }
 
 - (id) stopMonitoringOrientation {
@@ -86,7 +86,7 @@
 
         monitoringOrientation = NO;
     }
-    return Nil;
+    return nil;
 }
 
 #pragma mark delegate and notification methods
@@ -126,19 +126,19 @@
 }
 
 - (NSString *) instanceMethods {
-    return Nil;
+    return nil;
 }
 
 - (NSString *) classMethods {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstance {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstanceWithArgs:(NSDictionary *)args {
-    return Nil;
+    return nil;
 }
 
 

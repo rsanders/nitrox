@@ -73,7 +73,7 @@
     } else if ([extension isEqualToString:@"css"]) {
         return @"text/css";
     } else {
-        return Nil;
+        return nil;
     }
 }
 

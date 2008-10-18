@@ -35,7 +35,7 @@
   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
   book_ = [[GTMABAddressBook addressBook] retain];
   [pool release];
-  STAssertNotNil(book_, nil);
+  STAssertNotnil(book_, nil);
   STAssertFalse([book_ hasUnsavedChanges], nil);
 }
 
@@ -54,7 +54,7 @@
   // Create a person
   GTMABPerson *person = [GTMABPerson personWithFirstName:@"Bart" 
                                                 lastName:@"Simpson"];
-  STAssertNotNil(person, nil);
+  STAssertNotnil(person, nil);
   
   // Add person
   NSArray *people = [book_ people];
@@ -67,7 +67,7 @@
   STAssertFalse([book_ hasUnsavedChanges], nil);
   
   people = [book_ people];
-  STAssertNotNil(people, nil);
+  STAssertNotnil(people, nil);
   // Normally this next line would be STAssertTrue, however due to
   // Radar 6200703: ABAddressBookAddRecord doesn't add an item to the people 
   //                array until it's saved
@@ -77,7 +77,7 @@
   // Save book_
   STAssertTrue([book_ save], nil);
   people = [book_ people];
-  STAssertNotNil(people, nil);
+  STAssertNotnil(people, nil);
   STAssertTrue([people containsObject:person], nil);
   
   ABRecordID recordID = [person recordID];
@@ -105,7 +105,7 @@
   STAssertFalse([book_ hasUnsavedChanges], nil);
   STAssertFalse([people containsObject:person], nil); 
   record = [book_ personForId:recordID];
-  STAssertNil(record, nil);
+  STAssertnil(record, nil);
   
   // Revert book_
   STAssertTrue([book_ addRecord:person], nil);
@@ -128,7 +128,7 @@
 - (void)testAddingAndRemovingGroup {
   // Create a group
   GTMABGroup *group = [GTMABGroup groupNamed:@"Test"];
-  STAssertNotNil(group, nil);
+  STAssertNotnil(group, nil);
   
   // Add group
   NSArray *groups = [book_ groups];
@@ -141,7 +141,7 @@
   STAssertFalse([book_ hasUnsavedChanges], nil);
   
   groups = [book_ groups];
-  STAssertNotNil(groups, nil);
+  STAssertNotnil(groups, nil);
   // Normally this next line would be STAssertTrue, however due to
   // Radar 6200703: ABAddressBookAddRecord doesn't add an item to the groups 
   //                array until it's saved
@@ -151,7 +151,7 @@
   // Save book_
   STAssertTrue([book_ save], nil);
   groups = [book_ groups];
-  STAssertNotNil(groups, nil);
+  STAssertNotnil(groups, nil);
   STAssertTrue([groups containsObject:group], nil);
   
   ABRecordID recordID = [group recordID];
@@ -179,7 +179,7 @@
   STAssertFalse([book_ hasUnsavedChanges], nil);
   STAssertFalse([groups containsObject:group], nil); 
   record = [book_ groupForId:recordID];
-  STAssertNil(record, nil);
+  STAssertnil(record, nil);
 
   // Revert book_
   STAssertTrue([book_ addRecord:group], nil);
@@ -194,15 +194,15 @@
 
 - (void)testPerson {
   GTMABPerson *person = [[[GTMABPerson alloc] initWithRecord:nil] autorelease];
-  STAssertNil(person, nil);
+  STAssertnil(person, nil);
   person = [GTMABPerson personWithFirstName:@"Bart"
                                    lastName:nil];
-  STAssertNotNil(person, nil);
+  STAssertNotnil(person, nil);
   STAssertEqualObjects([person compositeName], @"Bart", nil);
   NSString *firstName = [person valueForProperty:kABPersonFirstNameProperty];
   STAssertEqualObjects(firstName, @"Bart", nil);
   NSString *lastName = [person valueForProperty:kABPersonLastNameProperty];
-  STAssertNil(lastName, nil);
+  STAssertnil(lastName, nil);
   STAssertTrue([person removeValueForProperty:kABPersonFirstNameProperty], nil);
   STAssertFalse([person removeValueForProperty:kABPersonFirstNameProperty], nil);
   STAssertFalse([person removeValueForProperty:kABPersonLastNameProperty], nil);
@@ -224,30 +224,30 @@
   STAssertEqualObjects(string, kGTMABUnknownPropertyName, nil);
   
   string = [person description];
-  STAssertNotNil(string, nil);
+  STAssertNotnil(string, nil);
   
   ABPersonCompositeNameFormat format = [GTMABPerson compositeNameFormat];
   STAssertTrue(format == kABPersonCompositeNameFormatFirstNameFirst ||
                format == kABPersonCompositeNameFormatLastNameFirst, nil);
   
   NSData *data = [person imageData];
-  STAssertNil(data, nil);
+  STAssertnil(data, nil);
   STAssertTrue([person setImageData:nil], nil);
   data = [person imageData];
-  STAssertNil(data, nil);
+  STAssertnil(data, nil);
   UIImage *image = [UIImage imageNamed:@"phone.png"];
-  STAssertNotNil(image, nil);
+  STAssertNotnil(image, nil);
   data = UIImagePNGRepresentation(image);
   STAssertTrue([person setImageData:data], nil);
   NSData *data2 = [person imageData];
   STAssertEqualObjects(data, data2, nil);
   STAssertTrue([person setImageData:nil], nil);
   data = [person imageData];
-  STAssertNil(data, nil);  
+  STAssertnil(data, nil);  
   
   STAssertTrue([person setImage:image], nil);
   UIImage *image2 = [person image];
-  STAssertNotNil(image2, nil);
+  STAssertNotnil(image2, nil);
   STAssertEqualObjects(UIImagePNGRepresentation(image),
                        UIImagePNGRepresentation(image2), nil);
   
@@ -259,7 +259,7 @@
   
   GTMABMutableMultiValue *value 
     = [GTMABMutableMultiValue valueWithPropertyType:kABStringPropertyType];
-  STAssertNotNil(value, nil);
+  STAssertNotnil(value, nil);
   STAssertNotEquals([value addValue:@"222-222-2222" 
                           withLabel:kABHomeLabel], 
                     kABMultiValueInvalidIdentifier, nil);
@@ -268,7 +268,7 @@
                     kABMultiValueInvalidIdentifier, nil);
   STAssertTrue([person setValue:value forProperty:kABPersonPhoneProperty], nil);
   id value2 = [person valueForProperty:kABPersonPhoneProperty];
-  STAssertNotNil(value2, nil);
+  STAssertNotnil(value2, nil);
   STAssertEqualObjects(value, value2, nil);
   STAssertEquals([value hash], [value2 hash], nil);
   STAssertNotEquals([person hash], (NSUInteger)0, nil);
@@ -276,14 +276,14 @@
 
 - (void)testGroup {
   GTMABGroup *group = [[[GTMABGroup alloc] initWithRecord:nil] autorelease];
-  STAssertNil(group, nil);
+  STAssertnil(group, nil);
   group = [GTMABGroup groupNamed:@"TestGroup"];
-  STAssertNotNil(group, nil);
+  STAssertNotnil(group, nil);
   STAssertEqualObjects([group compositeName], @"TestGroup", nil);
   NSString *name = [group valueForProperty:kABGroupNameProperty];
   STAssertEqualObjects(name, @"TestGroup", nil);
   NSString *lastName = [group valueForProperty:kABPersonLastNameProperty];
-  STAssertNil(lastName, nil);
+  STAssertnil(lastName, nil);
   STAssertTrue([group removeValueForProperty:kABGroupNameProperty], nil);
   STAssertFalse([group removeValueForProperty:kABGroupNameProperty], nil);
   STAssertFalse([group removeValueForProperty:kABPersonLastNameProperty], nil);
@@ -309,7 +309,7 @@
   STAssertEqualObjects(string, kGTMABUnknownPropertyName, nil);
 
   string = [group description];
-  STAssertNotNil(string, nil);
+  STAssertNotnil(string, nil);
   
   // Adding and removing members
   group = [GTMABGroup groupNamed:@"TestGroup2"];
@@ -323,7 +323,7 @@
   
   GTMABPerson *person = [GTMABPerson personWithFirstName:@"Bart"
                                                 lastName:@"Simpson"];
-  STAssertNotNil(person, nil);
+  STAssertNotnil(person, nil);
   STAssertTrue([book_ addRecord:person], nil);
   STAssertTrue([book_ save], nil);
   STAssertTrue([group addMember:person], nil);
@@ -344,27 +344,27 @@
   STAssertThrows([[GTMABMultiValue alloc] init], nil);
   STAssertThrows([[GTMABMutableMultiValue alloc] init], nil);
   GTMABMultiValue *value = [[GTMABMultiValue alloc] initWithMultiValue:nil];
-  STAssertNil(value, nil);
+  STAssertnil(value, nil);
   GTMABMutableMultiValue *mutValue 
     = [GTMABMutableMultiValue valueWithPropertyType:kABInvalidPropertyType];
-  STAssertNil(mutValue, nil);
+  STAssertnil(mutValue, nil);
   mutValue 
     = [[[GTMABMutableMultiValue alloc]
         initWithMutableMultiValue:nil] autorelease];
-  STAssertNil(mutValue, nil);
+  STAssertnil(mutValue, nil);
   mutValue 
     = [[[GTMABMutableMultiValue alloc]
         initWithMultiValue:nil] autorelease];
-  STAssertNil(mutValue, nil);
+  STAssertnil(mutValue, nil);
   mutValue = [GTMABMutableMultiValue valueWithPropertyType:kABStringPropertyType];
-  STAssertNotNil(mutValue, nil);
+  STAssertNotnil(mutValue, nil);
   value = [[mutValue copy] autorelease];
   STAssertEqualObjects([value class], [GTMABMultiValue class], nil);
   mutValue = [[value mutableCopy] autorelease];
   STAssertEqualObjects([mutValue class], [GTMABMutableMultiValue class], nil);
   STAssertEquals([mutValue count], (NSUInteger)0, nil);
-  STAssertNil([mutValue valueAtIndex:0], nil);
-  STAssertNil([mutValue labelAtIndex:0], nil);
+  STAssertnil([mutValue valueAtIndex:0], nil);
+  STAssertnil([mutValue labelAtIndex:0], nil);
   STAssertEquals([mutValue identifierAtIndex:0], 
                  kABMultiValueInvalidIdentifier, nil);
   STAssertEquals([mutValue propertyType], 
@@ -425,7 +425,7 @@
   
   // Enumerator test
   mutValue = [GTMABMutableMultiValue valueWithPropertyType:kABIntegerPropertyType];
-  STAssertNotNil(mutValue, nil);
+  STAssertNotnil(mutValue, nil);
   for (int i = 0; i < 100; i++) {
     NSString *label = [NSString stringWithFormat:@"label %d", i];
     NSNumber *val = [NSNumber numberWithInt:i];
@@ -447,10 +447,10 @@
   // Test messing with the values while we're enumerating them
   NSEnumerator *labelEnum = [mutValue labelEnumerator];
   NSEnumerator *valueEnum = [mutValue valueEnumerator];
-  STAssertNotNil(labelEnum, nil);
-  STAssertNotNil(valueEnum, nil);
-  STAssertNotNil([labelEnum nextObject], nil);
-  STAssertNotNil([valueEnum nextObject], nil);
+  STAssertNotnil(labelEnum, nil);
+  STAssertNotnil(valueEnum, nil);
+  STAssertNotnil([labelEnum nextObject], nil);
+  STAssertNotnil([valueEnum nextObject], nil);
   STAssertTrue([mutValue removeValueAndLabelAtIndex:0], nil);
   STAssertThrows([labelEnum nextObject], nil);
   STAssertThrows([valueEnum nextObject], nil);
@@ -490,7 +490,7 @@
     ABMultiValueRef ref = ABMultiValueCreateMutable(type);
     STAssertNotNULL(ref, nil);
     NSString *label = [[NSString alloc] initWithString:@"label"];
-    STAssertNotNil(label, nil);
+    STAssertNotnil(label, nil);
     id val;
     switch (type) {
       case kABDictionaryPropertyType:
@@ -510,7 +510,7 @@
         val = [[NSDate alloc] init];
         break;
     }
-    STAssertNotNil(val, 
+    STAssertNotnil(val, 
                    @"Testing type %d, %@", type, val);
     NSUInteger firstRetainCount = [val retainCount];
     STAssertNotEquals(firstRetainCount, 

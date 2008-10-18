@@ -39,10 +39,10 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     
-    NSData *res = Nil;
+    NSData *res = nil;
 
     NSString *soffset = [args objectForKey:@"offset"];
     NSString *ssize = [args objectForKey:@"size"];
@@ -58,13 +58,13 @@
     }
     
     if (! [fileManager fileExistsAtPath:path]) {
-        return Nil;
+        return nil;
     }
 
     NSFileHandle *fh = [NSFileHandle fileHandleForReadingAtPath:path];
     if (!fh) {
         NSLog(@"got null fh for writing to path %@", path);
-        return Nil;
+        return nil;
     }
 
     if (offset > 0) {
@@ -72,7 +72,7 @@
         if ([fh offsetInFile] != offset) {
             NSLog(@"premature end of file when seeking");
             [fh closeFile];
-            return Nil;
+            return nil;
         }
     }
 
@@ -93,7 +93,7 @@
     NSString *path = [args objectForKey:@"path"];
     NSString *sdata = [args objectForKey:@"data"];
     if (!path || !sdata) {
-        return Nil;
+        return nil;
     }
     NSData *data = [sdata dataUsingEncoding:NSUTF8StringEncoding];
     NSString *smode = [args objectForKey:@"mode"];
@@ -107,7 +107,7 @@
     if (! [fileManager fileExistsAtPath:path]) {
         BOOL res = [fileManager createFileAtPath:path 
                                         contents:data 
-                                      attributes:Nil];
+                                      attributes:nil];
         if (!res) {
             NSLog(@"error creating file at path: %@", path);
         }
@@ -116,7 +116,7 @@
     NSFileHandle *fh = [NSFileHandle fileHandleForWritingAtPath:path];
     if (!fh) {
         NSLog(@"got null fh for writing to path %@", path);
-        return Nil;
+        return nil;
     }
     if ((smode && [smode isEqualToString:@"w+"])
         || offset > 0)
@@ -144,7 +144,7 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
 
     int res = unlink([self path2cString:path]);
@@ -156,10 +156,10 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     
-    NSError *error = Nil;
+    NSError *error = nil;
     if (! [fileManager removeItemAtPath:path error:&error]) {
         NSLog(@"could not delete item %@: %@", path, error);
         return [self boolObject:NO];
@@ -172,12 +172,12 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     
     NSString *smode = [args objectForKey:@"mode"];
     if (!smode) {
-        return Nil;
+        return nil;
     }
 
     int amode = 0;
@@ -218,13 +218,13 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     
     struct stat buf;
     int res = stat([self path2cString:path], &buf);
     if (res == -1) {
-        return Nil;
+        return nil;
     }
     
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -246,7 +246,7 @@
                           [NSNumber numberWithInteger:buf.st_blksize], @"st_blksize",
                           [NSNumber numberWithInteger:buf.st_flags], @"st_flags",
                           [NSNumber numberWithInteger:buf.st_gen], @"st_gen",
-                          Nil];
+                          nil];
     return dict;
 }
 
@@ -254,7 +254,7 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
 
     NSString *smode = [args objectForKey:@"mode"];
@@ -268,7 +268,7 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
 
     NSString *ssize = [args objectForKey:@"size"];
@@ -282,12 +282,12 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
 
     NSString *path2 = [args objectForKey:@"path2"];
     if (!path2) {
-        return Nil;
+        return nil;
     }
     int res = link([self path2cString:path], [self path2cString:path2]);
     return [self boolObject:(res == 0 ? YES : NO)];
@@ -297,15 +297,15 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     
     NSString *path2 = [args objectForKey:@"path2"];
     if (!path2) {
-        return Nil;
+        return nil;
     }
 
-    NSError *error = Nil;
+    NSError *error = nil;
     BOOL res = [fileManager copyItemAtPath:path toPath:path2 error:&error];
     if (! res) {
         NSLog(@"failed to copy from %@ to %@: %@", path, path2, error);
@@ -318,12 +318,12 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
 
     NSString *path2 = [args objectForKey:@"path2"];
     if (!path2) {
-        return Nil;
+        return nil;
     }
 
     int res = symlink([self path2cString:path], [self path2cString:path2]);
@@ -335,7 +335,7 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     int mode = 0755;
     NSString *smode = [args objectForKey:@"mode"];
@@ -352,7 +352,7 @@
     NSDictionary *attr = [NSDictionary dictionaryWithObject:[NSNumber numberWithLong:mode]
                                                      forKey:NSFilePosixPermissions];
     
-    NSError *error = Nil;
+    NSError *error = nil;
     BOOL res = [fileManager createDirectoryAtPath:path
                       withIntermediateDirectories:recursive 
                                        attributes:attr
@@ -367,7 +367,7 @@
 //{
 //    NSString *path = [args objectForKey:@"path"];
 //    if (!path) {
-//        return Nil;
+//        return nil;
 //    }
 //    int mode = 0755;
 //    NSString *smode = [args objectForKey:@"mode"];
@@ -383,7 +383,7 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     int res = rmdir([self path2cString:path]);
     return [self boolObject:(res == 0 ? YES : NO)];
@@ -393,7 +393,7 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     
     return [fileManager directoryContentsAtPath:path];
@@ -403,7 +403,7 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     
     NSArray *files = [fileManager directoryContentsAtPath:path];
@@ -426,7 +426,7 @@
 {
     NSString *path = [args objectForKey:@"path"];
     if (!path) {
-        return Nil;
+        return nil;
     }
     return [self boolObject:[fileManager changeCurrentDirectoryPath:path]];
 }

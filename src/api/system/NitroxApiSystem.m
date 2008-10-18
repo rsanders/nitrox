@@ -28,10 +28,10 @@
     NSString *url = [args objectForKey:@"url"];
     if (! url) {
         NSLog(@"no URL supplied to openURL");
-        return Nil;
+        return nil;
     }
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-    return Nil;
+    return nil;
 }
 
 - (id) exit:(NSDictionary *)args
@@ -48,7 +48,7 @@
 
     NSLog(@"exiting...");
     exit(0);
-    return Nil;
+    return nil;
 }
 
 - (id) setApplicationBadgeNumber:(NSDictionary *)args
@@ -56,10 +56,10 @@
     NSString *url = [args objectForKey:@"number"];
     if (! url) {
         NSLog(@"no number supplied to openURL");
-        return Nil;
+        return nil;
     }
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:[url integerValue]];
-    return Nil;
+    return nil;
 }
 
 - (id) applicationBadgeNumber
@@ -71,25 +71,25 @@
 - (id) enableScriptDebugging
 {
     [[[[self dispatcher] webViewController] webView] setScriptDebuggingEnabled:YES];
-    return Nil;
+    return nil;
 }
 
 - (id) disableScriptDebugging
 {
     [[[[self dispatcher] webViewController] webView] setScriptDebuggingEnabled:NO];
-    return Nil;
+    return nil;
 }
 
 - (id) getEnv:(NSDictionary *)args
 {
     NSString *name = [args objectForKey:@"name"];
     if (!name) {
-        return Nil;
+        return nil;
     }
     
     char *val = getenv([name cStringUsingEncoding:NSISOLatin1StringEncoding]);
     if (! val) {
-        return Nil;
+        return nil;
     }
     return [NSString stringWithCString:val encoding:NSISOLatin1StringEncoding];
 }
@@ -98,7 +98,7 @@
 {
     NSString *name = [args objectForKey:@"name"];
     if (!name) {
-        return Nil;
+        return nil;
     }
     NSString *value = [args objectForKey:@"value"];
     if (value) {
@@ -107,7 +107,7 @@
     } else {
         unsetenv([name cStringUsingEncoding:NSISOLatin1StringEncoding]);
     }
-    return Nil;
+    return nil;
 }
 
 #pragma mark Stub methods; should refactor out

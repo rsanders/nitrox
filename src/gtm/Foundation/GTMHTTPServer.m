@@ -78,7 +78,7 @@ static NSString *kResponse = @"Response";
       return nil;
     }
     delegate_ = delegate;
-    GTMAssertSelectorNilOrImplementedWithReturnTypeAndArguments(delegate_,
+    GTMAssertSelectornilOrImplementedWithReturnTypeAndArguments(delegate_,
                                                                 @selector(httpServer:handleRequest:),
                                                                 // return type
                                                                 @encode(GTMHTTPResponseMessage *),
@@ -579,8 +579,8 @@ startFailed:
 @implementation GTMHTTPThreadedConnectionHandler
 
 - (void) start {
-    // [self performSelectorInBackground:@selector(listenOnThread) withObject:Nil];
-    listenThread_ = [[[NSThread alloc] initWithTarget:self selector:@selector(listenOnThread) object:Nil] retain];
+    // [self performSelectorInBackground:@selector(listenOnThread) withObject:nil];
+    listenThread_ = [[[NSThread alloc] initWithTarget:self selector:@selector(listenOnThread) object:nil] retain];
     [listenThread_ start];
 }
 

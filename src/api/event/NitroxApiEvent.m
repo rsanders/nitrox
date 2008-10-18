@@ -24,40 +24,40 @@
 {
     NSString *name = [args objectForKey:@"name"];
     if (! name) {
-        return Nil;
+        return nil;
     }
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(handleNotification:) name:name object:Nil];
+    [center addObserver:self selector:@selector(handleNotification:) name:name object:nil];
     
-    return Nil;
+    return nil;
 }
 
 - (id) removeNotificationListener:(NSDictionary *)args
 {
     NSString *name = [args objectForKey:@"name"];
     if (! name) {
-        return Nil;
+        return nil;
     }
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center removeObserver:self name:name object:Nil];
+    [center removeObserver:self name:name object:nil];
     
-    return Nil;
+    return nil;
 }
 
 - (id) postNotification:(NSDictionary *)args
 {
     NSString *name = [args objectForKey:@"name"];
     if (! name) {
-        return Nil;
+        return nil;
     }
 
-    NSDictionary *userInfo = Nil;
+    NSDictionary *userInfo = nil;
     NSString *userInfoString = [args objectForKey:@"userInfo"];
     if (userInfoString) {
         CJSONDeserializer *deserializer = [[[CJSONDeserializer alloc] init] autorelease];
-        NSError *outError = Nil;
+        NSError *outError = nil;
         @try  {
             userInfo = [deserializer deserializeAsDictionary:[userInfoString dataUsingEncoding:NSUTF8StringEncoding]
                                                                  error:&outError];
@@ -66,14 +66,14 @@
         }
         if (outError) {
             NSLog(@"error deserializing userInfo: %@", outError);
-            userInfo = Nil;
+            userInfo = nil;
         }
     }
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:name object:Nil userInfo:userInfo];
+    [center postNotificationName:name object:nil userInfo:userInfo];
     
-    return Nil;
+    return nil;
 }
 
 

@@ -21,28 +21,28 @@
 }
 
 - (NSString *) instanceMethods {
-    return Nil;
+    return nil;
 }
 
 - (NSString *) classMethods {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstance {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstanceWithArgs:(NSDictionary *)args {
-    return Nil;
+    return nil;
 }
 
 - (id) object:(id)object invoke:(NSString *)method args:(NSDictionary *)args {
-    return Nil;
+    return nil;
 }
 
 - (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args {
     
-    NSString *res = Nil;
+    NSString *res = nil;
 
     SEL sel = NSSelectorFromString( [method stringByAppendingString:@":"] );       
     if ([self respondsToSelector:sel]) {

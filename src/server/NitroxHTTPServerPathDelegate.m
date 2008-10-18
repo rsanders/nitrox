@@ -23,7 +23,7 @@
             fromRequest:(NitroxHTTPRequest *)request
                onServer:(NitroxHTTPServer *)server
 {
-    return ([paths objectForKey:path] != Nil || [paths objectForKey:[[request URL] path]]);
+    return ([paths objectForKey:path] != nil || [paths objectForKey:[[request URL] path]]);
 }
 
 - (NitroxHTTPResponseMessage *)httpServer:(NitroxHTTPServer *)server
@@ -31,12 +31,12 @@
                                    atPath:(NSString *)path
 {
     NSArray *components = [path componentsSeparatedByString:@"/"];
-    id<NitroxHTTPServerDelegate> handler = Nil;
+    id<NitroxHTTPServerDelegate> handler = nil;
     
     handler = [paths objectForKey:path];
     
     if (! handler) {
-        NSString *key = Nil;
+        NSString *key = nil;
         if ([components count] >= 1) {
             key = [components objectAtIndex:0];
         } else {
@@ -54,7 +54,7 @@
     } else if (defaultDelegate) {
         return [defaultDelegate httpServer:server handleRequest:request atPath:path];
     } else {
-        return Nil;
+        return nil;
     }
 }
 

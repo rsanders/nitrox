@@ -23,9 +23,9 @@
 }
 
 - (void) dealloc {
-    self.picker = Nil;
-    self.saveDir = Nil;
-    self.urlFormat = Nil;
+    self.picker = nil;
+    self.saveDir = nil;
+    self.urlFormat = nil;
     [lastImage release];
     [completionCondition release];
     [super dealloc];
@@ -72,7 +72,7 @@
 //    
 //    NSLog(@"returning new image path %@", lastImage);
 
-    return Nil;
+    return nil;
 }
 
 - (id) takePhoto {
@@ -80,8 +80,8 @@
 
     picker.delegate = self;
     [picker performSelectorOnMainThread:@selector(pickNewPhoto)
-                             withObject:Nil waitUntilDone:NO];
-    return Nil;
+                             withObject:nil waitUntilDone:NO];
+    return nil;
 }
 
 - (id) chooseFromLibrary {
@@ -90,8 +90,8 @@
     picker.delegate = self;
     // [picker pickExistingPhoto];
     [picker performSelectorOnMainThread:@selector(pickExistingPhoto)
-                             withObject:Nil waitUntilDone:NO];
-    return Nil;
+                             withObject:nil waitUntilDone:NO];
+    return nil;
 }
 
 - (NSString *) saveImageToTempFile:(UIImage *)image
@@ -103,17 +103,17 @@
     if (![[NSFileManager defaultManager] 
                             createFileAtPath:filename 
                             contents:UIImageJPEGRepresentation(image, 0.9)  
-                            attributes:Nil]) 
+                            attributes:nil]) 
     {
         NSLog(@"couldn't create image file at path %@", filename);
-        return Nil;
+        return nil;
     }
 
     return filepart;
 }
 
 - (void) cleanupPicker {
-    self.picker = Nil;
+    self.picker = nil;
 }
 
 #pragma mark Imagepicker delegate methods
@@ -171,23 +171,23 @@
 
 
 - (NSString *) instanceMethods {
-    return Nil;
+    return nil;
 }
 
 - (NSString *) classMethods {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstance {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstanceWithArgs:(NSDictionary *)args {
-    return Nil;
+    return nil;
 }
 
 - (id) invoke:(NSString *)method args:(NSDictionary *)args {
-    return Nil;
+    return nil;
 }
 
 

@@ -16,7 +16,7 @@
 
 + (NitroxHTTPServerLogDelegate *) singleton
 {
-    static NitroxHTTPServerLogDelegate *singleton = Nil;
+    static NitroxHTTPServerLogDelegate *singleton = nil;
     @synchronized(self)
     {
         if (!singleton)

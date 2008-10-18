@@ -80,7 +80,7 @@ static CFSocketRef gRunLoopSocket;
     signo_ = signo;
     target_ = target;  // Don't retain since target will most likely retain us.
     handler_ = handler;
-    GTMAssertSelectorNilOrImplementedWithArguments(target_,
+    GTMAssertSelectornilOrImplementedWithArguments(target_,
                                                    handler_,
                                                    @encode(NSNumber *),
                                                    NULL);

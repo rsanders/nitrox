@@ -78,8 +78,8 @@ static NitroxCore *singleton;
 }
 
 - (void) dealloc {
-    self.apps = Nil;
-    self.server = Nil;
+    self.apps = nil;
+    self.server = nil;
     [appPathDelegate release];
     [rootPathDelegate release];
     [super dealloc];

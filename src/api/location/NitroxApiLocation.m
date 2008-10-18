@@ -17,7 +17,7 @@
 {
     self.locationManager = mgr;
     [self.locationManager setDelegate:self];
-    self.currentLocation = Nil;
+    self.currentLocation = nil;
     return self;
 }
 
@@ -43,10 +43,10 @@
 - (id) start {
     if (! started) {
         [locationManager startUpdatingLocation];
-        self.currentLocation = Nil;
+        self.currentLocation = nil;
         started = YES;
     }
-    return Nil;
+    return nil;
 }
 
 - (id) stop {
@@ -54,12 +54,12 @@
         [locationManager stopUpdatingLocation];
         started = NO;
     }
-    return Nil;
+    return nil;
 }
 
 - (id) getLocation {
-    if (!started || currentLocation == Nil) {
-        return Nil;
+    if (!started || currentLocation == nil) {
+        return nil;
     }
 
     NSLog(@"current location info is %@", self.currentLocation);
@@ -71,7 +71,7 @@
                          [NSNumber numberWithDouble:currentLocation.verticalAccuracy], @"verticalAccuracy",
                          [NSNumber numberWithDouble:currentLocation.horizontalAccuracy], @"horizontalAccuracy",
                          [NSString stringWithFormat:@"%@", currentLocation.timestamp], @"timestamp",
-                         Nil];
+                         nil];
     return [linfo autorelease];
 }
 
@@ -113,19 +113,19 @@
 }
 
 - (NSString *) instanceMethods {
-    return Nil;
+    return nil;
 }
 
 - (NSString *) classMethods {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstance {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstanceWithArgs:(NSDictionary *)args {
-    return Nil;
+    return nil;
 }
 
 

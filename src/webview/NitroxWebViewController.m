@@ -165,7 +165,7 @@
 
 
 - (void)dealloc {
-    otherJSLibs = Nil;
+    otherJSLibs = nil;
     
     //[server stop];
     //[server release];
@@ -225,7 +225,7 @@
         @"id not set", [request.URL path]];
     
     [webView stringByEvaluatingJavaScriptFromString:jsstring];
-    return Nil;
+    return nil;
 }
 
 - (BOOL)handleJSLog:(UIWebView *)webView request:(NSURLRequest *)request 
@@ -297,9 +297,9 @@
     } 
 
     // TODO: use remapping delegate
-    NSURL *remapping = Nil;
+    NSURL *remapping = nil;
     
-    if (remapping != Nil) {
+    if (remapping != nil) {
         passNext = YES;
         [webView performSelectorOnMainThread:@selector(loadRequest:)
                               withObject:[NSURLRequest requestWithURL:remapping]

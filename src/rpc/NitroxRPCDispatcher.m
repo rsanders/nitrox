@@ -15,7 +15,7 @@
 @synthesize webViewController;
 
 - (NitroxRPCDispatcher *) initWithStubClass:(NitroxStubClass *)stubClass {
-    return [self initWithStubClass:stubClass webViewController:Nil];
+    return [self initWithStubClass:stubClass webViewController:nil];
 }
 
 - (NitroxRPCDispatcher *) initWithStubClass:(NitroxStubClass *)stubClass 
@@ -28,8 +28,8 @@
 }
 
 - (void) dealloc {
-    stub.dispatcher = Nil;
-    self.webViewController = Nil;
+    stub.dispatcher = nil;
+    self.webViewController = nil;
     [stub release];
     [super dealloc];
 }
@@ -96,7 +96,7 @@
     NSLog(@"response is %@", result);
 
     NSString *response;
-    if (result == Nil) {
+    if (result == nil) {
         response = @"null";
     } else {
         response = [serializer serializeObject:result];

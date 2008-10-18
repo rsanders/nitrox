@@ -105,7 +105,7 @@
 
 
 - (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args {
-    NSObject *res = Nil;
+    NSObject *res = nil;
     NSString *paramstring = [args objectForKey:@"parameters"];
     CJSONDeserializer *deserializer = [[CJSONDeserializer alloc] init];
     NSError *error;
@@ -116,7 +116,7 @@
                                               error:&error];
     } @catch (NSException *e) {
         NSLog(@"caught exception deserializing: %@", e);
-        return Nil;
+        return nil;
     }
     
     if (! parameters || ! [parameters isKindOfClass:[NSArray class]]) {
@@ -143,7 +143,7 @@
     if ([signature numberOfArguments] != [parameters count] + 2) {
         NSLog(@"signature takes %d args, have %d parameters",
               [signature numberOfArguments]-2, [parameters count]);
-        return Nil;
+        return nil;
     }
     
     NSArray *converted = [self convertArguments:parameters bySignature:signature];
@@ -266,7 +266,7 @@
     NSLog(@"response is %@", result);
     
     NSString *response;
-    if (result == Nil) {
+    if (result == nil) {
         response = @"null";
     } else {
         response = [serializer serializeObject:result];

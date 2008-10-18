@@ -28,25 +28,25 @@
 - (id) vibrate
 {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate); 
-    return Nil;
+    return nil;
 }
 
 #pragma mark Stub methods; should refactor out
 
 - (NSString *) instanceMethods {
-    return Nil;
+    return nil;
 }
 
 - (NSString *) classMethods {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstance {
-    return Nil;
+    return nil;
 }
 
 - (id) newInstanceWithArgs:(NSDictionary *)args {
-    return Nil;
+    return nil;
 }
 
 @end

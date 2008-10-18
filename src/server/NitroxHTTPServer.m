@@ -46,7 +46,7 @@
         || [(NSString *)self.path rangeOfString:@"/"].length == 0) 
     {
         NSLog(@"in nextLevelRequest, tried to get subpath of non-subpathable path: %@", path);
-        return Nil;
+        return nil;
     }
     
     // move a path component from the path to the prefix

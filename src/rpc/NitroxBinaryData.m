@@ -23,7 +23,7 @@
 
 - (void) dealloc 
 {
-    self.data = Nil;
+    self.data = nil;
     [super dealloc];
 }
 
