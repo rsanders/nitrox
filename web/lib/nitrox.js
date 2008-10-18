@@ -781,6 +781,10 @@ Nitrox.File.getcwd = function() {
     return Nitrox.Bridge.call("File/c/getcwd", {}, false);
 }
 
+Nitrox.File.chdir = function(path) {
+    return Nitrox.Bridge.call("File/c/chdir", {path: path}, false);
+}
+
 Nitrox.File.prototype = {
     exists: function() {
         return this.access("f");

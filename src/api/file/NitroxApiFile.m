@@ -17,11 +17,12 @@
 {
     [super init];
 
-    fileManager = [NSFileManager defaultManager];
+    fileManager = [[NSFileManager alloc] init];
     return self;
 }
 
 - (void) dealloc {
+    [fileManager release];
     [super dealloc];
 }
 
@@ -217,7 +218,6 @@
     return [NSNumber numberWithDouble:dbltime];
 }
 
-// TODO
 - (id) stat:(NSDictionary *)args
 {
     NSString *path = [args objectForKey:@"path"];
@@ -372,17 +372,18 @@
 
 # pragma mark non-filehandle methods (class methods)
 
-- (id) getcwd
+- (id) chdir:(NSDictionary *)args
 {
-    char *cwd = getcwd(NULL, 0);
-    if (!cwd) {
-        NSLog(@"got null cwd");
+    NSString *path = [args objectForKey:@"path"];
+    if (!path) {
         return Nil;
     }
-    NSString *res = [NSString stringWithCString:cwd encoding:NSISOLatin1StringEncoding];
-    NSLog(@"cwd is %@", res);
-    free(cwd);
-    return res;
+    return [self boolObject:[fileManager changeCurrentDirectoryPath:path]];
+}
+
+- (id) getcwd
+{
+    return [fileManager currentDirectoryPath];
 }
 
 

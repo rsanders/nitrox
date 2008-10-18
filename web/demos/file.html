@@ -67,6 +67,11 @@ function statFile() {
   Nitrox.log("result = " + Nitrox.Lang.toJSON(new Nitrox.File(lastFilename).stat()));
 }
 
+function chdir() {
+  Nitrox.log("Changing to tmpdir");
+  Nitrox.log("result = " + Nitrox.File.chdir(Nitrox.Application.tmpDirectory()));
+}
+
 function getCwd() {
   Nitrox.log("CWD is " + Nitrox.File.getcwd());
 }
@@ -90,6 +95,7 @@ function lsTmpDir() {
 <a href="javascript:readFile();">Read file</a> <br/>
 <a href="javascript:unlinkFile();">Unlink file</a> <br/>
 <a href="javascript:statFile();">Stat file</a> <br/>
+<a href="javascript:chdir();">Chdir to tmpdir</a> <br/>
 <a href="javascript:getCwd();">Get current directory</a> <br/>
 <a href="javascript:lsBundleDir();">List bundle dir</a> <br/>
 <a href="javascript:lsTmpDir();">List tmp dir</a> <br/>
