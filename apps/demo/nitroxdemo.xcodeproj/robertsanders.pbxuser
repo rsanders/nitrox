@@ -182,8 +182,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 246004279;
-			PBXWorkspaceStateSaveDate = 246004279;
+			PBXPerProjectTemplateStateSaveDate = 246069038;
+			PBXWorkspaceStateSaveDate = 246069038;
 		};
 		perUserProjectItems = {
 			B107E6DE0EA9274C00CEF255 /* PBXTextBookmark */ = B107E6DE0EA9274C00CEF255 /* PBXTextBookmark */;
@@ -191,9 +191,8 @@
 			B107E6E00EA9274C00CEF255 /* PBXTextBookmark */ = B107E6E00EA9274C00CEF255 /* PBXTextBookmark */;
 			B107E6E30EA9274C00CEF255 /* PBXTextBookmark */ = B107E6E30EA9274C00CEF255 /* PBXTextBookmark */;
 			B107EA770EA9BCFE00CEF255 /* PBXTextBookmark */ = B107EA770EA9BCFE00CEF255 /* PBXTextBookmark */;
-			B107EA780EA9BCFE00CEF255 /* PlistBookmark */ = B107EA780EA9BCFE00CEF255 /* PlistBookmark */;
-			B107EA790EA9BCFE00CEF255 /* PBXTextBookmark */ = B107EA790EA9BCFE00CEF255 /* PBXTextBookmark */;
 			B107EA890EA9BE9000CEF255 /* PlistBookmark */ = B107EA890EA9BE9000CEF255 /* PlistBookmark */;
+			B107EB4D0EAAB82F00CEF255 /* PlistBookmark */ = B107EB4D0EAAB82F00CEF255 /* PlistBookmark */;
 			B14E6B320E8E90B6000BB59F /* PBXTextBookmark */ = B14E6B320E8E90B6000BB59F /* PBXTextBookmark */;
 			B14E6B570E8E90B6000BB59F /* PBXTextBookmark */ = B14E6B570E8E90B6000BB59F /* PBXTextBookmark */;
 			B15F09530EA701FE00B34B71 /* PlistBookmark */ = B15F09530EA701FE00B34B71 /* PlistBookmark */;
@@ -355,7 +354,7 @@
 		vrLen = 761;
 		vrLoc = 0;
 	};
-	B107EA780EA9BCFE00CEF255 /* PlistBookmark */ = {
+	B107EA890EA9BE9000CEF255 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = B107EA620EA9BBD800CEF255 /* Entitlements.plist */;
 		fallbackIsa = PBXBookmark;
@@ -367,17 +366,7 @@
 		rLen = 0;
 		rLoc = 2147483647;
 	};
-	B107EA790EA9BCFE00CEF255 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* nitroxdemoAppDelegate.m */;
-		name = "nitroxdemoAppDelegate.m: 19";
-		rLen = 0;
-		rLoc = 394;
-		rType = 0;
-		vrLen = 761;
-		vrLoc = 0;
-	};
-	B107EA890EA9BE9000CEF255 /* PlistBookmark */ = {
+	B107EB4D0EAAB82F00CEF255 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = B107EA620EA9BBD800CEF255 /* Entitlements.plist */;
 		fallbackIsa = PBXBookmark;

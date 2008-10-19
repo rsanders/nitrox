@@ -18,6 +18,22 @@
 #import <Foundation/NSInvocation.h>
 #import <Foundation/NSMethodSignature.h>
 
+typedef union {
+    id objectValue;
+    bool booleanValue;
+    char charValue;
+    short shortValue;
+    int intValue;
+    long longValue;
+    long long longLongValue;
+    float floatValue;
+    double doubleValue;
+    void *arrayValue;
+    char *stringValue;
+    void *ptrValue;
+} ObjcValue;
+
+
 @implementation NitroxBridgeClass
 
 @synthesize app;
@@ -187,7 +203,7 @@
     return [NitroxBool objectForBool:val];
 }
 
-#pragma mark test method
+#pragma mark test methods
 
 - (NSNumber *) add:(NSNumber *)num1 and:(NSNumber *)num2
 {
@@ -197,6 +213,30 @@
 - (NSString *) concat:(NSString *)str1 and:(NSString *)str2
 {
     return [str1 stringByAppendingString:str2];
+}
+
+- (id) reverse:(id)object
+{
+    if ([object isKindOfClass:[NSString class]]) {
+        NSString *src = object;
+        NSMutableString *dest = [[[NSMutableString alloc] init] autorelease];
+        
+        for (int i = [src length]-1; i >= 0; i--) {
+            [dest appendString:[src substringWithRange:NSMakeRange(i, 1)]];
+        }
+        
+        return dest;
+    } else if ([object isKindOfClass:[NSArray class]]) {
+        NSArray *src = object;
+        NSMutableArray *dest = [[[NSMutableArray alloc] init] autorelease];
+        id elt;
+        for (elt in [src reverseObjectEnumerator]) {
+            [dest addObject:elt];
+        }
+        return dest;
+    } else {
+        return object;
+    }
 }
 
 

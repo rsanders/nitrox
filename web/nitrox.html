@@ -303,6 +303,17 @@ function testBridgeClassNum() {
   Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
 }
 
+function testBridgeReverse() {
+  var string = "this is a string";
+  var array = [1,1,2,3,5,8,13,21];
+  
+  var rstring = Nitrox.Bridge.call('BridgeTest/c/reverse:', {parameters: Nitrox.Lang.toJSON([string])}, false);
+  Nitrox.log("reversed string is " + Nitrox.Lang.toJSON(rstring));
+  var rarray = Nitrox.Bridge.call('BridgeTest/c/reverse:', {parameters: Nitrox.Lang.toJSON([array])}, false);    
+  Nitrox.log("reversed string is " + Nitrox.Lang.toJSON(rarray));
+}
+
+
 Nitrox(function() {
   Nitrox.log("user nitroxready handler run");
 });
@@ -317,6 +328,7 @@ jQuery(function() {
 
 <a href="javascript:testBridgeClass();">Test bridge clss</a> <br/>
 <a href="javascript:testBridgeClassNum();">Test bridge class w/nums</a> <br/>
+<a href="javascript:testBridgeReverse();">Test bridge reverse</a> <br/>
 
 <a href="javascript:window.location.href='demos/file.html';">Load File Demo</a> <br/>
 <a href="javascript:window.location.href='demos/filebrowser.html';">Filebrowser Demo</a> <br/>
