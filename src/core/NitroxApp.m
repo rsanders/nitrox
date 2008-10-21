@@ -205,9 +205,21 @@
     [singletons setValue:[[UIApplication sharedApplication] windows]
                   forKey:@"windows"];
 
+    [singletons setValue:[NSUserDefaults standardUserDefaults]
+                  forKey:@"NSUserDefaults"];
+
+    [singletons setValue:[NSBundle mainBundle]
+                  forKey:@"NSBundle"];
+
+    [singletons setValue:[[NSBundle mainBundle] infoDictionary]
+                  forKey:@"InfoDictionary"];
+    
     [singletons setValue:[UIDevice currentDevice]
                   forKey:@"UIDevice"];
 
+    [singletons setValue:[UIAccelerometer sharedAccelerometer]
+                  forKey:@"UIAccelerometer"];
+    
     [singletons setValue:self
                   forKey:@"NitroxApp"];
 

@@ -124,7 +124,7 @@
     NSMutableDictionary *res = [[NSMutableDictionary alloc] init];
     NSString *key;
     for (key in [dict keyEnumerator]) {
-        [res setObject:[NSString stringWithFormat:@"%@", [dict objectForKey:key]] 
+        [res setObject:[dict objectForKey:key] //[NSString stringWithFormat:@"%@", [dict objectForKey:key]] 
                 forKey:[NSString stringWithFormat:@"%@", key]];
 //        [res setObject:[dict objectForKey:key] forKey:[NSString stringWithFormat:@"%@", key]];
     }
@@ -135,7 +135,7 @@
 {
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     
-    return [self translateDictionary:info];
+    return info; // [self translateDictionary:info];
 }
 
 - (id) getInfoValue:(NSDictionary *)args
@@ -151,7 +151,7 @@
 - (id) userDefaults
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [self translateDictionary:[defaults dictionaryRepresentation]];
+    return [defaults dictionaryRepresentation];
 }
 
 - (id) getUserDefaults:(NSDictionary *)args
@@ -218,6 +218,7 @@
                 [self tmpDirectory], @"tmpDirectory",
                 [self homeDirectory], @"homeDirectory",
                 [self infoDictionary], @"infoDictionary",
+                // this is too much stuff, prob also some encoding issues
                 // [self userDefaults], @"userDefaults",
             nil];
     } @catch (NSException *e) {
