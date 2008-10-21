@@ -336,6 +336,9 @@ function testBridgeDeviceDirect() {
 function testBridgeDescribe() {
   var res = Nitrox.Bridge.describe('singleton.NitroxApp', false);    
   Nitrox.log("description of singleton.NitroxApp is " + Nitrox.Lang.toJSON(res));
+  var res = Nitrox.Bridge.describe('class.NitroxAddition', false);    
+  Nitrox.log("description of class.NitroxAddition is " + Nitrox.Lang.toJSON(res));
+
 }
 
 Nitrox(function() {
