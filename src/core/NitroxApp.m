@@ -219,6 +219,9 @@
 
     [singletons setValue:[UIAccelerometer sharedAccelerometer]
                   forKey:@"UIAccelerometer"];
+
+    [singletons setValue:[NSFileManager defaultManager]
+                  forKey:@"NSFileManager"];
     
     [singletons setValue:self
                   forKey:@"NitroxApp"];
