@@ -50,6 +50,8 @@
 		B1A667C20EAD82C10018CF6A /* NitroxSymbolTable.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A667C00EAD82C10018CF6A /* NitroxSymbolTable.m */; };
 		B1A667DE0EAD95800018CF6A /* NitroxClassSymbolTable.h in Headers */ = {isa = PBXBuildFile; fileRef = B1A667DC0EAD95800018CF6A /* NitroxClassSymbolTable.h */; };
 		B1A667DF0EAD95800018CF6A /* NitroxClassSymbolTable.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A667DD0EAD95800018CF6A /* NitroxClassSymbolTable.m */; };
+		B1A6689E0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = B1A6689C0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.h */; };
+		B1A6689F0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A6689D0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.m */; };
 		B1B075640EA7FF44006EB800 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1B075630EA7FF44006EB800 /* Entitlements.plist */; };
 		B1C043150EA65640000858B3 /* NitroxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C043130EA65640000858B3 /* NitroxCore.h */; };
 		B1C043160EA65640000858B3 /* NitroxCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043140EA65640000858B3 /* NitroxCore.m */; };
@@ -227,6 +229,8 @@
 		B1A667C00EAD82C10018CF6A /* NitroxSymbolTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxSymbolTable.m; sourceTree = "<group>"; };
 		B1A667DC0EAD95800018CF6A /* NitroxClassSymbolTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxClassSymbolTable.h; sourceTree = "<group>"; };
 		B1A667DD0EAD95800018CF6A /* NitroxClassSymbolTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxClassSymbolTable.m; sourceTree = "<group>"; };
+		B1A6689C0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxFallbackJSONSerializer.h; sourceTree = "<group>"; };
+		B1A6689D0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxFallbackJSONSerializer.m; sourceTree = "<group>"; };
 		B1B075630EA7FF44006EB800 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		B1C043130EA65640000858B3 /* NitroxCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxCore.h; sourceTree = "<group>"; };
 		B1C043140EA65640000858B3 /* NitroxCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxCore.m; sourceTree = "<group>"; };
@@ -916,6 +920,8 @@
 				B1A666B90EAD2A940018CF6A /* NitroxHTTPBridge.m */,
 				B1A667BF0EAD82C10018CF6A /* NitroxSymbolTable.h */,
 				B1A667C00EAD82C10018CF6A /* NitroxSymbolTable.m */,
+				B1A6689C0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.h */,
+				B1A6689D0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.m */,
 			);
 			path = rpc;
 			sourceTree = "<group>";
@@ -1086,6 +1092,7 @@
 				B1A667520EAD51030018CF6A /* NitroxAddition.h in Headers */,
 				B1A667C10EAD82C10018CF6A /* NitroxSymbolTable.h in Headers */,
 				B1A667DE0EAD95800018CF6A /* NitroxClassSymbolTable.h in Headers */,
+				B1A6689E0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1346,6 +1353,7 @@
 				B1A667530EAD51030018CF6A /* NitroxAddition.m in Sources */,
 				B1A667C20EAD82C10018CF6A /* NitroxSymbolTable.m in Sources */,
 				B1A667DF0EAD95800018CF6A /* NitroxClassSymbolTable.m in Sources */,
+				B1A6689F0EADA1A20018CF6A /* NitroxFallbackJSONSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,7 @@
 
 #import "CJSONSerializer.h"
 #import "CJSONDeserializer.h"
+#import "NitroxFallbackJSONSerializer.h"
 
 
 @implementation NitroxHTTPBridge
@@ -111,6 +112,7 @@
         parameters = [[[NSArray alloc] init] autorelease];
     }
     
+    serializer.fallbackSerializer = [[[NitroxFallbackJSONSerializer alloc] init] autorelease];
     
     NSString *result;
     @try {

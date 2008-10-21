@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol CJSONSerializer
+- (NSString *)serializeObject:(id)inObject;
+@end
+
 @interface CJSONSerializer : NSObject {
+    id<CJSONSerializer>        fallbackSerializer;
 }
+
+@property (retain) id<CJSONSerializer> fallbackSerializer;
 
 + (id)serializer;
 

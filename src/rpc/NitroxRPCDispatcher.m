@@ -9,6 +9,7 @@
 #import "NitroxRPCDispatcher.h"
 #import "Nibware.h";
 #import "CJSONSerializer.h"
+#import "NitroxFallbackJSONSerializer.h"
 
 @implementation NitroxRPCDispatcher
 
@@ -77,6 +78,8 @@
     // NSString *className = [stub className];
     NSString *ic = [components objectAtIndex:0];
 
+    serializer.fallbackSerializer = [[[NitroxFallbackJSONSerializer alloc] init] autorelease];
+    
     NSString *result;
     @try {
         if ([ic isEqualToString:@"c"]) {

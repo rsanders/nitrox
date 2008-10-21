@@ -14,9 +14,17 @@
 
 @implementation CJSONSerializer
 
+@synthesize fallbackSerializer;
+
 + (id)serializer
 {
 return([[[self alloc] init] autorelease]);
+}
+
+- (void) dealloc
+{
+    [fallbackSerializer release];
+    [super dealloc];
 }
 
 - (NSString *)serializeObject:(id)inObject;
@@ -56,6 +64,10 @@ else if ([inObject isKindOfClass:[NSData class]])
 	NSString *theString = [[[NSString alloc] initWithData:inObject encoding:NSUTF8StringEncoding] autorelease];
 	theResult = [self serializeString:theString];
 	}
+else if (fallbackSerializer) 
+    {
+        NSString *theString = [fallbackSerializer serializeObject:inObject];
+    }
 else
 	{
         NSLog(@"cannot serialize data of type '%@'", NSStringFromClass([inObject class]));
