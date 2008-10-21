@@ -460,12 +460,12 @@ Nitrox.Lang = {
         var idx;
         while (!done) {
             idx = fmtstring.indexOf('%', lastFmtIdx);
-            out += fmtstring.substring(lastFmtIdx, idx);
-            lastFmtIdx = idx;
             if (idx == -1 || idx+1 == fmtstring.length) {
                 done = true;
                 continue;
             }
+            out += fmtstring.substring(lastFmtIdx, idx);
+            lastFmtIdx = idx;
             var nextchr = fmtstring.substr(idx+1,1);
             if (nextchr == '%') {
                 lastFmtIdx+=2;

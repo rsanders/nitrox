@@ -8,7 +8,8 @@ NEW APIs:
 * System
   * Free file space / filesystems
   * Free memory space
-  * Screen dimensions, OS version, model #, etc.
+  * System: Screen dimensions, OS version, model #, etc.
+  * Status bar control
   * whether headphones are connected
 
 * Generic network
@@ -51,10 +52,18 @@ NEW UI CLASSES:
 
 CORE CAPABILITIES:
 
-* JavascriptCore-like bridging: ability to put Obj-C object references into JS namespace and
-  send message to them from JS.  (IN PROGRESS)
+* JavascriptCore-like bridging with full instantiation, GC / refcounting, nested
+  method invocation, providing object types as arguments, stacks, etc.  (NOT STARTED)
 * Asynchronous functions in all cases
 * Binary data transfer for functions where it makes sense (e.g. file read/write)
+
+BRIDGE:
+
+* Generalized system of callbacks in the Obj-C layer
+* Ability to instantiate and persistently refer to object instances (across multiple calls)-
+  classic case is "open file" + "read from file" + "read from file" + "seek" + "write to file" + "close"
+* de-serialization of non-fundamental types from JS
+* Handling args and return values of non-NSObject types
 
 ENHANCEMENTS:
 
@@ -66,8 +75,6 @@ ENHANCEMENTS:
   - provide pass-by-ref for binary data
   - file(1) like facility for read()/stat() to tell possible file type
   - readdir() should also return file types
-
-* NSLog-like Nitrox.Log (format strings)
 
 * standard listener / event dispatch library for Nitrox user code
   * should we just use events triggered on document (or another elt)
@@ -130,6 +137,10 @@ DONE:
 * orientation (DONE), location (AUTOMATIC), and accel (PER FREQ): be sure to send at least one update nearly immediately after
   enabling.
 
+* NSLog-like Nitrox.Log (format strings)
+
+* JavascriptCore-like bridging: ability to put Obj-C object classes into JS namespace and
+  send message to them from JS.  (mostly done)
 
 
 NOTES:

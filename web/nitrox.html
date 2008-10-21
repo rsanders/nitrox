@@ -341,6 +341,13 @@ function testBridgeDescribe() {
 
 }
 
+function testShowDefaults() {
+  var res = Nitrox.Bridge.invoke('singleton.NSUserDefaults', 'dictionaryRepresentation', [], false);    
+  Nitrox.log("description of defaults are " + Nitrox.Lang.toJSON(res));
+  Nitrox.log("Phone number is %@", 
+          Nitrox.Bridge.invoke('singleton.NSUserDefaults', 'stringForKey:', ['SBFormattedPhoneNumber'], false));
+}
+
 function testLog() {
   Nitrox.log("starting testLog");
   var res = Nitrox.Lang.format("this is a test of %% percent sign %x hex %d decimal %s string %@ obj %",
@@ -362,6 +369,8 @@ jQuery(function() {
 
 // ]]>
 </script>
+<a href="javascript:testShowDefaults();">Show defaults</a> <br/>
+
 <a href="javascript:testLog();">Test format</a> <br/>
 
 <a href="javascript:testBridgeDescribe();">Test bridge description</a> <br/>

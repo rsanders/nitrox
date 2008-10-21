@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B1A66A230EAE60F10018CF6A</string>
+						<string>B1A66A480EAE9AE30018CF6A</string>
 						<key>history</key>
 						<array>
 							<string>B1A668FC0EADB87D0018CF6A</string>
@@ -389,7 +389,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B1A66A220EAE60F10018CF6A</string>
+										<string>B1A66A470EAE9AE30018CF6A</string>
 										<key>history</key>
 										<array>
 											<string>B1DD3D380E8EC25500952CD6</string>
@@ -859,12 +859,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>B1A66A490EAE9AE30018CF6A</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>B1A668D70EADA3810018CF6A</string>
 		<string>B1A668D80EADA3810018CF6A</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/Shared/vitrue/src/xcode/libs/nitroxkit/lib/libnitrox.xcodeproj</string>
 		<string>B14E69EA0E8D9692000BB59F</string>
+		<string>/Users/Shared/vitrue/src/xcode/libs/nitroxkit/lib/libnitrox.xcodeproj</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
@@ -884,8 +885,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -908,6 +907,8 @@
 							<string>287pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
