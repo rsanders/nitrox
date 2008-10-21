@@ -341,6 +341,16 @@ function testBridgeDescribe() {
 
 }
 
+function testLog() {
+  Nitrox.log("starting testLog");
+  var res = Nitrox.Lang.format("this is a test of %% percent sign %x hex %d decimal %s string %@ obj %",
+                               [255, 255, "somestring"]);
+  Nitrox.log("result is .." + res + "..");
+  Nitrox.log("FROMLOG: this is a test of %% percent sign %x hex %d decimal %s string %@ obj %",
+                               255, 255, "somestring");
+
+}
+
 Nitrox(function() {
   Nitrox.log("user nitroxready handler run");
 });
@@ -352,6 +362,7 @@ jQuery(function() {
 
 // ]]>
 </script>
+<a href="javascript:testLog();">Test format</a> <br/>
 
 <a href="javascript:testBridgeDescribe();">Test bridge description</a> <br/>
 

@@ -84,32 +84,49 @@ if (this.console && console.log) {
     Nitrox.consolelog = console.log;
 }
 
-Nitrox.log = function(msg, skipremote) {
+Nitrox.log = function(msg) {
     if (!Nitrox.Runtime.debug) {
         return;
+    }
+
+    if (arguments.length > 1)
+    {
+        var args = [];
+        for (var i = 1; i < arguments.length; i++)
+        {
+            args.push(arguments[i]);
+        }
+        msg = Nitrox.Lang.format(msg, args);
     }
 
     setTimeout(function() {
                jQuery('#debuglog').html( msgencode(msg) + "<br/>--<br/>" + jQuery('#debuglog').html() );
                }, 1);
 
-    if (Nitrox.Runtime.enabled && false) {
-        setTimeout(function() { 
-                window.location.href="nitroxlog://somehost/path?" + escape(msg);                
-            },
-           20);
-    } else if (Nitrox.Runtime.enabled && window.nadirect.log  && ! window.nadirect.isSimulated) {
+    if (Nitrox.Runtime.enabled && window.nadirect.log  && ! window.nadirect.isSimulated) {
         window.nadirect.log(msg);
-    } else if (Nitrox.Runtime.enabled && !skipremote) {
-        // TODO: this will be super-slow if sync, and out-of-order if 
-        // async; need to create an outbound ajax queue
-        jQuery.ajax({url: "http://127.0.0.1:" + Nitrox.Runtime.port + "/log", 
-                    data: msg, async: false, type: 'post'});
-        
-    } else if (Nitrox.consolelog) {
+    }
+    else if (Nitrox.Runtime.enabled) {
+        setTimeout(function() { 
+                Nitrox.Runtime.iframe.src="nitroxlog://somehost/path?" + escape(msg);                
+            },
+           1);
+    }
+    // else if (Nitrox.Runtime.enabled && !skipremote) {
+    //     // TODO: this will be super-slow if sync, and out-of-order if 
+    //     // async; need to create an outbound ajax queue
+    //     jQuery.ajax({url: "http://127.0.0.1:" + Nitrox.Runtime.port + "/log", 
+    //                 data: msg, async: false, type: 'post'});
+    // }
+    //     
+    else if (Nitrox.consolelog) {
         Nitrox.consolelog(msg);
     }
 };
+
+function NSLog() {
+    Nitrox.log.apply(Nitrox.log, arguments);
+}
 
 console.log = Nitrox.log;
 
@@ -434,6 +451,33 @@ Nitrox.Lang = {
             Nitrox.Lang.require("lib/jquery/jquery.json.js");
         }
         return jQuery.toJSON(obj);
+    },
+    
+    format: function(fmtstring, args) {
+        var out = "";
+        var done = false;
+        var lastFmtIdx = 0;
+        var idx;
+        while (!done) {
+            idx = fmtstring.indexOf('%', lastFmtIdx);
+            out += fmtstring.substring(lastFmtIdx, idx);
+            lastFmtIdx = idx;
+            if (idx == -1 || idx+1 == fmtstring.length) {
+                done = true;
+                continue;
+            }
+            var nextchr = fmtstring.substr(idx+1,1);
+            if (nextchr == '%') {
+                lastFmtIdx+=2;
+                out += '%';
+                continue;
+            }
+            // TODO: just allow single-char specifiers
+            lastFmtIdx += 2;
+            out += args.shift();
+        }
+        out += fmtstring.substr(lastFmtIdx);
+        return out;
     },
     
     version: '0.1'
