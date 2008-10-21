@@ -143,10 +143,6 @@ Nitrox.Bridge = {
             var port = Nitrox.Runtime.port;
             // clone args
             if (! ajaxOpts) { ajaxOpts = {}; }
-            // args = jQuery.extend(true, args, 
-            //             {'object': Nitrox.Lang.toJSON(iobject), 'method': imethod, 'parameters': Nitrox.Lang.toJSON(args),
-            //              '__id': id, '__token': Nitrox.Runtime.token}
-            //      );
             var data = {'object': Nitrox.Lang.toJSON(iobject), 'method': imethod, 'parameters': Nitrox.Lang.toJSON(args),
                           '__id': id, '__token': Nitrox.Runtime.token};
             var fullstring = Nitrox.Runtime.appURL() + "/invoke";
