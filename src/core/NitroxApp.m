@@ -24,6 +24,7 @@
 
 @interface NitroxApp (Private) 
 - (id<NitroxHTTPServerDelegate>)createServerDelegate;
+- (NitroxSymbolTable*)createSymbolTable;
 @end
 
 @implementation NitroxApp
@@ -206,6 +207,12 @@
 
     [singletons setValue:[UIDevice currentDevice]
                   forKey:@"UIDevice"];
+
+    [singletons setValue:self
+                  forKey:@"NitroxApp"];
+
+    [singletons setValue:core
+                  forKey:@"NitroxCore"];
     
     [table setValue:singletons forKey:@"singleton"];
     

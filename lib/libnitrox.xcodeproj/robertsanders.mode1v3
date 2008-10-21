@@ -288,8 +288,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>47</integer>
-									<integer>43</integer>
+									<integer>61</integer>
+									<integer>59</integer>
 									<integer>42</integer>
 									<integer>0</integer>
 								</array>
@@ -332,7 +332,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NitroxApp.m</string>
+								<string>NitroxBridgeClass.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -340,11 +340,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NitroxApp.m</string>
+										<string>NitroxBridgeClass.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B1A668220EAD98450018CF6A</string>
+										<string>B1A668500EAD9EE10018CF6A</string>
 										<key>history</key>
 										<array>
 											<string>B1DD3D380E8EC25500952CD6</string>
@@ -426,15 +426,15 @@
 											<string>B1A667E70EAD97950018CF6A</string>
 											<string>B1A667E80EAD97950018CF6A</string>
 											<string>B1A667E90EAD97950018CF6A</string>
-											<string>B1A667EA0EAD97950018CF6A</string>
 											<string>B1A667EB0EAD97950018CF6A</string>
 											<string>B1A667EC0EAD97950018CF6A</string>
 											<string>B1A667EF0EAD97950018CF6A</string>
 											<string>B1A6680F0EAD97A50018CF6A</string>
 											<string>B1A668150EAD97E60018CF6A</string>
 											<string>B1A6681D0EAD98450018CF6A</string>
-											<string>B1A6681E0EAD98450018CF6A</string>
-											<string>B1A667F00EAD97950018CF6A</string>
+											<string>B1A668360EAD9D410018CF6A</string>
+											<string>B1A668460EAD9E590018CF6A</string>
+											<string>B1A668470EAD9E590018CF6A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -609,6 +609,9 @@
 											<string>B1A6681F0EAD98450018CF6A</string>
 											<string>B1A668200EAD98450018CF6A</string>
 											<string>B1A668210EAD98450018CF6A</string>
+											<string>B1A6682E0EAD9CA40018CF6A</string>
+											<string>B1A668370EAD9D410018CF6A</string>
+											<string>B1A668480EAD9E590018CF6A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -802,7 +805,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B1A668230EAD98450018CF6A</string>
 		<string>B1A666AE0EACE2C40018CF6A</string>
 		<string>B1A666B00EACE2C40018CF6A</string>
 		<string>1CD10A99069EF8BA00B06720</string>

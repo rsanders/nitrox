@@ -52,7 +52,7 @@ NEW UI CLASSES:
 CORE CAPABILITIES:
 
 * JavascriptCore-like bridging: ability to put Obj-C object references into JS namespace and
-  send message to them from JS.
+  send message to them from JS.  (IN PROGRESS)
 * Asynchronous functions in all cases
 * Binary data transfer for functions where it makes sense (e.g. file read/write)
 

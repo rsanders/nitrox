@@ -201,10 +201,17 @@ typedef union {
     
     [invocation invoke];
     
-    [invocation getReturnValue:&res];
+    // no return value
+    if (!strcmp([signature methodReturnType], "v")) {
+        NSLog(@"void function");
+        return nil;
+    }
+    
+    ObjcValue returnValue;
+    [invocation getReturnValue:&returnValue];
     NSLog(@"invocation result is %@", res);
     
-    return res;
+    return returnValue.objectValue;
 }
 
 - (id) invokeMethod:(NSString *)method onClass:(NSString*)className parameters:(NSArray *)parameters 

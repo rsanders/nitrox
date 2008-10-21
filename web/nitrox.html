@@ -303,6 +303,21 @@ function testBridgeClassNum() {
   Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
 }
 
+function testBridgeDevice() {
+  var res = Nitrox.Bridge.invoke('singleton.UIDevice', 'uniqueIdentifier', [], false);
+  Nitrox.log("singleton result is " + Nitrox.Lang.toJSON(res));
+  var res = Nitrox.Bridge.invoke('class.UIDevice.currentDevice', 'systemName', [], false);
+  Nitrox.log("class-currentdevice-systemname result is " + Nitrox.Lang.toJSON(res));
+}
+
+function testBridgeProperty() {
+  var res = Nitrox.Bridge.invoke('singleton.NitroxApp', 'localRoot', [], false);    
+  Nitrox.log("homeURL is " + Nitrox.Lang.toJSON(res));
+  var res = Nitrox.Bridge.invoke('singleton.NitroxApp', 'setLocalRoot:', ["http://www.news.com/"], false);    
+  var res = Nitrox.Bridge.invoke('singleton.NitroxApp', 'localRoot', [], false);    
+  Nitrox.log("new homeURL is " + Nitrox.Lang.toJSON(res));
+}
+
 function testBridgeReverse() {
   var string = "this is a string";
   var array = [1,1,2,3,5,8,13,21];
@@ -326,7 +341,9 @@ jQuery(function() {
 // ]]>
 </script>
 
-<a href="javascript:testBridgeClass();">Test bridge clss</a> <br/>
+<a href="javascript:testBridgeProperty();">Test bridge property</a> <br/>
+<a href="javascript:testBridgeDevice();">Test bridge device</a> <br/>
+<a href="javascript:testBridgeClass();">Test bridge class</a> <br/>
 <a href="javascript:testBridgeClassNum();">Test bridge class w/nums</a> <br/>
 <a href="javascript:testBridgeReverse();">Test bridge reverse</a> <br/>
 
