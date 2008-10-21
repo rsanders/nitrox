@@ -291,7 +291,7 @@ function testBridgeClass() {
   var str1 = "first string";
   var str2 = "...secondstring";
   
-  var res = Nitrox.Bridge.call('NitroxAddition', 'concat:and:', [str1, str2], false);
+  var res = Nitrox.Bridge.call('class.NitroxAddition', 'concat:and:', [str1, str2], false);
   Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
 }
 
@@ -299,7 +299,7 @@ function testBridgeClassNum() {
   var num1 = 10;
   var num2 = 20.0;
   
-  var res = Nitrox.Bridge.invoke('NitroxAddition', 'add:and:', [num1, num2], false);
+  var res = Nitrox.Bridge.invoke('class.NitroxAddition', 'add:and:', [num1, num2], false);
   Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
 }
 
@@ -307,9 +307,9 @@ function testBridgeReverse() {
   var string = "this is a string";
   var array = [1,1,2,3,5,8,13,21];
   
-  var rstring = Nitrox.Bridge.invoke('NitroxAddition', 'reverse:', [string], false);
+  var rstring = Nitrox.Bridge.invoke('class.NitroxAddition', 'reverse:', [string], false);
   Nitrox.log("reversed string is " + Nitrox.Lang.toJSON(rstring));
-  var rarray = Nitrox.Bridge.invoke('NitroxAddition', 'reverse', [array], false);    
+  var rarray = Nitrox.Bridge.invoke('class.NitroxAddition', 'reverse', [array], false);    
   Nitrox.log("reversed string is " + Nitrox.Lang.toJSON(rarray));
 }
 

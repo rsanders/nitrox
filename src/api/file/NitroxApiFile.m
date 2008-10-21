@@ -412,8 +412,11 @@
     NSString *key;
     for (key in [files objectEnumerator]) {
         NSString *fullPath = [NSString stringWithFormat:@"%@/%@", path, key];
-        [dict setObject:[fileManager fileAttributesAtPath:fullPath traverseLink:NO]
-                 forKey:key];
+        id attrs = [fileManager fileAttributesAtPath:fullPath traverseLink:NO];
+        if (!attrs) {
+            attrs = [NSNull null];
+        }
+        [dict setObject:attrs forKey:key];
     }
     
     return dict;

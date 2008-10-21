@@ -19,6 +19,9 @@
 #import "NitroxHTTPBridge.h"
 #import "Nibware.h"
 
+#import "NitroxSymbolTable.h"
+#import "NitroxClassSymbolTable.h"
+
 @interface NitroxApp (Private) 
 - (id<NitroxHTTPServerDelegate>)createServerDelegate;
 @end
@@ -28,20 +31,22 @@
 @synthesize appID, localRoot, homeURL;
 @synthesize delegate, webViewController;
 @synthesize currentPage, pages, parentView;
-@synthesize bridge;
+@synthesize bridge, symbolTable;
 
 // TODO: this will leak like a sieve.  clean the allocation up here
 - (NitroxApp *) initWithCore:(NitroxCore*)newcore {
     [super init];
     
     core = newcore;
-    bridge = [[NitroxBridgeClass alloc] init];
+    bridge = [[NitroxBridgeClass alloc] initWithApp:self];
+    symbolTable = [self createSymbolTable];
 
     self.webViewController = [[NitroxWebViewController alloc] 
                                     initWithNibName:@"NitroxWebView" bundle:[NSBundle mainBundle]];
     
     [self.webViewController setApp:self];
-
+   
+    // has to come after core, bridge, symbolTable,and webViewcontroller are set...
     appServerDelegate = [self createServerDelegate];
     
     return self;
@@ -183,6 +188,28 @@
 //      autorelease]];
     
     return pathDelegate;
+}
+
+- (NitroxSymbolTable*) createSymbolTable
+{
+    NitroxSymbolTable*  table = [[NitroxSymbolTable alloc] init];
+    
+    [table setValue:[[NitroxClassSymbolTable alloc] init]
+             forKey:@"class"];
+    
+    NitroxSymbolTable* singletons = [[NitroxSymbolTable alloc] init];
+    [singletons setValue:[UIApplication sharedApplication]
+                  forKey:@"UIApplication"];
+
+    [singletons setValue:[[UIApplication sharedApplication] windows]
+                  forKey:@"windows"];
+
+    [singletons setValue:[UIDevice currentDevice]
+                  forKey:@"UIDevice"];
+    
+    [table setValue:singletons forKey:@"singleton"];
+    
+    return table;
 }
 
 @end

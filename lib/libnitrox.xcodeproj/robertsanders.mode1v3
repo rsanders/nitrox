@@ -276,15 +276,6 @@
 								<string>B1C8AE910E9EE112003FE061</string>
 								<string>B1C8ABA30E9EE0FD003FE061</string>
 								<string>B1C043120EA655F3000858B3</string>
-								<string>B1C8ABA40E9EE0FD003FE061</string>
-								<string>B107E7EA0EA94A7900CEF255</string>
-								<string>B1C8ABA80E9EE0FD003FE061</string>
-								<string>B1C8ABAB0E9EE0FD003FE061</string>
-								<string>B1C8ABAE0E9EE0FD003FE061</string>
-								<string>B1C8ABB10E9EE0FD003FE061</string>
-								<string>B1C8ABB40E9EE0FD003FE061</string>
-								<string>B1C8ABB80E9EE0FD003FE061</string>
-								<string>B1C8ABC00E9EE0FD003FE061</string>
 								<string>B1C8ACAB0E9EE0FE003FE061</string>
 								<string>B1C8ACAE0E9EE0FE003FE061</string>
 								<string>B1C8ACB80E9EE0FE003FE061</string>
@@ -297,15 +288,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>53</integer>
-									<integer>51</integer>
-									<integer>50</integer>
+									<integer>47</integer>
+									<integer>43</integer>
 									<integer>42</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 642}, {296, 760}}</string>
+							<string>{{0, 708}, {296, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -324,7 +314,7 @@
 							<real>296</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>-38 59 1572 819 0 0 1440 878 </string>
+						<string>0 59 1440 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -342,7 +332,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NitroxApiFile.m</string>
+								<string>NitroxApp.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -350,11 +340,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NitroxApiFile.m</string>
+										<string>NitroxApp.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B1A667C80EAD856A0018CF6A</string>
+										<string>B1A668220EAD98450018CF6A</string>
 										<key>history</key>
 										<array>
 											<string>B1DD3D380E8EC25500952CD6</string>
@@ -390,7 +380,6 @@
 											<string>B11856BD0EA82A41008581D0</string>
 											<string>B107E5DF0EA8F8FC00CEF255</string>
 											<string>B107E5E00EA8F8FC00CEF255</string>
-											<string>B107E5E30EA8F8FC00CEF255</string>
 											<string>B107E60B0EA8FA4400CEF255</string>
 											<string>B107E66F0EA9161C00CEF255</string>
 											<string>B107E6860EA9164700CEF255</string>
@@ -429,18 +418,23 @@
 											<string>B107EAE10EAA344F00CEF255</string>
 											<string>B107EB090EAA3D3500CEF255</string>
 											<string>B107EB2C0EAA96D800CEF255</string>
-											<string>B1A666BE0EAD2E750018CF6A</string>
 											<string>B1A666EE0EAD32810018CF6A</string>
 											<string>B1A667400EAD4B270018CF6A</string>
-											<string>B1A667540EAD52780018CF6A</string>
 											<string>B1A6677F0EAD55AD0018CF6A</string>
-											<string>B1A667960EAD56410018CF6A</string>
-											<string>B1A667970EAD56410018CF6A</string>
-											<string>B1A667A90EAD56A00018CF6A</string>
-											<string>B1A667AA0EAD56A00018CF6A</string>
-											<string>B1A667C30EAD856A0018CF6A</string>
-											<string>B1A667C40EAD856A0018CF6A</string>
-											<string>B1A667C50EAD856A0018CF6A</string>
+											<string>B1A667CD0EAD87650018CF6A</string>
+											<string>B1A667E60EAD97950018CF6A</string>
+											<string>B1A667E70EAD97950018CF6A</string>
+											<string>B1A667E80EAD97950018CF6A</string>
+											<string>B1A667E90EAD97950018CF6A</string>
+											<string>B1A667EA0EAD97950018CF6A</string>
+											<string>B1A667EB0EAD97950018CF6A</string>
+											<string>B1A667EC0EAD97950018CF6A</string>
+											<string>B1A667EF0EAD97950018CF6A</string>
+											<string>B1A6680F0EAD97A50018CF6A</string>
+											<string>B1A668150EAD97E60018CF6A</string>
+											<string>B1A6681D0EAD98450018CF6A</string>
+											<string>B1A6681E0EAD98450018CF6A</string>
+											<string>B1A667F00EAD97950018CF6A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -585,6 +579,36 @@
 											<string>B1A667AE0EAD56A00018CF6A</string>
 											<string>B1A667C60EAD856A0018CF6A</string>
 											<string>B1A667C70EAD856A0018CF6A</string>
+											<string>B1A667D00EAD87650018CF6A</string>
+											<string>B1A667D10EAD87650018CF6A</string>
+											<string>B1A667F20EAD97950018CF6A</string>
+											<string>B1A667F30EAD97950018CF6A</string>
+											<string>B1A667F40EAD97950018CF6A</string>
+											<string>B1A667F50EAD97950018CF6A</string>
+											<string>B1A667F60EAD97950018CF6A</string>
+											<string>B1A667F70EAD97950018CF6A</string>
+											<string>B1A667F80EAD97950018CF6A</string>
+											<string>B1A667F90EAD97950018CF6A</string>
+											<string>B1A667FA0EAD97950018CF6A</string>
+											<string>B1A667FB0EAD97950018CF6A</string>
+											<string>B1A667FC0EAD97950018CF6A</string>
+											<string>B1A667FD0EAD97950018CF6A</string>
+											<string>B1A667FE0EAD97950018CF6A</string>
+											<string>B1A667FF0EAD97950018CF6A</string>
+											<string>B1A668000EAD97950018CF6A</string>
+											<string>B1A668010EAD97950018CF6A</string>
+											<string>B1A668020EAD97950018CF6A</string>
+											<string>B1A668030EAD97950018CF6A</string>
+											<string>B1A668040EAD97950018CF6A</string>
+											<string>B1A668050EAD97950018CF6A</string>
+											<string>B1A668060EAD97950018CF6A</string>
+											<string>B1A668070EAD97950018CF6A</string>
+											<string>B1A668110EAD97A50018CF6A</string>
+											<string>B1A668120EAD97A50018CF6A</string>
+											<string>B1A668160EAD97E60018CF6A</string>
+											<string>B1A6681F0EAD98450018CF6A</string>
+											<string>B1A668200EAD98450018CF6A</string>
+											<string>B1A668210EAD98450018CF6A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -596,14 +620,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1254, 763}}</string>
+								<string>{{0, 0}, {1122, 738}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-38 59 1572 819 0 0 1440 878 </string>
+								<string>0 59 1440 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>763pt</string>
+							<string>738pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -616,18 +640,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 768}, {1254, 10}}</string>
+								<string>{{0, 743}, {1122, 35}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-38 59 1572 819 0 0 1440 878 </string>
+								<string>0 59 1440 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>10pt</string>
+							<string>35pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1254pt</string>
+					<string>1122pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -778,17 +802,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B1A667C90EAD856A0018CF6A</string>
-		<string>B1A667BD0EAD59650018CF6A</string>
+		<string>B1A668230EAD98450018CF6A</string>
 		<string>B1A666AE0EACE2C40018CF6A</string>
 		<string>B1A666B00EACE2C40018CF6A</string>
-		<string>B14E69EA0E8D9692000BB59F</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>B14E69EA0E8D9692000BB59F</string>
 		<string>/Users/Shared/vitrue/src/xcode/libs/nitroxkit/lib/libnitrox.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
-	<string>-38 59 1572 819 0 0 1440 878 </string>
+	<string>0 59 1440 819 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -811,7 +834,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NitroxBridgeClass.m</string>
+								<string>NitroxClassSymbolTable.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -820,7 +843,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1089, 287}}</string>
 								<key>RubberWindowFrame</key>
-								<string>343 128 1089 789 0 0 1440 878 </string>
+								<string>343 89 1089 789 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -844,7 +867,7 @@
 								<key>Frame</key>
 								<string>{{0, 292}, {1089, 456}}</string>
 								<key>RubberWindowFrame</key>
-								<string>343 128 1089 789 0 0 1440 878 </string>
+								<string>343 89 1089 789 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -874,11 +897,11 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.buildV3</string>
 			<key>WindowString</key>
-			<string>343 128 1089 789 0 0 1440 878 </string>
+			<string>343 89 1089 789 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>B14E69EA0E8D9692000BB59F</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -1128,7 +1151,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1024, 481}}</string>
 								<key>RubberWindowFrame</key>
-								<string>117 213 1024 522 0 0 1440 878 </string>
+								<string>19 307 1024 522 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1157,7 +1180,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>117 213 1024 522 0 0 1440 878 </string>
+			<string>19 307 1024 522 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

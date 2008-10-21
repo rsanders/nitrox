@@ -15,6 +15,7 @@
 @class NitroxAppPage;
 @class NitroxCore;
 @class NitroxBridgeClass;
+@class NitroxSymbolTable;
 @protocol NitroxHTTPServerDelegate;
 
 @interface NitroxApp : NSObject {
@@ -43,7 +44,7 @@
     NitroxHTTPServerPathDelegate* rpcDelegate;
     
     NitroxBridgeClass*            bridge;
-
+    NitroxSymbolTable*            symbolTable;
 }
 
 @property (retain) NSString*                     appID;
@@ -55,6 +56,7 @@
 @property (retain) NitroxAppPage*                currentPage;
 @property (retain) NSArray*                      pages;
 @property (retain) NitroxBridgeClass*            bridge;
+@property (retain) NitroxSymbolTable*            symbolTable;
 
 @property (readonly) id<NitroxHTTPServerDelegate>     appServerDelegate;
 

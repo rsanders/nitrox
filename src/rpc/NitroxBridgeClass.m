@@ -219,14 +219,22 @@ typedef union {
     NSLog(@"invoking %@ on target %@ with parameters %@",
           method, object, parameters);
     
+    id target = nil;
+
     // simple string is a class reference
     if ([object isKindOfClass:[NSString class]]) {
-        return [self invokeMethod:method onClass:(NSString *)object parameters:parameters];
-    }
-    else {
+        target = [[self.app symbolTable] valueForKeyPath:object];
+    } else {
         NSLog(@"unknown object reference type: %@", object);
         return nil;
     }
+
+    if (!target) {
+        NSLog(@"cannot resolve object reference: %@", object);
+        return nil;
+    }
+    
+    return [self invokeMethod:method withTarget:target parameters:parameters];
 }
 
 #pragma mark Callback methods

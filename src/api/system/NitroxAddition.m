@@ -8,7 +8,7 @@
 
 #import "NitroxAddition.h"
 
-@interface NSObject (Reversible)
+@protocol NitroxReversible
 - (id) reverse;
 @end
 
@@ -30,7 +30,7 @@
 + (id) reverse:(id)object
 {
     if ([object respondsToSelector:@selector(reverse)]) {
-        return [object reverse];
+        return [(id<NitroxReversible>)object reverse];
     }
     else if ([object isKindOfClass:[NSString class]]) {
         NSString *src = object;
