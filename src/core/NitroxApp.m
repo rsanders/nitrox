@@ -222,6 +222,9 @@
 
     [singletons setValue:[NSFileManager defaultManager]
                   forKey:@"NSFileManager"];
+
+    [singletons setValue:[UIScreen mainScreen]
+                  forKey:@"UIScreen"];
     
     [singletons setValue:self
                   forKey:@"NitroxApp"];
