@@ -145,7 +145,7 @@ Nitrox.Bridge = {
             if (! ajaxOpts) { ajaxOpts = {}; }
             var data = {'object': Nitrox.Lang.toJSON(iobject), 'method': imethod, 'parameters': Nitrox.Lang.toJSON(args),
                           '__id': id, '__token': Nitrox.Runtime.token};
-            var fullstring = Nitrox.Runtime.appURL() + "/invoke";
+            var fullstring = Nitrox.Runtime.appURL() + "/bridge/invoke";
             var req;
             try {
                 var ajaxObject = {url: fullstring, data: data, async: async, type: 'get'};
@@ -183,6 +183,63 @@ Nitrox.Bridge = {
             return res;
     },
 
+    'describe': function() {
+        try {
+            var res = this.realdescribe.apply(this, arguments);
+            return res;
+        } catch (e) {
+            window.nadirect.log('NBd: caught exception ' + e);
+            return null;
+        }
+    },
+
+    
+    'realdescribe': function(iobject, async, ajaxOpts) {
+            var id = "id" + this.idcounter++;
+            if (!async) async = false;
+            window.nadirect.log('NBd: starting bridge describe for id ' + id);
+            var port = Nitrox.Runtime.port;
+            // clone args
+            if (! ajaxOpts) { ajaxOpts = {}; }
+            var data = {'object': Nitrox.Lang.toJSON(iobject),
+                          '__id': id, '__token': Nitrox.Runtime.token};
+            var fullstring = Nitrox.Runtime.appURL() + "/bridge/describe";
+            var req;
+            try {
+                var ajaxObject = {url: fullstring, data: data, async: async, type: 'get'};
+                ajaxObject = jQuery.extend(ajaxObject, ajaxOpts);
+                window.nadirect.log("NBd: ajax object: " + Nitrox.Lang.toJSON(ajaxObject));
+                req = jQuery.ajax(ajaxObject);
+                window.nadirect.log("NBd: ajax returned without exception");
+                if (req.readyState == 4) {
+                    window.nadirect.log("NBd: ajax status is " + req.status);                    
+                }
+            } catch (e) {
+                window.nadirect.log("NBd: caught error in Nitrox.Bridge.invoke: " + e);
+                req = {error: e, status:401, responseText: "Error: " + e};
+            }
+            var res = null;
+            if (async) {
+                window.nadirect.log("NBd: returning from async " + fun + " , id=" + id);
+                return null;
+            }
+            if (! req) {
+                window.nadirect.log("NBd: No request object returned");
+                req = {error: "unknown", status:500, responseText:"No req object returned"};
+            }
+            if (req && req.status == 200 && req.readyState == 4) {
+                window.nadirect.log('NBd: plain response text is: ' + req.responseText);
+                res = jQuery.evalJSON(req.responseText);
+                window.nadirect.log('NBd: decoded response text for ajax is: ' + res);
+            } else {
+                window.nadirect.log('NBd: not ready: state = ' + (req ? req.readyState : "no req"));
+            }
+            /*
+             * expected to be like
+             *   { result: resultobj, state: stateobj, exception: exceptionobj (or null) }
+             */
+            return res;
+    },
 
     'call': function(fun, args, async, ajaxOpts) {
             var id = "id" + this.idcounter++;

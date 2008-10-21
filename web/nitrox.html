@@ -333,6 +333,11 @@ function testBridgeDeviceDirect() {
   Nitrox.log("singleton result is " + Nitrox.Lang.toJSON(res));
 }
 
+function testBridgeDescribe() {
+  var res = Nitrox.Bridge.describe('singleton.NitroxApp', false);    
+  Nitrox.log("description of singleton.NitroxApp is " + Nitrox.Lang.toJSON(res));
+}
+
 Nitrox(function() {
   Nitrox.log("user nitroxready handler run");
 });
@@ -344,6 +349,9 @@ jQuery(function() {
 
 // ]]>
 </script>
+
+<a href="javascript:testBridgeDescribe();">Test bridge description</a> <br/>
+
 <a href="javascript:testBridgeDeviceDirect();">Test bridge device direct</a> <br/>
 
 

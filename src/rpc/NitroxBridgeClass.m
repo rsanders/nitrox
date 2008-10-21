@@ -4,6 +4,9 @@
 //  Created by Robert Sanders
 //
 
+#import <Foundation/NSInvocation.h>
+#import <Foundation/NSMethodSignature.h>
+
 #import "NitroxApp.h"
 
 #import "Nibware.h"
@@ -15,8 +18,10 @@
 #import "CJSONSerializer.h"
 #import "CJSONDeserializer.h"
 
-#import <Foundation/NSInvocation.h>
-#import <Foundation/NSMethodSignature.h>
+// #import "NSObject+JSBridge.h"
+
+#import "GTMObjC2Runtime.h"
+
 
 typedef union {
     id objectValue;
@@ -79,6 +84,20 @@ typedef union {
 }
 
 #pragma mark Nitrox Bridge reflection methods
+
+// TODO: support more reference types
+- (id) resolveObjectRef:(id)ref
+{
+    id target = nil;
+    if ([ref isKindOfClass:[NSString class]]) {
+        target = [[self.app symbolTable] valueForKeyPath:ref];
+    } else {
+        NSLog(@"cannot resolve object ref, using literally: %@", target);
+        target = ref;
+    }
+    
+    return target;
+}
 
 // only works for all string args
 // see http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/Articles/chapter_13_section_9.html#//apple_ref/doc/uid/TP30001163-CH9-TPXREF165
@@ -214,27 +233,12 @@ typedef union {
     return returnValue.objectValue;
 }
 
-- (id) invokeMethod:(NSString *)method onClass:(NSString*)className parameters:(NSArray *)parameters 
-{
-    Class clazz = NSClassFromString(className);
-    
-    return [self invokeMethod:method withTarget:clazz parameters:parameters];
-}
-
 - (id)invoke:(NSString *)method withTarget:(id)object parameters:(NSArray*)parameters
 {
     NSLog(@"invoking %@ on target %@ with parameters %@",
           method, object, parameters);
     
-    id target = nil;
-
-    // simple string is a class reference
-    if ([object isKindOfClass:[NSString class]]) {
-        target = [[self.app symbolTable] valueForKeyPath:object];
-    } else {
-        NSLog(@"unknown object reference type: %@", object);
-        return nil;
-    }
+    id target = [self resolveObjectRef:object];
 
     if (!target) {
         NSLog(@"cannot resolve object reference: %@", object);
@@ -242,6 +246,92 @@ typedef union {
     }
     
     return [self invokeMethod:method withTarget:target parameters:parameters];
+}
+
+#pragma mark Introspection
+
+- (NSArray*) methodNamesForClass:(Class)clazz {
+    unsigned int count;
+    Method * methodList = class_copyMethodList(clazz, &count);    
+    NSMutableArray *names = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < count; i++) {
+        Method method = methodList[i];
+        [names addObject:[NSString stringWithCString:sel_getName(method_getName(method))]];
+    }
+    
+    free(methodList);
+    
+    return [names autorelease];
+}
+
+- (NSArray*) instanceMethodNames:(id)target {
+    NSArray *names = [self methodNamesForClass:[target class]];
+    
+    if ([target respondsToSelector:@selector(webScriptNameForSelector:)]) {
+        NSMutableArray *xlated = [[NSMutableArray alloc] initWithCapacity:[names count]];
+        
+        NSString* name;
+        for (name in names) {
+            NSString* xname = [target webScriptNameForSelector:NSSelectorFromString(name)];
+            [xlated addObject:(xname ? xname : name)];
+        }
+        
+        names = [xlated autorelease];
+    }
+    
+    return names;
+}
+
+- (NSArray*) classMethodNames:(id)target {
+    return [self methodNamesForClass:object_getClass([target class])];
+}
+
+- (NSArray*) propertyNamesForClass:(Class)cls {
+    unsigned int outCount;
+    objc_property_t *plist =  class_copyPropertyList(cls, &outCount);
+    NSMutableArray *names = [[NSMutableArray alloc] initWithCapacity:outCount];
+    for (int i = 0; i < outCount; i++)
+    {
+        [names addObject:[NSString stringWithCString:property_getName(plist[i]) encoding:NSUTF8StringEncoding]];
+    }
+    free(plist);
+    return [names autorelease];
+}
+
+- (NSArray*) propertyNames:(id) target {
+    NSMutableArray* allNames = [[NSMutableArray alloc] init];
+    
+    Class cls = [target class];
+    while (cls != Nil ) 
+    {
+        [allNames addObjectsFromArray:[self propertyNamesForClass:cls]];
+        cls = class_getSuperclass(cls);
+    }
+         
+    return [allNames autorelease];
+}         
+
+- (id) describeObject:(id)objectRef
+{
+    id target = [self resolveObjectRef:objectRef];
+
+    if (!target) {
+        return @"null";
+    }
+    
+    NSMutableDictionary *dict = 
+        [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+            NSStringFromClass([target class]), @"__type",
+            [NSString stringWithFormat:@"0x%x", target], @"__ptr", 
+            [self instanceMethodNames:target], @"instanceMethods", 
+         // TODO: this doesn't seem to work at all, or at least not recursively
+            [self classMethodNames:target], @"classMethods", 
+            [self propertyNames:target], @"properties",
+            [NSNumber numberWithInteger:[target retainCount]], @"retaincount",
+         nil];
+
+    return [dict autorelease];
 }
 
 #pragma mark Callback methods

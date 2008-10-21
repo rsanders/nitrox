@@ -83,11 +83,9 @@
     
     CJSONDeserializer *deserializer = [[[CJSONDeserializer alloc] init] autorelease];        
     CJSONSerializer *serializer = [[[CJSONSerializer alloc] init] autorelease];    
-    
+    serializer.fallbackSerializer = [[[NitroxFallbackJSONSerializer alloc] init] autorelease];
+
     NSString* sobjkey = [args objectForKey:@"object"];         // JSON string or object
-    NSString* method = [args objectForKey:@"method"];         // plain string
-    NSString* sparameters = [args objectForKey:@"parameters"];  // JSON array
-    
     NSError *error = nil;
     id object = [deserializer deserialize:[sobjkey dataUsingEncoding:NSUTF8StringEncoding]
                                     error:&error];
@@ -96,34 +94,44 @@
                                        reason:@"Cannot decode object ref"
                                      userInfo:nil];
     }
-    
-    
-    NSArray *parameters;
-    
-    if (sparameters && ! [sparameters isEqualToString:@""]) {
-        parameters = [deserializer deserialize:[sparameters dataUsingEncoding:NSUTF8StringEncoding]
-                                         error:&error];
-        if (!parameters || ![parameters isKindOfClass:[NSArray class]]) {
-            @throw [NSException exceptionWithName:@"NitroxEncodingException"
-                                           reason:@"Cannot decode parameters array"
-                                         userInfo:nil];
+
+    id result;
+    if ([path isEqualToString:@"invoke"]) {
+        NSString* method = [args objectForKey:@"method"];         // plain string
+        NSString* sparameters = [args objectForKey:@"parameters"];  // JSON array
+
+        NSArray *parameters;
+        
+        if (sparameters && ! [sparameters isEqualToString:@""]) {
+            parameters = [deserializer deserialize:[sparameters dataUsingEncoding:NSUTF8StringEncoding]
+                                             error:&error];
+            if (!parameters || ![parameters isKindOfClass:[NSArray class]]) {
+                @throw [NSException exceptionWithName:@"NitroxEncodingException"
+                                               reason:@"Cannot decode parameters array"
+                                             userInfo:nil];
+            }
+        } else {
+            parameters = [[[NSArray alloc] init] autorelease];
         }
-    } else {
-        parameters = [[[NSArray alloc] init] autorelease];
-    }
-    
-    serializer.fallbackSerializer = [[[NitroxFallbackJSONSerializer alloc] init] autorelease];
-    
-    NSString *result;
-    @try {
-        result = [bridge invoke:method withTarget:object parameters:parameters];
+        
+        @try {
+            result = [bridge invoke:method withTarget:object parameters:parameters];
+        } 
+        @catch (NSException *ne) { 
+            result = [NSString stringWithFormat:@"Caught exception: %@", ne];
+            NSLog(@"raised exception invoking method in NitroxBridgeClass: %@", result);
+            // TODO: gateway exception into Javascript
+            return [NitroxHTTPResponseMessage responseWithBody:[[serializer serializeString:result] dataUsingEncoding:NSUTF8StringEncoding]
+                                                   contentType:@"text/plain" statusCode:400];
+        }
     } 
-    @catch (NSException *ne) { 
-        result = [NSString stringWithFormat:@"Caught exception: %@", ne];
-        NSLog(@"raised exception invoking method in NitroxBridgeClass: %@", result);
-        // TODO: gateway exception into Javascript
-        return [NitroxHTTPResponseMessage responseWithBody:[[serializer serializeString:result] dataUsingEncoding:NSUTF8StringEncoding]
-                                               contentType:@"text/plain" statusCode:400];
+    else if ([path isEqualToString:@"describe"]) {
+        NSLog(@"describing object: %@", object);
+        result = [bridge describeObject:object];
+    }
+    else {
+        NSLog(@"unknown bridge operation: %@", path);
+        result = nil;
     }
     
     NSLog(@"response is %@", result);

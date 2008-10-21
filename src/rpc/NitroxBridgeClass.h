@@ -22,18 +22,22 @@
 
 - (NitroxBridgeClass *) initWithApp:(NitroxApp*)app;
 
-- (id)invoke:(NSString *)method withTarget:(id)object parameters:(NSArray*)parameters;
+// js->objc: invocation
 
-// - (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args;
-
+- (id) invoke:(NSString *)method withTarget:(id)object parameters:(NSArray*)parameters;
 - (id) invokeMethod:(NSString *)method withTarget:(id)target parameters:(NSArray *)parameters;
-- (id) invokeMethod:(NSString *)method onClass:(NSString*)className parameters:(NSArray *)parameters;
 
-- (NSString *) serialize:(id)object;
+// js->objc: description/introspection of objects
 
+- (id) resolveObjectRef:(id)ref;
+- (id) describeObject:(id)object;
+
+// objc->js: callbacks
 - (void) scheduleCallbackScript:(NSString *)jsscript;
 - (void) scheduleCallback:(NitroxRPCCallback *)callback immediate:(BOOL)now;
 
+// data transformation
+- (NSString *) serialize:(id)object;
 - (id) boolObject:(BOOL)val;
 
 @end

@@ -126,7 +126,7 @@
     
     [pathDelegate addPath:@"proxy" delegate:[[[NitroxHTTPServerProxyDelegate alloc] init] autorelease]];
 
-    [pathDelegate addPath:@"invoke" delegate:[[NitroxHTTPBridge alloc] initWithBridge:self.bridge]];
+    [pathDelegate addPath:@"bridge" delegate:[[NitroxHTTPBridge alloc] initWithBridge:self.bridge]];
     
     rpcDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
     [pathDelegate addPath:@"rpc" delegate:rpcDelegate];
