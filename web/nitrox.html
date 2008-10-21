@@ -291,7 +291,7 @@ function testBridgeClass() {
   var str1 = "first string";
   var str2 = "...secondstring";
   
-  var res = Nitrox.Bridge.call('class.NitroxAddition', 'concat:and:', [str1, str2], false);
+  var res = Nitrox.Bridge.invoke('class.NitroxAddition', 'concat:and:', [str1, str2], false);
   Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
 }
 
