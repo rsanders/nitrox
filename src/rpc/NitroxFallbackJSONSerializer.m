@@ -15,7 +15,7 @@
 - (NSString *)serializeObject:(id)object
 {
     CJSONSerializer *serializer = [[CJSONSerializer alloc] init];
-    NSString *res = [NSString stringWithFormat:@"{__type: %@, value: %@}",
+    NSString *res = [NSString stringWithFormat:@"{\"__type\": %@, \"value\": %@}",
                      [serializer serializeString:[NSString stringWithFormat:@"%@", [object class]]],
                      [serializer serializeString:[NSString stringWithFormat:@"%@", object]]
                      ];

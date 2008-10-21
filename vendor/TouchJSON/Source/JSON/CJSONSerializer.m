@@ -66,7 +66,7 @@ else if ([inObject isKindOfClass:[NSData class]])
 	}
 else if (fallbackSerializer) 
     {
-        NSString *theString = [fallbackSerializer serializeObject:inObject];
+        theResult = [fallbackSerializer serializeObject:inObject];
     }
 else
 	{
