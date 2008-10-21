@@ -12,12 +12,17 @@
 @class WebView;
 @class WebInspector;
 
+@class NitroxApp;
+
 @interface NitroxWebView : UIWebView {
     WebView*      privateWebView;
     id            windowScriptObject;
     BOOL          scriptDebuggingEnabled;
+    NitroxApp*    app;
 }
 
 @property BOOL scriptDebuggingEnabled;
+
+- (void)setApp:(NitroxApp*)app;
 
 @end

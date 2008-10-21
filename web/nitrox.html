@@ -324,10 +324,14 @@ function testBridgeReverse() {
   
   var rstring = Nitrox.Bridge.invoke('class.NitroxAddition', 'reverse:', [string], false);
   Nitrox.log("reversed string is " + Nitrox.Lang.toJSON(rstring));
-  var rarray = Nitrox.Bridge.invoke('class.NitroxAddition', 'reverse', [array], false);    
+  var rarray = Nitrox.Bridge.invoke('class.NitroxAddition', 'reverse:', [array], false);    
   Nitrox.log("reversed string is " + Nitrox.Lang.toJSON(rarray));
 }
 
+function testBridgeDeviceDirect() {
+  var res = window.nadirect.invoke("systemName", "singleton.UIDevice", []);
+  Nitrox.log("singleton result is " + Nitrox.Lang.toJSON(res));
+}
 
 Nitrox(function() {
   Nitrox.log("user nitroxready handler run");
@@ -340,6 +344,8 @@ jQuery(function() {
 
 // ]]>
 </script>
+<a href="javascript:testBridgeDeviceDirect();">Test bridge device direct</a> <br/>
+
 
 <a href="javascript:testBridgeProperty();">Test bridge property</a> <br/>
 <a href="javascript:testBridgeDevice();">Test bridge device</a> <br/>

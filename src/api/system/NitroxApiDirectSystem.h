@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class NitroxApp;
 
 @interface NitroxApiDirectSystem : NSObject {
+    NitroxApp *app;
     NSString *attr;
 }
+
+- (NitroxApiDirectSystem*)initWithApp:(NitroxApp*)app;
 
 - (NSString *) model;
 - (void) log:(NSString *)msg;

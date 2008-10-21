@@ -9,6 +9,7 @@
 #import "NitroxWebView.h"
 #import "NitroxScriptDebugDelegate.h"
 #import "NitroxApiDirectSystem.h"
+#import "NitroxApp.h"
 
 @implementation NitroxWebView
 
@@ -23,6 +24,9 @@
     return self;
 }
 
+- (void)setApp:(NitroxApp*)newapp {
+    app = newapp;
+}
 
 - (void)drawRect:(CGRect)rect {
     // Drawing code
@@ -147,7 +151,7 @@
      property of the 'window' object.   */
 
     NSLog(@"scriptObject is %@", windowScriptObject);
-    [windowScriptObject setValue:[[NitroxApiDirectSystem alloc] init] forKey:@"nadirect"];
+    [windowScriptObject setValue:[[NitroxApiDirectSystem alloc] initWithApp:app] forKey:@"nadirect"];
 }
 
 // UNKNOWN

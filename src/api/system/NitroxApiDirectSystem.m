@@ -8,13 +8,15 @@
 
 #import "NitroxApiDirectSystem.h"
 
+#import "NitroxApp.h"
 
 @implementation NitroxApiDirectSystem
 
 @synthesize attr;
 
-- (NitroxApiDirectSystem *) init {
+- (NitroxApiDirectSystem *) initWithApp:(NitroxApp*)newapp {
     [super init];
+    app = newapp;
     self.attr = @"default attr value";
     return self;
 }
@@ -86,10 +88,39 @@
         return @"getKey";
     } else if (sel == @selector(log:)) {
         return @"log";
+    } else if (sel == @selector(invoke:withTarget:parameters:)) {
+        return @"invoke";
     }
     else {
         return NSStringFromSelector(sel);
     }
 }
+
+
+- (id) invoke:(NSString *)method withTarget:(id)target parameters:(NSArray*)parameters
+{
+    
+    if (!parameters) {
+        parameters = [[[NSArray alloc] init] autorelease];
+    }
+    
+    parameters = [[[NSArray alloc] init] autorelease];
+    
+    NSString *result;
+    @try {
+        result = [app.bridge invoke:method withTarget:target parameters:parameters];
+    } 
+    @catch (NSException *ne) { 
+        result = [NSString stringWithFormat:@"Caught exception: %@", ne];
+        NSLog(@"raised exception invoking method in NitroxBridgeClass: %@", result);
+        // TODO: gateway exception into Javascript
+        return nil;
+    }
+    
+    NSLog(@"response for direct is %@", result);
+    
+    return result;
+}
+
 
 @end

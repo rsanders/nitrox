@@ -37,6 +37,9 @@
     return ret;
 }
 
+
+
+
 - (void) stop {
     // [server stop];
 }
@@ -44,110 +47,13 @@
 - (NSInteger) httpPort {
     return 58214;
 }
-//
-//- (void)startHTTPServer {
-//    if (server) {
-//        NSLog(@"server already started on port %d", self.httpPort);
-//        return;
-//    }
-//
-//    NSLog(@"starting HTTP server");
-//    
-//    NitroxHTTPServerPathDelegate *pathDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
-//    [pathDelegate addPath:@"log" delegate:[NitroxHTTPServerLogDelegate singleton]];
-//
-//    [pathDelegate addPath:@"proxy" delegate:[[[NitroxHTTPServerProxyDelegate alloc] init] autorelease]];
-//    
-//    rpcDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
-//    [pathDelegate addPath:@"rpc" delegate:rpcDelegate];
-//    
-//    [rpcDelegate addPath:@"Device" delegate:[[NitroxRPCDispatcher alloc] 
-//                                             initWithStubClass:[[NitroxApiDevice alloc] init]
-//                                             webViewController:self]];
-//
-//    [rpcDelegate addPath:@"Location" delegate:[[NitroxRPCDispatcher alloc] 
-//                                               initWithStubClass:[[NitroxApiLocation alloc] init]
-//                                               webViewController:self]];
-//
-//
-//    [rpcDelegate addPath:@"Accelerometer" delegate:[[NitroxRPCDispatcher alloc] 
-//                                                    initWithStubClass:[[NitroxApiAccelerometer alloc] init]
-//                                                    webViewController:self]];
-//    
-//    [rpcDelegate addPath:@"Vibrate" delegate:[[NitroxRPCDispatcher alloc] 
-//                                              initWithStubClass:[[NitroxApiVibrate alloc] init]
-//                                              webViewController:self]];
-//
-//    [rpcDelegate addPath:@"Benchmark" delegate:[[NitroxRPCDispatcher alloc] 
-//                                              initWithStubClass:[[NitroxApiBenchmark alloc] init]
-//                                              webViewController:self]];
-//
-//    [rpcDelegate addPath:@"System" delegate:[[NitroxRPCDispatcher alloc] 
-//                                              initWithStubClass:[[NitroxApiSystem alloc] init]
-//                                              webViewController:self]];
-//
-//    [rpcDelegate addPath:@"Event" delegate:[[NitroxRPCDispatcher alloc] 
-//                                             initWithStubClass:[[NitroxApiEvent alloc] init]
-//                                             webViewController:self]];
-//
-//    [rpcDelegate addPath:@"Application" delegate:[[NitroxRPCDispatcher alloc] 
-//                                            initWithStubClass:[[NitroxApiApplication alloc] init]
-//                                            webViewController:self]];
-//
-//    NitroxApiPhoto *photo = [[NitroxApiPhoto alloc] init];
-//    [rpcDelegate addPath:@"Photo" delegate:[[NitroxRPCDispatcher alloc] 
-//                                            initWithStubClass:photo
-//                                            webViewController:self]];
-//    
-//    [pathDelegate addPath:@"photoresults" delegate:
-//     [[NitroxHTTPServerFilesystemDelegate alloc] 
-//       initWithRoot:photo.saveDir
-//       authoritative:YES]
-//     ];
-//    
-//    // fallback is an authoritative filesystem server rooted at APP.app/web
-//    [pathDelegate setDefaultDelegate:
-//        [[[NitroxHTTPServerFilesystemDelegate alloc] 
-//            initWithRoot:[NSString stringWithFormat:@"%@/web",
-//                          [[NSBundle mainBundle] bundlePath]]
-//            authoritative:YES] 
-//         autorelease]];
-//    
-//    serverDelegate = pathDelegate;
-//
-//    server = [[NitroxHTTPServer alloc] initWithDelegate:serverDelegate];
-//    
-//    // TODO: randomize 
-//    authToken = @"temptoken";
-//    
-//    httpPort = 58214;
-//    if (httpPort > 0) {
-//        [server setPort:httpPort];
-//    }
-//    
-//    // if you say YES here, you gots yourself a deadlock
-//    [server setAcceptWithRunLoop:NO];
-//    
-//    // security risk otherwise; once we validate with tokens, it won't be as much, though
-//    // it's still kind of useless unless we want to allow distributed communication / RPC
-//    [server setLocalhostOnly:YES];
-//
-//    NSError *error;
-//    [server start:&error];
-//    
-//    if (error) {
-//        NSLog(@"had error starting HTTP server: %@", error);
-//        @throw error;
-//    }
-//    
-//    httpPort = [server port];
-//    NSLog(@"started HTTP server %d", httpPort);
-//}
 
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
     [super viewDidLoad];
     [(UIWebView*)self.view setDelegate:self];
-
+    [(NitroxWebView*)self.view setApp:app];
+    
     // [self startHTTPServer];
 }
 
