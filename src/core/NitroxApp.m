@@ -16,6 +16,7 @@
 #import "NitroxApi.h"
 #import "NitroxRPC.h"
 #import "NitroxBridgeClass.h"
+#import "NitroxHTTPBridge.h"
 #import "Nibware.h"
 
 @interface NitroxApp (Private) 
@@ -27,21 +28,38 @@
 @synthesize appID, localRoot, homeURL;
 @synthesize delegate, webViewController;
 @synthesize currentPage, pages, parentView;
+@synthesize bridge;
 
+// TODO: this will leak like a sieve.  clean the allocation up here
 - (NitroxApp *) initWithCore:(NitroxCore*)newcore {
     [super init];
     
     core = newcore;
+    bridge = [[NitroxBridgeClass alloc] init];
 
     self.webViewController = [[NitroxWebViewController alloc] 
                                     initWithNibName:@"NitroxWebView" bundle:[NSBundle mainBundle]];
     
     [self.webViewController setApp:self];
-    
+
     appServerDelegate = [self createServerDelegate];
     
     return self;
 }
+
+
+// TODO: this will leak like a sieve.  clean the DEallocation up here
+- (void) dealloc {
+    [(id<NSObject>)appServerDelegate release];
+    [webViewController release];
+    // webViewController = nil;
+    self.bridge = nil;
+    
+    [super dealloc];
+}
+
+
+#pragma maintenance
 
 - (void) setParentView:(UIView*)view
 {
@@ -60,10 +78,6 @@
 - (NSString *) appID {
     NSString *id = [NSString stringWithFormat:@"%08x", self];
     return id;
-}
-
-- (void) dealloc {
-    [super dealloc];
 }
 
 - (NSURL *) convertToUrl:(NSString *)ref
@@ -105,6 +119,8 @@
     [pathDelegate addPath:@"log" delegate:[NitroxHTTPServerLogDelegate singleton]];
     
     [pathDelegate addPath:@"proxy" delegate:[[[NitroxHTTPServerProxyDelegate alloc] init] autorelease]];
+
+    [pathDelegate addPath:@"invoke" delegate:[[NitroxHTTPBridge alloc] initWithBridge:self.bridge]];
     
     rpcDelegate = [[NitroxHTTPServerPathDelegate alloc] init];
     [pathDelegate addPath:@"rpc" delegate:rpcDelegate];
@@ -145,9 +161,7 @@
     [rpcDelegate addPath:@"File" delegate:[[NitroxRPCDispatcher alloc] 
                                                   initWithStubClass:[[NitroxApiFile alloc] init]
                                                   webViewController:webViewController]];
-
-    [rpcDelegate addPath:@"BridgeTest" delegate:[[NitroxBridgeClass alloc] initWithApp:self]];
-    
+   
     
     NitroxApiPhoto *photo = [[NitroxApiPhoto alloc] init];
     [rpcDelegate addPath:@"Photo" delegate:[[NitroxRPCDispatcher alloc] 

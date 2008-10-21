@@ -38,6 +38,8 @@ typedef union {
 
 @synthesize app;
 
+#pragma mark initialization
+
 - (NitroxBridgeClass *) initWithApp:(NitroxApp*)newapp
 {
     [super init];
@@ -50,6 +52,13 @@ typedef union {
     return app.webViewController;
 }
 
+- (void) dealloc
+{
+    self.app = nil;
+    [super dealloc];
+}
+
+#pragma mark Standard WebScriptObject protocol methods
 
 // this is an apple method which we'd have to invert
 + (NSString *) webScriptNameForSelector:(SEL)sel {
@@ -68,6 +77,8 @@ typedef union {
 + (SEL) selectorForWebScriptName:(NSString *)name {
     return NSSelectorFromString(name);
 }
+
+#pragma mark Nitrox Bridge reflection methods
 
 // only works for all string args
 // see http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/Articles/chapter_13_section_9.html#//apple_ref/doc/uid/TP30001163-CH9-TPXREF165
@@ -119,55 +130,73 @@ typedef union {
     return parameters;
 }
 
+- (BOOL)copyArguments:(NSArray *)parameters 
+       intoInvocation:(NSInvocation*)invocation 
+          bySignature:(NSMethodSignature *)signature
+{
+    NSAssert([signature numberOfArguments]-2 == [parameters count],
+             @"Check signature and provided param count match exactly");
 
-- (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args {
-    NSObject *res = nil;
-    NSString *paramstring = [args objectForKey:@"parameters"];
-    CJSONDeserializer *deserializer = [[CJSONDeserializer alloc] init];
-    NSError *error;
-    NSArray *parameters;
+    for (int i = 0; i < [signature numberOfArguments]-2; i++)
+    {
+        const char *argType = [signature getArgumentTypeAtIndex:i+2];
+        NSLog(@"argument type at idx %d is %s, provided type is %@", 
+              i, argType, [[parameters objectAtIndex:i] class]);
+
+        // TODO: convert other types, e.g. numerics, C string, bool, array
+        NSObject *obj = [parameters objectAtIndex:i];
+        [invocation setArgument:&obj atIndex:i+2];
+    }    
     
-    @try {
-        parameters = [deserializer deserialize:[paramstring dataUsingEncoding:NSUTF8StringEncoding]
-                                              error:&error];
-    } @catch (NSException *e) {
-        NSLog(@"caught exception deserializing: %@", e);
-        return nil;
-    }
+    return YES;
+}
+
+
+
+- (id) invokeMethod:(NSString *)method withTarget:(id)target parameters:(NSArray *)parameters 
+{
+    NSObject *res = nil;
     
     if (! parameters || ! [parameters isKindOfClass:[NSArray class]]) {
         NSLog(@"parameters is %@, not an array", parameters);
         [NSException raise:@"NSGenericException" format:@"Bad paramaters for method: %@", method];
     }
-
-    SEL sel = [[self class] selectorForWebScriptName:method];
+    
+    SEL sel;
+    if ([target respondsToSelector:@selector(selectorForWebScriptName:)])
+    {
+        sel = [target selectorForWebScriptName:method];
+    } else {
+        sel = NSSelectorFromString(method);
+    }
     
     // TODO: check for explicit exports here
-    if (! sel || ! [self respondsToSelector:sel]) {
+    if (! sel || ! [target respondsToSelector:sel]) {
         NSLog(@"call to bad method %@", method);
         [NSException raise:@"NitroxNoSuchMethod" format:@"No such method: %@", method];
     }
     
-    NSMethodSignature *signature = [self methodSignatureForSelector:sel];
+    NSMethodSignature *signature = [target methodSignatureForSelector:sel];
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
     
-    [invocation setTarget:self];
+    [invocation setTarget:target];
     [invocation setSelector:sel];
-
+    
     NSLog(@"got signature %@, invocation %@", signature, invocation);
-
+    
     if ([signature numberOfArguments] != [parameters count] + 2) {
         NSLog(@"signature takes %d args, have %d parameters",
               [signature numberOfArguments]-2, [parameters count]);
+        // TODO throw exception here?
         return nil;
     }
     
-    NSArray *converted = [self convertArguments:parameters bySignature:signature];
+    BOOL copyRes = [self copyArguments:parameters intoInvocation:invocation bySignature:signature];
 
-    for (int i = 0; i < [converted count]; i++)
-    {
-        NSObject *obj = [converted objectAtIndex:i];
-        [invocation setArgument:&obj atIndex:i+2];
+    if (! copyRes) {
+        // TODO: throw exception here?
+        NSLog(@"failed to copy/convert arguments, failing to invoke");
+        return NO;
     }
     
     [invocation invoke];
@@ -177,6 +206,30 @@ typedef union {
     
     return res;
 }
+
+- (id) invokeMethod:(NSString *)method onClass:(NSString*)className parameters:(NSArray *)parameters 
+{
+    Class clazz = NSClassFromString(className);
+    
+    return [self invokeMethod:method withTarget:clazz parameters:parameters];
+}
+
+- (id)invoke:(NSString *)method withTarget:(id)object parameters:(NSArray*)parameters
+{
+    NSLog(@"invoking %@ on target %@ with parameters %@",
+          method, object, parameters);
+    
+    // simple string is a class reference
+    if ([object isKindOfClass:[NSString class]]) {
+        return [self invokeMethod:method onClass:(NSString *)object parameters:parameters];
+    }
+    else {
+        NSLog(@"unknown object reference type: %@", object);
+        return nil;
+    }
+}
+
+#pragma mark Callback methods
 
 - (void) scheduleCallback:(NitroxRPCCallback *)callback immediate:(BOOL)now
 {
@@ -190,6 +243,8 @@ typedef union {
                             immediate:NO];
 }
 
+#pragma mark (De)serialization methods
+
 - (NSString *) serialize:(id)object
 {
     
@@ -202,119 +257,6 @@ typedef union {
 {
     return [NitroxBool objectForBool:val];
 }
-
-#pragma mark test methods
-
-- (NSNumber *) add:(NSNumber *)num1 and:(NSNumber *)num2
-{
-    return [NSNumber numberWithDouble:([num1 doubleValue] + [num2 doubleValue])];
-}
-
-- (NSString *) concat:(NSString *)str1 and:(NSString *)str2
-{
-    return [str1 stringByAppendingString:str2];
-}
-
-- (id) reverse:(id)object
-{
-    if ([object isKindOfClass:[NSString class]]) {
-        NSString *src = object;
-        NSMutableString *dest = [[[NSMutableString alloc] init] autorelease];
-        
-        for (int i = [src length]-1; i >= 0; i--) {
-            [dest appendString:[src substringWithRange:NSMakeRange(i, 1)]];
-        }
-        
-        return dest;
-    } else if ([object isKindOfClass:[NSArray class]]) {
-        NSArray *src = object;
-        NSMutableArray *dest = [[[NSMutableArray alloc] init] autorelease];
-        id elt;
-        for (elt in [src reverseObjectEnumerator]) {
-            [dest addObject:elt];
-        }
-        return dest;
-    } else {
-        return object;
-    }
-}
-
-
-#pragma mark NitroxHTTPDelegate methods
-
-
-- (BOOL) willHandlePath:(NSString *)path
-            fromRequest:(NitroxHTTPRequest *)request
-               onServer:(NitroxHTTPServer *)server
-{
-    return YES;
-}
-
-
-- (NitroxHTTPResponseMessage *)httpServer:(NitroxHTTPServer *)server
-                            handleRequest:(NitroxHTTPRequest *)request
-                                   atPath:(NSString *)path
-{
-    NSString *msg = [[[NSString alloc] initWithData:[[request requestMessage] body] 
-                                           encoding:NSUTF8StringEncoding] 
-                     autorelease];
-    
-    NSString *query = [[[request requestMessage] URL] query];
-    
-    // need to separate id and token and other args
-    if (query && ![query isEqualToString:@""]) {
-        msg = [[[request requestMessage] URL] query];
-    }
-    
-    NSDictionary* args = [NibwareUrlUtils parseQueryString:msg];
-    
-    /*
-     * /rpc/CLASSNAME/c/CLASSMETHOD
-     * /rpc/CLASSNAME/i/INSTANCEID/INSTANCEMETHOD (?)
-     *
-     * Next version:
-     *  /rpc/CONTEXTID/CLASSNAME/[ic]/...
-     */
-    NSArray *components = [[NitroxHTTPUtils stripLeadingSlash:path] componentsSeparatedByString:@"/"];
-    if ([components count] < 2) {
-        NSLog(@"Bad arg format: %@", path);
-        return [NitroxHTTPResponseMessage emptyResponseWithCode:400];
-    }
-    
-    CJSONSerializer *serializer = [[[CJSONSerializer alloc] init] autorelease];    
-    
-    // NSString *className = [stub className];
-    NSString *ic = [components objectAtIndex:0];
-    
-    NSString *result;
-    @try {
-        if ([ic isEqualToString:@"c"]) {
-            result = [self invokeClassMethod:[components objectAtIndex:1] args:args];
-        } else if ([ic isEqualToString:@"i"]) {
-            result = @"INSTANCE CALLS NOT SUPPORTED YET";
-        } else {
-            result = @"Incorrect i/c setting";
-        }
-    } 
-    @catch (NSException *ne) { 
-        result = [NSString stringWithFormat:@"Caught exception: %@", ne];
-        NSLog(@"raised exception invoking method in NitroxBridgeClass: %@", result);
-        return [NitroxHTTPResponseMessage responseWithBody:[[serializer serializeString:result] dataUsingEncoding:NSUTF8StringEncoding]
-                                               contentType:@"text/plain" statusCode:400];
-    }
-    
-    NSLog(@"response is %@", result);
-    
-    NSString *response;
-    if (result == nil) {
-        response = @"null";
-    } else {
-        response = [serializer serializeObject:result];
-    }
-    return [NitroxHTTPResponseMessage responseWithBody:[response dataUsingEncoding:NSUTF8StringEncoding]
-                                           contentType:@"application/javascript" statusCode:200];
-}
-
 
 
 @end

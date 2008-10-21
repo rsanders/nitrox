@@ -5,7 +5,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NitroxHTTP.h"
 #import "NitroxRPC.h"
 #import "NitroxRPCCallback.h"
 #import "NitroxBool.h"
@@ -14,7 +13,7 @@
 
 @class NitroxWebViewController;
 
-@interface NitroxBridgeClass : NSObject <NitroxHTTPServerDelegate> {
+@interface NitroxBridgeClass : NSObject  {
     NitroxApp*               app;
 }
 
@@ -23,8 +22,12 @@
 
 - (NitroxBridgeClass *) initWithApp:(NitroxApp*)app;
 
+- (id)invoke:(NSString *)method withTarget:(id)object parameters:(NSArray*)parameters;
 
-- (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args;
+// - (id) invokeClassMethod:(NSString *)method args:(NSDictionary *)args;
+
+- (id) invokeMethod:(NSString *)method withTarget:(id)target parameters:(NSArray *)parameters;
+- (id) invokeMethod:(NSString *)method onClass:(NSString*)className parameters:(NSArray *)parameters;
 
 - (NSString *) serialize:(id)object;
 
@@ -32,15 +35,5 @@
 - (void) scheduleCallback:(NitroxRPCCallback *)callback immediate:(BOOL)now;
 
 - (id) boolObject:(BOOL)val;
-
-//@property (retain,readonly)  NSString*    className;
-//@property (retain,readonly)  NSString*    classMethods;
-//@property (retain,readonly)  NSString*    instanceMethods;   
-
-//- (id) newInstance;
-//- (id) newInstanceWithArgs:(NSDictionary *)args;
-// - (id) object:(id)object invoke:(NSString *)method args:(NSDictionary *)args;
-
-
 
 @end

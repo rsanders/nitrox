@@ -41,6 +41,13 @@
 		B15F08230EA6EC3600B34B71 /* NitroxWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C8ACCF0E9EE0FE003FE061 /* NitroxWebView.xib */; };
 		B15F09E90EA798A600B34B71 /* MainWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15F09E80EA798A600B34B71 /* MainWindowViewController.m */; };
 		B15F09EE0EA79AEB00B34B71 /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15F09ED0EA79AEB00B34B71 /* PopupViewController.m */; };
+		B1A666BA0EAD2A940018CF6A /* NitroxHTTPBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = B1A666B80EAD2A940018CF6A /* NitroxHTTPBridge.h */; };
+		B1A666BB0EAD2A940018CF6A /* NitroxHTTPBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A666B90EAD2A940018CF6A /* NitroxHTTPBridge.m */; };
+		B1A667520EAD51030018CF6A /* NitroxAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = B1A667500EAD51030018CF6A /* NitroxAddition.h */; };
+		B1A667530EAD51030018CF6A /* NitroxAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A667510EAD51030018CF6A /* NitroxAddition.m */; };
+		B1A667A70EAD56980018CF6A /* NitroxAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A667510EAD51030018CF6A /* NitroxAddition.m */; };
+		B1A667C10EAD82C10018CF6A /* NitroxSymbolTable.h in Headers */ = {isa = PBXBuildFile; fileRef = B1A667BF0EAD82C10018CF6A /* NitroxSymbolTable.h */; };
+		B1A667C20EAD82C10018CF6A /* NitroxSymbolTable.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A667C00EAD82C10018CF6A /* NitroxSymbolTable.m */; };
 		B1B075640EA7FF44006EB800 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1B075630EA7FF44006EB800 /* Entitlements.plist */; };
 		B1C043150EA65640000858B3 /* NitroxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C043130EA65640000858B3 /* NitroxCore.h */; };
 		B1C043160EA65640000858B3 /* NitroxCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C043140EA65640000858B3 /* NitroxCore.m */; };
@@ -210,6 +217,12 @@
 		B15F09EC0EA79AEB00B34B71 /* PopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
 		B15F09ED0EA79AEB00B34B71 /* PopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
 		B17C290D0E99472D00329098 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B1A666B80EAD2A940018CF6A /* NitroxHTTPBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxHTTPBridge.h; sourceTree = "<group>"; };
+		B1A666B90EAD2A940018CF6A /* NitroxHTTPBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxHTTPBridge.m; sourceTree = "<group>"; };
+		B1A667500EAD51030018CF6A /* NitroxAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxAddition.h; sourceTree = "<group>"; };
+		B1A667510EAD51030018CF6A /* NitroxAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxAddition.m; sourceTree = "<group>"; };
+		B1A667BF0EAD82C10018CF6A /* NitroxSymbolTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxSymbolTable.h; sourceTree = "<group>"; };
+		B1A667C00EAD82C10018CF6A /* NitroxSymbolTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxSymbolTable.m; sourceTree = "<group>"; };
 		B1B075630EA7FF44006EB800 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		B1C043130EA65640000858B3 /* NitroxCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NitroxCore.h; sourceTree = "<group>"; };
 		B1C043140EA65640000858B3 /* NitroxCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NitroxCore.m; sourceTree = "<group>"; };
@@ -663,6 +676,8 @@
 				B1C8ABC20E9EE0FD003FE061 /* NitroxApiDirectSystem.m */,
 				B1C8ABC30E9EE0FD003FE061 /* NitroxApiSystem.h */,
 				B1C8ABC40E9EE0FD003FE061 /* NitroxApiSystem.m */,
+				B1A667500EAD51030018CF6A /* NitroxAddition.h */,
+				B1A667510EAD51030018CF6A /* NitroxAddition.m */,
 			);
 			path = system;
 			sourceTree = "<group>";
@@ -891,6 +906,10 @@
 				B1C8ACB70E9EE0FE003FE061 /* NitroxStubClass.m */,
 				B107E87B0EA96BC500CEF255 /* NitroxBool.h */,
 				B107E87C0EA96BC500CEF255 /* NitroxBool.m */,
+				B1A666B80EAD2A940018CF6A /* NitroxHTTPBridge.h */,
+				B1A666B90EAD2A940018CF6A /* NitroxHTTPBridge.m */,
+				B1A667BF0EAD82C10018CF6A /* NitroxSymbolTable.h */,
+				B1A667C00EAD82C10018CF6A /* NitroxSymbolTable.m */,
 			);
 			path = rpc;
 			sourceTree = "<group>";
@@ -1057,6 +1076,9 @@
 				B107E91F0EA9963700CEF255 /* NitroxBinaryData.h in Headers */,
 				B107E9380EA99EBB00CEF255 /* NSDate+JSON.h in Headers */,
 				B107EA8C0EAA284600CEF255 /* NitroxBridgeClass.h in Headers */,
+				B1A666BA0EAD2A940018CF6A /* NitroxHTTPBridge.h in Headers */,
+				B1A667520EAD51030018CF6A /* NitroxAddition.h in Headers */,
+				B1A667C10EAD82C10018CF6A /* NitroxSymbolTable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1238,6 +1260,7 @@
 				B15F06180EA6B37200B34B71 /* main.m in Sources */,
 				B15F09E90EA798A600B34B71 /* MainWindowViewController.m in Sources */,
 				B15F09EE0EA79AEB00B34B71 /* PopupViewController.m in Sources */,
+				B1A667A70EAD56980018CF6A /* NitroxAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1312,6 +1335,9 @@
 				B107E9200EA9963700CEF255 /* NitroxBinaryData.m in Sources */,
 				B107E9390EA99EBB00CEF255 /* NSDate+JSON.m in Sources */,
 				B107EA8D0EAA284600CEF255 /* NitroxBridgeClass.m in Sources */,
+				B1A666BB0EAD2A940018CF6A /* NitroxHTTPBridge.m in Sources */,
+				B1A667530EAD51030018CF6A /* NitroxAddition.m in Sources */,
+				B1A667C20EAD82C10018CF6A /* NitroxSymbolTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

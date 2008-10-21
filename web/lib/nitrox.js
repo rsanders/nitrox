@@ -124,7 +124,70 @@ if (! window.nadirect.log) {
 
 Nitrox.Bridge = {
     idcounter: 0,
+
+    'invoke': function() {
+        try {
+            var res = this.realinvoke.apply(this, arguments);
+            return res;
+        } catch (e) {
+            window.nadirect.log('NBi: caught exception ' + e);
+            return null;
+        }
+    },
+
     
+    'realinvoke': function(iobject, imethod, args, async, ajaxOpts) {
+            var id = "id" + this.idcounter++;
+            if (!async) async = false;
+            window.nadirect.log('NBi: starting bridge invoke for id ' + id);
+            var port = Nitrox.Runtime.port;
+            // clone args
+            if (! ajaxOpts) { ajaxOpts = {}; }
+            // args = jQuery.extend(true, args, 
+            //             {'object': Nitrox.Lang.toJSON(iobject), 'method': imethod, 'parameters': Nitrox.Lang.toJSON(args),
+            //              '__id': id, '__token': Nitrox.Runtime.token}
+            //      );
+            var data = {'object': Nitrox.Lang.toJSON(iobject), 'method': imethod, 'parameters': Nitrox.Lang.toJSON(args),
+                          '__id': id, '__token': Nitrox.Runtime.token};
+            var fullstring = Nitrox.Runtime.appURL() + "/invoke";
+            var req;
+            try {
+                var ajaxObject = {url: fullstring, data: data, async: async, type: 'get'};
+                ajaxObject = jQuery.extend(ajaxObject, ajaxOpts);
+                window.nadirect.log("NBi: ajax object: " + Nitrox.Lang.toJSON(ajaxObject));
+                req = jQuery.ajax(ajaxObject);
+                window.nadirect.log("NBi: ajax returned without exception");
+                if (req.readyState == 4) {
+                    window.nadirect.log("NBi: ajax status is " + req.status);                    
+                }
+            } catch (e) {
+                window.nadirect.log("NBi: caught error in Nitrox.Bridge.invoke: " + e);
+                req = {error: e, status:401, responseText: "Error: " + e};
+            }
+            var res = null;
+            if (async) {
+                window.nadirect.log("NBi: returning from async " + fun + " , id=" + id);
+                return null;
+            }
+            if (! req) {
+                window.nadirect.log("NBi: No request object returned");
+                req = {error: "unknown", status:500, responseText:"No req object returned"};
+            }
+            if (req && req.status == 200 && req.readyState == 4) {
+                window.nadirect.log('NBi: plain response text is: ' + req.responseText);
+                res = jQuery.evalJSON(req.responseText);
+                window.nadirect.log('NBi: decoded response text for ajax is: ' + res);
+            } else {
+                window.nadirect.log('NBi: not ready: state = ' + (req ? req.readyState : "no req"));
+            }
+            /*
+             * expected to be like
+             *   { result: resultobj, state: stateobj, exception: exceptionobj (or null) }
+             */
+            return res;
+    },
+
+
     'call': function(fun, args, async, ajaxOpts) {
             var id = "id" + this.idcounter++;
             if (!async) async = false;

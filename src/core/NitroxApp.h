@@ -14,6 +14,7 @@
 
 @class NitroxAppPage;
 @class NitroxCore;
+@class NitroxBridgeClass;
 @protocol NitroxHTTPServerDelegate;
 
 @interface NitroxApp : NSObject {
@@ -40,6 +41,8 @@
     
     id<NitroxHTTPServerDelegate>  appServerDelegate;
     NitroxHTTPServerPathDelegate* rpcDelegate;
+    
+    NitroxBridgeClass*            bridge;
 
 }
 
@@ -51,6 +54,7 @@
 @property (retain) NitroxWebViewController*      webViewController;
 @property (retain) NitroxAppPage*                currentPage;
 @property (retain) NSArray*                      pages;
+@property (retain) NitroxBridgeClass*            bridge;
 
 @property (readonly) id<NitroxHTTPServerDelegate>     appServerDelegate;
 

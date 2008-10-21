@@ -43,7 +43,7 @@
 {
     // either no further path or a path that cannot be subdivided
     if ([self.path isEqualToString:@""]
-        || [(NSString *)self.path rangeOfString:@"/"].length == 0) 
+        /* || [(NSString *)self.path rangeOfString:@"/"].length == 0 */) 
     {
         NSLog(@"in nextLevelRequest, tried to get subpath of non-subpathable path: %@", path);
         return nil;
