@@ -213,7 +213,7 @@
  * Converts native C/Obj-C types to the types we pass into
  * Javascript; mostly NSNumber, NSString, NitroxBool
  *
- * TODO: NSArray <-> [type] array
+ * TODO: NSArray <-> [type] array, structs
  *
  */
 - (id) convertValue:(ObjcValue) value
@@ -267,7 +267,6 @@
             
             // C99 boolean
         case 'B':
-            // object = [NSNumber numberWithBool:(value.booleanValue ? YES : NO)];
             object = [NitroxBool objectForBool:(value.booleanValue ? YES : NO)];
             break;
             
@@ -302,7 +301,7 @@
  * Converts JSON-decoded objects from Javascript into native 
  * C/Obj-C types Javascript; mostly handles NSNumber, NSString
  *
- * TODO: NSArray <-> [type] array
+ * TODO: NSArray <-> [type] array, structs
  */
 - (ObjcValue) convertObject:(id) object
                      toType:(const char *)type

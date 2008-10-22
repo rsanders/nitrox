@@ -225,7 +225,10 @@
 
     [singletons setValue:[UIScreen mainScreen]
                   forKey:@"UIScreen"];
-    
+
+    [singletons setValue:[[UIApplication sharedApplication] keyWindow]
+                  forKey:@"UIWindow"];
+
     [singletons setValue:self
                   forKey:@"NitroxApp"];
 

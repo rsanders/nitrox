@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B1A66AAF0EAEFA450018CF6A</string>
+						<string>B1A66ACA0EAF05480018CF6A</string>
 						<key>history</key>
 						<array>
 							<string>B1A66A940EAEF9840018CF6A</string>
@@ -263,7 +263,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B1A66AB00EAEFA450018CF6A</string>
+						<string>B1A66ACB0EAF05480018CF6A</string>
 						<key>history</key>
 						<array>
 							<string>B1A668FC0EADB87D0018CF6A</string>
@@ -319,6 +319,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -367,7 +369,9 @@
 								<string>B1C8ABA40E9EE0FD003FE061</string>
 								<string>B1C8ABA50E9EE0FD003FE061</string>
 								<string>B1C8ABA80E9EE0FD003FE061</string>
+								<string>B1C8ABAE0E9EE0FD003FE061</string>
 								<string>B1C8ABC00E9EE0FD003FE061</string>
+								<string>B1C8ABC50E9EE0FD003FE061</string>
 								<string>B1C8ACAB0E9EE0FE003FE061</string>
 								<string>B1C8ACAE0E9EE0FE003FE061</string>
 								<string>B1C8ACB80E9EE0FE003FE061</string>
@@ -380,15 +384,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>70</integer>
-									<integer>64</integer>
+									<integer>75</integer>
+									<integer>73</integer>
 									<integer>50</integer>
 									<integer>42</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1039}, {296, 760}}</string>
+							<string>{{0, 774}, {296, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -418,14 +422,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NitroxAddition.m</string>
+								<string>NitroxApiVibrate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -433,11 +435,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NitroxAddition.m</string>
+										<string>NitroxApiVibrate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B1A66AAE0EAEFA450018CF6A</string>
+										<string>B1A66AC90EAF05480018CF6A</string>
 										<key>history</key>
 										<array>
 											<string>B1DD3D380E8EC25500952CD6</string>
@@ -468,7 +470,6 @@
 											<string>B1B075660EA7FF85006EB800</string>
 											<string>B1B0757D0EA803DF006EB800</string>
 											<string>B11856BD0EA82A41008581D0</string>
-											<string>B107E5DF0EA8F8FC00CEF255</string>
 											<string>B107E5E00EA8F8FC00CEF255</string>
 											<string>B107E60B0EA8FA4400CEF255</string>
 											<string>B107E66F0EA9161C00CEF255</string>
@@ -518,7 +519,6 @@
 											<string>B1A6690C0EAE1EF40018CF6A</string>
 											<string>B1A6690D0EAE1EF40018CF6A</string>
 											<string>B1A6690E0EAE1EF40018CF6A</string>
-											<string>B1A6690F0EAE1EF40018CF6A</string>
 											<string>B1A669100EAE1EF40018CF6A</string>
 											<string>B1A669460EAE32E10018CF6A</string>
 											<string>B1A669480EAE32E10018CF6A</string>
@@ -532,8 +532,11 @@
 											<string>B1A66A0D0EAE4ACA0018CF6A</string>
 											<string>B1A66A4D0EAEDF950018CF6A</string>
 											<string>B1A66A800EAEF9300018CF6A</string>
-											<string>B1A66AA70EAEFA3C0018CF6A</string>
-											<string>B1A66AA80EAEFA3C0018CF6A</string>
+											<string>B1A66AB50EAEFF720018CF6A</string>
+											<string>B1A66ABE0EAF05290018CF6A</string>
+											<string>B1A66ABF0EAF05290018CF6A</string>
+											<string>B1A66AC00EAF05290018CF6A</string>
+											<string>B1A66AC10EAF05290018CF6A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -722,6 +725,10 @@
 											<string>B1A66A850EAEF9300018CF6A</string>
 											<string>B1A66A860EAEF9300018CF6A</string>
 											<string>B1A66AA90EAEFA3C0018CF6A</string>
+											<string>B1A66AB70EAEFF720018CF6A</string>
+											<string>B1A66AC20EAF05290018CF6A</string>
+											<string>B1A66AC30EAF05290018CF6A</string>
+											<string>B1A66AC40EAF05290018CF6A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -915,12 +922,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B1A66AAD0EAEFA3C0018CF6A</string>
+		<string>B1A66ACC0EAF05480018CF6A</string>
+		<string>B1A66AC80EAF05290018CF6A</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>B1A668D70EADA3810018CF6A</string>
 		<string>B1A668D80EADA3810018CF6A</string>
-		<string>B1A66A880EAEF9300018CF6A</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>B1A66A880EAEF9300018CF6A</string>
 		<string>B14E69EA0E8D9692000BB59F</string>
 		<string>/Users/Shared/vitrue/src/xcode/libs/nitroxkit/lib/libnitrox.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
