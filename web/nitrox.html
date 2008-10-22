@@ -113,6 +113,19 @@ function testLoadJS() {
   Nitrox.load("done with loadJS test");
 }
 
+function benchmarkAjaxBridge() {
+  Nitrox.log("benchmark starting");
+  var oldDebug = Nitrox.Runtime.debug;
+  Nitrox.Runtime.debug = false;
+  
+  var res = Nitrox.Benchmark.run(function() {
+      Nitrox.Bridge.invoke('class.NitroxAddition', 'reverse:', ['a'], false);
+    }, 50);
+  Nitrox.Runtime.debug = oldDebug;
+    
+  Nitrox.log("average time for ajax+bridge was " + res + " ms");
+}
+
 function benchmarkAjax() {
   Nitrox.log("benchmark starting");
   var oldDebug = Nitrox.Runtime.debug;
@@ -349,13 +362,25 @@ function testShowDefaults() {
 }
 
 function testLog() {
-  Nitrox.log("starting testLog");
   var res = Nitrox.Lang.format("this is a test of %% percent sign %x hex %d decimal %s string %@ obj %",
                                [255, 255, "somestring"]);
   Nitrox.log("result is .." + res + "..");
   Nitrox.log("FROMLOG: this is a test of %% percent sign %x hex %d decimal %s string %@ obj %",
                                255, 255, "somestring");
 
+}
+
+function testStruct() {
+  var res = Nitrox.Bridge.invoke('singleton.UIWindow', 'drawRect:', [null], false);
+  Nitrox.log("struct result is %@", res);
+}
+
+function testBridgePrimitiveNum() {
+  var num1 = 10;
+  var num2 = 20.0;
+  
+  var res = Nitrox.Bridge.invoke('class.NitroxAddition', 'addInt:and:', [num1, num2], false);
+  Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
 }
 
 Nitrox(function() {
@@ -369,6 +394,10 @@ jQuery(function() {
 
 // ]]>
 </script>
+<a href="javascript:testBridgePrimitiveNum();">Test add primitive nums</a> <br/>
+
+<a href="javascript:testStruct();">Test struct arg</a> <br/>
+
 <a href="javascript:testShowDefaults();">Show defaults</a> <br/>
 
 <a href="javascript:testLog();">Test format</a> <br/>
@@ -400,6 +429,7 @@ jQuery(function() {
 <a href="javascript:testAccelerometer();">Get Accel</a> <br/>
 <a href="javascript:testLoadJS();">Test LoadJS</a> <br/>
 <a href="javascript:benchmarkAjax();">Benchmark Ajax</a> <br/>
+<a href="javascript:benchmarkAjaxBridge();">Benchmark Ajax + Bridge</a> <br/>
 <a href="javascript:benchmarkHook();">Benchmark Hook</a> <br/>
 <a href="javascript:benchmarkDirect();">Benchmark Direct</a> <br/>
 <a href="javascript:forceError();">Force error</a> <br/>

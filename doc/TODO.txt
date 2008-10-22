@@ -30,6 +30,7 @@ NEW APIs:
     http://dev.w3.org/geo/api/spec-source.html
   * HTML5 cross-domain ajax
   * AIR classes
+  * XML parser (can just use a loopback XHR which returns XML into a document)
 
 * Background threads API (hidden UIWebView and RPC between webviews)
   * multi-window support, multiple UIWebViews for a single app

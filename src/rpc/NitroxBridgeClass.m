@@ -7,9 +7,13 @@
 #import <Foundation/NSInvocation.h>
 #import <Foundation/NSMethodSignature.h>
 
+#import <strings.h>
+
 #import "NitroxApp.h"
 
 #import "Nibware.h"
+
+#import "NitroxBool.h"
 
 #import "NitroxBridgeClass.h"
 
@@ -18,26 +22,7 @@
 #import "CJSONSerializer.h"
 #import "CJSONDeserializer.h"
 
-// #import "NSObject+JSBridge.h"
-
 #import "GTMObjC2Runtime.h"
-
-
-typedef union {
-    id objectValue;
-    bool booleanValue;
-    char charValue;
-    short shortValue;
-    int intValue;
-    long longValue;
-    long long longLongValue;
-    float floatValue;
-    double doubleValue;
-    void *arrayValue;
-    char *stringValue;
-    void *ptrValue;
-} ObjcValue;
-
 
 @implementation NitroxBridgeClass
 
@@ -149,6 +134,259 @@ typedef union {
     return parameters;
 }
 
+/* Mappings:  (see http://tinyurl.com/6285f9)
+ *
+ * NSNumber  <=>   c,i,s,l,q,C,I,S,L,Q,f,d
+ * boolean?  (B, c/C
+ * NSNull  <->  v (void)
+ * NSDictionary, NSString, NSArray, NSNull, id <=>  @
+ * NSString <->  *
+ * NSString <->  :  (selector)
+ * NSArray <->   [type]  (array)
+ *
+ * Unmapped: # (Class object), ? (unknown), ^type (pointers), {types} (structs)
+ *
+ */
+
+/*
+ *
+ * CGRect shows as:
+ *     {CGRect={CGPoint=ff}{CGSize=ff}}
+ *
+ * xlate to?  [[5.0, 4.0], [9.0, 0.0]]
+ *
+ */ 
+
+- (NSInteger) extractInt:(id) object
+{
+    if ([object isKindOfClass:[NSNumber class]]) {
+        return [(NSNumber*)object integerValue];
+    } else if ([object respondsToSelector:@selector(integerValue)]) {
+        return [(NSNumber*)object integerValue];
+    } else {
+        NSLog(@"couldn't covert object %@ of type %@ to integer", 
+              object, [object class]);
+        return -1;
+    }
+}
+
+- (double) extractDouble:(id) object
+{
+    if ([object isKindOfClass:[NSNumber class]]) {
+        return [(NSNumber*)object doubleValue];
+    } else if ([object respondsToSelector:@selector(doubleValue)]) {
+        return [(NSNumber*)object doubleValue];
+    } else {
+        NSLog(@"couldn't covert object %@ of type %@ to double", 
+              object, [object class]);
+        return -1;
+    }
+}
+
+- (BOOL) extractBOOL:(id) object
+{
+    if ([object isKindOfClass:[NSNumber class]]) {
+        return [(NSNumber*)object boolValue];
+    } else if ([object respondsToSelector:@selector(boolValue)]) {
+        return [(NSNumber*)object boolValue];
+    } else {
+        NSLog(@"couldn't covert object %@ of type %@ to double", 
+              object, [object class]);
+        return NO;
+    }
+}
+
+- (NSString*) extractString:(id) object
+{
+    if ([object isKindOfClass:[NSString class]]) {
+        return object;
+    } else if ([object respondsToSelector:@selector(stringValue)]) {
+        return [(NSNumber*)object stringValue];
+    } else {
+        NSLog(@"couldn't covert object %@ of type %@ to double", 
+              object, [object class]);
+        return [NSString stringWithFormat:@"%@", object];
+    }
+}
+
+/*
+ * Converts native C/Obj-C types to the types we pass into
+ * Javascript; mostly NSNumber, NSString, NitroxBool
+ *
+ * TODO: NSArray <-> [type] array
+ *
+ */
+- (id) convertValue:(ObjcValue) value
+     toObjectOfType:(const char *) type
+{
+    id object = nil;
+    
+    if (strlen(type) != 1) {
+        NSLog(@"type is not a single char, bailing: %s", type);
+        return object;
+    }
+    
+    // TODO: handle multi-char types
+    char typechar = type[0];
+    
+    switch (typechar) 
+    {
+            // numerics
+        case 'c':
+        case 'C':
+            object = [NSNumber numberWithChar:value.charValue];
+            break;
+            
+        case 'i':
+        case 'I':
+            object = [NSNumber numberWithInt:value.intValue];
+            break;
+            
+        case 's':
+        case 'S':
+            object = [NSNumber numberWithShort:value.shortValue];
+            break;
+            
+        case 'l':
+        case 'L':
+            object = [NSNumber numberWithLong:value.longValue];
+            break;
+            
+        case 'q':
+        case 'Q':
+            object = [NSNumber numberWithLongLong:value.longLongValue];
+            break;
+            
+        case 'f':
+            object = [NSNumber numberWithFloat:value.floatValue];
+            break;
+            
+        case 'd':
+            object = [NSNumber numberWithDouble:value.doubleValue];
+            break;
+            
+            // C99 boolean
+        case 'B':
+            // object = [NSNumber numberWithBool:(value.booleanValue ? YES : NO)];
+            object = [NitroxBool objectForBool:(value.booleanValue ? YES : NO)];
+            break;
+            
+            // object - TODO: make this work for array and dict types (?)
+        case '@':
+            object = value.objectValue;
+            break;
+            
+            // C string
+        case '*':
+            object = [NSString stringWithCString:value.stringValue encoding:NSUTF8StringEncoding];
+            break;
+            
+            // selector
+        case ':':
+            object = NSStringFromSelector(value.selectorValue);
+            break;
+
+        case '#':
+            object = NSStringFromClass(value.classValue);
+            break;
+            
+        default:
+            NSLog(@"unhandled type %s", type);
+            return object;
+    }
+    
+    return object;
+}
+
+/*
+ * Converts JSON-decoded objects from Javascript into native 
+ * C/Obj-C types Javascript; mostly handles NSNumber, NSString
+ *
+ * TODO: NSArray <-> [type] array
+ */
+- (ObjcValue) convertObject:(id) object
+                     toType:(const char *)type
+{
+    ObjcValue value;
+    memset(&value, 0, sizeof(value));
+    
+    if (strlen(type) != 1) {
+        NSLog(@"type is not a single char, bailing: %s", type);
+        return value;
+    }
+    
+    // TODO: handle multi-char types
+    char typechar = type[0];
+    
+    switch (typechar) 
+    {
+        // numerics
+        case 'c':
+        case 'C':
+            value.charValue = [self extractInt:object];
+            break;
+
+        case 'i':
+        case 'I':
+            value.intValue = [self extractInt:object];
+            break;
+
+        case 's':
+        case 'S':
+            value.shortValue = [self extractInt:object];
+            break;
+
+        case 'l':
+        case 'L':
+            value.longValue = [self extractInt:object];
+            break;
+
+        case 'q':
+        case 'Q':
+            value.longLongValue = [self extractInt:object];
+            break;
+
+        case 'f':
+            value.floatValue = [self extractDouble:object];
+            break;
+            
+        case 'd':
+            value.doubleValue = [self extractDouble:object];
+            break;
+            
+        // C99 boolean
+        case 'B':
+            value.booleanValue = [self extractBOOL:object] ?
+                                 true : false;
+            break;
+    
+        // object
+        case '@':
+            value.objectValue = object;
+            break;
+            
+        // C string
+        case '*':
+            value.stringValue = [[self extractString:object] cStringUsingEncoding:NSUTF8StringEncoding];
+            break;
+            
+        // selector
+        case ':':
+            value.selectorValue = NSSelectorFromString([self extractString:object]);
+            break;
+        
+        case '#':
+            value.classValue = NSClassFromString([self extractString:object]);
+            break;
+            
+        default:
+            NSLog(@"unhandled type %s", type);
+            return value;
+    }
+    
+    return value;
+}
+
 - (BOOL)copyArguments:(NSArray *)parameters 
        intoInvocation:(NSInvocation*)invocation 
           bySignature:(NSMethodSignature *)signature
@@ -162,9 +400,11 @@ typedef union {
         NSLog(@"argument type at idx %d is %s, provided type is %@", 
               i, argType, [[parameters objectAtIndex:i] class]);
 
+        ObjcValue val = [self convertObject:[parameters objectAtIndex:i] toType:(char *)argType];
+        
         // TODO: convert other types, e.g. numerics, C string, bool, array
-        NSObject *obj = [parameters objectAtIndex:i];
-        [invocation setArgument:&obj atIndex:i+2];
+        // NSObject *obj = [parameters objectAtIndex:i];
+        [invocation setArgument:&val atIndex:i+2];
     }    
     
     return YES;
@@ -228,9 +468,11 @@ typedef union {
     
     ObjcValue returnValue;
     [invocation getReturnValue:&returnValue];
-    NSLog(@"invocation result is %@", res);
+    res = [self convertValue:returnValue toObjectOfType:[signature methodReturnType]];
+    NSLog(@"invocation result is %@, type %s, class %@", 
+          res, [signature methodReturnType], [res class]);
     
-    return returnValue.objectValue;
+    return res;
 }
 
 - (id)invoke:(NSString *)method withTarget:(id)object parameters:(NSArray*)parameters

@@ -22,6 +22,11 @@
     return [NSNumber numberWithDouble:([num1 doubleValue] + [num2 doubleValue])];
 }
 
++ (double) addInt:(int)num1 and:(double)num2
+{
+    return (num1 + num2);
+}
+
 + (NSString *) concat:(NSString *)str1 and:(NSString *)str2
 {
     return [str1 stringByAppendingString:str2];

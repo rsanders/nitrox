@@ -13,6 +13,25 @@
 
 @class NitroxWebViewController;
 
+
+typedef union {
+    id objectValue;
+    bool booleanValue;
+    char charValue;
+    short shortValue;
+    int intValue;
+    long longValue;
+    long long longLongValue;
+    float floatValue;
+    double doubleValue;
+    void *arrayValue;
+    const char *stringValue;
+    void *ptrValue;
+    SEL selectorValue;
+    Class classValue;
+} ObjcValue;
+
+
 @interface NitroxBridgeClass : NSObject  {
     NitroxApp*               app;
 }
@@ -39,5 +58,8 @@
 // data transformation
 - (NSString *) serialize:(id)object;
 - (id) boolObject:(BOOL)val;
+
+- (id) convertValue:(ObjcValue) value toObjectOfType:(const char *) type;
+- (ObjcValue) convertObject:(id) object       toType:(const char *) type;
 
 @end
