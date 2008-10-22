@@ -50,6 +50,11 @@
     // has to come after core, bridge, symbolTable,and webViewcontroller are set...
     appServerDelegate = [self createServerDelegate];
     
+    // backwards compat hack
+    // HTTP delegate, main subpaths are "log", "rpc", "proxy", and "photoresults"
+    [symbolTable setValue:[(NitroxHTTPServerPathDelegate*)appServerDelegate paths] forKey:@"oldapi"];
+    [symbolTable setValue:[rpcDelegate paths] forKey:@"rpc"];
+    
     return self;
 }
 
@@ -199,6 +204,10 @@
              forKey:@"class"];
     
     NitroxSymbolTable* singletons = [[NitroxSymbolTable alloc] init];
+    
+    [singletons setValue:[NibwareLog singleton]
+                  forKey:@"NibwareLog"];
+    
     [singletons setValue:[UIApplication sharedApplication]
                   forKey:@"UIApplication"];
 
@@ -236,7 +245,7 @@
                   forKey:@"NitroxCore"];
     
     [table setValue:singletons forKey:@"singleton"];
-    
+
     return table;
 }
 

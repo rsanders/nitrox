@@ -383,6 +383,10 @@ function testBridgePrimitiveNum() {
   Nitrox.log("result is " + Nitrox.Lang.toJSON(res));
 }
 
+function testBridgeCompat() {
+  var res = Nitrox.Bridge.invoke('rpc.Vibrate.stub', 'vibrate', [], false);
+  Nitrox.log("vibrate result is %@", res);
+}
 
 Nitrox(function() {
   Nitrox.log("user nitroxready handler run");
@@ -395,6 +399,8 @@ jQuery(function() {
 
 // ]]>
 </script>
+
+<a href="javascript:testBridgeCompat();">Test bridge backwards compat</a> <br/>
 
 <a href="javascript:testBridgePrimitiveNum();">Test add primitive nums</a> <br/>
 

@@ -69,4 +69,21 @@
     [super dealloc];
 }
 
+#pragma mark KVC Methods
+
+- (id) valueForKey:(NSString *)key
+{
+    id res = [paths valueForKey:key];
+    if (!res) {
+        res = [super valueForKey:key];
+    }
+    return res;
+}
+
+- (void) setValue:(id)value forKey:(NSString *)key
+{
+    [paths setValue:value forKey:key];
+}
+
+
 @end
